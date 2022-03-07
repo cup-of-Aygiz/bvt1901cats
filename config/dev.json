@@ -1,0 +1,8 @@
+{
+  "baseUrl": "http://",
+  "environment": "dev",
+  "appScheme": "appScheme",
+  "host": "host",
+  "apiToken": "apiToken",
+  "flavorName": "dev"
+}

@@ -47,6 +47,7 @@ dependencies:
   nil: ^1.1.1
   flutter_secure_storage: ^4.2.1
   shared_preferences: ^2.0.8
+  pretty_dio_logger: ^1.1.1
 
 dev_dependencies:
   flutter_test:
@@ -71,40 +72,7 @@ flutter:
 
   assets:
     - assets/icons/
-
-  fonts:
-    - family: Roboto
-      fonts:
-        - asset: assets/fonts/Roboto/Roboto-Black.ttf
-          weight: 900
-        - asset: assets/fonts/Roboto/Roboto-BlackItalic.ttf
-          weight: 900
-          style: italic
-        - asset: assets/fonts/Roboto/Roboto-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/Roboto/Roboto-BoldItalic.ttf
-          weight: 700
-          style: italic
-        - asset: assets/fonts/Roboto/Roboto-Italic.ttf
-          weight: 400
-          style: italic
-        - asset: assets/fonts/Roboto/Roboto-Light.ttf
-          weight: 300
-        - asset: assets/fonts/Roboto/Roboto-LightItalic.ttf
-          weight: 300
-          style: italic
-        - asset: assets/fonts/Roboto/Roboto-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/Roboto/Roboto-MediumItalic.ttf
-          weight: 500
-          style: italic
-        - asset: assets/fonts/Roboto/Roboto-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/Roboto/Roboto-Thin.ttf
-          weight: 100
-        - asset: assets/fonts/Roboto/Roboto-ThinItalic.ttf
-          weight: 100
-          style: italic
+    - config/
 
 flutter_gen:
   output: lib/gen/

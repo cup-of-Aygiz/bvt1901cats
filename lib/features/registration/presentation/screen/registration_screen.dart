@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class RegistrationScreen extends StatelessWidget {
   const RegistrationScreen({Key? key}) : super(key: key);
@@ -6,6 +6,9 @@ class RegistrationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     /// TODO сверстать
-    return Container();
+    return  Scaffold(
+      appBar: AppBar(),
+      body: Container(color: Colors.red,),
+    );
   }
 }

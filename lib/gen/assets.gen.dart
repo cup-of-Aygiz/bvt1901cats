@@ -7,6 +7,12 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
 
+class $ConfigGen {
+  const $ConfigGen();
+
+  String get dev => 'config/dev.json';
+}
+
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
@@ -17,6 +23,7 @@ class Assets {
   Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $ConfigGen config = $ConfigGen();
 }
 
 class AssetGenImage extends AssetImage {
