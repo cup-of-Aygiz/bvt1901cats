@@ -3,9 +3,10 @@ import 'package:bvt1901_practice/app/router/app_router.dart';
 import 'package:bvt1901_practice/di/service_locator.dart';
 import 'package:bvt1901_practice/features/registration/presentation/screen/registration_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:injectable/injectable.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'app_config.dart';
 
 class MainAppBuilder extends AppBuilder {
@@ -50,6 +51,16 @@ class MainAppBuilder extends AppBuilder {
           navigatorKey: AppRouter.instance.rootNavigatorKey,
           // supportedLocales: AppLocalizations.supportedLocales,
           // localizationsDelegates: AppLocalizations.localizationsDelegates,
+          localizationsDelegates: [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: [
+            Locale('en', ''), // English, no country code
+            Locale('ru', ''), // Spanish, no country code
+          ],
           themeMode: ThemeMode.light,
           // theme: lightThemeData,
           home: RegistrationScreen(),

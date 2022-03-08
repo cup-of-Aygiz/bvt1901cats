@@ -25,7 +25,7 @@ dependencies:
   dio: 4.0.0
   connectivity_plus: ^2.0.2
   # localization
-  intl: 0.17.0
+  intl: ^0.17.0
   flutter_localizations:
     sdk: flutter
   #date time utils
@@ -82,4 +82,3 @@ flutter_gen:
     flutter_svg: true
   assets:
     enabled: true
-
