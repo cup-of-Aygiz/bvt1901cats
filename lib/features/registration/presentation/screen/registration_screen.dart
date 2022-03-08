@@ -10,7 +10,7 @@ class RegistrationScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Container(
-        color: Colors.red,
+        color: Colors.blue,
         child: Text(locale.aqua),
       ),
     );
