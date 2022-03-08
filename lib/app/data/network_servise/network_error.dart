@@ -1,3 +1,4 @@
+import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -17,16 +18,16 @@ class NetworkError with _$NetworkError implements Exception {
 
   const factory NetworkError.unknown() = _Unknown;
 
-  // String getLocalizedErrorMessage(BuildContext context) {
-  //   // final locale = AppLocalizations.of(context)!;
-  //   // return when<String>(
-  //   //   logic: (error) => error ?? locale.commonError,
-  //   //   noConnection: () => locale.noInternet,
-  //   //   request: (DioError error) =>
-  //   //   _tryParseDioError(error) ?? locale.commonError,
-  //   //   unknown: () => locale.commonError,
-  //   // );
-  // }
+  String getLocalizedErrorMessage(BuildContext context) {
+    final locale = context.appLocale;
+    return when<String>(
+      logic: (error) => error ?? locale.commonError,
+      noConnection: () => locale.noInternet,
+      request: (DioError error) =>
+      _tryParseDioError(error) ?? locale.commonError,
+      unknown: () => locale.commonError,
+    );
+  }
 
   String? _tryParseDioError(DioError error) {
     try {

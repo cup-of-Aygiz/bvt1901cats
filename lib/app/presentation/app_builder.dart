@@ -3,7 +3,6 @@ import 'package:bvt1901_practice/app/router/app_router.dart';
 import 'package:bvt1901_practice/di/service_locator.dart';
 import 'package:bvt1901_practice/features/registration/presentation/screen/registration_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:injectable/injectable.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -49,21 +48,11 @@ class MainAppBuilder extends AppBuilder {
               getIt<AppConfig>().environment.name == Environment.dev,
           // locale: AppLocalizations.supportedLocales.first,
           navigatorKey: AppRouter.instance.rootNavigatorKey,
-          // supportedLocales: AppLocalizations.supportedLocales,
-          // localizationsDelegates: AppLocalizations.localizationsDelegates,
-          localizationsDelegates: [
-            AppLocalizations.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: [
-            Locale('en', ''), // English, no country code
-            Locale('ru', ''), // Spanish, no country code
-          ],
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
           themeMode: ThemeMode.light,
           // theme: lightThemeData,
-          home: RegistrationScreen(),
+          home: const RegistrationScreen(),
         );
       },
       // ),

@@ -1,3 +1,5 @@
 {
-  "aqua": "Вода"
+  "aqua": "Вода",
+  "noInternet": "",
+  "commonError": ""
 }

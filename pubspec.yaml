@@ -25,15 +25,15 @@ dependencies:
   dio: 4.0.0
   connectivity_plus: ^2.0.2
   # localization
-  intl: ^0.17.0
   flutter_localizations:
     sdk: flutter
+  intl: ^0.17.0
   #date time utils
   date_format: ^2.0.2
   # open links
   url_launcher: 6.0.6
   # assets
-  flutter_gen: 3.1.1
+  #flutter_gen: 3.1.1
   # dev
   logger: 1.0.0
   device_preview: 1.0.0

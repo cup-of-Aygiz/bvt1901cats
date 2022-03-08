@@ -1,3 +1,4 @@
+import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationScreen extends StatelessWidget {
@@ -5,10 +6,13 @@ class RegistrationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /// TODO сверстать
-    return  Scaffold(
+    final locale = context.appLocale;
+    return Scaffold(
       appBar: AppBar(),
-      body: Container(color: Colors.red,),
+      body: Container(
+        color: Colors.red,
+        child: Text(locale.aqua),
+      ),
     );
   }
 }
