@@ -9,9 +9,13 @@ class RegistrationScreen extends StatelessWidget {
     final locale = context.appLocale;
     return Scaffold(
       appBar: AppBar(),
-      body: Container(
-        color: Colors.red,
-        child: Text(locale.aqua),
+      body: Column(
+        children: [
+          Container(
+            color: Colors.red,
+            child: Text(locale.aqua),
+          ),
+        ],
       ),
     );
   }

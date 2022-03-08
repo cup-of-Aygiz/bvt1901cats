@@ -5,7 +5,7 @@ import 'package:bvt1901_practice/features/registration/presentation/screen/regis
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:injectable/injectable.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../../l10n/generated/app_localizations.dart';
 import 'app_config.dart';
 
 class MainAppBuilder extends AppBuilder {
