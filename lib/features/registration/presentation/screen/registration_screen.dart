@@ -32,7 +32,7 @@ class RegistrationScreen extends StatelessWidget {
         //),
         backgroundColor: Colors.white,
       ),
-      body: const RegistrationBody(),
+      body: RegistrationBody(),
     );
   }
 }
