@@ -25,32 +25,31 @@ dependencies:
   dio: 4.0.0
   connectivity_plus: ^2.0.2
   # localization
-  intl: 0.17.0
   flutter_localizations:
     sdk: flutter
+  intl: ^0.17.0
   #date time utils
   date_format: ^2.0.2
   # open links
   url_launcher: 6.0.6
   # assets
-  flutter_gen: 3.1.1
+  flutter_gen: 4.1.6
   # dev
   logger: 1.0.0
   device_preview: 1.0.0
   fancy_shimmer_image: ^2.0.0+2
   flutter_screenutil: ^5.2.0
-  flutter_svg: ^0.22.0
-  flutter_svg_provider: ^0.1.10
+  flutter_svg: ^1.0.3
+  flutter_svg_provider: ^1.0.3
   flutter_form_builder: 6.0.1
   shimmer: ^2.0.0
   freezed_annotation: any
   nil: ^1.1.1
   flutter_secure_storage: ^4.2.1
   shared_preferences: ^2.0.8
-  flutter_launcher_icons: ^0.9.2
+  pretty_dio_logger: ^1.1.1
 
 dev_dependencies:
-
   flutter_test:
     sdk: flutter
   build_runner: ^2.1.4
@@ -59,6 +58,7 @@ dev_dependencies:
   # res generators
   flutter_gen_runner: any
   injectable_generator: ^1.5.2
+  flutter_launcher_icons: ^0.9.2
   flutter_native_splash: any
   json_serializable: ^6.0.1
   # linters
@@ -66,9 +66,22 @@ dev_dependencies:
   # testing
   bloc_test: ^8.0.1
 
-
-
 flutter:
   generate: true
   uses-material-design: true
 
+  assets:
+    - assets/icons/
+    - config/
+
+flutter_gen:
+  output: lib/gen/
+  lineLength: 80
+  null_safety: true
+  integrations:
+    flutter_svg: true
+  assets:
+    enabled: true
+
+#flutter_intl:
+#  enabled: true
