@@ -1,38 +1,34 @@
-import 'package:flutter/cupertino.dart';
+import 'package:bvt1901_practice/features/registration/presentation/components/default_app_bar.dart';
 import 'package:flutter/material.dart';
-
-import '../components/registration_body.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../uikit/text_fields/app_text_field.dart';
+import '../components/app_text_button.dart';
+import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 
 class RegistrationScreen extends StatelessWidget {
   const RegistrationScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
+    //добавить локализацию после запуска
+    final locale = context.appLocale;
+
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Регистрация",
-          style: TextStyle(color: Colors.black, fontSize: 18,fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
-        leading:
-            //Ink(
-            //decoration: const ShapeDecoration(
-            //color: Colors.lightBlue,
-            //shape: CircleBorder(),
-            //),
-            //child:
-            IconButton(
-          onPressed: () => {},
-          icon: const Icon(
-            Icons.arrow_back_outlined,
-            color: Colors.blue,
+      appBar: const DefaultAppBar(myTitle: 'Регистрация',),
+      body: ListView(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(top: 20.h),
           ),
-        ),
-        //),
-        backgroundColor: Colors.white,
+          const AppTextField(myText: 'Имя'),
+          const AppTextField(myText: 'Фамилия'),
+          const AppTextField(myText: 'Отчество'),
+          const AppTextField(myText: 'Телефон'),
+          const AppTextField(myText: 'Пароль'),
+          const AppTextButton(),
+        ],
       ),
-      body: RegistrationBody(),
     );
   }
 }

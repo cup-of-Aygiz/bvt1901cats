@@ -1,5 +1,11 @@
 {
   "aqua": "Вода",
   "noInternet": "",
-  "commonError": ""
+  "commonError": "",
+  "registration": "Регистрация",
+  "phone": "Номер телефона",
+  "name": "Имя",
+  "last_name": "Фамилия",
+  "patronymic": "Отчество",
+  "password": "Пароль"
 }

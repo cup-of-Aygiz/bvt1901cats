@@ -448,7 +448,7 @@ packages:
     source: hosted
     version: "4.1.6"
   flutter_launcher_icons:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: flutter_launcher_icons
       url: "https://pub.dartlang.org"
