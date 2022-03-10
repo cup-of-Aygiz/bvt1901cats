@@ -12,7 +12,7 @@ class RegistrationScreen extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            color: Colors.red,
+            color: Colors.blue,
             child: Text(locale.aqua),
           ),
         ],
