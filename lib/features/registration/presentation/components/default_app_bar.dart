@@ -5,7 +5,7 @@ class DefaultAppBar extends StatelessWidget with PreferredSizeWidget {
   final bool centreTitle;
   final String myTitle;
 
-  const DefaultAppBar(
+  const DefaultAppBar(bool bool, 
       {Key? key, this.centreTitle = true, required this.myTitle})
       : super(key: key);
 

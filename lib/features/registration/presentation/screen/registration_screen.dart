@@ -1,9 +1,10 @@
 import 'package:bvt1901_practice/features/registration/presentation/components/default_app_bar.dart';
+import 'package:bvt1901_practice/features/registration/presentation/screen/phone_virification_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../uikit/text_fields/app_text_field.dart';
 import '../components/app_text_button.dart';
-import 'package:bvt1901_practice/utils/extentions/app_context.dart';
+//import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 
 class RegistrationScreen extends StatelessWidget {
   const RegistrationScreen({Key? key}) : super(key: key);
@@ -12,10 +13,18 @@ class RegistrationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     //добавить локализацию после запуска
-    final locale = context.appLocale;
+    //final locale1 = context.appLocale;
+
+    void createAccountOnPressed(){
+
+      Navigator.push(context,
+          MaterialPageRoute(builder: (BuildContext context) {
+            return const PhoneVerification();
+          }));
+    }
 
     return Scaffold(
-      appBar: const DefaultAppBar(myTitle: 'Регистрация',),
+      appBar: const DefaultAppBar(true,myTitle: 'Регистрация'),
       body: ListView(
         children: [
           Padding(
@@ -26,7 +35,7 @@ class RegistrationScreen extends StatelessWidget {
           const AppTextField(myText: 'Отчество'),
           const AppTextField(myText: 'Телефон'),
           const AppTextField(myText: 'Пароль'),
-          const AppTextButton(),
+          AppTextButton(buttonText: 'Создать аккаунт', onPressed: createAccountOnPressed),
         ],
       ),
     );
