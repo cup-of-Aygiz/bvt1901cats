@@ -17,6 +17,9 @@ class RegistrationScreen extends StatefulWidget {
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
   final _formKey = GlobalKey<FormBuilderState>();
+  final String _phonePattern = r'^(?:[+0][1-9])?[0-9]{10,12}$';
+  final String _passwordPattern =
+      r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{7,}$';
 
   @override
   Widget build(BuildContext context) {
@@ -39,53 +42,81 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     ),
                     AppTextField(
                       labelText: 'Имя',
+                      name: 'firstName',
                       initialValue: state.firstName,
                       onChanged:
                           context.read<RegistrationCubit>().changeFirstName,
-                      name: 'firstName',
+                      validator: FormBuilderValidators.minLength(context, 1,
+                          errorText:
+                              'Имя должно содержать хотя бы один символ'),
                     ),
-                    const AppTextField(
+                    AppTextField(
                       labelText: 'Фамилия',
                       name: 'lastName',
+                      onChanged:
+                          context.read<RegistrationCubit>().changeLastName,
+                      validator: FormBuilderValidators.minLength(context, 1,
+                          errorText:
+                              'Фамилия должно содержать хотя бы один символ'),
                     ),
-                    const AppTextField(
+                    AppTextField(
                       labelText: 'Отчество',
                       name: 'middleName',
+                      onChanged:
+                          context.read<RegistrationCubit>().changeMiddleName,
                     ),
                     AppTextField(
                       labelText: 'Телефон',
+                      name: 'phone',
                       onChanged: (str) {
                         if (str != null) {
                           context.read<RegistrationCubit>().changePhone(str);
                         }
                       },
-                      name: 'phone',
+                      validator: FormBuilderValidators.match(
+                          context, _phonePattern,
+                          errorText:
+                              'Номер телефона должен быть введен корректно'),
                     ),
                     AppTextField(
-                      labelText: 'Пароль',
-                      onChanged: (str) {
-                        context.read<RegistrationCubit>().changePassword(str);
-                      },
-                      name: 'password',
+                        labelText: 'Пароль',
+                        name: 'password',
+                        obscureText: true,
+                        onChanged: (str) {
+                          context.read<RegistrationCubit>().changePassword(str);
+                        },
+                        validator: FormBuilderValidators.match(
+                            context, _passwordPattern,
+                            errorText: 'Пароль не соответствует требованиям')),
+                    const AppTextField(
+                      labelText: 'Повторите пароль',
+                      name: 'password_prov',
+                      obscureText: true,
+                      //TODO валидатор на сравнение с первым полем пароля
                     ),
                     AppTextButton(
                         buttonText: 'Создать аккаунт',
                         onPressed: () async {
-                          // BlocProvider.of<RegistrationCubit>(context).registration(password: password, phone: phone);
+                          //BlocProvider.of<RegistrationCubit>(context).registration(password: password, phone: phone);
                           _formKey.currentState?.validate();
                           if (_formKey.currentState?.validate() ?? false) {
                             _formKey.currentState!.save();
                             // String firstName =
                             //     _formKey.currentState!.value['firstName'];
-                            // print(firstName);
-                            // await context
-                            //     .read<RegistrationCubit>()
-                            //     .registration();
-                            // print(_formKey.currentState!.value);
-                            // print(state);
+                            // String lastName =
+                            //     _formKey.currentState!.value['lastName'];
+                            // String middleName =
+                            //     _formKey.currentState!.value['middleName'];
+                            // String phone =
+                            //     _formKey.currentState!.value['phone'];
+                            // String password =
+                            //     _formKey.currentState!.value['password'];
+                             await context
+                                 .read<RegistrationCubit>()
+                                 .registration();
                           }
-                          // context.appRouter
-                          //     .pushScreen(context, const PhoneVerification());
+                          //context.appRouter
+                          //.pushScreen(context, const PhoneVerification());
                         }),
                   ],
                 ),

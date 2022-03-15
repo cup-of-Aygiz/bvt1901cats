@@ -11,10 +11,10 @@ class RegistrationState with _$RegistrationState {
     final dynamic error,
     /// имя
     @Default('') final String firstName,
-    /// отчество
-    @Default('') final String middleName,
     /// фамилия
     @Default('') final String lastName,
+    /// отчество
+    @Default('') final String middleName,
     @Default('') final String phone,
     @Default('') final String password,
   }) = _RegistrationState;

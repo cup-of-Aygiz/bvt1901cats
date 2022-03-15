@@ -5,15 +5,19 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AppTextField extends StatelessWidget {
   final String labelText;
   final String name;
+  final bool obscureText;
   final String? initialValue;
   final Function(String?)? onChanged;
+  final FormFieldValidator<String>? validator;
 
   const AppTextField(
       {Key? key,
       required this.labelText,
+      this.obscureText = false,
       this.onChanged,
       this.initialValue,
-      required this.name,})
+      required this.name,
+      this.validator})
       : super(key: key);
 
   @override
@@ -23,6 +27,7 @@ class AppTextField extends StatelessWidget {
       children: [
         Container(
           child: FormBuilderTextField(
+            obscureText: obscureText,
             decoration: InputDecoration(
               border: const OutlineInputBorder(),
               labelText: labelText,
@@ -31,10 +36,7 @@ class AppTextField extends StatelessWidget {
             name: name,
             onChanged: onChanged,
             autovalidateMode: AutovalidateMode.onUserInteraction,
-            validator: FormBuilderValidators.compose([
-              FormBuilderValidators.minLength(context, 3,
-                  errorText: 'значние больше 3'),
-            ]),
+            validator: validator,
           ),
           margin: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
         ),
