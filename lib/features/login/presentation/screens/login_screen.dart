@@ -16,8 +16,8 @@ class Login extends StatelessWidget {
       body: ListView(
         children: [
           //TODO добавить картинку
-          const AppTextField(labelText: 'Номер телефона'),
-          const AppTextField(labelText: 'Пароль'),
+          const AppTextField(labelText: 'Номер телефона', name: '',),
+          const AppTextField(labelText: 'Пароль', name: '',),
           AppTextButton(buttonText: 'Войти', onPressed: loginButtonOnPressed),
         ],
       ),

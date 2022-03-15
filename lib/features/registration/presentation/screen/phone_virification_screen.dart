@@ -21,10 +21,10 @@ class PhoneVerification extends StatelessWidget {
       body: ListView(
         children: [
           Padding(padding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 16.h)),
-          const AppTextField(labelText: 'Укажите телефон'),
+          const AppTextField(labelText: 'Укажите телефон', name: '',),
           const VerificationButton(buttonText: 'Отправить смс'),
           Padding(padding: EdgeInsets.symmetric(horizontal: 30.w,vertical: 30.h)),
-          const AppTextField(labelText: 'Код подтверждения'),
+          const AppTextField(labelText: 'Код подтверждения', name: '',),
           AppTextButton(buttonText: 'Подтвердить', onPressed: verificationOnPressed),
         ],
       ),
