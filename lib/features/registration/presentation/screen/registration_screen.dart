@@ -9,33 +9,32 @@ import '../components/app_text_button.dart';
 class RegistrationScreen extends StatelessWidget {
   const RegistrationScreen({Key? key}) : super(key: key);
 
+  void createAccountOnPressed(BuildContext context){
+
+    Navigator.push(context,
+        MaterialPageRoute(builder: (BuildContext context) {
+          return const PhoneVerification();
+        }));
+  }
   @override
   Widget build(BuildContext context) {
 
-    //добавить локализацию после запуска
+    //TODO добавить локализацию
     //final locale1 = context.appLocale;
 
-    void createAccountOnPressed(){
-
-      Navigator.push(context,
-          MaterialPageRoute(builder: (BuildContext context) {
-            return const PhoneVerification();
-          }));
-    }
-
     return Scaffold(
-      appBar: const DefaultAppBar(true,myTitle: 'Регистрация'),
+      appBar: const DefaultAppBar(myTitle: 'Регистрация'),
       body: ListView(
         children: [
           Padding(
             padding: EdgeInsets.only(top: 20.h),
           ),
-          const AppTextField(myText: 'Имя'),
-          const AppTextField(myText: 'Фамилия'),
-          const AppTextField(myText: 'Отчество'),
-          const AppTextField(myText: 'Телефон'),
-          const AppTextField(myText: 'Пароль'),
-          AppTextButton(buttonText: 'Создать аккаунт', onPressed: createAccountOnPressed),
+          const AppTextField(labelText: 'Имя'),
+          const AppTextField(labelText: 'Фамилия'),
+          const AppTextField(labelText: 'Отчество'),
+          const AppTextField(labelText: 'Телефон'),
+          const AppTextField(labelText: 'Пароль'),
+          AppTextButton(buttonText: 'Создать аккаунт', onPressed: createAccountOnPressed(context)),
         ],
       ),
     );

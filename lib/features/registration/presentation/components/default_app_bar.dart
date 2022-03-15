@@ -5,12 +5,11 @@ class DefaultAppBar extends StatelessWidget with PreferredSizeWidget {
   final bool centreTitle;
   final String myTitle;
 
-  const DefaultAppBar(bool bool, 
-      {Key? key, this.centreTitle = true, required this.myTitle})
-      : super(key: key);
 
   @override
   final Size preferredSize = const Size.fromHeight(50);
+
+  const DefaultAppBar({Key? key,this.centreTitle = true, required this.myTitle}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +25,6 @@ class DefaultAppBar extends StatelessWidget with PreferredSizeWidget {
         ),
         centerTitle: centreTitle,
         leading:
-            //Ink(
-            //decoration: const ShapeDecoration(
-            //color: Colors.lightBlue,
-            //shape: CircleBorder(),
-            //),
-            //child:
             IconButton(
           onPressed: () => {},
           icon: Icon(
@@ -39,7 +32,6 @@ class DefaultAppBar extends StatelessWidget with PreferredSizeWidget {
             color: myColors.blue,
           ),
         ),
-        //),
         backgroundColor: myColors.white,
       ),
     );

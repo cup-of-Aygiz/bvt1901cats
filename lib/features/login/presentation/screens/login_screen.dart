@@ -6,18 +6,18 @@ import 'package:flutter/material.dart';
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
 
+  void loginButtonOnPressed(){}
+
   @override
   Widget build(BuildContext context) {
 
-    void loginButtonOnPressed(){}
-
     return Scaffold(
-      appBar: const DefaultAppBar(true, myTitle: 'Вход в аккаунт'),
+      appBar: const DefaultAppBar(myTitle: 'Вход в аккаунт'),
       body: ListView(
         children: [
-          //добавить картинку
-          const AppTextField(myText: 'Номер телефона'),
-          const AppTextField(myText: 'Пароль'),
+          //TODO добавить картинку
+          const AppTextField(labelText: 'Номер телефона'),
+          const AppTextField(labelText: 'Пароль'),
           AppTextButton(buttonText: 'Войти', onPressed: loginButtonOnPressed),
         ],
       ),
