@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../app/presentation/theme/app_text_style.dart';
+import '../../app/presentation/theme/app_text_style.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 
 
@@ -15,7 +15,7 @@ class AppTextButton extends StatelessWidget {
 
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 70.w, vertical: 10.h),
-      height: 50,
+      height: 50.h,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ButtonStyle(
@@ -30,7 +30,7 @@ class AppTextButton extends StatelessWidget {
         ),
         child: Text(buttonText,
             style:
-                AppTextStyle.normalW700S18H24.copyWith(color: myColors.black,fontSize: 16)),
+                AppTextStyle.normalW700S16H24.copyWith(color: myColors.black)),
       ),
     );
   }
