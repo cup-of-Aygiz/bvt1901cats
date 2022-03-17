@@ -1,5 +1,5 @@
-import 'package:bvt1901_practice/features/registration/presentation/components/app_text_button.dart';
-import 'package:bvt1901_practice/features/registration/presentation/components/default_app_bar.dart';
+import 'package:bvt1901_practice/uikit/buttons/app_text_button.dart';
+import 'package:bvt1901_practice/uikit/app_bars/default_app_bar.dart';
 import 'package:bvt1901_practice/uikit/text_fields/app_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

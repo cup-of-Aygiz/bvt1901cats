@@ -9,16 +9,20 @@ class AppTextField extends StatelessWidget {
   final String? initialValue;
   final Function(String?)? onChanged;
   final FormFieldValidator<String>? validator;
+  final TextEditingController? controller;
+  final AutovalidateMode autoValidateMode;
 
-  const AppTextField(
-      {Key? key,
-      required this.labelText,
-      this.obscureText = false,
-      this.onChanged,
-      this.initialValue,
-      required this.name,
-      this.validator})
-      : super(key: key);
+  const AppTextField({
+    Key? key,
+    required this.labelText,
+    this.obscureText = false,
+    this.onChanged,
+    this.initialValue,
+    required this.name,
+    this.validator,
+    this.controller,
+    this.autoValidateMode = AutovalidateMode.onUserInteraction,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,12 +35,14 @@ class AppTextField extends StatelessWidget {
             decoration: InputDecoration(
               border: const OutlineInputBorder(),
               labelText: labelText,
+              errorMaxLines: 3
             ),
             initialValue: initialValue,
             name: name,
             onChanged: onChanged,
-            autovalidateMode: AutovalidateMode.onUserInteraction,
+            autovalidateMode: autoValidateMode,
             validator: validator,
+            controller: controller,
           ),
           margin: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
         ),
