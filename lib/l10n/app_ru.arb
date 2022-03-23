@@ -1,5 +1,17 @@
 {
   "aqua": "Вода",
   "noInternet": "",
-  "commonError": ""
+  "commonError": "",
+  "registration": "Регистрация",
+  "phone": "Номер телефона",
+  "name": "Имя",
+  "last_name": "Фамилия",
+  "patronymic": "Отчество",
+  "password": "Пароль",
+  "second_password": "Повторите Пароль",
+  "passwords_not_match": "Пароли не совпадают!",
+  "create_account": "Создать аккаунт",
+  "this_required_field": "Это обязательное поле",
+  "error_password": "Пароль должен содержать хотя бы один строчный и заглавный латинские символы и цифру",
+  "incorrect_format": "Неверный формат"
 }

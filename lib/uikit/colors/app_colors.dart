@@ -5,54 +5,33 @@ class AppColors {
   static AppColors of(BuildContext context) => Theme.of(context).appColors;
 
   final Color white;
-  final Color appBackground;
-  final Color backgroundGrey;
-  final Color appGreen;
-  final Color appGreenLight;
+  final Color red;
+  final Color darkRed;
+  final Color blue;
+  final Color lightBlue;
+  final Color darkBlue;
+  final Color purple;
+  final Color lightPurple;
+  final Color darkPurple;
+  final Color green;
+  final Color lightGreen;
+  final Color darkGreen;
   final Color black;
-  final Color appTextInactive;
-  final Color appRed;
-  final Color appGreyDisable;
-  final Color defaultBlack;
-  final Color appGreyLight;
-  final Color grey;
-  final Color darkGrey;
-  final Color whiteGrey;
-  final Color lightGrey;
-
-  final Color appGreyInactive;
-  final Color appGrey;
-  final Color appPurple;
-  final Color appBlue;
-  final Color appOrange;
-  final Color appOrangeDisabled;
-  final Color systemGrey;
-  final Color systemRed;
   final Color transparent;
 
   const AppColors.light()
-      : darkGrey = const Color(0xFF838A92),
-        white = const Color(0xFFFFFFFF),
-        appGreenLight = const Color(0xFFECFCF0),
-        appBackground = const Color(0xFFFFFFFF),
-        backgroundGrey = const Color(0xFFF4F4F4),
-        appGreen = const Color(0xFF30C92C),
+      : white = const Color(0xFFFFFFFF),
         black = const Color(0xFF363535),
-        appTextInactive = const Color(0xFFA1A4B2),
-        appGreyInactive = const Color(0xFFDADADA),
-        appRed = const Color(0xFFCC2035),
-        appGreyDisable = const Color(0xFFC3C5C8),
-        defaultBlack = const Color(0xFF000000),
-        appGreyLight = const Color(0xFFE6E7E8),
-        grey = const Color(0xFFF8F8F8),
-        appGrey = const Color(0xFF838A92),
-        appPurple = const Color(0xFF882A7B),
-        appBlue = const Color(0xFF4285F4),
-        appOrange = const Color(0xFFFB8754),
-        appOrangeDisabled = const Color(0xFFECD0D4),
-        systemGrey = const Color(0xFFF7F7F7),
-        systemRed = const Color(0xFFF8DEE1),
-        whiteGrey = const Color(0xFFF4F4F4),
-        lightGrey = const Color(0xFFC3C5C8),
+        red = const Color(0xFFFF3434),
+        darkRed = const Color(0xFFA60000),
+        blue = const Color(0xFF99AAFF),
+        lightBlue = const Color(0xFFC7D0FF),
+        darkBlue = const Color(0xFF3244A6),
+        purple = const Color(0xFFC993FF),
+        lightPurple = const Color(0xFFE1C4FF),
+        darkPurple = const Color(0xFF6A30A6),
+        green = const Color(0xFF8AFFEF),
+        lightGreen = const Color(0xFFBFFFF6),
+        darkGreen = const Color(0xFF2DA695),
         transparent = const Color(0x00000000);
 }

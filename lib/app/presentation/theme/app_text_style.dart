@@ -17,4 +17,10 @@ class AppTextStyle {
     height: 24 / 18,
     fontWeight: FontWeight.w700,
   );
+
+  static final TextStyle normalW700S16H24 = TextStyle(
+    fontSize: 16.sp,
+    height: 24 / 18,
+    fontWeight: FontWeight.w700,
+  );
 }
