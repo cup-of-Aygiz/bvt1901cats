@@ -10,11 +10,8 @@ _$_RegistrationState _$$_RegistrationStateFromJson(Map<String, dynamic> json) =>
     _$_RegistrationState(
       loading: json['loading'] as bool? ?? false,
       error: json['error'],
-      firstName: json['firstName'] as String? ?? '',
-      middleName: json['middleName'] as String? ?? '',
-      lastName: json['lastName'] as String? ?? '',
-      phone: json['phone'] as String? ?? '',
-      password: json['password'] as String? ?? '',
+      personEntity:
+          PersonEntity.fromJson(json['personEntity'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_RegistrationStateToJson(
@@ -22,9 +19,5 @@ Map<String, dynamic> _$$_RegistrationStateToJson(
     <String, dynamic>{
       'loading': instance.loading,
       'error': instance.error,
-      'firstName': instance.firstName,
-      'middleName': instance.middleName,
-      'lastName': instance.lastName,
-      'phone': instance.phone,
-      'password': instance.password,
+      'personEntity': instance.personEntity,
     };

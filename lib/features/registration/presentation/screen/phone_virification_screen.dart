@@ -17,7 +17,7 @@ class PhoneVerification extends StatelessWidget {
     }
 
     return  Scaffold(
-      appBar: const DefaultAppBar(myTitle: 'Подстверждение номера',),
+      appBar: const DefaultAppBar(titleText: 'Подстверждение номера',),
       body: ListView(
         children: [
           Padding(padding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 16.h)),

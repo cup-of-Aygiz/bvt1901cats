@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../entity/person/person_entity.dart';
 
 part 'registration_state.freezed.dart';
 part 'registration_state.g.dart';
@@ -9,14 +10,8 @@ class RegistrationState with _$RegistrationState {
   const factory RegistrationState({
     @Default(false) final bool loading,
     final dynamic error,
-    /// имя
-    @Default('') final String firstName,
-    /// фамилия
-    @Default('') final String lastName,
-    /// отчество
-    @Default('') final String middleName,
-    @Default('') final String phone,
-    @Default('') final String password,
+    required final PersonEntity personEntity,
   }) = _RegistrationState;
-  factory RegistrationState.fromJson(Map<String, dynamic> json) => _$RegistrationStateFromJson(json);
+  factory RegistrationState.fromJson(Map<String, dynamic> json) =>
+      _$RegistrationStateFromJson(json);
 }

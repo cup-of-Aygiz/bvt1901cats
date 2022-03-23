@@ -1,1 +1,16 @@
-{}
+{
+  "en": [
+    "registration",
+    "phone",
+    "name",
+    "last_name",
+    "patronymic",
+    "password",
+    "second_password",
+    "passwords_not_match",
+    "create_account",
+    "this_required_field",
+    "error_password",
+    "incorrect_format"
+  ]
+}

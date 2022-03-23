@@ -11,6 +11,7 @@ class AppTextField extends StatelessWidget {
   final FormFieldValidator<String>? validator;
   final TextEditingController? controller;
   final AutovalidateMode autoValidateMode;
+  final EdgeInsets? padding;
 
   const AppTextField({
     Key? key,
@@ -22,31 +23,28 @@ class AppTextField extends StatelessWidget {
     this.validator,
     this.controller,
     this.autoValidateMode = AutovalidateMode.onUserInteraction,
+    this.padding,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          child: FormBuilderTextField(
-            obscureText: obscureText,
-            decoration: InputDecoration(
-              border: const OutlineInputBorder(),
-              labelText: labelText,
-              errorMaxLines: 3
-            ),
-            initialValue: initialValue,
-            name: name,
-            onChanged: onChanged,
-            autovalidateMode: autoValidateMode,
-            validator: validator,
-            controller: controller,
-          ),
-          margin: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+    return Padding(
+      padding:
+          padding ?? EdgeInsets.symmetric(vertical: 10.h),
+      child: FormBuilderTextField(
+        obscureText: obscureText,
+        decoration: InputDecoration(
+          border: const OutlineInputBorder(),
+          labelText: labelText,
+          errorMaxLines: 3,
         ),
-      ],
+        initialValue: initialValue,
+        name: name,
+        onChanged: onChanged,
+        autovalidateMode: autoValidateMode,
+        validator: validator,
+        controller: controller,
+      ),
     );
   }
 }

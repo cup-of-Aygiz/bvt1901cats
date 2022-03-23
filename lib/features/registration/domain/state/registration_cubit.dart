@@ -1,67 +1,36 @@
+import 'package:bvt1901_practice/features/registration/domain/entity/person/person_entity.dart';
 import 'package:bvt1901_practice/features/registration/domain/state/registration_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../mock/registration_mock_repository.dart';
+import '../../../../di/service_locator.dart';
+import '../repository/registration_repository.dart';
 
 // import '../../mock/registration_mock_repository.dart';
 
 class RegistrationCubit extends Cubit<RegistrationState> {
-  RegistrationCubit() : super(const RegistrationState());
+  RegistrationCubit()
+      : super(
+          const RegistrationState(
+            personEntity: PersonEntity(),
+          ),
+        );
 
-  /// TODO
-  /// 1 метод который будет сохранять значения state
-  /// 2 валидацию на поля, при этом каждое поле со своим валидатором
-  /// 3 отправлять на моковый репозиторий их
-  /// 4 моковый репозиторий возвращает true/ false если регистрация прошла и отображать
-  /// это значение на странице через error
-  /// ///////////5 true/ false - возвращаются рандомно
-  /// [Random]
-  Future<void> registration() async {
-    emit(state.copyWith(loading: true));
+  final RegistrationRepository _registrationRepository = getIt();
+
+  Future<void> init() async {
+    emit(state.copyWith(
+        personEntity: await _registrationRepository.loadPerson()));
+  }
+
+  Future<void> saveStateAndRegistration(Map<String, dynamic> json) async {
     try {
-       RegistrationMockRepository registrationMockRepository = RegistrationMockRepository();
-       bool sigIn = await registrationMockRepository.registration(
-           firstName: state.firstName,
-           lastName: state.lastName,
-           middleName: state.middleName,
-           phone: state.phone,
-           password: state.password);
-
-       emit(state.copyWith(loading: false));
-
-       //TODO добавить вывод ошибки
-       //if(sigIn) emit(state.copyWith(loading: false));
-       //else emit(state.copyWith(loading: false,error: ));
+      emit(state.copyWith(personEntity: PersonEntity.fromJson(json)));
+      emit(state.copyWith(loading: true));
+      await _registrationRepository.registration(
+          personEntity: state.personEntity);
+      emit(state.copyWith(loading: false));
     } catch (e) {
-      emit(state.copyWith(error: e));
-    }
-  }
-
-  void changeFirstName(String? firstName) {
-    if (firstName != null) {
-      emit(state.copyWith(firstName: firstName));
-    }
-  }
-
-  void changeLastName(String? lastName) {
-    if (lastName != null) {
-      emit(state.copyWith(lastName: lastName));
-    }
-  }
-
-  void changeMiddleName(String? middleName) {
-    if (middleName != null) {
-      emit(state.copyWith(middleName: middleName));
-    }
-  }
-
-  void changePhone(String phone) {
-    emit(state.copyWith(phone: phone));
-  }
-
-  void changePassword(String? password) {
-    if (password != null) {
-      emit(state.copyWith(password: password));
+      emit(state.copyWith(error: e, loading: false));
     }
   }
 }
