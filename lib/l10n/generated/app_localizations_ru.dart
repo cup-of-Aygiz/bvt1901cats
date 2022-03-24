@@ -51,4 +51,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get incorrect_format => 'Неверный формат';
+
+  @override
+  String get login => 'Войти';
 }

@@ -5,6 +5,7 @@ import 'package:bvt1901_practice/features/registration/presentation/screen/regis
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:injectable/injectable.dart';
+import '../../features/welcom_page/presentation/screens/welcom_page_screen.dart';
 import '../../l10n/generated/app_localizations.dart';
 import 'app_config.dart';
 
@@ -52,7 +53,7 @@ class MainAppBuilder extends AppBuilder {
           supportedLocales: AppLocalizations.supportedLocales,
           themeMode: ThemeMode.light,
           // theme: lightThemeData,
-          home: const RegistrationScreen(),
+          home: const WelcomePageScreen(),
         );
       },
       // ),

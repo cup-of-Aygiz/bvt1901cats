@@ -11,6 +11,7 @@
     "create_account",
     "this_required_field",
     "error_password",
-    "incorrect_format"
+    "incorrect_format",
+    "login"
   ]
 }

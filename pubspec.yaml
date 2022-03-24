@@ -69,12 +69,19 @@ dev_dependencies:
   # testing
   bloc_test: ^8.0.1
 
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/ic_general.webp"
+
 flutter:
   generate: true
   uses-material-design: true
 
   assets:
     - assets/icons/
+    - assets/images/logotip.svg
+    - assets/images/logo.png
     - config/
 
 flutter_gen:

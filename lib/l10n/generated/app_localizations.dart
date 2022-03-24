@@ -183,6 +183,12 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Неверный формат'**
   String get incorrect_format;
+
+  /// No description provided for @login.
+  ///
+  /// In ru, this message translates to:
+  /// **'Войти'**
+  String get login;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
