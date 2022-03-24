@@ -10,6 +10,9 @@ class AppColors {
   final Color blue;
   final Color lightBlue;
   final Color darkBlue;
+  final Color darkOcean;
+  final Color lightOcean;
+  final Color ocean;
   final Color purple;
   final Color lightPurple;
   final Color darkPurple;
@@ -27,6 +30,9 @@ class AppColors {
         blue = const Color(0xFF99AAFF),
         lightBlue = const Color(0xFFC7D0FF),
         darkBlue = const Color(0xFF3244A6),
+        darkOcean = const Color(0xFF005f89),
+        lightOcean = const Color(0xFF63cdd7),
+        ocean = const Color(0xFF0093b7),
         purple = const Color(0xFFC993FF),
         lightPurple = const Color(0xFFE1C4FF),
         darkPurple = const Color(0xFF6A30A6),

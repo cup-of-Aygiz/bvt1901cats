@@ -28,7 +28,7 @@ class BackgroundProgressWidget extends StatelessWidget {
         Align(
           alignment: Alignment.bottomCenter,
           child: ProgressWave(
-            color: (colorOne ?? colors.blue),
+            color: (colorOne ?? colors.lightOcean),
             duration: const Duration(seconds: 9),
             progress: 1 / (length + 1),
           ),
@@ -36,7 +36,7 @@ class BackgroundProgressWidget extends StatelessWidget {
         Align(
           alignment: Alignment.bottomCenter,
           child: ProgressWave(
-            color: (colorTwo ?? colors.blue),
+            color: (colorTwo ?? colors.ocean),
             duration: const Duration(seconds: 10),
             progress: 1 / (length + 1.5),
           ),
@@ -45,7 +45,7 @@ class BackgroundProgressWidget extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: ProgressWave(
             duration: const Duration(seconds: 11),
-            color: !error ? (colorThree ?? colors.darkBlue) : colors.darkRed,
+            color: !error ? (colorThree ?? colors.ocean) : colors.darkRed,
             progress: 1 / (length + 2),
           ),
         ),
