@@ -11,7 +11,6 @@ class AppColors {
   final Color darkBlue;
   final Color shadow;
   final Color lightBlue;
-  final Color darkBlue;
   final Color darkOcean;
   final Color lightOcean;
   final Color ocean;
@@ -22,7 +21,6 @@ class AppColors {
   final Color lightGreen;
   final Color darkGreen;
   final Color black;
-  final Color red;
   final Color transparent;
 
   const AppColors.light()
