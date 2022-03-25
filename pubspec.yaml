@@ -12,6 +12,13 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # image carousel slider
+  carousel_slider: ^4.0.0 
+  # animated page indicator 
+  smooth_page_indicator: ^1.0.0+2
+  # navigator bar
+  curved_navigation_bar: ^1.0.3
+
   cupertino_icons: ^1.0.2
   device_info_plus: ^2.2.0
   json_annotation: ^4.3.0
