@@ -96,21 +96,93 @@ abstract class AppLocalizations {
 
   /// No description provided for @aqua.
   ///
-  /// In en, this message translates to:
+  /// In ru, this message translates to:
   /// **'Вода'**
   String get aqua;
 
   /// No description provided for @noInternet.
   ///
-  /// In en, this message translates to:
+  /// In ru, this message translates to:
   /// **''**
   String get noInternet;
 
   /// No description provided for @commonError.
   ///
-  /// In en, this message translates to:
+  /// In ru, this message translates to:
   /// **''**
   String get commonError;
+
+  /// No description provided for @registration.
+  ///
+  /// In ru, this message translates to:
+  /// **'Регистрация'**
+  String get registration;
+
+  /// No description provided for @phone.
+  ///
+  /// In ru, this message translates to:
+  /// **'Номер телефона'**
+  String get phone;
+
+  /// No description provided for @name.
+  ///
+  /// In ru, this message translates to:
+  /// **'Имя'**
+  String get name;
+
+  /// No description provided for @last_name.
+  ///
+  /// In ru, this message translates to:
+  /// **'Фамилия'**
+  String get last_name;
+
+  /// No description provided for @patronymic.
+  ///
+  /// In ru, this message translates to:
+  /// **'Отчество'**
+  String get patronymic;
+
+  /// No description provided for @password.
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароль'**
+  String get password;
+
+  /// No description provided for @second_password.
+  ///
+  /// In ru, this message translates to:
+  /// **'Повторите Пароль'**
+  String get second_password;
+
+  /// No description provided for @passwords_not_match.
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароли не совпадают!'**
+  String get passwords_not_match;
+
+  /// No description provided for @create_account.
+  ///
+  /// In ru, this message translates to:
+  /// **'Создать аккаунт'**
+  String get create_account;
+
+  /// No description provided for @this_required_field.
+  ///
+  /// In ru, this message translates to:
+  /// **'Это обязательное поле'**
+  String get this_required_field;
+
+  /// No description provided for @error_password.
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароль должен содержать хотя бы один строчный и заглавный латинские символы и цифру'**
+  String get error_password;
+
+  /// No description provided for @incorrect_format.
+  ///
+  /// In ru, this message translates to:
+  /// **'Неверный формат'**
+  String get incorrect_format;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

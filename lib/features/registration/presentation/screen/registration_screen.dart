@@ -1,42 +1,149 @@
-import 'package:bvt1901_practice/features/registration/presentation/components/default_app_bar.dart';
-import 'package:bvt1901_practice/features/registration/presentation/screen/phone_virification_screen.dart';
+import 'package:bvt1901_practice/uikit/app_bars/default_app_bar.dart';
+import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../uikit/spinkit/spinkit.dart';
+import '../../../../uikit/text_fields/app_phone_field.dart';
 import '../../../../uikit/text_fields/app_text_field.dart';
-import '../components/app_text_button.dart';
-//import 'package:bvt1901_practice/utils/extentions/app_context.dart';
+import '../../../../uikit/validators/app_validators.dart';
+import '../../domain/state/registration_cubit.dart';
+import '../../domain/state/registration_state.dart';
+import '../../../../uikit/buttons/app_text_button.dart';
+import '../components/proggres_gradient.dart';
 
-class RegistrationScreen extends StatelessWidget {
+class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({Key? key}) : super(key: key);
 
   @override
+  State<RegistrationScreen> createState() => _RegistrationScreenState();
+}
+
+class _RegistrationScreenState extends State<RegistrationScreen> {
+  final _formKey = GlobalKey<FormBuilderState>();
+  late String _password = '';
+  late String _passwordProv = '';
+
+  @override
   Widget build(BuildContext context) {
+    final locale = context.appLocale;
+    final colors = context.appColors;
 
-    //добавить локализацию после запуска
-    //final locale1 = context.appLocale;
-
-    void createAccountOnPressed(){
-
-      Navigator.push(context,
-          MaterialPageRoute(builder: (BuildContext context) {
-            return const PhoneVerification();
-          }));
-    }
-
-    return Scaffold(
-      appBar: const DefaultAppBar(true,myTitle: 'Регистрация'),
-      body: ListView(
-        children: [
-          Padding(
-            padding: EdgeInsets.only(top: 20.h),
-          ),
-          const AppTextField(myText: 'Имя'),
-          const AppTextField(myText: 'Фамилия'),
-          const AppTextField(myText: 'Отчество'),
-          const AppTextField(myText: 'Телефон'),
-          const AppTextField(myText: 'Пароль'),
-          AppTextButton(buttonText: 'Создать аккаунт', onPressed: createAccountOnPressed),
-        ],
+    return BlocProvider(
+      create: (context) => RegistrationCubit()..init(),
+      child: BlocBuilder<RegistrationCubit, RegistrationState>(
+        buildWhen: (p, c) => p != c,
+        builder: (context, state) {
+          return Scaffold(
+            appBar: DefaultAppBar(
+              titleText: locale.registration,
+            ),
+            body: (!state.loading)
+                ? BackgroundProgressWidget(
+                    length: 3,
+                    error: state.error != null,
+                    child: FormBuilder(
+                      key: _formKey,
+                      child: Stack(
+                        children: [
+                          ListView(
+                            padding: EdgeInsets.symmetric(horizontal: 10.w),
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(top: 20.h),
+                              ),
+                              AppTextField(
+                                labelText: locale.name,
+                                name: 'firstName',
+                                initialValue: state.personEntity.firstName,
+                                validator: AppValidators.requiredMinLengthField(
+                                    context),
+                              ),
+                              AppTextField(
+                                labelText: locale.last_name,
+                                name: 'lastName',
+                                initialValue: state.personEntity.lastName,
+                                validator: AppValidators.requiredMinLengthField(
+                                    context),
+                              ),
+                              AppTextField(
+                                labelText: locale.patronymic,
+                                initialValue: state.personEntity.middleName,
+                                name: 'middleName',
+                              ),
+                              AppPhoneTextField(
+                                labelText: locale.phone,
+                                initialValue: state.personEntity.phone,
+                                name: 'phone',
+                              ),
+                              AppTextField(
+                                labelText: locale.password,
+                                initialValue: state.personEntity.password,
+                                name: 'password',
+                                onChanged: (String? str) {
+                                  setState(() {
+                                    if (str != null) {
+                                      _password = str;
+                                    }
+                                  });
+                                },
+                                obscureText: true,
+                                validator: AppValidators.requiredPasswordField(
+                                    context),
+                              ),
+                              AppTextField(
+                                labelText: locale.second_password,
+                                initialValue: state.personEntity.password,
+                                name: 'password_prov',
+                                obscureText: true,
+                                onChanged: (String? str) {
+                                  setState(() {
+                                    if (str != null) {
+                                      _passwordProv = str;
+                                    }
+                                  });
+                                },
+                                autoValidateMode: AutovalidateMode.disabled,
+                                validator: (String? passwordProv) {
+                                  if (_password != _passwordProv) {
+                                    return locale.passwords_not_match;
+                                  }
+                                  return null;
+                                },
+                              ),
+                              SizedBox(
+                                height: 16.h,
+                              ),
+                            ],
+                          ),
+                          Positioned(
+                            bottom: 30.h,
+                            left: 10.w,
+                            right: 10.w,
+                            child: AppTextButton(
+                              color: colors.purple,
+                              buttonText: locale.create_account,
+                              onPressed: () async {
+                                _formKey.currentState?.validate();
+                                if (_formKey.currentState?.validate() ??
+                                    false) {
+                                  _formKey.currentState!.save();
+                                  await context
+                                      .read<RegistrationCubit>()
+                                      .saveStateAndRegistration(
+                                          _formKey.currentState!.value);
+                                }
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                : const AppSpinKit(),
+          );
+        },
       ),
     );
   }
