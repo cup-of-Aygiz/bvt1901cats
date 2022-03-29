@@ -1,5 +1,4 @@
 import 'package:bvt1901_practice/features/home/components/products.dart';
-import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,8 +17,7 @@ class HomeBody extends StatefulWidget {
 class _HomeBodyState extends State<HomeBody> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
+    return  SafeArea(
         //отступы
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
@@ -38,12 +36,12 @@ class _HomeBodyState extends State<HomeBody> {
             
             const Category(),
             
-            Container(
+            SizedBox(
                height: 200,
               child: Products()),
           ]),
         ),
-      ),
+      
     );
   }
 }
