@@ -1,7 +1,7 @@
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+// import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 class NavigatorPanel extends StatelessWidget {
