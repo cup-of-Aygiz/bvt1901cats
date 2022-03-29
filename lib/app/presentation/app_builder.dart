@@ -1,7 +1,6 @@
 import 'package:bvt1901_practice/app/domain/app_builder.dart';
 import 'package:bvt1901_practice/app/router/app_router.dart';
 import 'package:bvt1901_practice/di/service_locator.dart';
-import 'package:bvt1901_practice/features/registration/presentation/screen/registration_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:injectable/injectable.dart';
