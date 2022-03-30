@@ -80,8 +80,7 @@ flutter:
 
   assets:
     - assets/icons/
-    - assets/images/logotip.svg
-    - assets/images/logo.png
+    - assets/images/
     - config/
 
 flutter_gen:

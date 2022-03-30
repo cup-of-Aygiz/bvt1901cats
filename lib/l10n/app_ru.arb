@@ -14,5 +14,6 @@
   "this_required_field": "Это обязательное поле",
   "error_password": "Пароль должен содержать хотя бы один строчный и заглавный латинские символы и цифру",
   "incorrect_format": "Неверный формат",
-  "login": "Войти"
+  "login": "Войти",
+  "project_name": "Aqualabean.ru"
 }

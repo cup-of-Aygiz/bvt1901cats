@@ -1,4 +1,5 @@
 import 'package:bvt1901_practice/features/registration/presentation/screen/registration_screen.dart';
+import 'package:bvt1901_practice/gen/assets.gen.dart';
 import 'package:bvt1901_practice/uikit/app_bars/default_app_bar.dart';
 import 'package:bvt1901_practice/uikit/buttons/app_text_button.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
@@ -11,20 +12,20 @@ class WelcomePageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final locale = context.appLocale;
+    final router = context.appRouter;
 
     return Scaffold(
-      appBar: const DefaultAppBar(
-        titleText: 'Aqualabean.ru',
+      appBar: DefaultAppBar(
+        titleText: locale.project_name,
       ),
       body: ListView(
         children: [
           Padding(
             padding: EdgeInsets.only(top: 20.h),
           ),
-          const Image(
-            image: AssetImage('assets/images/logo.png'),
-            width: 400,
-            height: 400,
+          Assets.images.logoHehe.svg(
+            width: 400.w,
+            height: 300.h,
           ),
           Padding(
             padding: EdgeInsets.only(top: 80.h),
@@ -34,8 +35,7 @@ class WelcomePageScreen extends StatelessWidget {
             child: AppTextButton(
                 buttonText: locale.login,
                 onPressed: () {
-                  context.appRouter
-                      .pushScreen(context, const RegistrationScreen());
+                  router.pushScreen(context, const RegistrationScreen());
                 }),
           ),
           Padding(
@@ -46,8 +46,7 @@ class WelcomePageScreen extends StatelessWidget {
             child: AppTextButton(
                 buttonText: locale.registration,
                 onPressed: () {
-                  context.appRouter
-                      .pushScreen(context, const RegistrationScreen());
+                  router.pushScreen(context, const RegistrationScreen());
                 }),
           ),
         ],

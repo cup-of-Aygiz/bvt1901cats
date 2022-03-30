@@ -54,4 +54,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get login => 'Войти';
+
+  @override
+  String get project_name => 'Aqualabean.ru';
 }

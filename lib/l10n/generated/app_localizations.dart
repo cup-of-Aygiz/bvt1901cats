@@ -189,6 +189,12 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Войти'**
   String get login;
+
+  /// No description provided for @project_name.
+  ///
+  /// In ru, this message translates to:
+  /// **'Aqualabean.ru'**
+  String get project_name;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
