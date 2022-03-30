@@ -16,7 +16,7 @@ class HomeSearch extends StatelessWidget {
       children: [
         Expanded(
             child: Container(
-                margin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 15.w),
+                margin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 16.w),
                 decoration: BoxDecoration(
                     color: myColors.white,
                     borderRadius: BorderRadius.circular(25.r),

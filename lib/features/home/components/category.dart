@@ -15,7 +15,7 @@ class _CategoryState extends State<Category> {
   
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 80,
+      height: 80.h,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
@@ -66,7 +66,7 @@ class CategoryProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     final myColors = context.appColors;
     return Padding(
-      padding: EdgeInsets.symmetric( horizontal: 5.h),
+      padding: EdgeInsets.symmetric( horizontal: 6.w),
       child: GestureDetector(
         onTap: press,
         child: Chip(
@@ -76,7 +76,7 @@ class CategoryProduct extends StatelessWidget {
             Text(text),
             Image.network(
               urlImage,
-              height: 40,
+              height: 40.h,
             ),
           ],
         )),

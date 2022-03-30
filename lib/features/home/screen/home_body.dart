@@ -24,20 +24,20 @@ class _HomeBodyState extends State<HomeBody> {
           child: Column(children:  [
             //create appbar
             const HomeAppBar(),
-            const SizedBox(
-              height: 15,
+            SizedBox(
+              height: 16.h,
             ),
             // create finder
             const HomeSearch(),
-            const SizedBox(
-              height: 15,
+            SizedBox(
+              height: 16.h,
             ),
             const HomeSlider(), // исправить
             
             const Category(),
             
             SizedBox(
-               height: 200,
+               height: 200.h,
               child: Products()),
           ]),
         ),
