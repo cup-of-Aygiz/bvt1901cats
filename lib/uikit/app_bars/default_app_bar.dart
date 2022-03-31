@@ -23,6 +23,9 @@ class DefaultAppBar extends StatelessWidget with PreferredSizeWidget {
   Widget build(BuildContext context) {
     final myColors = context.appColors;
 
+    final ModalRoute<dynamic>? parentRoute = ModalRoute.of(context);
+    final bool canPop = parentRoute?.canPop ?? false;
+
     return PreferredSize(
       preferredSize: const Size.fromHeight(80.0),
       child: AppBar(
@@ -31,7 +34,7 @@ class DefaultAppBar extends StatelessWidget with PreferredSizeWidget {
           style: AppTextStyle.normalW700S18H24.copyWith(color: myColors.black),
         ),
         centerTitle: centreTitle,
-        leading: const AppGoBackButton(),
+        leading: canPop ? const AppGoBackButton() : null,
         backgroundColor: backgroundColor ?? myColors.purple,
       ),
     );

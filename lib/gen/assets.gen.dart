@@ -22,14 +22,26 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_bottle.svg
   SvgGenImage get icBottle => const SvgGenImage('assets/icons/ic_bottle.svg');
 
+  /// File path: assets/icons/ic_general.webp
+  AssetGenImage get icGeneral =>
+      const AssetGenImage('assets/icons/ic_general.webp');
+
   /// File path: assets/icons/ic_icon.svg
   SvgGenImage get icIcon => const SvgGenImage('assets/icons/ic_icon.svg');
+}
+
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/logotip.png
+  AssetGenImage get logotip => const AssetGenImage('assets/images/logotip.png');
 }
 
 class Assets {
   Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $ConfigGen config = $ConfigGen();
 }
 

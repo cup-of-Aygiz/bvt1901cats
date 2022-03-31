@@ -22,6 +22,7 @@ class RegistrationScreen extends StatefulWidget {
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
   final _formKey = GlobalKey<FormBuilderState>();
+
   late String _password = '';
   late String _passwordProv = '';
 
