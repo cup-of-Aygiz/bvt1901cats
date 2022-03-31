@@ -33,14 +33,8 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/logo.png
-  AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
-
-  /// File path: assets/images/logoHehe.svg
-  SvgGenImage get logoHehe => const SvgGenImage('assets/images/logoHehe.svg');
-
-  /// File path: assets/images/logotip.svg
-  SvgGenImage get logotip => const SvgGenImage('assets/images/logotip.svg');
+  /// File path: assets/images/logotip.png
+  AssetGenImage get logotip => const AssetGenImage('assets/images/logotip.png');
 }
 
 class Assets {

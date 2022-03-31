@@ -13,18 +13,20 @@ class WelcomePageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final locale = context.appLocale;
     final router = context.appRouter;
+    final colors = context.appColors;
 
     return Scaffold(
       appBar: DefaultAppBar(
-        titleText: locale.project_name,
+        titleText: locale.welcome,
       ),
       body: ListView(
         children: [
           Padding(
             padding: EdgeInsets.only(top: 20.h),
           ),
-          Assets.images.logoHehe.svg(
-            width: 400.w,
+          Image(
+            image: Assets.images.logotip,
+            width: 300.h,
             height: 300.h,
           ),
           Padding(
@@ -51,6 +53,7 @@ class WelcomePageScreen extends StatelessWidget {
           ),
         ],
       ),
+      backgroundColor: colors.white,
     );
   }
 }
