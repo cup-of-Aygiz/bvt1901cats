@@ -184,6 +184,12 @@ abstract class AppLocalizations {
   /// **'Неверный формат'**
   String get incorrect_format;
 
+  /// No description provided for @login_title.
+  ///
+  /// In ru, this message translates to:
+  /// **'Вход в аккаунт'**
+  String get login_title;
+
   /// No description provided for @login.
   ///
   /// In ru, this message translates to:
@@ -201,6 +207,12 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Добро пожаловать'**
   String get welcome;
+
+  /// No description provided for @no_registration_yet.
+  ///
+  /// In ru, this message translates to:
+  /// **'Не зарегистрированы?'**
+  String get no_registration_yet;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

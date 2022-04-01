@@ -53,6 +53,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get incorrect_format => 'Неверный формат';
 
   @override
+  String get login_title => 'Вход в аккаунт';
+
+  @override
   String get login => 'Войти';
 
   @override
@@ -60,4 +63,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get welcome => 'Добро пожаловать';
+
+  @override
+  String get no_registration_yet => 'Не зарегистрированы?';
 }

@@ -1,3 +1,4 @@
+import 'package:bvt1901_practice/gen/fonts.gen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -22,5 +23,24 @@ class AppTextStyle {
     fontSize: 16.sp,
     height: 24 / 18,
     fontWeight: FontWeight.w700,
+  );
+
+  static final TextStyle normalW200S34H24 = TextStyle(
+    fontSize: 34.sp,
+    height: 24 / 18,
+    fontWeight: FontWeight.w200,
+    fontStyle: FontStyle.italic
+  );
+
+  static final TextStyle normalW400S12H24 = TextStyle(
+      fontSize: 12.sp,
+      height: 24 / 18,
+      fontWeight: FontWeight.w400,
+  );
+
+  static final TextStyle normalW700S12H24 = TextStyle(
+      fontSize: 12.sp,
+      height: 24 / 18,
+      fontWeight: FontWeight.w700,
   );
 }
