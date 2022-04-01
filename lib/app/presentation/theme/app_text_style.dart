@@ -1,4 +1,3 @@
-import 'package:bvt1901_practice/gen/fonts.gen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
