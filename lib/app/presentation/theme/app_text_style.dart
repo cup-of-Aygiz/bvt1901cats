@@ -28,7 +28,6 @@ class AppTextStyle {
     fontSize: 34.sp,
     height: 24 / 18,
     fontWeight: FontWeight.w200,
-    fontStyle: FontStyle.italic
   );
 
   static final TextStyle normalW400S12H24 = TextStyle(
