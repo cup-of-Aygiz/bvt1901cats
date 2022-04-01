@@ -6,6 +6,8 @@ import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../login/presentation/screens/login_screen.dart';
+
 class WelcomePageScreen extends StatelessWidget {
   const WelcomePageScreen({Key? key}) : super(key: key);
 
@@ -37,7 +39,7 @@ class WelcomePageScreen extends StatelessWidget {
             child: AppTextButton(
                 buttonText: locale.login,
                 onPressed: () {
-                  router.pushScreen(context, const RegistrationScreen());
+                  router.pushScreen(context, const LoginScreen());
                 }),
           ),
           Padding(
