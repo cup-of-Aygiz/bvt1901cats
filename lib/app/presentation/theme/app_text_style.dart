@@ -24,21 +24,18 @@ class AppTextStyle {
     fontWeight: FontWeight.w700,
   );
 
-  static final TextStyle normalW200S34H24 = TextStyle(
+  static final TextStyle normalW200S34 = TextStyle(
     fontSize: 34.sp,
-    height: 24 / 18,
     fontWeight: FontWeight.w200,
   );
 
-  static final TextStyle normalW400S12H24 = TextStyle(
+  static final TextStyle normalW400S12 = TextStyle(
       fontSize: 12.sp,
-      height: 24 / 18,
       fontWeight: FontWeight.w400,
   );
 
-  static final TextStyle normalW700S12H24 = TextStyle(
+  static final TextStyle normalW700S12 = TextStyle(
       fontSize: 12.sp,
-      height: 24 / 18,
       fontWeight: FontWeight.w700,
 
   );

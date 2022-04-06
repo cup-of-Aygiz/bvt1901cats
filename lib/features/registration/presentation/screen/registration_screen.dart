@@ -42,7 +42,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             ),
             body: (!state.loading)
                 ? BackgroundProgressWidget(
-                    length: 3,
+                    length: 4,
                     error: state.error != null,
                     child: FormBuilder(
                       key: _formKey,
