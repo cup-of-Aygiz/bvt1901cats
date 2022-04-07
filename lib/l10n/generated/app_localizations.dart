@@ -183,6 +183,24 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Неверный формат'**
   String get incorrect_format;
+
+  /// No description provided for @login.
+  ///
+  /// In ru, this message translates to:
+  /// **'Войти'**
+  String get login;
+
+  /// No description provided for @project_name.
+  ///
+  /// In ru, this message translates to:
+  /// **'Aqualabean.ru'**
+  String get project_name;
+
+  /// No description provided for @welcome.
+  ///
+  /// In ru, this message translates to:
+  /// **'Добро пожаловать'**
+  String get welcome;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

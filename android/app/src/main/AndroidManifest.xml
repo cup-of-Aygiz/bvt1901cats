@@ -2,7 +2,7 @@
     package="com.example.bvt1901_practice">
    <application
         android:label="bvt1901_practice"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

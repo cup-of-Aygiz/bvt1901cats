@@ -51,4 +51,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get incorrect_format => 'Неверный формат';
+
+  @override
+  String get login => 'Войти';
+
+  @override
+  String get project_name => 'Aqualabean.ru';
+
+  @override
+  String get welcome => 'Добро пожаловать';
 }
