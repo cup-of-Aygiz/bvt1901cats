@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeSlider extends StatefulWidget {
@@ -25,18 +26,13 @@ class _HomeSliderState extends State<HomeSlider> {
         CarouselSlider.builder(
           itemCount: urlImages.length,
           itemBuilder: (context, index, realIndex) {
-            return Container(
-              margin: const EdgeInsets.symmetric(
-                  // horizontal: 5.h
-                  ), // расстояние между изображениями
-              child: Image.network(
-                urlImages[index],
-                fit: BoxFit.cover,
-              ),
+            return Image.network(
+              urlImages[index],
+              fit: BoxFit.cover,
             );
           },
           options: CarouselOptions(
-              height: 190,
+              height: 180,
               autoPlay: true,
               autoPlayInterval: const Duration(seconds: 4),
               enlargeCenterPage: true, // центральная увеичивается
@@ -48,13 +44,13 @@ class _HomeSliderState extends State<HomeSlider> {
                 });
               }),
         ),
-        const SizedBox(height: 10),
+        SizedBox(height: 10.h),
         AnimatedSmoothIndicator(
           activeIndex: activeIndex,
           count: urlImages.length,
-          effect: const SwapEffect(
-            dotHeight: 10,
-            dotWidth: 10,
+          effect: SwapEffect(
+            dotHeight: 10.h,
+            dotWidth: 10.w,
             //  dotColor:
           ),
         )

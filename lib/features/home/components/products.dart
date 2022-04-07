@@ -3,9 +3,10 @@
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Products extends StatelessWidget {
-  final ptoductList = [
+class HomeProducts extends StatelessWidget {
+  final productList = [
     {
       'name': 'Святой источник 5л',
       'image':
@@ -46,19 +47,25 @@ class Products extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-        itemCount: ptoductList.length,
+    return SliverGrid(
+        delegate: SliverChildBuilderDelegate(
+          (context, index) {
+            return Container(
+              alignment: Alignment.center,
+              padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
+              child: SingleProducts(
+                single_product_name: productList[index]['name'],
+                single_product_image: productList[index]['image'],
+                single_product_price: productList[index]['price'],
+              ),
+            );
+          },
+          childCount: productList.length,
+        ),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 0.70,
-        ),
-        itemBuilder: (BuildContext context, int index) {
-          return SingleProducts(
-            single_product_name: ptoductList[index]['name'],
-            single_product_image: ptoductList[index]['image'],
-            single_product_price: ptoductList[index]['price'],
-          );
-        });
+          childAspectRatio: 0.65,
+        ));
   }
 }
 
@@ -78,8 +85,10 @@ class SingleProducts extends StatefulWidget {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('single_product_name', single_product_name));
-    properties.add(DiagnosticsProperty('single_product_name', single_product_name));
+    properties
+        .add(DiagnosticsProperty('single_product_name', single_product_name));
+    properties
+        .add(DiagnosticsProperty('single_product_name', single_product_name));
   }
 }
 
@@ -88,42 +97,68 @@ class _SingleProductsState extends State<SingleProducts> {
 
   @override
   Widget build(BuildContext context) {
-
+     Size size = MediaQuery.of(context).size;
     final myColors = context.appColors;
-    return Column(
-      children: [
-        Container(
-          height: 160,
-          width: 160,
-          decoration: BoxDecoration(
-              color: myColors.blue, borderRadius: BorderRadius.circular(30)),
-          child: Image.network(widget.single_product_image),
-        ),
-        ListTile(
-          title: Text(widget.single_product_name),
-          subtitle: Text('₽${widget.single_product_price}'),
-          trailing: Container(
-            height: 40,
-            width: 40,
+    return Container(
+      width: size.width * 0.5,
+      decoration: BoxDecoration(
+                color: myColors.purple, borderRadius: BorderRadius.circular(30),),
+      child: Column(
+        children: [
+          Container(
+            height: 160.h,
+            width: 160.w,
             decoration: BoxDecoration(
-                color: myColors.blue,
-                borderRadius: BorderRadius.circular(20),
-              ),
-            child: IconButton(
-              icon: Icon(
-                isLike ? Icons.favorite : Icons.favorite_border_outlined,
-                color:  isLike? myColors.red : null, 
-                size: 20,
-              ),
-              onPressed: () {
-                setState(() {
-                  isLike = !isLike;
-                });
-              },
-            ),
+                color: myColors.ocean, borderRadius: BorderRadius.circular(30),
+                image: DecorationImage(
+                         image: NetworkImage(widget.single_product_image),
+                         fit: BoxFit.cover),),
           ),
-        )
-      ],
+          ListTile(
+            title: Text(widget.single_product_name),
+            subtitle: Text('₽${widget.single_product_price}'),
+            trailing: Container(
+              height: 40.h,
+              width: 40.w,
+              decoration: BoxDecoration(
+                  color: myColors.purple,
+                  borderRadius: BorderRadius.circular(20.r),
+                ),
+              child: IconButton(
+                icon: Icon(
+                  isLike ? Icons.favorite : Icons.favorite_border_outlined,
+                  color:  isLike? myColors.red : null,
+                  size: 20,
+                ),
+                onPressed: () {
+                  setState(() {
+                    isLike = !isLike;
+                  });
+                },
+              ),
+            ),
+          )
+
+          // Container(
+          //   // width: size.width * 0.4,
+          //   decoration: BoxDecoration(
+          //       borderRadius: BorderRadius.circular(30.r), color: myColors.black),
+          //   child: Column(
+          //     children: [
+          //       Container(
+          //         height: 200,
+          //         decoration: BoxDecoration(
+          //           borderRadius: BorderRadius.circular(30.r),
+          //           image: DecorationImage(
+          //               image: NetworkImage(widget.single_product_image),
+          //               fit: BoxFit.cover),
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // )
+        ],
+      ),
     );
   }
 }

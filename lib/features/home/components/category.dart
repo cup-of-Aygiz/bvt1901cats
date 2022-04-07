@@ -70,7 +70,7 @@ class CategoryProduct extends StatelessWidget {
       child: GestureDetector(
         onTap: press,
         child: Chip(
-          backgroundColor: myColors.blue,
+          backgroundColor: myColors.purple,
             label: Row(
           children: [
             Text(text),

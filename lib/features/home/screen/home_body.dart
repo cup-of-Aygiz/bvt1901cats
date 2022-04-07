@@ -17,31 +17,27 @@ class HomeBody extends StatefulWidget {
 class _HomeBodyState extends State<HomeBody> {
   @override
   Widget build(BuildContext context) {
-    return  SafeArea(
-        //отступы
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
-          child: Column(children:  [
-            //create appbar
-            const HomeAppBar(),
-            SizedBox(
-              height: 16.h,
-            ),
-            // create finder
-            const HomeSearch(),
-            SizedBox(
-              height: 16.h,
-            ),
-            const HomeSlider(), // исправить
-            
-            const Category(),
-            
-            SizedBox(
-               height: 200.h,
-              child: Products()),
-          ]),
+    return  Padding(
+      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
+      child: Column(children:  [
+        //create appbar
+        const HomeAppBar(),
+        SizedBox(
+          height: 16.h,
         ),
-      
+        // create finder
+        const HomeSearch(),
+        SizedBox(
+          height: 16.h,
+        ),
+        const HomeSlider(), // исправить
+        
+        const Category(),
+        
+        SizedBox(
+           height: 200.h,
+          child: HomeProducts()),
+      ]),
     );
   }
 }

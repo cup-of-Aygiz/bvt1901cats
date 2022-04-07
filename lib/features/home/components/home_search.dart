@@ -12,30 +12,27 @@ class HomeSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final myColors = context.appColors;
-    return Row(
-      children: [
-        Expanded(
-            child: Container(
-                margin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 16.w),
-                decoration: BoxDecoration(
-                    color: myColors.white,
-                    borderRadius: BorderRadius.circular(25.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: myColors.shadow,
-                        blurRadius: 4,
-                      )
-                    ]),
-                child: const TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Поиск',
-                    //убираем подчеркивания
-                    enabledBorder: InputBorder.none,
-                    focusedBorder: InputBorder.none,
-                    prefixIcon: Icon(Icons.search), 
-                  ),
-                ))),
-      ],
-    );
+    return Expanded(
+        child: Container(
+          height: 36.h,
+            margin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 16.w),
+            decoration: BoxDecoration(
+                color: myColors.white,
+                borderRadius: BorderRadius.circular(25.r),
+                boxShadow: [
+                  BoxShadow(
+                    color: myColors.shadow,
+                    blurRadius: 4.r,
+                  )
+                ]),
+            child: const TextField(
+              decoration: InputDecoration(
+                hintText: 'Поиск',
+                //убираем подчеркивания
+                enabledBorder: InputBorder.none,
+                focusedBorder: InputBorder.none,
+                prefixIcon: Icon(Icons.search), 
+              ),
+            )));
   }
 }
