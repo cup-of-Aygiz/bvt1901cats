@@ -15,7 +15,7 @@ class RegistrationCubit extends Cubit<RegistrationState> {
           ),
         );
 
-  final RegistrationRepository _registrationRepository = getIt();
+  RegistrationRepository get _registrationRepository => getIt();
 
   Future<void> init() async {
     emit(state.copyWith(
