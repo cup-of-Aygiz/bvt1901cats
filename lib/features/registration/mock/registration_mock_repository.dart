@@ -8,8 +8,9 @@ import '../domain/repository/registration_repository.dart';
 
 class RegistrationMockRepository extends RegistrationRepository
     with MockFactory<RegistrationRepository> {
+  final RegistrationMockStorage _registrationMockStorage =
+      RegistrationMockStorage();
 
-  final RegistrationMockStorage _registrationMockStorage = RegistrationMockStorage();
   @override
   Future<bool> registration({
     required PersonEntity personEntity,

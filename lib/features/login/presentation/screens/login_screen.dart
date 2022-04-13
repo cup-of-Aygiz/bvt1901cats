@@ -97,24 +97,24 @@ class _LoginScreenState extends State<LoginScreen> {
                           padding: EdgeInsets.only(top: 150.h),
                         ),
                         Container(
-                            margin: EdgeInsets.symmetric(horizontal: 10.w),
-                            child: AppTextButton(
-                              color: colors.purple,
-                              buttonText: locale.login,
-                              onPressed: () async {
-                                _formKey.currentState?.validate();
-                                if (_formKey.currentState?.validate() ??
-                                    false) {
-                                  _formKey.currentState!.save();
-                                  await context
-                                      .read<LoginCubit>()
-                                      .saveStateAndLogin(
-                                          _formKey.currentState!.value['phone'],
-                                          _formKey
-                                              .currentState!.value['password']);
-                                }
-                              },
-                            )),
+                          margin: EdgeInsets.symmetric(horizontal: 10.w),
+                          child: AppTextButton(
+                            color: colors.purple,
+                            buttonText: locale.login,
+                            onPressed: () async {
+                              _formKey.currentState?.validate();
+                              if (_formKey.currentState?.validate() ?? false) {
+                                _formKey.currentState!.save();
+                                await context
+                                    .read<LoginCubit>()
+                                    .saveStateAndLogin(
+                                        _formKey.currentState!.value['phone'],
+                                        _formKey
+                                            .currentState!.value['password']);
+                              }
+                            },
+                          ),
+                        ),
                       ],
                     ),
                   )
