@@ -12,8 +12,10 @@
     "this_required_field",
     "error_password",
     "incorrect_format",
+    "login_title",
     "login",
     "project_name",
-    "welcome"
+    "welcome",
+    "no_registration_yet"
   ]
 }

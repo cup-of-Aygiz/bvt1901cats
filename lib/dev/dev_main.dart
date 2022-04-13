@@ -3,6 +3,7 @@ import 'package:bvt1901_practice/app/presentation/app_builder.dart';
 import 'package:bvt1901_practice/app/presentation/app_config.dart';
 import 'package:bvt1901_practice/app/presentation/app_runner.dart';
 import 'package:bvt1901_practice/di/service_locator.dart';
+import 'package:bvt1901_practice/features/login/mock/login_mock_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
@@ -21,11 +22,12 @@ import 'mocking/runtime_mock_config.dart';
 /// ]);
 final _mockConfig = RuntimeMockConfig.custom([
   RegistrationMockRepository(),
+  LoginMockRepository(),
 ]);
 
 /// 3. Если не нужно запускать DevicePreview
 /// то удаляем миксин DevicePreviewBuilder
-class DevAppBuilder extends MainAppBuilder with DevicePreviewBuilder{
+class DevAppBuilder extends MainAppBuilder with DevicePreviewBuilder {
   // Переопределяем первый экран для запуска
 // @override
 //   Widget get initialScreen => super.initialScreen;
