@@ -7,7 +7,7 @@ import '../../domain/repository/login_repository.dart';
 class LoginNetworkRepository extends LoginRepository {
 
   @override
-  Future<ProfileEntity> login({required String phone, required String password}) {
+  Future<ProfileEntity?> login({required String phone, required String password}) {
     // TODO: implement login
     throw UnimplementedError();
   }
