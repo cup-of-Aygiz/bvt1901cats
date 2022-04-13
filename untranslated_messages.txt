@@ -16,6 +16,14 @@
     "login",
     "project_name",
     "welcome",
-    "no_registration_yet"
+    "no_registration_yet",
+    "your_profile",
+    "my_orders",
+    "my_data",
+    "my_address",
+    "my_favorite",
+    "my_discounts",
+    "leave_account",
+    "free_delivery"
   ]
 }

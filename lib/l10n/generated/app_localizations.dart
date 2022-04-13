@@ -213,6 +213,54 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Не зарегистрированы?'**
   String get no_registration_yet;
+
+  /// No description provided for @your_profile.
+  ///
+  /// In ru, this message translates to:
+  /// **'Профиль'**
+  String get your_profile;
+
+  /// No description provided for @my_orders.
+  ///
+  /// In ru, this message translates to:
+  /// **'Мои заказы'**
+  String get my_orders;
+
+  /// No description provided for @my_data.
+  ///
+  /// In ru, this message translates to:
+  /// **'Мои данные'**
+  String get my_data;
+
+  /// No description provided for @my_address.
+  ///
+  /// In ru, this message translates to:
+  /// **'Мои адреса'**
+  String get my_address;
+
+  /// No description provided for @my_favorite.
+  ///
+  /// In ru, this message translates to:
+  /// **'Мои любимые заказы'**
+  String get my_favorite;
+
+  /// No description provided for @my_discounts.
+  ///
+  /// In ru, this message translates to:
+  /// **'Мои скидки и промокоды'**
+  String get my_discounts;
+
+  /// No description provided for @leave_account.
+  ///
+  /// In ru, this message translates to:
+  /// **'Покинуть аккаунт'**
+  String get leave_account;
+
+  /// No description provided for @free_delivery.
+  ///
+  /// In ru, this message translates to:
+  /// **'Первая доставка бесплатно!'**
+  String get free_delivery;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

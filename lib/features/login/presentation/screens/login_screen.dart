@@ -88,8 +88,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                 router.pushScreen(
                                     context, const RegistrationScreen());
                               },
-                              style: AppTextStyle.normalW700S12,
-                              text: locale.create_account,
+                              child: Text(
+                                locale.create_account,
+                                style: AppTextStyle.normalW700S12
+                                    .copyWith(color: colors.black),
+                              ),
                             )
                           ],
                         ),
