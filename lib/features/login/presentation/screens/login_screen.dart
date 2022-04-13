@@ -105,12 +105,13 @@ class _LoginScreenState extends State<LoginScreen> {
                               _formKey.currentState?.validate();
                               if (_formKey.currentState?.validate() ?? false) {
                                 _formKey.currentState!.save();
-                                await context
+                                final loginSuccess = await context
                                     .read<LoginCubit>()
                                     .saveStateAndLogin(
                                         _formKey.currentState!.value['phone'],
                                         _formKey
                                             .currentState!.value['password']);
+                                if (loginSuccess) {}
                               }
                             },
                           ),
