@@ -13,10 +13,10 @@ class HomeSlider extends StatefulWidget {
 class _HomeSliderState extends State<HomeSlider> {
   int activeIndex = 0;
   final urlImages = [
-    'https://vodovoz.ru/upload/iblock/29a/29ac65985e8a213ccfcc3003cc3e452f.jpg',
-    'https://img.freepik.com/free-vector/pure-mineral-water-ad-with-bottle-close-up-on-the-left-side-and-smaller-bottle-on-the-right-side-snow-mountain-background_317810-1484.jpg',
-    'https://vodovoz.ru/upload/iblock/29a/29ac65985e8a213ccfcc3003cc3e452f.jpg',
-    'https://img.freepik.com/free-vector/pure-mineral-water-ad-with-bottle-close-up-on-the-left-side-and-smaller-bottle-on-the-right-side-snow-mountain-background_317810-1484.jpg',
+    'https://img.freepik.com/free-vector/flat-world-water-day-sale-horizontal-banner_23-2149270620.jpg?t=st=1649344139~exp=1649344739~hmac=c88dcdfaab7f2b8dec5413fb938ef7cc56baafd7db7dc8118452b0aa1f04b126&w=1380',
+    'https://img.freepik.com/free-vector/flat-world-water-day-sale-horizontal-banner_23-2149280529.jpg?t=st=1649344139~exp=1649344739~hmac=2bcbbe80199560437c688b80c339e7df0d44047d7f7a9e9e18b51fea92d68584&w=1380',
+    'https://img.freepik.com/free-vector/gradient-world-water-day-sale-horizontal-banner_23-2149270850.jpg?t=st=1649344139~exp=1649344739~hmac=f3e2726890a855cc6bc198c6b722fdda532ea0cd857de54e8326ab543ca71ab3&w=1380',
+    'https://img.freepik.com/free-vector/household-water-filter-purification-pitcher-with-replacement-cartridge-and-full-glass-realistic-advertising-composition-blue-splashes_1284-26867.jpg?t=st=1649344304~exp=1649344904~hmac=12f66a7b838910938f1db77bd76ce63be0eb72710f2925434813501e6078eace&w=996',
   ];
 
   @override
@@ -32,7 +32,7 @@ class _HomeSliderState extends State<HomeSlider> {
             );
           },
           options: CarouselOptions(
-              height: 180,
+              height: 180.h,
               autoPlay: true,
               autoPlayInterval: const Duration(seconds: 4),
               enlargeCenterPage: true, // центральная увеичивается
