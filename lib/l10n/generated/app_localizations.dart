@@ -213,6 +213,30 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Не зарегистрированы?'**
   String get no_registration_yet;
+
+  /// No description provided for @home_tab.
+  ///
+  /// In ru, this message translates to:
+  /// **'Главная'**
+  String get home_tab;
+
+  /// No description provided for @favorite_tab.
+  ///
+  /// In ru, this message translates to:
+  /// **'Избранное'**
+  String get favorite_tab;
+
+  /// No description provided for @cart_tab.
+  ///
+  /// In ru, this message translates to:
+  /// **'Корзина'**
+  String get cart_tab;
+
+  /// No description provided for @profile_tab.
+  ///
+  /// In ru, this message translates to:
+  /// **'Профиль'**
+  String get profile_tab;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

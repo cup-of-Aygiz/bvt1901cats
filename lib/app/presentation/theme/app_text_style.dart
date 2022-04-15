@@ -12,15 +12,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 /// которого [sp] прописывать надо
 
 class AppTextStyle {
-  static final TextStyle normalW700S18H24 = TextStyle(
+  static final TextStyle normalW700S18 = TextStyle(
     fontSize: 18.sp,
-    height: 24 / 18,
     fontWeight: FontWeight.w700,
   );
 
-  static final TextStyle normalW700S16H24 = TextStyle(
+  static final TextStyle normalW700S16 = TextStyle(
     fontSize: 16.sp,
-    height: 24 / 18,
     fontWeight: FontWeight.w700,
   );
 
@@ -30,13 +28,17 @@ class AppTextStyle {
   );
 
   static final TextStyle normalW400S12 = TextStyle(
-      fontSize: 12.sp,
-      fontWeight: FontWeight.w400,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
   );
 
   static final TextStyle normalW700S12 = TextStyle(
-      fontSize: 12.sp,
-      fontWeight: FontWeight.w700,
-
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w700,
+  );
+  static final TextStyle bottomNavigationLabel = TextStyle(
+    fontSize: 10.sp,
+    height: 1.18,
+    fontWeight: FontWeight.w400,
   );
 }

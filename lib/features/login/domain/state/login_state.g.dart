@@ -9,7 +9,9 @@ part of 'login_state.dart';
 _$_LoginState _$$_LoginStateFromJson(Map<String, dynamic> json) =>
     _$_LoginState(
       loading: json['loading'] as bool? ?? false,
-      error: json['error'],
+      error: json['error'] == null
+          ? null
+          : ErrorModel.fromJson(json['error'] as Map<String, dynamic>),
       profileEntity: json['profileEntity'] == null
           ? null
           : ProfileEntity.fromJson(
