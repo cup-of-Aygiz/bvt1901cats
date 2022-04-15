@@ -17,5 +17,10 @@
   "login_title": "Вход в аккаунт",
   "login": "Войти",
   "project_name": "Aqualabean.ru",
-  "welcome": "Добро пожаловать"
+  "welcome": "Добро пожаловать",
+  "no_registration_yet": "Не зарегистрированы?",
+  "home_tab": "Главная",
+  "favorite_tab": "Избранное",
+  "cart_tab": "Корзина",
+  "profile_tab": "Профиль"
 }
