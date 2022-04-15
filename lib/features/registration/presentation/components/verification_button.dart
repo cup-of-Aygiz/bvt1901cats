@@ -30,7 +30,7 @@ class VerificationButton extends StatelessWidget {
         ),
         child: Text(buttonText,
             style:
-                AppTextStyle.normalW700S16H24.copyWith(color: myColors.black)),
+                AppTextStyle.normalW700S16.copyWith(color: myColors.black)),
       ),
     );
   }

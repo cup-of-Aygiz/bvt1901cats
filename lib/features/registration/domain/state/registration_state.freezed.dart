@@ -23,7 +23,7 @@ class _$RegistrationStateTearOff {
 
   _RegistrationState call(
       {bool loading = false,
-      dynamic error,
+      ErrorModel? error,
       required PersonEntity personEntity}) {
     return _RegistrationState(
       loading: loading,
@@ -43,7 +43,7 @@ const $RegistrationState = _$RegistrationStateTearOff();
 /// @nodoc
 mixin _$RegistrationState {
   bool get loading => throw _privateConstructorUsedError;
-  dynamic get error => throw _privateConstructorUsedError;
+  ErrorModel? get error => throw _privateConstructorUsedError;
   PersonEntity get personEntity => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -57,8 +57,9 @@ abstract class $RegistrationStateCopyWith<$Res> {
   factory $RegistrationStateCopyWith(
           RegistrationState value, $Res Function(RegistrationState) then) =
       _$RegistrationStateCopyWithImpl<$Res>;
-  $Res call({bool loading, dynamic error, PersonEntity personEntity});
+  $Res call({bool loading, ErrorModel? error, PersonEntity personEntity});
 
+  $ErrorModelCopyWith<$Res>? get error;
   $PersonEntityCopyWith<$Res> get personEntity;
 }
 
@@ -85,12 +86,23 @@ class _$RegistrationStateCopyWithImpl<$Res>
       error: error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as ErrorModel?,
       personEntity: personEntity == freezed
           ? _value.personEntity
           : personEntity // ignore: cast_nullable_to_non_nullable
               as PersonEntity,
     ));
+  }
+
+  @override
+  $ErrorModelCopyWith<$Res>? get error {
+    if (_value.error == null) {
+      return null;
+    }
+
+    return $ErrorModelCopyWith<$Res>(_value.error!, (value) {
+      return _then(_value.copyWith(error: value));
+    });
   }
 
   @override
@@ -108,8 +120,10 @@ abstract class _$RegistrationStateCopyWith<$Res>
           _RegistrationState value, $Res Function(_RegistrationState) then) =
       __$RegistrationStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool loading, dynamic error, PersonEntity personEntity});
+  $Res call({bool loading, ErrorModel? error, PersonEntity personEntity});
 
+  @override
+  $ErrorModelCopyWith<$Res>? get error;
   @override
   $PersonEntityCopyWith<$Res> get personEntity;
 }
@@ -139,7 +153,7 @@ class __$RegistrationStateCopyWithImpl<$Res>
       error: error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as ErrorModel?,
       personEntity: personEntity == freezed
           ? _value.personEntity
           : personEntity // ignore: cast_nullable_to_non_nullable
@@ -161,7 +175,7 @@ class _$_RegistrationState implements _RegistrationState {
   @override
   final bool loading;
   @override
-  final dynamic error;
+  final ErrorModel? error;
   @override
   final PersonEntity personEntity;
 
@@ -205,7 +219,7 @@ class _$_RegistrationState implements _RegistrationState {
 abstract class _RegistrationState implements RegistrationState {
   const factory _RegistrationState(
       {bool loading,
-      dynamic error,
+      ErrorModel? error,
       required PersonEntity personEntity}) = _$_RegistrationState;
 
   factory _RegistrationState.fromJson(Map<String, dynamic> json) =
@@ -214,7 +228,7 @@ abstract class _RegistrationState implements RegistrationState {
   @override
   bool get loading => throw _privateConstructorUsedError;
   @override
-  dynamic get error => throw _privateConstructorUsedError;
+  ErrorModel? get error => throw _privateConstructorUsedError;
   @override
   PersonEntity get personEntity => throw _privateConstructorUsedError;
   @override

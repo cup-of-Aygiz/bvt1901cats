@@ -8,8 +8,8 @@ class AppColors {
   final Color red;
   final Color darkRed;
   final Color blue;
-  final Color lightBlue;
   final Color darkBlue;
+  final Color lightBlue;
   final Color darkOcean;
   final Color lightOcean;
   final Color ocean;
@@ -24,7 +24,7 @@ class AppColors {
 
   const AppColors.light()
       : white = const Color(0xFFFFFFFF),
-        black = const Color(0xFF363535),
+        black = const Color(0xFF363535),    
         red = const Color(0xFFFF3434),
         darkRed = const Color(0xFFA60000),
         blue = const Color(0xFF99AAFF),

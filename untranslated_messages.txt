@@ -16,6 +16,10 @@
     "login",
     "project_name",
     "welcome",
-    "no_registration_yet"
+    "no_registration_yet",
+    "home_tab",
+    "favorite_tab",
+    "cart_tab",
+    "profile_tab"
   ]
 }
