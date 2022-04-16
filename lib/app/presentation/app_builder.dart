@@ -32,7 +32,7 @@ class MainAppBuilder extends AppBuilder {
       ],
       child: ScreenUtilInit(
         designSize: const Size(375, 750),
-        builder: () {
+        builder: (_) {
           return BlocBuilder<LoginCubit, LoginState>(
             builder: (context, state) {
               return MaterialApp(

@@ -68,6 +68,30 @@ class AppLocalizationsRu extends AppLocalizations {
   String get no_registration_yet => 'Не зарегистрированы?';
 
   @override
+  String get your_profile => 'Профиль';
+
+  @override
+  String get my_orders => 'Мои заказы';
+
+  @override
+  String get my_data => 'Мои данные';
+
+  @override
+  String get my_address => 'Мои адреса';
+
+  @override
+  String get my_favorite => 'Мои любимые заказы';
+
+  @override
+  String get my_discounts => 'Мои скидки и промокоды';
+
+  @override
+  String get leave_account => 'Покинуть аккаунт';
+
+  @override
+  String get free_delivery => 'Первая доставка бесплатно!';
+
+  @override
   String get home_tab => 'Главная';
 
   @override

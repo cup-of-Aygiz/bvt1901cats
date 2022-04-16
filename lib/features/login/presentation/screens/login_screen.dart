@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../uikit/buttons/app_button_detector.dart';
+import '../../../../uikit/buttons/app_transparent_button.dart';
 import '../../../../uikit/spinkit/spinkit.dart';
 import '../../../registration/presentation/components/proggres_gradient.dart';
 import '../../../router/presentation/screen/router_screen.dart';
@@ -84,13 +84,13 @@ class _LoginScreenState extends State<LoginScreen> {
                             locale.no_registration_yet,
                             style: AppTextStyle.normalW400S12,
                           ),
-                          AppGestureDetector(
-                            onPressed: () {
+                          AppTransparentButton(
+                            onTap: () {
                               router.pushScreen(
                                   context, const RegistrationScreen());
                             },
-                            style: AppTextStyle.normalW700S12,
-                            text: locale.create_account,
+                            child: Text(locale.create_account,
+                                style: AppTextStyle.normalW700S12),
                           )
                         ],
                       ),
