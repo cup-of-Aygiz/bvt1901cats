@@ -1,3 +1,4 @@
+import 'package:bvt1901_practice/features/login/presentation/screens/login_screen.dart';
 import 'package:bvt1901_practice/features/registration/presentation/screen/registration_screen.dart';
 import 'package:bvt1901_practice/gen/assets.gen.dart';
 import 'package:bvt1901_practice/uikit/app_bars/default_app_bar.dart';
@@ -5,8 +6,6 @@ import 'package:bvt1901_practice/uikit/buttons/app_text_button.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../login/presentation/screens/login_screen.dart';
 
 class WelcomePageScreen extends StatelessWidget {
   const WelcomePageScreen({Key? key}) : super(key: key);

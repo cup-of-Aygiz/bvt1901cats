@@ -22,12 +22,37 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_bottle.svg
   SvgGenImage get icBottle => const SvgGenImage('assets/icons/ic_bottle.svg');
 
+  /// File path: assets/icons/ic_freeDelivery.svg
+  SvgGenImage get icFreeDelivery =>
+      const SvgGenImage('assets/icons/ic_freeDelivery.svg');
+
   /// File path: assets/icons/ic_general.webp
   AssetGenImage get icGeneral =>
       const AssetGenImage('assets/icons/ic_general.webp');
 
+  /// File path: assets/icons/ic_geolocation.svg
+  SvgGenImage get icGeolocation =>
+      const SvgGenImage('assets/icons/ic_geolocation.svg');
+
+  /// File path: assets/icons/ic_heartFavorite.svg
+  SvgGenImage get icHeartFavorite =>
+      const SvgGenImage('assets/icons/ic_heartFavorite.svg');
+
   /// File path: assets/icons/ic_icon.svg
   SvgGenImage get icIcon => const SvgGenImage('assets/icons/ic_icon.svg');
+
+  /// File path: assets/icons/ic_leave.svg
+  SvgGenImage get icLeave => const SvgGenImage('assets/icons/ic_leave.svg');
+
+  /// File path: assets/icons/ic_person.svg
+  SvgGenImage get icPerson => const SvgGenImage('assets/icons/ic_person.svg');
+
+  /// File path: assets/icons/ic_sales.svg
+  SvgGenImage get icSales => const SvgGenImage('assets/icons/ic_sales.svg');
+
+  /// File path: assets/icons/ic_shopingBag.svg
+  SvgGenImage get icShopingBag =>
+      const SvgGenImage('assets/icons/ic_shopingBag.svg');
 }
 
 class $AssetsImagesGen {
