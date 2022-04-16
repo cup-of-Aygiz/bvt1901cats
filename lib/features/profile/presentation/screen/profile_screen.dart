@@ -1,11 +1,13 @@
+import 'package:bvt1901_practice/features/map_page/presentation/screens/map_screen.dart';
+import 'package:bvt1901_practice/features/person_data/presentation/screens/person_data_screen.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../gen/assets.gen.dart';
 import '../../../../uikit/app_bars/default_app_bar.dart';
-import '../../../../uikit/buttons/app_text_button.dart';
 import '../../../login/presentation/screens/login_screen.dart';
+import '../../../orders/presentation/screens/order_screen.dart';
 import '../../../registration/presentation/components/proggres_gradient.dart';
 import '../components/profile_button.dart';
 
@@ -23,7 +25,7 @@ class ProfileScreen extends StatelessWidget {
         titleText: locale.your_profile,
       ),
       body: BackgroundProgressWidget(
-        length: 3,
+        length: 8,
         child: ListView(
           children: [
             Container(
@@ -43,7 +45,7 @@ class ProfileScreen extends StatelessWidget {
               icon: Assets.icons.icShopingBag.svg(width: 30.h, height: 30.h),
               text: locale.my_orders,
               onTap: () {
-                router.pushScreen(context, const LoginScreen());
+                router.pushScreen(context, const OrdersScreen());
               },
             ),
             ProfileButton(
@@ -57,28 +59,23 @@ class ProfileScreen extends StatelessWidget {
               icon: Assets.icons.icGeolocation.svg(width: 30.h, height: 30.h),
               text: locale.my_address,
               onTap: () {
-                router.pushScreen(context, const LoginScreen());
+                router.pushScreen(context, const MapScreen());
               },
             ),
             ProfileButton(
               icon: Assets.icons.icSales.svg(width: 30.h, height: 30.h),
               text: locale.my_discounts,
               onTap: () {
-                router.pushScreen(context, const LoginScreen());
+                router.pushScreen(context, const PersonDataScreen());
               },
             ),
             ProfileButton(
-              icon: Assets.icons.icSales.svg(width: 30.h, height: 30.h),
-              text: locale.my_discounts,
+              icon: Assets.icons.icLeave.svg(width: 30.h, height: 30.h),
+              text: locale.leave_account,
               onTap: () {
                 router.pushScreen(context, const LoginScreen());
               },
             ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 10.h),
-              child: AppTextButton(
-                  buttonText: locale.leave_account, onPressed: () {}),
-            )
           ],
         ),
       ),
