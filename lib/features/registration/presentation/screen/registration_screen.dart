@@ -51,9 +51,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           ListView(
                             padding: EdgeInsets.symmetric(horizontal: 10.w),
                             children: [
-                              Padding(
-                                padding: EdgeInsets.only(top: 20.h),
-                              ),
+                              SizedBox(height: 20.h),
                               AppTextField(
                                 labelText: locale.name,
                                 name: 'firstName',
@@ -114,7 +112,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                 },
                               ),
                               SizedBox(
-                                height: 16.h,
+                                height: 166.h,
                               ),
                             ],
                           ),
@@ -133,7 +131,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                   await context
                                       .read<RegistrationCubit>()
                                       .saveStateAndRegistration(
-                                          _formKey.currentState!.value);
+                                        _formKey.currentState!.value,
+                                      );
                                 }
                               },
                             ),

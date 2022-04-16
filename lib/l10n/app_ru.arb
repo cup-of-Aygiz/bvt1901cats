@@ -26,5 +26,9 @@
   "my_favorite": "Мои любимые заказы",
   "my_discounts": "Мои скидки и промокоды",
   "leave_account": "Покинуть аккаунт",
-  "free_delivery": "Первая доставка бесплатно!"
+  "free_delivery": "Первая доставка бесплатно!",
+  "home_tab": "Главная",
+  "favorite_tab": "Избранное",
+  "cart_tab": "Корзина",
+  "profile_tab": "Профиль"
 }

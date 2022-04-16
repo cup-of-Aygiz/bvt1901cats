@@ -6,7 +6,8 @@ import '../buttons/app_go_back.dart';
 
 class DefaultAppBar extends StatelessWidget with PreferredSizeWidget {
   final bool centreTitle;
-  final String titleText;
+  final String? titleText;
+  final Widget? title;
   final Color? backgroundColor;
 
   @override
@@ -15,8 +16,9 @@ class DefaultAppBar extends StatelessWidget with PreferredSizeWidget {
   const DefaultAppBar({
     Key? key,
     this.centreTitle = true,
-    required this.titleText,
+    this.titleText,
     this.backgroundColor,
+    this.title,
   }) : super(key: key);
 
   @override
@@ -29,10 +31,13 @@ class DefaultAppBar extends StatelessWidget with PreferredSizeWidget {
     return PreferredSize(
       preferredSize: const Size.fromHeight(80.0),
       child: AppBar(
-        title: Text(
-          titleText,
-          style: AppTextStyle.normalW700S18H24.copyWith(color: myColors.black),
-        ),
+        title: titleText != null
+            ? Text(
+                titleText ?? '',
+                style: AppTextStyle.normalW700S18
+                    .copyWith(color: myColors.black),
+              )
+            : title,
         centerTitle: centreTitle,
         leading: canPop ? const AppGoBackButton() : null,
         backgroundColor: backgroundColor ?? myColors.purple,

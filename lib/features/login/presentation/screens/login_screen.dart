@@ -13,6 +13,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../uikit/buttons/app_button_detector.dart';
 import '../../../../uikit/spinkit/spinkit.dart';
 import '../../../registration/presentation/components/proggres_gradient.dart';
+import '../../../router/presentation/screen/router_screen.dart';
 import '../../domain/state/login_cubit.dart';
 import '../../domain/state/login_state.dart';
 
@@ -32,97 +33,98 @@ class _LoginScreenState extends State<LoginScreen> {
     final colors = context.appColors;
     final router = context.appRouter;
 
-    return BlocProvider(
-        create: (context) => LoginCubit(),
-        child: BlocBuilder<LoginCubit, LoginState>(builder: (context, state) {
-          return Scaffold(
-            backgroundColor: colors.white,
-            appBar: DefaultAppBar(
-              titleText: locale.login_title,
-            ),
-            body: (!state.loading)
-                ? BackgroundProgressWidget(
-                    length: 2,
-                    child: ListView(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(top: 32.h),
+    return BlocBuilder<LoginCubit, LoginState>(builder: (context, state) {
+      return Scaffold(
+        backgroundColor: colors.white,
+        appBar: DefaultAppBar(
+          titleText: locale.login_title,
+        ),
+        body: (!state.loading)
+            ? BackgroundProgressWidget(
+                length: 2,
+                child: FormBuilder(
+                  key: _formKey,
+                  child: ListView(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: 32.h),
+                      ),
+                      Text(
+                        locale.project_name,
+                        style: AppTextStyle.normalW200S34,
+                        textAlign: TextAlign.center,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 32.h),
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 10.w),
+                        child: AppPhoneTextField(
+                            labelText: locale.phone, name: 'phone'),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 6.h),
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 10.w),
+                        child: AppTextField(
+                          labelText: locale.password,
+                          name: 'password',
+                          validator:
+                              AppValidators.requiredMinLengthField(context),
                         ),
-                        Text(
-                          locale.project_name,
-                          style: AppTextStyle.normalW200S34,
-                          textAlign: TextAlign.center,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 32.h),
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(horizontal: 10.w),
-                          child: AppPhoneTextField(
-                              labelText: locale.phone, name: 'phone'),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 6.h),
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(horizontal: 10.w),
-                          child: AppTextField(
-                            labelText: locale.password,
-                            name: 'password',
-                            validator:
-                                AppValidators.requiredMinLengthField(context),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 40.h),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            locale.no_registration_yet,
+                            style: AppTextStyle.normalW400S12,
                           ),
+                          AppGestureDetector(
+                            onPressed: () {
+                              router.pushScreen(
+                                  context, const RegistrationScreen());
+                            },
+                            style: AppTextStyle.normalW700S12,
+                            text: locale.create_account,
+                          )
+                        ],
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 150.h),
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 10.w),
+                        child: AppTextButton(
+                          color: colors.purple,
+                          buttonText: locale.login,
+                          onPressed: () async {
+                            _formKey.currentState?.validate();
+                            if (_formKey.currentState?.validate() ?? false) {
+                              _formKey.currentState!.save();
+                              final loginSuccess = await context
+                                  .read<LoginCubit>()
+                                  .saveStateAndLogin(
+                                      _formKey.currentState!.value['phone'],
+                                      _formKey.currentState!.value['password']);
+                              if (loginSuccess) {
+                                context.appRouter.pushAndPopToRoot(
+                                    context, const RouterScreen());
+                              }
+                            }
+                          },
                         ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 40.h),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              locale.no_registration_yet,
-                              style: AppTextStyle.normalW400S12,
-                            ),
-                            AppGestureDetector(
-                              onPressed: () {
-                                router.pushScreen(
-                                    context, const RegistrationScreen());
-                              },
-                              child: Text(
-                                locale.create_account,
-                                style: AppTextStyle.normalW700S12
-                                    .copyWith(color: colors.black),
-                              ),
-                            )
-                          ],
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 150.h),
-                        ),
-                        Container(
-                            margin: EdgeInsets.symmetric(horizontal: 10.w),
-                            child: AppTextButton(
-                              color: colors.purple,
-                              buttonText: locale.login,
-                              onPressed: () async {
-                                _formKey.currentState?.validate();
-                                if (_formKey.currentState?.validate() ??
-                                    false) {
-                                  _formKey.currentState!.save();
-                                  await context
-                                      .read<LoginCubit>()
-                                      .saveStateAndLogin(
-                                          _formKey.currentState!.value['phone'],
-                                          _formKey
-                                              .currentState!.value['password']);
-                                }
-                              },
-                            )),
-                      ],
-                    ),
-                  )
-                : const AppSpinKit(),
-          );
-        }));
+                      ),
+                    ],
+                  ),
+                ),
+              )
+            : const AppSpinKit(),
+      );
+    });
   }
 }

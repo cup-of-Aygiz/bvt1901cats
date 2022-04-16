@@ -1,3 +1,4 @@
+import 'package:bvt1901_practice/app/domain/models/error_model.dart';
 import 'package:bvt1901_practice/features/registration/domain/entity/person/person_entity.dart';
 import 'package:bvt1901_practice/features/registration/domain/state/registration_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,7 +30,7 @@ class RegistrationCubit extends Cubit<RegistrationState> {
       await _registrationRepository.registration(
           personEntity: state.personEntity);
       emit(state.copyWith(loading: false));
-    } catch (e) {
+    } on ErrorModel catch (e) {
       emit(state.copyWith(error: e, loading: false));
     }
   }

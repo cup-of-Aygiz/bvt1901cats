@@ -9,7 +9,9 @@ part of 'registration_state.dart';
 _$_RegistrationState _$$_RegistrationStateFromJson(Map<String, dynamic> json) =>
     _$_RegistrationState(
       loading: json['loading'] as bool? ?? false,
-      error: json['error'],
+      error: json['error'] == null
+          ? null
+          : ErrorModel.fromJson(json['error'] as Map<String, dynamic>),
       personEntity:
           PersonEntity.fromJson(json['personEntity'] as Map<String, dynamic>),
     );

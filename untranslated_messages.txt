@@ -17,13 +17,9 @@
     "project_name",
     "welcome",
     "no_registration_yet",
-    "your_profile",
-    "my_orders",
-    "my_data",
-    "my_address",
-    "my_favorite",
-    "my_discounts",
-    "leave_account",
-    "free_delivery"
+    "home_tab",
+    "favorite_tab",
+    "cart_tab",
+    "profile_tab"
   ]
 }

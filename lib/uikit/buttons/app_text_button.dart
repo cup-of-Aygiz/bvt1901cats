@@ -37,7 +37,7 @@ class AppTextButton extends StatelessWidget {
         ),
         child: Text(
           buttonText,
-          style: AppTextStyle.normalW700S16H24.copyWith(
+          style: AppTextStyle.normalW700S16.copyWith(
             color: textColor ?? myColors.black,
           ),
         ),

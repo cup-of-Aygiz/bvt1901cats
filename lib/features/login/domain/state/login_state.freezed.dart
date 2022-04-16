@@ -22,7 +22,7 @@ class _$LoginStateTearOff {
   const _$LoginStateTearOff();
 
   _LoginState call(
-      {bool loading = false, dynamic error, ProfileEntity? profileEntity}) {
+      {bool loading = false, ErrorModel? error, ProfileEntity? profileEntity}) {
     return _LoginState(
       loading: loading,
       error: error,
@@ -41,7 +41,7 @@ const $LoginState = _$LoginStateTearOff();
 /// @nodoc
 mixin _$LoginState {
   bool get loading => throw _privateConstructorUsedError;
-  dynamic get error => throw _privateConstructorUsedError;
+  ErrorModel? get error => throw _privateConstructorUsedError;
   ProfileEntity? get profileEntity => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -55,8 +55,9 @@ abstract class $LoginStateCopyWith<$Res> {
   factory $LoginStateCopyWith(
           LoginState value, $Res Function(LoginState) then) =
       _$LoginStateCopyWithImpl<$Res>;
-  $Res call({bool loading, dynamic error, ProfileEntity? profileEntity});
+  $Res call({bool loading, ErrorModel? error, ProfileEntity? profileEntity});
 
+  $ErrorModelCopyWith<$Res>? get error;
   $ProfileEntityCopyWith<$Res>? get profileEntity;
 }
 
@@ -82,12 +83,23 @@ class _$LoginStateCopyWithImpl<$Res> implements $LoginStateCopyWith<$Res> {
       error: error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as ErrorModel?,
       profileEntity: profileEntity == freezed
           ? _value.profileEntity
           : profileEntity // ignore: cast_nullable_to_non_nullable
               as ProfileEntity?,
     ));
+  }
+
+  @override
+  $ErrorModelCopyWith<$Res>? get error {
+    if (_value.error == null) {
+      return null;
+    }
+
+    return $ErrorModelCopyWith<$Res>(_value.error!, (value) {
+      return _then(_value.copyWith(error: value));
+    });
   }
 
   @override
@@ -108,8 +120,10 @@ abstract class _$LoginStateCopyWith<$Res> implements $LoginStateCopyWith<$Res> {
           _LoginState value, $Res Function(_LoginState) then) =
       __$LoginStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool loading, dynamic error, ProfileEntity? profileEntity});
+  $Res call({bool loading, ErrorModel? error, ProfileEntity? profileEntity});
 
+  @override
+  $ErrorModelCopyWith<$Res>? get error;
   @override
   $ProfileEntityCopyWith<$Res>? get profileEntity;
 }
@@ -138,7 +152,7 @@ class __$LoginStateCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
       error: error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as ErrorModel?,
       profileEntity: profileEntity == freezed
           ? _value.profileEntity
           : profileEntity // ignore: cast_nullable_to_non_nullable
@@ -159,7 +173,7 @@ class _$_LoginState implements _LoginState {
   @override
   final bool loading;
   @override
-  final dynamic error;
+  final ErrorModel? error;
   @override
   final ProfileEntity? profileEntity;
 
@@ -203,7 +217,7 @@ class _$_LoginState implements _LoginState {
 abstract class _LoginState implements LoginState {
   const factory _LoginState(
       {bool loading,
-      dynamic error,
+      ErrorModel? error,
       ProfileEntity? profileEntity}) = _$_LoginState;
 
   factory _LoginState.fromJson(Map<String, dynamic> json) =
@@ -212,7 +226,7 @@ abstract class _LoginState implements LoginState {
   @override
   bool get loading => throw _privateConstructorUsedError;
   @override
-  dynamic get error => throw _privateConstructorUsedError;
+  ErrorModel? get error => throw _privateConstructorUsedError;
   @override
   ProfileEntity? get profileEntity => throw _privateConstructorUsedError;
   @override
