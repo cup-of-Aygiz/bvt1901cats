@@ -15,6 +15,7 @@ class RouterScreen extends StatelessWidget {
         return !wasPop;
       },
       child: Scaffold(
+        extendBody: true,
         resizeToAvoidBottomInset: false,
         body: ValueListenableBuilder<int>(
             valueListenable: context.appRouter.currentTabNotifier,
@@ -37,7 +38,8 @@ class RouterScreen extends StatelessWidget {
                   context.appRouter.currentTabNotifier.value = index;
                 }
               },
-              // backgroundColor: colors.systemGrey,
+              elevation: 0,
+              backgroundColor: colors.transparent,
               type: BottomNavigationBarType.fixed,
               selectedItemColor: colors.blue,
               unselectedItemColor: colors.black,
