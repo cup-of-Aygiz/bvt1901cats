@@ -102,4 +102,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get profile_tab => 'Профиль';
+
+  @override
+  String get change_password => 'Сменить пароль';
 }

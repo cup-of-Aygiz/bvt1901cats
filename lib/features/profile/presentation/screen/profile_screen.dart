@@ -53,7 +53,7 @@ class ProfileScreen extends StatelessWidget {
               icon: Assets.icons.icPerson.svg(width: 30.h, height: 30.h),
               text: locale.my_data,
               onTap: () {
-                router.pushScreen(context, const LoginScreen());
+                router.pushScreen(context, const PersonDataScreen());
               },
             ),
             ProfileButton(

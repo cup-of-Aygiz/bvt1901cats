@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,6 +13,8 @@ class AppTextField extends StatelessWidget {
   final TextEditingController? controller;
   final AutovalidateMode autoValidateMode;
   final EdgeInsets? padding;
+  final InputBorder? inputBorder;
+  final Widget suffix;
 
   const AppTextField({
     Key? key,
@@ -24,17 +27,19 @@ class AppTextField extends StatelessWidget {
     this.controller,
     this.autoValidateMode = AutovalidateMode.onUserInteraction,
     this.padding,
+    this.inputBorder = const OutlineInputBorder(),
+    this.suffix = const SizedBox(),
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:
-          padding ?? EdgeInsets.symmetric(vertical: 10.h),
+      padding: padding ?? EdgeInsets.symmetric(vertical: 10.h,horizontal: 10.h),
       child: FormBuilderTextField(
         obscureText: obscureText,
         decoration: InputDecoration(
-          border: const OutlineInputBorder(),
+          border: inputBorder,
+          suffix:suffix,
           labelText: labelText,
           errorMaxLines: 3,
         ),

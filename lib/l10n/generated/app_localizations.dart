@@ -285,6 +285,12 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Профиль'**
   String get profile_tab;
+
+  /// No description provided for @change_password.
+  ///
+  /// In ru, this message translates to:
+  /// **'Сменить пароль'**
+  String get change_password;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

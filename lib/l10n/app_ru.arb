@@ -30,5 +30,6 @@
   "home_tab": "Главная",
   "favorite_tab": "Избранное",
   "cart_tab": "Корзина",
-  "profile_tab": "Профиль"
+  "profile_tab": "Профиль",
+  "change_password": "Сменить пароль"
 }
