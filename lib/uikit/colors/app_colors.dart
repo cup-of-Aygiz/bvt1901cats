@@ -21,10 +21,14 @@ class AppColors {
   final Color darkGreen;
   final Color black;
   final Color transparent;
+  final Color generalColor;
+  final Color grey;
+
+  //final Color thirdColor;
 
   const AppColors.light()
       : white = const Color(0xFFFFFFFF),
-        black = const Color(0xFF363535),    
+        black = const Color(0xFF363535),
         red = const Color(0xFFFF3434),
         darkRed = const Color(0xFFA60000),
         blue = const Color(0xFF99AAFF),
@@ -33,11 +37,13 @@ class AppColors {
         darkOcean = const Color(0xFF005f89),
         lightOcean = const Color(0xFF63cdd7),
         ocean = const Color(0xFF0093b7),
-        purple = const Color(0xFFC993FF),
-        lightPurple = const Color(0xFFE1C4FF),
+        purple = const Color(0xFFA28ACF),
+        lightPurple = const Color(0xFFCFBEEE),
         darkPurple = const Color(0xFF6A30A6),
         green = const Color(0xFF8AFFEF),
         lightGreen = const Color(0xFFBFFFF6),
         darkGreen = const Color(0xFF2DA695),
-        transparent = const Color(0x00000000);
+        transparent = const Color(0x00000000),
+        generalColor = const Color(0xFFC8D3E6),
+        grey = const Color(0xff9e9e9e);
 }

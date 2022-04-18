@@ -41,7 +41,7 @@ class RouterScreen extends StatelessWidget {
               elevation: 0,
               backgroundColor: colors.transparent,
               type: BottomNavigationBarType.fixed,
-              selectedItemColor: colors.blue,
+              selectedItemColor: colors.white,
               unselectedItemColor: colors.black,
               selectedLabelStyle: AppTextStyle.bottomNavigationLabel
                   .copyWith(color: colors.blue),
