@@ -50,6 +50,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_sales.svg
   SvgGenImage get icSales => const SvgGenImage('assets/icons/ic_sales.svg');
 
+  /// File path: assets/icons/ic_search.svg
+  SvgGenImage get icSearch => const SvgGenImage('assets/icons/ic_search.svg');
+
   /// File path: assets/icons/ic_shopingBag.svg
   SvgGenImage get icShopingBag =>
       const SvgGenImage('assets/icons/ic_shopingBag.svg');

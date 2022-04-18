@@ -42,17 +42,22 @@ class ProductContainer extends StatelessWidget {
                           borderRadius: BorderRadius.circular(15.r),
                         ),
                       ),
-                      Container(
-                        margin: EdgeInsets.only(left: 116.w, top: 6.h),
-                        width: 32.h,
-                        height: 32.h,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: myColors.white,
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 2.w,top: 2.w),
-                          child: const LikeButton(),
+                      Positioned(
+                        top: 0.h,
+                        right: 0.h,
+                        child: Container(
+                          width: 36.h,
+                          height: 36.h,
+                          decoration: BoxDecoration(
+                            color: myColors.white,
+                            borderRadius: BorderRadius.only(bottomLeft:Radius.circular(25.r)),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 2.w, top: 2.w),
+                            child: LikeButton(
+                              size: 25.h,
+                            ),
+                          ),
                         ),
                       ),
                     ],
