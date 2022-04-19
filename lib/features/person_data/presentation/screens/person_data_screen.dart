@@ -1,15 +1,14 @@
 import 'package:bvt1901_practice/features/person_data/presentation/domain/state/profile_cubit.dart';
 import 'package:bvt1901_practice/features/person_data/presentation/domain/state/profile_state.dart';
-import 'package:bvt1901_practice/gen/assets.gen.dart';
 import 'package:bvt1901_practice/uikit/app_bars/default_app_bar.dart';
 import 'package:bvt1901_practice/uikit/buttons/app_text_button.dart';
-import 'package:bvt1901_practice/uikit/buttons/app_transparent_button.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../gen/assets.gen.dart';
 import '../../../../uikit/spinkit/spinkit.dart';
 import '../../../../uikit/text_fields/app_phone_field.dart';
 import '../../../../uikit/text_fields/app_text_field.dart';
@@ -30,6 +29,7 @@ class _PersonDataScreenState extends State<PersonDataScreen> {
   Widget build(BuildContext context) {
     final locale = context.appLocale;
     final router = context.appRouter;
+    final colors = context.appColors;
 
     return BlocProvider<ProfileCubit>(
       create: (context) => ProfileCubit()..init(),
@@ -38,6 +38,17 @@ class _PersonDataScreenState extends State<PersonDataScreen> {
           return Scaffold(
             appBar: DefaultAppBar(
               titleText: locale.my_data,
+              action: [
+                IconButton(
+                  splashColor: colors.blue,
+                  splashRadius: 24.r,
+                  onPressed: () {},
+                  icon: Assets.icons.icOk.svg(
+                    width: 30.h,
+                    height: 30.h,
+                  ),
+                )
+              ],
             ),
             body: (!state.loading)
                 ? FormBuilder(
@@ -52,11 +63,6 @@ class _PersonDataScreenState extends State<PersonDataScreen> {
                               padding: EdgeInsets.symmetric(vertical: 2.h),
                               inputBorder: null,
                               name: 'firstName',
-                              suffix: AppTransparentButton(
-                                child: Assets.icons.icSave
-                                    .svg(width: 30.h, height: 30.h),
-                                onTap: () {},
-                              ),
                               initialValue: state.profileEntity?.firstName,
                               validator:
                                   AppValidators.requiredMinLengthField(context),
@@ -66,11 +72,6 @@ class _PersonDataScreenState extends State<PersonDataScreen> {
                               name: 'lastName',
                               padding: EdgeInsets.symmetric(vertical: 2.h),
                               inputBorder: null,
-                              suffix: AppTransparentButton(
-                                child: Assets.icons.icSave
-                                    .svg(width: 30.h, height: 30.h),
-                                onTap: () {},
-                              ),
                               initialValue: state.profileEntity?.lastName,
                               validator:
                                   AppValidators.requiredMinLengthField(context),
@@ -81,11 +82,6 @@ class _PersonDataScreenState extends State<PersonDataScreen> {
                               name: 'middleName',
                               inputBorder: null,
                               padding: EdgeInsets.symmetric(vertical: 2.h),
-                              suffix: AppTransparentButton(
-                                child: Assets.icons.icSave
-                                    .svg(width: 30.h, height: 30.h),
-                                onTap: () {},
-                              ),
                             ),
                             AppPhoneTextField(
                               labelText: locale.phone,
@@ -95,14 +91,17 @@ class _PersonDataScreenState extends State<PersonDataScreen> {
                               initialValue: state.profileEntity?.phone,
                               name: 'phone',
                             ),
+                            SizedBox(
+                              height: 30.h,
+                            ),
                             Padding(
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 10.h, vertical: 30.w),
+                                  horizontal: 10.h, vertical: 4.w),
                               child: AppTextButton(
                                   buttonText: locale.change_password,
                                   onPressed: () {
                                     router.pushScreen(
-                                        context, const ChangePasswordScreen());
+                                        context, ChangePasswordScreen());
                                   }),
                             )
                           ],

@@ -44,6 +44,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_leave.svg
   SvgGenImage get icLeave => const SvgGenImage('assets/icons/ic_leave.svg');
 
+  /// File path: assets/icons/ic_ok.svg
+  SvgGenImage get icOk => const SvgGenImage('assets/icons/ic_ok.svg');
+
   /// File path: assets/icons/ic_person.svg
   SvgGenImage get icPerson => const SvgGenImage('assets/icons/ic_person.svg');
 

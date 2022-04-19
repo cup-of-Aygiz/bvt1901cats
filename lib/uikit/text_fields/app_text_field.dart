@@ -14,7 +14,6 @@ class AppTextField extends StatelessWidget {
   final AutovalidateMode autoValidateMode;
   final EdgeInsets? padding;
   final InputBorder? inputBorder;
-  final Widget suffix;
 
   const AppTextField({
     Key? key,
@@ -28,7 +27,6 @@ class AppTextField extends StatelessWidget {
     this.autoValidateMode = AutovalidateMode.onUserInteraction,
     this.padding,
     this.inputBorder = const OutlineInputBorder(),
-    this.suffix = const SizedBox(),
   }) : super(key: key);
 
   @override
@@ -39,7 +37,6 @@ class AppTextField extends StatelessWidget {
         obscureText: obscureText,
         decoration: InputDecoration(
           border: inputBorder,
-          suffix:suffix,
           labelText: labelText,
           errorMaxLines: 3,
         ),

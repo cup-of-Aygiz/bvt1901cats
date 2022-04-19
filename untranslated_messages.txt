@@ -29,6 +29,9 @@
     "favorite_tab",
     "cart_tab",
     "profile_tab",
-    "change_password"
+    "change_password",
+    "old_password",
+    "new_password",
+    "prov_password"
   ]
 }

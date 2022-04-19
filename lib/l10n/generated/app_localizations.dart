@@ -291,6 +291,24 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Сменить пароль'**
   String get change_password;
+
+  /// No description provided for @old_password.
+  ///
+  /// In ru, this message translates to:
+  /// **'Старый пароль'**
+  String get old_password;
+
+  /// No description provided for @new_password.
+  ///
+  /// In ru, this message translates to:
+  /// **'Новый пароль'**
+  String get new_password;
+
+  /// No description provided for @prov_password.
+  ///
+  /// In ru, this message translates to:
+  /// **'Подсвердите пароль'**
+  String get prov_password;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

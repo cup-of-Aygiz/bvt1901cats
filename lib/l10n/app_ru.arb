@@ -31,5 +31,8 @@
   "favorite_tab": "Избранное",
   "cart_tab": "Корзина",
   "profile_tab": "Профиль",
-  "change_password": "Сменить пароль"
+  "change_password": "Сменить пароль",
+  "old_password": "Старый пароль",
+  "new_password": "Новый пароль",
+  "prov_password": "Подсвердите пароль"
 }
