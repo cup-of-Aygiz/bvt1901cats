@@ -285,6 +285,12 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Профиль'**
   String get profile_tab;
+
+  /// No description provided for @search.
+  ///
+  /// In ru, this message translates to:
+  /// **'Поиск'**
+  String get search;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

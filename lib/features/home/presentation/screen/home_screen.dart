@@ -1,4 +1,5 @@
 import 'package:bvt1901_practice/features/home/presentation/components/slider_item.dart';
+import 'package:bvt1901_practice/features/search/presentation/screens/search_screen.dart';
 import 'package:bvt1901_practice/uikit/app_bars/default_app_bar.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -36,9 +37,9 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Container(
                             child: FormBuilderTextField(
-                              initialValue: "Поиск",
                               name: 'find',
                               decoration: InputDecoration(
+                                hintText: locale.search,
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30.r),
                                 ),
@@ -66,8 +67,14 @@ class HomeScreen extends StatelessWidget {
                                 style: BorderStyle.solid,
                               ),
                             ),
-                            child: const Icon(
-                              Icons.search,
+                            child: IconButton(
+                              onPressed: () {
+                                context.appRouter
+                                    .pushScreen(context, const SearchScreen());
+                              },
+                              icon: const Icon(
+                                Icons.search,
+                              ),
                             ),
                           ),
                         ],

@@ -28,6 +28,7 @@
     "home_tab",
     "favorite_tab",
     "cart_tab",
-    "profile_tab"
+    "profile_tab",
+    "search"
   ]
 }
