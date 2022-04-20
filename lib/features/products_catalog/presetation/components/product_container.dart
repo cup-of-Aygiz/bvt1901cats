@@ -4,7 +4,6 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:like_button/like_button.dart';
-import '../../../product_page/presentation/screens/product_screen.dart';
 import '../../domain/entity/product_entity.dart';
 
 class ProductContainer extends StatelessWidget {
@@ -93,9 +92,7 @@ class ProductContainer extends StatelessWidget {
                                 BorderRadius.all(Radius.circular(10.r)),
                           ),
                           child: TextButton(
-                            onPressed: () {
-                              context.appRouter.pushScreen(context,const ProductScreen());
-                            },
+                            onPressed: () {},
                             child: Text(
                               '${productEntity.price} ₽',
                               style: AppTextStyle.normalW700S12

@@ -1,12 +1,14 @@
 import 'package:bvt1901_practice/features/home/presentation/components/slider_item.dart';
 import 'package:bvt1901_practice/features/search/presentation/screens/search_screen.dart';
 import 'package:bvt1901_practice/uikit/app_bars/default_app_bar.dart';
+import 'package:bvt1901_practice/uikit/buttons/app_transparent_button.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../product_page/presentation/screens/product_screen.dart';
 import '../../../products_catalog/presetation/components/products_list.dart';
 import '../../../registration/presentation/components/proggres_gradient.dart';
 
@@ -24,60 +26,40 @@ class HomeScreen extends StatelessWidget {
       body: Stack(
         children: [
           BackgroundProgressWidget(
-              colorOne: colors.darkOcean,
-              length: 6,
-              child: SafeArea(
-                top: false,
+            colorOne: colors.darkOcean,
+            length: 6,
+            child: SafeArea(
+              top: false,
+              child: AppTransparentButton(
+                onTap: () {
+                  context.appRouter.pushScreen(context, const ProductScreen());
+                },
                 child: Stack(
                   children: [
                     Padding(
                       padding: EdgeInsets.symmetric(
                           vertical: 20.h, horizontal: 10.h),
-                      child: Row(
-                        children: [
-                          Container(
-                            child: FormBuilderTextField(
-                              name: 'find',
-                              decoration: InputDecoration(
-                                hintText: locale.search,
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(30.r),
-                                ),
-                              ),
-                            ),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.rectangle,
+                      child: Container(
+                        child: FormBuilderTextField(
+                          name: 'find',
+                          readOnly: true,
+                          onTap: () {
+                            context.appRouter
+                                .pushScreen(context, const SearchScreen());
+                          },
+                          decoration: InputDecoration(
+                            hintText: locale.search,
+                            border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30.r),
-                              color: colors.white,
-                            ),
-                            width: 290.w,
-                            height: 46.h,
-                            //color: colors.white,
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(left: 10.w),
-                            width: 46.h,
-                            height: 46.h,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: colors.white,
-                              border: Border.all(
-                                width: 1,
-                                color: colors.grey,
-                                style: BorderStyle.solid,
-                              ),
-                            ),
-                            child: IconButton(
-                              onPressed: () {
-                                context.appRouter
-                                    .pushScreen(context, const SearchScreen());
-                              },
-                              icon: const Icon(
-                                Icons.search,
-                              ),
                             ),
                           ),
-                        ],
+                        ),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.circular(30.r),
+                          color: colors.white,
+                        ),
+                        height: 46.h,
                       ),
                     ),
                     Padding(
@@ -98,7 +80,9 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-              )),
+              ),
+            ),
+          ),
         ],
       ),
       backgroundColor: colors.generalColor,
