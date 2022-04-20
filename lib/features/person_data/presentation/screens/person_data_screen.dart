@@ -8,7 +8,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../gen/assets.gen.dart';
 import '../../../../uikit/spinkit/spinkit.dart';
 import '../../../../uikit/text_fields/app_phone_field.dart';
 import '../../../../uikit/text_fields/app_text_field.dart';
@@ -28,8 +27,6 @@ class _PersonDataScreenState extends State<PersonDataScreen> {
   @override
   Widget build(BuildContext context) {
     final locale = context.appLocale;
-    final router = context.appRouter;
-    final colors = context.appColors;
 
     return BlocProvider<ProfileCubit>(
       create: (context) => ProfileCubit()..init(),
@@ -38,17 +35,6 @@ class _PersonDataScreenState extends State<PersonDataScreen> {
           return Scaffold(
             appBar: DefaultAppBar(
               titleText: locale.my_data,
-              action: [
-                IconButton(
-                  splashColor: colors.blue,
-                  splashRadius: 24.r,
-                  onPressed: () {},
-                  icon: Assets.icons.icOk.svg(
-                    width: 30.h,
-                    height: 30.h,
-                  ),
-                )
-              ],
             ),
             body: (!state.loading)
                 ? FormBuilder(
@@ -91,6 +77,18 @@ class _PersonDataScreenState extends State<PersonDataScreen> {
                               initialValue: state.profileEntity?.phone,
                               name: 'phone',
                             ),
+                            AppTextField(
+                              labelText: locale.password,
+                              inputBorder: null,
+                              obscureText: true,
+                              padding: EdgeInsets.symmetric(vertical: 2.h),
+                              initialValue: 'Парольчик',
+                              name: 'password',
+                              onChanged: (String? str) {
+                                context.appRouter.pushScreen(
+                                    context, const ChangePasswordScreen());
+                              },
+                            ),
                             SizedBox(
                               height: 30.h,
                             ),
@@ -98,11 +96,8 @@ class _PersonDataScreenState extends State<PersonDataScreen> {
                               padding: EdgeInsets.symmetric(
                                   horizontal: 10.h, vertical: 4.w),
                               child: AppTextButton(
-                                  buttonText: locale.change_password,
-                                  onPressed: () {
-                                    router.pushScreen(
-                                        context, ChangePasswordScreen());
-                                  }),
+                                  buttonText: locale.save_changes,
+                                  onPressed: () {}),
                             )
                           ],
                         ),

@@ -6,13 +6,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../gen/assets.gen.dart';
+import '../../../../uikit/buttons/app_text_button.dart';
 import '../../../../uikit/text_fields/app_text_field.dart';
 import '../../../../uikit/validators/app_validators.dart';
 import '../../domain/state/change_password_cubit.dart';
 
 class ChangePasswordScreen extends StatefulWidget {
-  ChangePasswordScreen({Key? key}) : super(key: key);
+  const ChangePasswordScreen({Key? key}) : super(key: key);
 
   @override
   State<ChangePasswordScreen> createState() => _ChangePasswordScreenState();
@@ -27,27 +27,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   @override
   Widget build(BuildContext context) {
     final locale = context.appLocale;
-    final colors = context.appColors;
 
     return Scaffold(
       appBar: DefaultAppBar(
         titleText: locale.change_password,
-        action: [
-          IconButton(
-            splashColor: colors.blue,
-            splashRadius: 24.r,
-            onPressed: () async {
-              _formKey.currentState?.validate();
-              if (_formKey.currentState?.validate() ?? false) {
-                String _newPassword = _password;
-              }
-            },
-            icon: Assets.icons.icOk.svg(
-              width: 30.h,
-              height: 30.h,
-            ),
-          )
-        ],
       ),
       body: BlocProvider(
         create: (context) => ChangePasswordCubit()..init(),
@@ -80,11 +63,13 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       validator: AppValidators.requiredPasswordField(context),
                       padding: EdgeInsets.symmetric(vertical: 2.h),
                       onChanged: (String? str) {
-                        setState(() {
-                          if (str != null) {
-                            _password = str;
-                          }
-                        });
+                        setState(
+                          () {
+                            if (str != null) {
+                              _password = str;
+                            }
+                          },
+                        );
                       },
                     ),
                   ),
@@ -97,11 +82,13 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       obscureText: true,
                       padding: EdgeInsets.symmetric(vertical: 2.h),
                       onChanged: (String? str) {
-                        setState(() {
-                          if (str != null) {
-                            _passwordProv = str;
-                          }
-                        });
+                        setState(
+                          () {
+                            if (str != null) {
+                              _passwordProv = str;
+                            }
+                          },
+                        );
                       },
                       autoValidateMode: AutovalidateMode.disabled,
                       validator: (String? passwordProv) {
@@ -112,6 +99,14 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       },
                     ),
                   ),
+                  Padding(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h),
+                    child: AppTextButton(
+                      buttonText: locale.change_password,
+                      onPressed: () {},
+                    ),
+                  )
                 ],
               ),
             );

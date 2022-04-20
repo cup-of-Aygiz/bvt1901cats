@@ -14,6 +14,7 @@ class AppPhoneTextField extends StatelessWidget {
   final EdgeInsets? padding;
   final bool readOnly;
   final InputBorder? inputBorder;
+  final Function(String?)? onChanged;
 
   const AppPhoneTextField({
     Key? key,
@@ -26,6 +27,7 @@ class AppPhoneTextField extends StatelessWidget {
     this.validate = true,
     this.readOnly = false,
     this.inputBorder = const OutlineInputBorder(),
+    this.onChanged,
   }) : super(key: key);
 
   @override
@@ -37,6 +39,7 @@ class AppPhoneTextField extends StatelessWidget {
       child: FormBuilderTextField(
         initialValue: initialValue,
         controller: textEditingController,
+        onChanged: onChanged,
         readOnly: readOnly,
         name: name,
         textInputAction: textInputAction,
@@ -53,11 +56,11 @@ class AppPhoneTextField extends StatelessWidget {
         ),
         validator: validate
             ? FormBuilderValidators.compose([
-                FormBuilderValidators.required(context,
-                    errorText: locale.this_required_field),
-                FormBuilderValidators.minLength(context, 15,
-                    errorText: locale.incorrect_format)
-              ])
+          FormBuilderValidators.required(context,
+              errorText: locale.this_required_field),
+          FormBuilderValidators.minLength(context, 15,
+              errorText: locale.incorrect_format)
+        ])
             : null,
       ),
     );

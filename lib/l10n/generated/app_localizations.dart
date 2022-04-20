@@ -309,6 +309,12 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Подсвердите пароль'**
   String get prov_password;
+
+  /// No description provided for @save_changes.
+  ///
+  /// In ru, this message translates to:
+  /// **'Сохранить изменения'**
+  String get save_changes;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

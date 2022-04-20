@@ -9,7 +9,6 @@ class DefaultAppBar extends StatelessWidget with PreferredSizeWidget {
   final String? titleText;
   final Widget? title;
   final Color? backgroundColor;
-  final List<Widget> action;
 
   @override
   final Size preferredSize = const Size.fromHeight(50);
@@ -20,7 +19,6 @@ class DefaultAppBar extends StatelessWidget with PreferredSizeWidget {
     this.titleText,
     this.backgroundColor,
     this.title,
-    this.action = const [],
   }) : super(key: key);
 
   @override
@@ -42,7 +40,6 @@ class DefaultAppBar extends StatelessWidget with PreferredSizeWidget {
             : title,
         centerTitle: centreTitle,
         leading: canPop ? const AppGoBackButton() : null,
-        actions: action,
         backgroundColor: backgroundColor ?? myColors.purple,
       ),
     );
