@@ -70,7 +70,7 @@ class ProductContainer extends StatelessWidget {
                   ),
                   width: size.width / 2,
                   height: 70.h,
-                  child: ListView(
+                  child: Column(
                     children: [
                       Padding(
                         padding: EdgeInsets.symmetric(
