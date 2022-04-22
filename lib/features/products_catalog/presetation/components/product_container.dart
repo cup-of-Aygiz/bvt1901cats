@@ -4,6 +4,7 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../gen/assets.gen.dart';
 import '../../domain/entity/product_entity.dart';
 
 class ProductContainer extends StatelessWidget {
@@ -33,7 +34,8 @@ class ProductContainer extends StatelessWidget {
                     imageUrl: productEntity.image,
                     width: constraints.maxWidth,
                     height: constraints.maxWidth,
-                    boxFit: BoxFit.fill,
+                    boxFit: BoxFit.contain,
+                    errorWidget: Center(child: Assets.images.logotip.image(),),
                     boxDecoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30.r),
                     ),

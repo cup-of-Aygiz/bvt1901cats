@@ -12,8 +12,8 @@ class CatalogCubit extends Cubit<CatalogState> {
   CatalogRepository get _catalogRepository => getIt();
 
   void init() async {
-   await getMaxLength();
-   await loadProducts();
+    await getMaxLength();
+    await loadProducts();
   }
 
   Future<void> loadProducts() async {
@@ -41,7 +41,10 @@ class CatalogCubit extends Cubit<CatalogState> {
   Future<void> getMaxLength() async {
     try {
       emit(state.copyWith(loading: true));
-      int maxLength = await _catalogRepository.getMaxLengthProducts();
+      int maxLength = await _catalogRepository.getMaxLengthProducts(
+        start: 1,
+        end: 1,
+      );
       emit(state.copyWith(
         maxLength: maxLength,
         loading: false,
