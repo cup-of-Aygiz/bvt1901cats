@@ -1,7 +1,7 @@
-import 'package:bvt1901_practice/app/domain/models/error_model.dart';
 import 'package:bvt1901_practice/features/products_catalog/data/dto/product_dto.dart';
 import 'package:bvt1901_practice/features/products_catalog/domain/entity/product_entity.dart';
 import 'package:injectable/injectable.dart';
+import '../../../app/data/exceptions/newtwork_error_mapper.dart';
 import '../../../app/data/network_servise/dio_container.dart';
 import '../domain/catalog_repository.dart';
 
@@ -16,25 +16,21 @@ class CatalogNetworkRepository extends CatalogRepository {
     required int start,
     required int end,
   }) async {
-    // try {
-    final response = await dioContainer.dio.get(
-      '/catalog',
-      queryParameters: {
-        "offset": start,
-        "limit": end,
-      },
-    );
-    if (response.data is List) {
-      final newList = List<ProductEntity>.from(
-          response.data.map((e) => ProductDTO.fromJson(e).toEntity()));
+    try {
+      final response = await dioContainer.dio.get(
+        '/catalog',
+        queryParameters: {
+          "offset": start,
+          "limit": end,
+        },
+      );
+        final newList = List<ProductEntity>.from(
+            response.data.map((e) => ProductDTO.fromJson(e).toEntity()));
 
-      return newList;
+        return newList;
+    } catch (e) {
+      throw mapToErrorModel(e);
     }
-    throw ErrorModel('');
-
-    // } catch (e) {
-    //   throw mapToErrorModel(e);
-    // }
   }
 
   @override
