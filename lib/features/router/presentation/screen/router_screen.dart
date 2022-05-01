@@ -31,7 +31,7 @@ class RouterScreen extends StatelessWidget {
           valueListenable: context.appRouter.currentTabNotifier,
           builder: (context, index, child) {
             return BackgroundProgressWidget(
-              length: 7,
+              length: 6,
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: BottomNavigationBar(
