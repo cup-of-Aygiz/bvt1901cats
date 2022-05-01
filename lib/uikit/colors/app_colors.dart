@@ -23,6 +23,7 @@ class AppColors {
   final Color transparent;
   final Color generalColor;
   final Color grey;
+  //final Color grey;
 
   //final Color thirdColor;
 
@@ -45,5 +46,5 @@ class AppColors {
         darkGreen = const Color(0xFF2DA695),
         transparent = const Color(0x00000000),
         generalColor = const Color(0xFFC8D3E6),
-        grey = const Color(0xff9e9e9e);
+        grey = const Color(0xFF9e9e9e);
 }

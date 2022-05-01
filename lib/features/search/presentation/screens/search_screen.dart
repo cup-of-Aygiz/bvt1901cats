@@ -12,7 +12,7 @@ class SearchScreen extends StatelessWidget {
     final colors = context.appColors;
     final locale = context.appLocale;
     return Scaffold(
-      appBar: DefaultAppBar(),
+      appBar: const DefaultAppBar(),
       body: ListView(
         children: [
           Row(

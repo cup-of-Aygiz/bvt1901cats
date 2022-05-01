@@ -6,6 +6,6 @@ class ProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: const DefaultAppBar(),);
+    return const Scaffold(appBar: DefaultAppBar(),);
   }
 }

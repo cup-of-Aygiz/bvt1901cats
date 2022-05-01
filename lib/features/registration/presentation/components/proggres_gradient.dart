@@ -10,6 +10,7 @@ class BackgroundProgressWidget extends StatelessWidget {
   final Color? colorTwo;
   final Color? colorThree;
   final bool error;
+
   const BackgroundProgressWidget({
     Key? key,
     required this.child,
@@ -72,7 +73,7 @@ class Wave extends StatelessWidget {
         gradients: [
           [
             color,
-            color.withOpacity(0.2),
+            color.withOpacity(0.8),
           ],
         ],
         durations: [duration.inMilliseconds],
