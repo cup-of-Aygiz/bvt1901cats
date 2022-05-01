@@ -51,6 +51,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       obscureText: true,
                       inputBorder: null,
                       padding: EdgeInsets.symmetric(vertical: 2.h),
+                      autoValidateMode: AutovalidateMode.disabled,
+                      validator: AppValidators.requiredMinLengthField(context),
                     ),
                   ),
                   Padding(
@@ -60,6 +62,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       name: 'new_password',
                       inputBorder: null,
                       obscureText: true,
+                      autoValidateMode: AutovalidateMode.disabled,
                       validator: AppValidators.requiredPasswordField(context),
                       padding: EdgeInsets.symmetric(vertical: 2.h),
                       onChanged: (String? str) {
@@ -104,7 +107,13 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                         EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h),
                     child: AppTextButton(
                       buttonText: locale.change_password,
-                      onPressed: () {},
+                      onPressed: () async {
+                        _formKey.currentState?.validate();
+                        if (_formKey.currentState?.validate() ??
+                            false) {
+                            //TODO сделать отправку на сервер
+                        }
+                      },
                     ),
                   )
                 ],
