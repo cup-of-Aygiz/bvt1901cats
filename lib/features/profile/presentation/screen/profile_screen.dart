@@ -16,7 +16,6 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final locale = context.appLocale;
     final router = context.appRouter;
     final colors = context.appColors;
@@ -53,7 +52,7 @@ class ProfileScreen extends StatelessWidget {
               icon: Assets.icons.icPerson.svg(width: 30.h, height: 30.h),
               text: locale.my_data,
               onTap: () {
-                router.pushScreen(context, const LoginScreen());
+                router.pushScreen(context, const PersonDataScreen());
               },
             ),
             ProfileButton(
