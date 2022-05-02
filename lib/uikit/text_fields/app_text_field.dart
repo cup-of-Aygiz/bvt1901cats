@@ -42,7 +42,7 @@ class AppTextField extends StatelessWidget {
       child: FormBuilderTextField(
         obscureText: obscureText,
         style: TextStyle(
-          color: readOnly ? colors.red : colors.black,
+          color: readOnly ? colors.grey : colors.black,
         ),
         decoration: InputDecoration(
           border: inputBorder,

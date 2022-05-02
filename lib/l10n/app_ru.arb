@@ -35,6 +35,6 @@
   "change_password": "Сменить пароль",
   "old_password": "Текущий пароль",
   "new_password": "Новый пароль",
-  "prov_password": "Подтвердите пароль",
+  "prov_password": "Повторите пароль",
   "save_changes": "Сохранить изменения"
 }
