@@ -1,7 +1,9 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 import '../../domain/entity/product_entity.dart';
 
 part 'product_dto.g.dart';
-
+@JsonSerializable()
 class ProductDTO {
   final int? id;
   final List<String>? images;
