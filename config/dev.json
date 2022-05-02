@@ -1,5 +1,5 @@
 {
-  "baseUrl": "http://",
+  "baseUrl": "https://aqualabean.ru/api",
   "environment": "dev",
   "appScheme": "appScheme",
   "host": "host",
