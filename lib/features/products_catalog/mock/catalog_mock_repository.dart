@@ -31,7 +31,8 @@ class CatalogMockRepository extends CatalogRepository
   }
 
   @override
-  Future<int> getMaxLengthProducts() async {
+  Future<int> getMaxLengthProducts(
+      {required int start, required int end}) async {
     return 100;
   }
 }
