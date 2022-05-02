@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
             top: false,
             child: Stack(
               children: [
-                const Expanded(child: ProductList()),
+                const ProductList(),
                 BackgroundProgressWidget(
                   length: 20,
                   colorThree: colors.ocean,
