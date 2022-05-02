@@ -34,8 +34,8 @@ class DefaultAppBar extends StatelessWidget with PreferredSizeWidget {
         title: titleText != null
             ? Text(
                 titleText ?? '',
-                style: AppTextStyle.normalW700S18
-                    .copyWith(color: myColors.black),
+                style:
+                    AppTextStyle.normalW700S18.copyWith(color: myColors.black),
               )
             : title,
         centerTitle: centreTitle,

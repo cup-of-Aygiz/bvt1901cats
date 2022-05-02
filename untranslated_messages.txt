@@ -28,6 +28,11 @@
     "home_tab",
     "favorite_tab",
     "cart_tab",
-    "profile_tab"
+    "profile_tab",
+    "change_password",
+    "old_password",
+    "new_password",
+    "prov_password",
+    "save_changes"
   ]
 }
