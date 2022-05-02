@@ -116,7 +116,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get new_password => 'Новый пароль';
 
   @override
-  String get prov_password => 'Подтвердите пароль';
+  String get prov_password => 'Повторите пароль';
 
   @override
   String get save_changes => 'Сохранить изменения';

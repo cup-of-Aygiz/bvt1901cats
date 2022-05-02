@@ -7,6 +7,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../uikit/buttons/app_text_button.dart';
+import '../../../../uikit/password_eye.dart';
 import '../../../../uikit/text_fields/app_text_field.dart';
 import '../../../../uikit/validators/app_validators.dart';
 import '../../domain/state/change_password_cubit.dart';
@@ -50,6 +51,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       name: 'old_password',
                       obscureText: true,
                       inputBorder: null,
+                      suffix: const PasswordEye(),
                       padding: EdgeInsets.symmetric(vertical: 2.h),
                       autoValidateMode: AutovalidateMode.disabled,
                       validator: AppValidators.requiredMinLengthField(context),
