@@ -16,7 +16,6 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final locale = context.appLocale;
     final router = context.appRouter;
     final colors = context.appColors;
