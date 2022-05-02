@@ -105,4 +105,19 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get search => 'Поиск';
+
+  @override
+  String get change_password => 'Сменить пароль';
+
+  @override
+  String get old_password => 'Текущий пароль';
+
+  @override
+  String get new_password => 'Новый пароль';
+
+  @override
+  String get prov_password => 'Подтвердите пароль';
+
+  @override
+  String get save_changes => 'Сохранить изменения';
 }
