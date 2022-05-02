@@ -29,6 +29,7 @@
     "favorite_tab",
     "cart_tab",
     "profile_tab",
+    "search",
     "change_password",
     "old_password",
     "new_password",

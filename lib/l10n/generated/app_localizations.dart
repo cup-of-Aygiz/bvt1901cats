@@ -286,6 +286,12 @@ abstract class AppLocalizations {
   /// **'Профиль'**
   String get profile_tab;
 
+  /// No description provided for @search.
+  ///
+  /// In ru, this message translates to:
+  /// **'Поиск'**
+  String get search;
+
   /// No description provided for @change_password.
   ///
   /// In ru, this message translates to:
@@ -295,7 +301,7 @@ abstract class AppLocalizations {
   /// No description provided for @old_password.
   ///
   /// In ru, this message translates to:
-  /// **'Старый пароль'**
+  /// **'Текущий пароль'**
   String get old_password;
 
   /// No description provided for @new_password.

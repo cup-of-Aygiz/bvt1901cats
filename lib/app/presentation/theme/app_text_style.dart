@@ -41,6 +41,16 @@ class AppTextStyle {
     fontSize: 12.sp,
     fontWeight: FontWeight.w700,
   );
+
+  static final TextStyle normalW700S11 = TextStyle(
+    fontSize: 11.sp,
+    fontWeight: FontWeight.w700,
+  );
+  static final TextStyle normalW700S9 = TextStyle(
+    fontSize: 9.sp,
+    fontWeight: FontWeight.w700,
+  );
+
   static final TextStyle bottomNavigationLabel = TextStyle(
     fontSize: 10.sp,
     height: 1.18,

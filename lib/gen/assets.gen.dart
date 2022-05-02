@@ -44,17 +44,14 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_leave.svg
   SvgGenImage get icLeave => const SvgGenImage('assets/icons/ic_leave.svg');
 
-  /// File path: assets/icons/ic_ok.svg
-  SvgGenImage get icOk => const SvgGenImage('assets/icons/ic_ok.svg');
-
   /// File path: assets/icons/ic_person.svg
   SvgGenImage get icPerson => const SvgGenImage('assets/icons/ic_person.svg');
 
   /// File path: assets/icons/ic_sales.svg
   SvgGenImage get icSales => const SvgGenImage('assets/icons/ic_sales.svg');
 
-  /// File path: assets/icons/ic_save.svg
-  SvgGenImage get icSave => const SvgGenImage('assets/icons/ic_save.svg');
+  /// File path: assets/icons/ic_search.svg
+  SvgGenImage get icSearch => const SvgGenImage('assets/icons/ic_search.svg');
 
   /// File path: assets/icons/ic_shopingBag.svg
   SvgGenImage get icShopingBag =>

@@ -104,10 +104,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get profile_tab => 'Профиль';
 
   @override
+  String get search => 'Поиск';
+
+  @override
   String get change_password => 'Сменить пароль';
 
   @override
-  String get old_password => 'Старый пароль';
+  String get old_password => 'Текущий пароль';
 
   @override
   String get new_password => 'Новый пароль';
