@@ -81,10 +81,11 @@ class _PersonDataScreenState extends State<PersonDataScreen> {
                               labelText: locale.password,
                               inputBorder: null,
                               obscureText: true,
+                              readOnly: true,
                               padding: EdgeInsets.symmetric(vertical: 2.h),
                               initialValue: 'Парольчик',
                               name: 'password',
-                              onChanged: (String? str) {
+                              onTap: () {
                                 context.appRouter.pushScreen(
                                     context, const ChangePasswordScreen());
                               },
