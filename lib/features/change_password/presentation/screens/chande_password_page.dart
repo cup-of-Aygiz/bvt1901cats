@@ -109,10 +109,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       buttonText: locale.change_password,
                       onPressed: () async {
                         _formKey.currentState?.validate();
-                        if (_formKey.currentState?.validate() ??
-                            false) {
-                            //TODO сделать отправку на сервер
-                        }
+                        if (_formKey.currentState?.validate() ?? false) {}
                       },
                     ),
                   )
