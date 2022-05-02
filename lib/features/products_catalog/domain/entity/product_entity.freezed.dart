@@ -24,12 +24,14 @@ class _$ProductEntityTearOff {
   _ProductEntity call(
       {int id = -1,
       String image = '',
+      String volume = '',
       String name = '',
       String price = '',
       int amount = 0}) {
     return _ProductEntity(
       id: id,
       image: image,
+      volume: volume,
       name: name,
       price: price,
       amount: amount,
@@ -48,6 +50,7 @@ const $ProductEntity = _$ProductEntityTearOff();
 mixin _$ProductEntity {
   int get id => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
+  String get volume => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get price => throw _privateConstructorUsedError;
   int get amount => throw _privateConstructorUsedError;
@@ -63,7 +66,13 @@ abstract class $ProductEntityCopyWith<$Res> {
   factory $ProductEntityCopyWith(
           ProductEntity value, $Res Function(ProductEntity) then) =
       _$ProductEntityCopyWithImpl<$Res>;
-  $Res call({int id, String image, String name, String price, int amount});
+  $Res call(
+      {int id,
+      String image,
+      String volume,
+      String name,
+      String price,
+      int amount});
 }
 
 /// @nodoc
@@ -79,6 +88,7 @@ class _$ProductEntityCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? image = freezed,
+    Object? volume = freezed,
     Object? name = freezed,
     Object? price = freezed,
     Object? amount = freezed,
@@ -91,6 +101,10 @@ class _$ProductEntityCopyWithImpl<$Res>
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
+              as String,
+      volume: volume == freezed
+          ? _value.volume
+          : volume // ignore: cast_nullable_to_non_nullable
               as String,
       name: name == freezed
           ? _value.name
@@ -115,7 +129,13 @@ abstract class _$ProductEntityCopyWith<$Res>
           _ProductEntity value, $Res Function(_ProductEntity) then) =
       __$ProductEntityCopyWithImpl<$Res>;
   @override
-  $Res call({int id, String image, String name, String price, int amount});
+  $Res call(
+      {int id,
+      String image,
+      String volume,
+      String name,
+      String price,
+      int amount});
 }
 
 /// @nodoc
@@ -133,6 +153,7 @@ class __$ProductEntityCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? image = freezed,
+    Object? volume = freezed,
     Object? name = freezed,
     Object? price = freezed,
     Object? amount = freezed,
@@ -145,6 +166,10 @@ class __$ProductEntityCopyWithImpl<$Res>
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
+              as String,
+      volume: volume == freezed
+          ? _value.volume
+          : volume // ignore: cast_nullable_to_non_nullable
               as String,
       name: name == freezed
           ? _value.name
@@ -168,6 +193,7 @@ class _$_ProductEntity implements _ProductEntity {
   const _$_ProductEntity(
       {this.id = -1,
       this.image = '',
+      this.volume = '',
       this.name = '',
       this.price = '',
       this.amount = 0});
@@ -183,6 +209,9 @@ class _$_ProductEntity implements _ProductEntity {
   final String image;
   @JsonKey(defaultValue: '')
   @override
+  final String volume;
+  @JsonKey(defaultValue: '')
+  @override
   final String name;
   @JsonKey(defaultValue: '')
   @override
@@ -193,7 +222,7 @@ class _$_ProductEntity implements _ProductEntity {
 
   @override
   String toString() {
-    return 'ProductEntity(id: $id, image: $image, name: $name, price: $price, amount: $amount)';
+    return 'ProductEntity(id: $id, image: $image, volume: $volume, name: $name, price: $price, amount: $amount)';
   }
 
   @override
@@ -204,6 +233,8 @@ class _$_ProductEntity implements _ProductEntity {
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.image, image) ||
                 const DeepCollectionEquality().equals(other.image, image)) &&
+            (identical(other.volume, volume) ||
+                const DeepCollectionEquality().equals(other.volume, volume)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.price, price) ||
@@ -217,6 +248,7 @@ class _$_ProductEntity implements _ProductEntity {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(image) ^
+      const DeepCollectionEquality().hash(volume) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(price) ^
       const DeepCollectionEquality().hash(amount);
@@ -236,6 +268,7 @@ abstract class _ProductEntity implements ProductEntity {
   const factory _ProductEntity(
       {int id,
       String image,
+      String volume,
       String name,
       String price,
       int amount}) = _$_ProductEntity;
@@ -247,6 +280,8 @@ abstract class _ProductEntity implements ProductEntity {
   int get id => throw _privateConstructorUsedError;
   @override
   String get image => throw _privateConstructorUsedError;
+  @override
+  String get volume => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override

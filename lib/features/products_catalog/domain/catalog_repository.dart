@@ -5,5 +5,9 @@ abstract class CatalogRepository {
     required int start,
     required int end,
   });
-  Future<int> getMaxLengthProducts();
+
+  Future<int> getMaxLengthProducts({
+    required int start,
+    required int end,
+  });
 }
