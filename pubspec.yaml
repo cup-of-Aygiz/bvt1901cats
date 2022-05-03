@@ -58,6 +58,7 @@ dependencies:
   wave: ^0.2.0
   like_button: ^2.0.4
   counter: ^0.2.2
+  yandex_mapkit: ^2.0.5
 
 dev_dependencies:
   flutter_test:
