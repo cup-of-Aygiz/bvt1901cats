@@ -313,7 +313,7 @@ abstract class AppLocalizations {
   /// No description provided for @prov_password.
   ///
   /// In ru, this message translates to:
-  /// **'Подтвердите пароль'**
+  /// **'Повторите пароль'**
   String get prov_password;
 
   /// No description provided for @save_changes.
