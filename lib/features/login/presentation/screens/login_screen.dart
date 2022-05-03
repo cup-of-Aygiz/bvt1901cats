@@ -3,7 +3,6 @@ import 'package:bvt1901_practice/features/registration/presentation/screen/regis
 import 'package:bvt1901_practice/uikit/app_bars/default_app_bar.dart';
 import 'package:bvt1901_practice/uikit/buttons/app_text_button.dart';
 import 'package:bvt1901_practice/uikit/text_fields/app_phone_field.dart';
-import 'package:bvt1901_practice/uikit/text_fields/app_text_field.dart';
 import 'package:bvt1901_practice/uikit/validators/app_validators.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +11,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../uikit/buttons/app_transparent_button.dart';
 import '../../../../uikit/spinkit/spinkit.dart';
+import '../../../../uikit/text_fields/app_password_field.dart';
 import '../../../registration/presentation/components/proggres_gradient.dart';
 import '../../../router/presentation/screen/router_screen.dart';
 import '../../domain/state/login_cubit.dart';
@@ -67,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       Container(
                         margin: EdgeInsets.symmetric(horizontal: 10.w),
-                        child: AppTextField(
+                        child: AppPasswordField(
                           labelText: locale.password,
                           name: 'password',
                           validator:

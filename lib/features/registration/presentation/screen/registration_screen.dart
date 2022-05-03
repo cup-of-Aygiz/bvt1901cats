@@ -1,4 +1,5 @@
 import 'package:bvt1901_practice/uikit/app_bars/default_app_bar.dart';
+import 'package:bvt1901_practice/uikit/text_fields/app_password_field.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -76,7 +77,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                 initialValue: state.personEntity.phone,
                                 name: 'phone',
                               ),
-                              AppTextField(
+                              AppPasswordField(
                                 labelText: locale.password,
                                 initialValue: state.personEntity.password,
                                 name: 'password',
@@ -87,15 +88,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                     }
                                   });
                                 },
-                                obscureText: true,
                                 validator: AppValidators.requiredPasswordField(
                                     context),
                               ),
-                              AppTextField(
+                              AppPasswordField(
                                 labelText: locale.second_password,
                                 initialValue: state.personEntity.password,
                                 name: 'password_prov',
-                                obscureText: true,
                                 onChanged: (String? str) {
                                   setState(() {
                                     if (str != null) {
