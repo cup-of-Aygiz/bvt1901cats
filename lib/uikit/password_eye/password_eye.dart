@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../gen/assets.gen.dart';
-import 'buttons/app_transparent_button.dart';
+import '../../gen/assets.gen.dart';
+import '../buttons/app_transparent_button.dart';
 
 class PasswordEye extends StatefulWidget {
   const PasswordEye({Key? key}) : super(key: key);
@@ -15,18 +16,15 @@ class _PasswordEyeState extends State<PasswordEye> {
 
   changeVisible() {
     setState(() {
-      if (visible) {
-        visible = false;
-      } else {
-        visible = true;
-      }
+      visible=!visible;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.red,
+    return SizedBox(
+      width: 30.h,
+      height: 30.h,
       child: AppTransparentButton(
         onTap: () {
           changeVisible();

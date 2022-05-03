@@ -54,9 +54,6 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_openEye.svg
   SvgGenImage get icOpenEye => const SvgGenImage('assets/icons/ic_openEye.svg');
 
-  /// File path: assets/icons/ic_ok.svg
-  SvgGenImage get icOk => const SvgGenImage('assets/icons/ic_ok.svg');
-
   /// File path: assets/icons/ic_person.svg
   SvgGenImage get icPerson => const SvgGenImage('assets/icons/ic_person.svg');
 
