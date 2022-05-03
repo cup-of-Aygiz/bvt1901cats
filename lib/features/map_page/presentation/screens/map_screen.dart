@@ -15,29 +15,26 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  Completer<YandexMapController> _completer = Completer();
-  String _hintText = "dj";
-  Point? _point=Point(longitude: 55.7520233, latitude: 37.5474616);
+  final Completer<YandexMapController> _completer = Completer();
+  String _hintText = "this is my try";
+  Point? _point = const Point(longitude: 55.7520233, latitude: 37.5474616);
 
-  void ChangeText(Point? point){
+  void changeText(Point? point) {
     setState(() {
-      _point=point;
-      _hintText="${_point!.latitude}, ${_point!.longitude}";
+      _point = point;
+      _hintText = "${_point!.latitude}, ${_point!.longitude}";
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    CameraPosition _moscow = const CameraPosition(
-        target: Point(longitude: 55.7520233, latitude: 37.5474616));
-
     return Scaffold(
       appBar: const DefaultAppBar(),
       body: Stack(children: [
         YandexMap(
           onMapCreated: _onMapCreated,
-          onMapTap: (Point? point){
-            ChangeText(point);
+          onMapTap: (Point? point) {
+            changeText(point);
           },
         ),
         Align(
@@ -53,7 +50,7 @@ class _MapScreenState extends State<MapScreen> {
             height: 200.h,
             color: Colors.red,
             child: FormBuilderTextField(
-              name: 'gj',
+              name: 'try',
               decoration: InputDecoration(
                 hintText: _hintText,
               ),
@@ -64,7 +61,11 @@ class _MapScreenState extends State<MapScreen> {
     );
   }
 
-  void _onMapCreated(YandexMapController controller) {
+  Future<void> _onMapCreated(YandexMapController controller) async {
     _completer.complete(controller);
+    await controller.moveCamera(
+      CameraUpdate.newCameraPosition(const CameraPosition(
+          target: Point(longitude: 37.617734, latitude: 55.751999))),
+    );
   }
 }

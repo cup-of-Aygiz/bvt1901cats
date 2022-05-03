@@ -1,4 +1,4 @@
-import 'package:bvt1901_practice/features/map_page/presentation/screens/map_screen.dart';
+import 'package:bvt1901_practice/features/adreses_page/presentation/screens/addresses_page.dart';
 import 'package:bvt1901_practice/features/person_data/presentation/screens/person_data_screen.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
@@ -59,7 +59,7 @@ class ProfileScreen extends StatelessWidget {
               icon: Assets.icons.icGeolocation.svg(width: 30.h, height: 30.h),
               text: locale.my_address,
               onTap: () {
-                router.pushScreen(context, const MapScreen());
+                router.pushScreen(context, const AddressesScreen());
               },
             ),
             ProfileButton(

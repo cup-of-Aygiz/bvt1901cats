@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AppTextField extends StatelessWidget {
   final String labelText;
   final String name;
+  final double? width;
   final bool readOnly;
   final bool obscureText;
   final String? initialValue;
@@ -26,6 +27,7 @@ class AppTextField extends StatelessWidget {
     this.initialValue,
     required this.name,
     this.validator,
+    this.width,
     this.controller,
     this.autoValidateMode = AutovalidateMode.onUserInteraction,
     this.padding,
@@ -39,24 +41,27 @@ class AppTextField extends StatelessWidget {
     return Padding(
       padding:
           padding ?? EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.h),
-      child: FormBuilderTextField(
-        obscureText: obscureText,
-        style: TextStyle(
-          color: readOnly ? colors.grey : colors.black,
+      child: SizedBox(
+        width: width,
+        child: FormBuilderTextField(
+          obscureText: obscureText,
+          style: TextStyle(
+            color: readOnly ? colors.grey : colors.black,
+          ),
+          decoration: InputDecoration(
+            border: inputBorder,
+            labelText: labelText,
+            errorMaxLines: 3,
+          ),
+          initialValue: initialValue,
+          name: name,
+          onChanged: onChanged,
+          onTap: onTap,
+          autovalidateMode: autoValidateMode,
+          validator: validator,
+          controller: controller,
+          readOnly: readOnly,
         ),
-        decoration: InputDecoration(
-          border: inputBorder,
-          labelText: labelText,
-          errorMaxLines: 3,
-        ),
-        initialValue: initialValue,
-        name: name,
-        onChanged: onChanged,
-        onTap: onTap,
-        autovalidateMode: autoValidateMode,
-        validator: validator,
-        controller: controller,
-        readOnly: readOnly,
       ),
     );
   }

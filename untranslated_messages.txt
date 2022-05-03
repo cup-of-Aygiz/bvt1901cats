@@ -34,6 +34,15 @@
     "old_password",
     "new_password",
     "prov_password",
-    "save_changes"
+    "save_changes",
+    "my_addresses",
+    "add_address",
+    "address",
+    "entrance",
+    "intercom",
+    "flat",
+    "floor",
+    "comment",
+    "choose_address"
   ]
 }
