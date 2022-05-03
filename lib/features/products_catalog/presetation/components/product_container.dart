@@ -33,17 +33,20 @@ class ProductContainer extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
               child: Column(
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(25.r),
-                        topRight: Radius.circular(25.r)),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(25.r),
+                          topRight: Radius.circular(25.r),),
+                      color: colors.productColor,
+                    ),
                     child: Stack(
                       children: [
                         FancyShimmerImage(
                           imageUrl: productEntity.image,
                           width: constraints.maxWidth,
                           height: constraints.maxWidth,
-                          boxFit: BoxFit.fill,
+                          boxFit: BoxFit.contain,
                         ),
                         Positioned(
                           top: 0.h,
@@ -54,7 +57,9 @@ class ProductContainer extends StatelessWidget {
                             decoration: BoxDecoration(
                               color: colors.white,
                               borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(25.r)),
+                                  bottomLeft: Radius.circular(25.r),
+                                  topRight:  Radius.circular(25.r),
+                              ),
                             ),
                             child: Padding(
                               padding: EdgeInsets.only(left: 2.w, top: 2.w),

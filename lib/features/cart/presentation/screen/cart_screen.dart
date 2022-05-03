@@ -1,3 +1,5 @@
+import 'package:bvt1901_practice/uikit/app_bars/default_app_bar.dart';
+import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
 
 class CartScreen extends StatelessWidget {
@@ -5,6 +7,10 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    final colors = context.appColors;
+    return Scaffold(
+      appBar: const DefaultAppBar(),
+      backgroundColor: colors.generalColor,
+    );
   }
 }
