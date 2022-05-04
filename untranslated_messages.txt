@@ -43,6 +43,10 @@
     "flat",
     "floor",
     "comment",
-    "choose_address"
+    "choose_address",
+    "next",
+    "delivery_address",
+    "load_address",
+    "choose"
   ]
 }

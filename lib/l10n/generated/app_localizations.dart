@@ -375,6 +375,30 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Редактировать адрес'**
   String get choose_address;
+
+  /// No description provided for @next.
+  ///
+  /// In ru, this message translates to:
+  /// **'Далее'**
+  String get next;
+
+  /// No description provided for @delivery_address.
+  ///
+  /// In ru, this message translates to:
+  /// **'Адрес доставки'**
+  String get delivery_address;
+
+  /// No description provided for @load_address.
+  ///
+  /// In ru, this message translates to:
+  /// **'Определяем ваш адрес'**
+  String get load_address;
+
+  /// No description provided for @choose.
+  ///
+  /// In ru, this message translates to:
+  /// **'Выбрать'**
+  String get choose;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

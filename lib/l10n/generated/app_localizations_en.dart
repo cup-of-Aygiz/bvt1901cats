@@ -147,4 +147,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get choose_address => 'Редактировать адрес';
+
+  @override
+  String get next => 'Далее';
+
+  @override
+  String get delivery_address => 'Адрес доставки';
+
+  @override
+  String get load_address => 'Определяем ваш адрес';
+
+  @override
+  String get choose => 'Выбрать';
 }

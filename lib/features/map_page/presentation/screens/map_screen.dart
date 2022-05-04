@@ -1,10 +1,15 @@
 import 'dart:async';
-
+import 'package:bvt1901_practice/app/presentation/theme/app_text_style.dart';
+import 'package:bvt1901_practice/features/adreses_page/presentation/screens/address_page.dart';
 import 'package:bvt1901_practice/gen/assets.gen.dart';
 import 'package:bvt1901_practice/uikit/app_bars/default_app_bar.dart';
+import 'package:bvt1901_practice/uikit/buttons/app_text_button.dart';
+import 'package:bvt1901_practice/uikit/text_fields/app_text_field.dart';
+import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:yandex_mapkit/yandex_mapkit.dart' as mapya;
+import 'package:yandex_geocoder/yandex_geocoder.dart';
 import 'package:yandex_mapkit/yandex_mapkit.dart';
 
 class MapScreen extends StatefulWidget {
@@ -16,25 +21,31 @@ class MapScreen extends StatefulWidget {
 
 class _MapScreenState extends State<MapScreen> {
   final Completer<YandexMapController> _completer = Completer();
-  String _hintText = "this is my try";
-  Point? _point = const Point(longitude: 55.7520233, latitude: 37.5474616);
+  String text = "Определяем ваш адрес";
+  final YandexGeocoder geocoder =
+      YandexGeocoder(apiKey: "6e95a308-6db4-4bf9-8dfe-a22740c21a94");
 
-  void changeText(Point? point) {
-    setState(() {
-      _point = point;
-      _hintText = "${_point!.latitude}, ${_point!.longitude}";
-    });
-  }
+  PointGeocode point = PointGeocode(longitude: 37.617734, latitude: 55.751999);
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
+    final locale = context.appLocale;
+    final double _width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: const DefaultAppBar(),
       body: Stack(children: [
         YandexMap(
           onMapCreated: _onMapCreated,
-          onMapTap: (Point? point) {
-            changeText(point);
+          onCameraPositionChanged: (CameraPosition cameraPosition,
+              CameraUpdateReason cameraUpdateReason, bool prov) {
+            setState(() {
+              PointGeocode _point = PointGeocode(
+                  longitude: cameraPosition.target.longitude,
+                  latitude: cameraPosition.target.latitude);
+              point = _point;
+            });
           },
         ),
         Align(
@@ -45,15 +56,60 @@ class _MapScreenState extends State<MapScreen> {
           ),
         ),
         Align(
-          alignment: Alignment.bottomCenter,
+          alignment: Alignment.bottomLeft,
           child: Container(
-            height: 200.h,
-            color: Colors.red,
-            child: FormBuilderTextField(
-              name: 'try',
-              decoration: InputDecoration(
-                hintText: _hintText,
-              ),
+            height: 300.h,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30.r),
+              color: colors.white,
+            ),
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(top: 20.h, bottom: 6.h),
+                  child: Text(
+                    locale.delivery_address,
+                    style: AppTextStyle.normalW700S16,
+                    maxLines: 10,
+                  ),
+                ),
+                AppTextField(hintText: text, name: 'address'),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
+                  child: SizedBox(
+                    width: _width,
+                    child: AppTextButton(
+                      buttonText: locale.choose,
+                      onPressed: () async {
+                        final GeocodeResponse geocodeFromPoint =
+                            await geocoder.getGeocode(GeocodeRequest(
+                          geocode: PointGeocode(
+                              latitude: point.latitude,
+                              longitude: point.longitude),
+                          lang: Lang.ru,
+                        ));
+
+                        setState(() {
+                          text = "${geocodeFromPoint.firstAddress?.formatted}";
+                        });
+                      },
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
+                  child: SizedBox(
+                    width: _width,
+                    child: AppTextButton(
+                      buttonText: locale.next,
+                      onPressed: () {
+                        context.appRouter
+                            .pushScreen(context, const AddressScreen());
+                      },
+                    ),
+                  ),
+                )
+              ],
             ),
           ),
         )
@@ -63,9 +119,7 @@ class _MapScreenState extends State<MapScreen> {
 
   Future<void> _onMapCreated(YandexMapController controller) async {
     _completer.complete(controller);
-    await controller.moveCamera(
-      CameraUpdate.newCameraPosition(const CameraPosition(
-          target: Point(longitude: 37.617734, latitude: 55.751999))),
-    );
+    controller.moveCamera(CameraUpdate.newCameraPosition(const CameraPosition(
+        target: mapya.Point(longitude: 37.617734, latitude: 55.751999), zoom: 17)));
   }
 }

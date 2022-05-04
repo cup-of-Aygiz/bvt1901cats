@@ -3,6 +3,7 @@ import 'package:bvt1901_practice/uikit/app_bars/default_app_bar.dart';
 import 'package:bvt1901_practice/uikit/buttons/app_text_button.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../components/addresses_list.dart';
 
@@ -22,9 +23,8 @@ class AddressesScreen extends StatelessWidget {
       body: Stack(
         children: [
           const AddressesList(),
-          Positioned(
-            bottom: 0,
-            left: 0,
+          Padding(
+            padding: EdgeInsets.only(top: 200.h),
             child: AppTextButton(
               buttonText: locale.add_address,
               onPressed: () {

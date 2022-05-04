@@ -4,8 +4,9 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTextField extends StatelessWidget {
-  final String labelText;
+  final String? labelText;
   final String name;
+  final String? hintText;
   final double? width;
   final bool readOnly;
   final bool obscureText;
@@ -20,7 +21,7 @@ class AppTextField extends StatelessWidget {
 
   const AppTextField({
     Key? key,
-    required this.labelText,
+    this.labelText,
     this.obscureText = false,
     this.onChanged,
     this.onTap,
@@ -33,6 +34,7 @@ class AppTextField extends StatelessWidget {
     this.padding,
     this.inputBorder = const OutlineInputBorder(),
     this.readOnly = false,
+    this.hintText,
   }) : super(key: key);
 
   @override
@@ -52,6 +54,7 @@ class AppTextField extends StatelessWidget {
             border: inputBorder,
             labelText: labelText,
             errorMaxLines: 3,
+            hintText: hintText,
           ),
           initialValue: initialValue,
           name: name,
