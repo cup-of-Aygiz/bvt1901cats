@@ -25,36 +25,42 @@ class FavoriteScreen extends StatelessWidget {
               titleText: locale.favorite_tab,
             ),
             backgroundColor: colors.generalColor,
-            body: NotificationListener<ScrollEndNotification>(
-              child: Stack(
-                children: [
-                  ListView(
+            body: state.loading && state.productList.isEmpty
+                ? const Center(
+                    child: AppSpinKit(),
+                  )
+                : Stack(
                     children: [
-                      Center(
-                        child: Wrap(
+                      NotificationListener<ScrollEndNotification>(
+                        child: ListView(
                           children: [
-                            for (var item in state.productList)
-                              ProductContainer(
-                                productEntity: item,
-                                isLiked: true,
+                            Center(
+                              child: Wrap(
+                                children: [
+                                  for (var item in state.productList)
+                                    ProductContainer(
+                                      productEntity: item,
+                                      isLiked: true,
+                                    ),
+                                ],
+                              ),
+                            ),
+                            if (state.loading && state.productList.isNotEmpty)
+                              Padding(
+                                padding: EdgeInsets.symmetric(vertical: 20.h),
+                                child: const AppSpinKit(),
                               ),
                           ],
                         ),
+                        onNotification: (scrollEnd) {
+                          context
+                              .read<FavoriteProductsCubit>()
+                              .loadFavoriteProducts();
+                          return true;
+                        },
                       ),
-                      if (state.loading && state.productList.isNotEmpty)
-                        Padding(
-                          padding: EdgeInsets.symmetric(vertical: 20.h),
-                          child: const AppSpinKit(),
-                        ),
                     ],
                   ),
-                ],
-              ),
-              onNotification: (scrollEnd) {
-                context.read<FavoriteProductsCubit>().loadFavoriteProducts();
-                return true;
-              },
-            ),
           );
         },
       ),
