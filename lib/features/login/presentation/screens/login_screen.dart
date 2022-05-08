@@ -3,7 +3,6 @@ import 'package:bvt1901_practice/features/registration/presentation/screen/regis
 import 'package:bvt1901_practice/uikit/app_bars/default_app_bar.dart';
 import 'package:bvt1901_practice/uikit/buttons/app_text_button.dart';
 import 'package:bvt1901_practice/uikit/text_fields/app_phone_field.dart';
-import 'package:bvt1901_practice/uikit/text_fields/app_text_field.dart';
 import 'package:bvt1901_practice/uikit/validators/app_validators.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +11,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../uikit/buttons/app_transparent_button.dart';
 import '../../../../uikit/spinkit/spinkit.dart';
+import '../../../../uikit/text_fields/app_password_field.dart';
 import '../../../registration/presentation/components/proggres_gradient.dart';
 import '../../../router/presentation/screen/router_screen.dart';
 import '../../domain/state/login_cubit.dart';
@@ -35,7 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     return BlocBuilder<LoginCubit, LoginState>(builder: (context, state) {
       return Scaffold(
-        backgroundColor: colors.generalColor,
+        backgroundColor: colors.white,
         appBar: DefaultAppBar(
           titleText: locale.login_title,
         ),
@@ -46,33 +46,32 @@ class _LoginScreenState extends State<LoginScreen> {
                   key: _formKey,
                   child: Column(
                     children: [
-                      Padding(
-                        padding: EdgeInsets.only(top: 32.h),
-                        child: Text(
-                          locale.project_name,
-                          style: AppTextStyle.normalW200S34,
-                          textAlign: TextAlign.center,
-                        ),
+                      SizedBox(height: 32.h),
+                      Text(
+                        locale.project_name,
+                        style: AppTextStyle.normalW200S34,
+                        textAlign: TextAlign.center,
                       ),
-                      SizedBox(
-                        height: 30.h,
-                      ),
+                      SizedBox(height: 32.h),
                       AppPhoneTextField(
                         labelText: locale.phone,
                         name: 'phone',
+                        autoValidateMode: AutovalidateMode.disabled,
                       ),
-                      SizedBox(
-                        height: 6.h,
+                      SizedBox(height: 4.h),
+                      Container(
+                        height: 60.h,
+                        margin: EdgeInsets.symmetric(horizontal: 10.w),
+                        child: AppPasswordField(
+                          labelText: locale.old_password,
+                          name: 'password',
+                          padding: EdgeInsets.symmetric(vertical: 2.h),
+                          autoValidateMode: AutovalidateMode.disabled,
+                          validator:
+                              AppValidators.requiredMinLengthField(context),
+                        ),
                       ),
-                      AppTextField(
-                        labelText: locale.password,
-                        name: 'password',
-                        validator:
-                            AppValidators.requiredMinLengthField(context),
-                      ),
-                      SizedBox(
-                        height: 40.h,
-                      ),
+                      SizedBox(height: 32.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -80,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             locale.no_registration_yet,
                             style: AppTextStyle.normalW400S12,
                           ),
-                          SizedBox(width: 6.w,),
+                          SizedBox(width: 4.w),
                           AppTransparentButton(
                             onTap: () {
                               router.pushScreen(
@@ -91,11 +90,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           )
                         ],
                       ),
-                      SizedBox(
-                        height: 150.h,
-                      ),
-                      SizedBox(
+                      SizedBox(height: 140.h),
+                      Container(
                         width: 300.w,
+                        margin: EdgeInsets.symmetric(horizontal: 10.w),
                         child: AppTextButton(
                           color: colors.purple,
                           buttonText: locale.login,
