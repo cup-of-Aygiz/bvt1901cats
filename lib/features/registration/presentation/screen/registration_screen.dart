@@ -38,6 +38,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         buildWhen: (p, c) => p != c,
         builder: (context, state) {
           return Scaffold(
+            backgroundColor: colors.generalColor,
             appBar: DefaultAppBar(
               titleText: locale.registration,
             ),
@@ -49,8 +50,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       key: _formKey,
                       child: Stack(
                         children: [
-                          ListView(
-                            padding: EdgeInsets.symmetric(horizontal: 10.w),
+                          Column(
                             children: [
                               SizedBox(height: 20.h),
                               AppTextField(
@@ -109,9 +109,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                   }
                                   return null;
                                 },
-                              ),
-                              SizedBox(
-                                height: 166.h,
                               ),
                             ],
                           ),

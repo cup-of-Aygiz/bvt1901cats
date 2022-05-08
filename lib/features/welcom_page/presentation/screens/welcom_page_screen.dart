@@ -54,7 +54,7 @@ class WelcomePageScreen extends StatelessWidget {
           ),
         ],
       ),
-      backgroundColor: colors.white,
+      backgroundColor: colors.generalColor,
     );
   }
 }

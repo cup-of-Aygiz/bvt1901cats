@@ -1,6 +1,7 @@
 import 'package:bvt1901_practice/uikit/buttons/app_text_button.dart';
 import 'package:bvt1901_practice/uikit/app_bars/default_app_bar.dart';
 import 'package:bvt1901_practice/uikit/text_fields/app_text_field.dart';
+import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -11,12 +12,14 @@ class PhoneVerification extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
 
     void verificationOnPressed(){
       Navigator.pop(context);
     }
 
     return  Scaffold(
+      backgroundColor: colors.generalColor,
       appBar: const DefaultAppBar(titleText: 'Подстверждение номера',),
       body: ListView(
         children: [

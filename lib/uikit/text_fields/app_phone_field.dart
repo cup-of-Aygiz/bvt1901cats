@@ -35,7 +35,7 @@ class AppPhoneTextField extends StatelessWidget {
     final locale = context.appLocale;
 
     return Padding(
-      padding: padding ?? EdgeInsets.symmetric(vertical: 10.h),
+      padding: padding ?? EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.h),
       child: FormBuilderTextField(
         initialValue: initialValue,
         controller: textEditingController,

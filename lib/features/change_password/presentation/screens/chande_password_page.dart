@@ -27,8 +27,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   @override
   Widget build(BuildContext context) {
     final locale = context.appLocale;
+    final colors = context.appColors;
 
     return Scaffold(
+      backgroundColor: colors.generalColor,
       appBar: DefaultAppBar(
         titleText: locale.change_password,
       ),

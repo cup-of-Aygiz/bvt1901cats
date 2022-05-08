@@ -18,9 +18,9 @@ class SliderItem extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 6.w),
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
+        color: colors.productColor,
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
-          width: 2.w,
           color: colors.darkOcean,
           style: BorderStyle.solid,
         ),
