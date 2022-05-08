@@ -10,15 +10,19 @@ import '../../domain/entity/product_entity.dart';
 
 class ProductContainer extends StatelessWidget {
   final ProductEntity productEntity;
+  final bool isLiked;
 
   const ProductContainer({
     Key? key,
     required this.productEntity,
+    this.isLiked = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery
+        .of(context)
+        .size;
     final colors = context.appColors;
     return SizedBox(
       width: size.width / 2 - 10,
@@ -36,8 +40,8 @@ class ProductContainer extends StatelessWidget {
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(25.r),
-                          topRight: Radius.circular(25.r),),
+                        topLeft: Radius.circular(25.r),
+                        topRight: Radius.circular(25.r),),
                       color: colors.productColor,
                     ),
                     child: Stack(
@@ -57,13 +61,14 @@ class ProductContainer extends StatelessWidget {
                             decoration: BoxDecoration(
                               color: colors.white,
                               borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(25.r),
-                                  topRight:  Radius.circular(25.r),
+                                bottomLeft: Radius.circular(25.r),
+                                topRight: Radius.circular(25.r),
                               ),
                             ),
                             child: Padding(
                               padding: EdgeInsets.only(left: 2.w, top: 2.w),
                               child: LikeButton(
+                                isLiked: isLiked,
                                 size: 26.h,
                               ),
                             ),
@@ -102,7 +107,7 @@ class ProductContainer extends StatelessWidget {
                             decoration: BoxDecoration(
                               color: colors.purple,
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(10.r)),
+                              BorderRadius.all(Radius.circular(10.r)),
                             ),
                             child: TextButton(
                               onPressed: () {},
