@@ -28,7 +28,11 @@ class AddressesScreen extends StatelessWidget {
             child: AppTextButton(
               buttonText: locale.add_address,
               onPressed: () {
-                context.appRouter.pushScreen(context, const MapScreen());
+                context.appRouter.pushScreen(
+                  context,
+                  const MapScreen(),
+                  rootNavigator: true,
+                );
               },
             ),
           )

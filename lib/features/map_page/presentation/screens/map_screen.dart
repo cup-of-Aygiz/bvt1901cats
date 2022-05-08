@@ -22,6 +22,9 @@ class MapScreen extends StatefulWidget {
 class _MapScreenState extends State<MapScreen> {
   final Completer<YandexMapController> _completer = Completer();
   String text = "Определяем ваш адрес";
+
+  /// переменная отвечает за показывать снизу окно с выбором или нет
+  bool isOpenAddress = true;
   final YandexGeocoder geocoder =
       YandexGeocoder(apiKey: "6e95a308-6db4-4bf9-8dfe-a22740c21a94");
 
@@ -55,61 +58,84 @@ class _MapScreenState extends State<MapScreen> {
             height: 30.h,
           ),
         ),
-        Align(
-          alignment: Alignment.bottomLeft,
-          child: Container(
-            height: 300.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30.r),
-              color: colors.white,
-            ),
-            child: Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(top: 20.h, bottom: 6.h),
-                  child: Text(
-                    locale.delivery_address,
-                    style: AppTextStyle.normalW700S16,
-                    maxLines: 10,
-                  ),
+        GestureDetector(
+          onTap: (){
+            setState(() {
+              isOpenAddress=!isOpenAddress;
+            });
+          },
+          child: Align(
+            alignment: Alignment.bottomLeft,
+            child: AnimatedCrossFade(
+              crossFadeState: isOpenAddress
+                  ? CrossFadeState.showSecond
+                  : CrossFadeState.showFirst,
+              firstChild: Container(
+                height: 60.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30.r),
+                  color: colors.white,
                 ),
-                AppTextField(hintText: text, name: 'address'),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
-                  child: SizedBox(
-                    width: _width,
-                    child: AppTextButton(
-                      buttonText: locale.choose,
-                      onPressed: () async {
-                        final GeocodeResponse geocodeFromPoint =
-                            await geocoder.getGeocode(GeocodeRequest(
-                          geocode: PointGeocode(
-                              latitude: point.latitude,
-                              longitude: point.longitude),
-                          lang: Lang.ru,
-                        ));
+              ),
+              duration: const Duration(milliseconds: 300),
+              secondChild: Container(
+                height: 300.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30.r),
+                  color: colors.white,
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(top: 20.h, bottom: 6.h),
+                      child: Text(
+                        locale.delivery_address,
+                        style: AppTextStyle.normalW700S16,
+                        maxLines: 10,
+                      ),
+                    ),
+                    AppTextField(hintText: text, name: 'address'),
+                    Padding(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
+                      child: SizedBox(
+                        width: _width,
+                        child: AppTextButton(
+                          buttonText: locale.choose,
+                          onPressed: () async {
+                            final GeocodeResponse geocodeFromPoint =
+                                await geocoder.getGeocode(GeocodeRequest(
+                              geocode: PointGeocode(
+                                  latitude: point.latitude,
+                                  longitude: point.longitude),
+                              lang: Lang.ru,
+                            ));
 
-                        setState(() {
-                          text = "${geocodeFromPoint.firstAddress?.formatted}";
-                        });
-                      },
+                            setState(() {
+                              text =
+                                  "${geocodeFromPoint.firstAddress?.formatted}";
+                            });
+                          },
+                        ),
+                      ),
                     ),
-                  ),
+                    Padding(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
+                      child: SizedBox(
+                        width: _width,
+                        child: AppTextButton(
+                          buttonText: locale.next,
+                          onPressed: () {
+                            context.appRouter
+                                .pushScreen(context, const AddressScreen());
+                          },
+                        ),
+                      ),
+                    )
+                  ],
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
-                  child: SizedBox(
-                    width: _width,
-                    child: AppTextButton(
-                      buttonText: locale.next,
-                      onPressed: () {
-                        context.appRouter
-                            .pushScreen(context, const AddressScreen());
-                      },
-                    ),
-                  ),
-                )
-              ],
+              ),
             ),
           ),
         )
@@ -120,6 +146,7 @@ class _MapScreenState extends State<MapScreen> {
   Future<void> _onMapCreated(YandexMapController controller) async {
     _completer.complete(controller);
     controller.moveCamera(CameraUpdate.newCameraPosition(const CameraPosition(
-        target: mapya.Point(longitude: 37.617734, latitude: 55.751999), zoom: 17)));
+        target: mapya.Point(longitude: 37.617734, latitude: 55.751999),
+        zoom: 17)));
   }
 }
