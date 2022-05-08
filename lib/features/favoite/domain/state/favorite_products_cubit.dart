@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bvt1901_practice/features/favoite/domain/state/favorite_products_state.dart';
 import 'package:bvt1901_practice/features/favoite/mock_repository/favorite_products_mock_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,7 +13,6 @@ class FavoriteProductsCubit extends Cubit<FavoriteProductState> {
           ),
         );
 
-  //FavoriteProductsMockRepository get _favoriteProductsMockRepository => getIt();
   final FavoriteProductsMockRepository _favoriteProductsMockRepository =  FavoriteProductsMockRepository();
 
   void init() async {
@@ -33,9 +30,6 @@ class FavoriteProductsCubit extends Cubit<FavoriteProductState> {
         end: state.end,
       );
 
-      log("Начало емита");
-      print({state.start, state.end, '214214'});
-
       emit(state.copyWith(
         productList: state.productList + listProducts,
         loading: false,
@@ -52,24 +46,15 @@ class FavoriteProductsCubit extends Cubit<FavoriteProductState> {
   Future<void> getMaxLength() async {
     try {
       emit(state.copyWith(loading: true));
-
-
-      log("Начало получения макса");
-
       int maxLength =
           await _favoriteProductsMockRepository.getMaxLengthProducts(
         start: 1,
         end: 1,
       );
-      log("Получили макс");
-
       emit(state.copyWith(
         maxLength: maxLength,
         loading: false,
       ));
-
-      log("заемитили");
-
     } on ErrorModel catch (e) {
       emit(state.copyWith(loading: false, error: e));
     }
