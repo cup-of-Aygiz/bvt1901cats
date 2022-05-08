@@ -10,8 +10,32 @@ import '../../../home/presentation/components/slider_item.dart';
 import '../../domain/state/catalog_cubit.dart';
 import '../../domain/state/catalog_state.dart';
 
-class ProductList extends StatelessWidget {
+class ProductList extends StatefulWidget {
   const ProductList({Key? key}) : super(key: key);
+
+  @override
+  State<ProductList> createState() => _ProductListState();
+}
+
+class _ProductListState extends State<ProductList>
+    with AutomaticKeepAliveClientMixin {
+  late ScrollController _controller;
+  bool _isLoadMoreRunning = false;
+
+  @override
+  bool get wantKeepAlive => true;
+
+  @override
+  initState() {
+    super.initState();
+    _controller = ScrollController()..addListener(_loadMore);
+  }
+
+  @override
+  void dispose() {
+    _controller.removeListener(_loadMore);
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,40 +46,47 @@ class ProductList extends StatelessWidget {
             ? const Center(
                 child: AppSpinKit(),
               )
-            : NotificationListener<ScrollEndNotification>(
-                child: ListView(
-                  children: [
-                    CarouselSlider(
-                      options: CarouselOptions(height: 120.h),
-                      items: [
-                        SliderItem(text: locale.free_delivery),
-                        SliderItem(text: locale.free_delivery),
-                        SliderItem(text: locale.free_delivery),
+            : ListView(
+                controller: _controller,
+                children: [
+                  CarouselSlider(
+                    options: CarouselOptions(height: 120.h),
+                    items: [
+                      SliderItem(text: locale.free_delivery),
+                      SliderItem(text: locale.free_delivery),
+                      SliderItem(text: locale.free_delivery),
+                    ],
+                  ),
+                  Center(
+                    child: Wrap(
+                      children: [
+                        for (var item in state.productList)
+                          ProductContainer(
+                            productEntity: item,
+                          ),
                       ],
                     ),
-                    Center(
-                      child: Wrap(
-                        children: [
-                          for (var item in state.productList)
-                            ProductContainer(
-                              productEntity: item,
-                            ),
-                        ],
-                      ),
+                  ),
+                  if (state.loading && state.productList.isNotEmpty)
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 20.h),
+                      child: const AppSpinKit(),
                     ),
-                    if (state.loading && state.productList.isNotEmpty)
-                      Padding(
-                        padding: EdgeInsets.symmetric(vertical: 20.h),
-                        child: const AppSpinKit(),
-                      ),
-                  ],
-                ),
-                onNotification: (scrollEnd) {
-                  context.read<CatalogCubit>().loadProducts();
-                  return true;
-                },
+                ],
               );
       },
     );
+  }
+
+  void _loadMore() async {
+    if (_controller.position.extentAfter < 300 && !_isLoadMoreRunning) {
+      setState(() {
+        _isLoadMoreRunning = true; // Display a progress indicator at the bottom
+      });
+      context.read<CatalogCubit>().loadProducts();
+      setState(() {
+        _isLoadMoreRunning = false;
+      });
+    }
   }
 }

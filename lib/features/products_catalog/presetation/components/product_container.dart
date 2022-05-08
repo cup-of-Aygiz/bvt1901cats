@@ -5,6 +5,7 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:like_button/like_button.dart';
+import '../../../../gen/assets.gen.dart';
 import '../../../../uikit/buttons/app_transparent_button.dart';
 import '../../domain/entity/product_entity.dart';
 
@@ -44,6 +45,7 @@ class ProductContainer extends StatelessWidget {
                           width: constraints.maxWidth,
                           height: constraints.maxWidth,
                           boxFit: BoxFit.fill,
+                          errorWidget: Assets.images.logotip.image(),
                         ),
                         Positioned(
                           top: 0.h,
