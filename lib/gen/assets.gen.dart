@@ -22,6 +22,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_bottle.svg
   SvgGenImage get icBottle => const SvgGenImage('assets/icons/ic_bottle.svg');
 
+  /// File path: assets/icons/ic_closeEye.svg
+  SvgGenImage get icCloseEye =>
+      const SvgGenImage('assets/icons/ic_closeEye.svg');
+
   /// File path: assets/icons/ic_freeDelivery.svg
   SvgGenImage get icFreeDelivery =>
       const SvgGenImage('assets/icons/ic_freeDelivery.svg');
@@ -46,6 +50,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/ic_ok.svg
   SvgGenImage get icOk => const SvgGenImage('assets/icons/ic_ok.svg');
+
+  /// File path: assets/icons/ic_openEye.svg
+  SvgGenImage get icOpenEye => const SvgGenImage('assets/icons/ic_openEye.svg');
 
   /// File path: assets/icons/ic_person.svg
   SvgGenImage get icPerson => const SvgGenImage('assets/icons/ic_person.svg');

@@ -7,7 +7,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../uikit/buttons/app_text_button.dart';
-import '../../../../uikit/text_fields/app_text_field.dart';
+import '../../../../uikit/text_fields/app_password_field.dart';
 import '../../../../uikit/validators/app_validators.dart';
 import '../../domain/state/change_password_cubit.dart';
 
@@ -47,10 +47,9 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16.w),
-                    child: AppTextField(
+                    child: AppPasswordField(
                       labelText: locale.old_password,
                       name: 'old_password',
-                      obscureText: true,
                       inputBorder: null,
                       padding: EdgeInsets.symmetric(vertical: 2.h),
                       autoValidateMode: AutovalidateMode.disabled,
@@ -59,11 +58,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16.w),
-                    child: AppTextField(
+                    child: AppPasswordField(
                       labelText: locale.new_password,
                       name: 'new_password',
                       inputBorder: null,
-                      obscureText: true,
                       autoValidateMode: AutovalidateMode.disabled,
                       validator: AppValidators.requiredPasswordField(context),
                       padding: EdgeInsets.symmetric(vertical: 2.h),
@@ -80,11 +78,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16.w),
-                    child: AppTextField(
+                    child: AppPasswordField(
                       labelText: locale.prov_password,
                       name: 'prov_password',
                       inputBorder: null,
-                      obscureText: true,
                       padding: EdgeInsets.symmetric(vertical: 2.h),
                       onChanged: (String? str) {
                         setState(
@@ -114,7 +111,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                         if (_formKey.currentState?.validate() ?? false) {}
                       },
                     ),
-                  )
+                  ),
                 ],
               ),
             );
