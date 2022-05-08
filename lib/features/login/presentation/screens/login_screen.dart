@@ -35,7 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     return BlocBuilder<LoginCubit, LoginState>(builder: (context, state) {
       return Scaffold(
-        backgroundColor: colors.white,
+        backgroundColor: colors.generalColor,
         appBar: DefaultAppBar(
           titleText: locale.login_title,
         ),
@@ -44,38 +44,34 @@ class _LoginScreenState extends State<LoginScreen> {
                 length: 2,
                 child: FormBuilder(
                   key: _formKey,
-                  child: ListView(
+                  child: Column(
                     children: [
                       Padding(
                         padding: EdgeInsets.only(top: 32.h),
-                      ),
-                      Text(
-                        locale.project_name,
-                        style: AppTextStyle.normalW200S34,
-                        textAlign: TextAlign.center,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 32.h),
-                      ),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 10.w),
-                        child: AppPhoneTextField(
-                            labelText: locale.phone, name: 'phone'),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 6.h),
-                      ),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 10.w),
-                        child: AppTextField(
-                          labelText: locale.password,
-                          name: 'password',
-                          validator:
-                              AppValidators.requiredMinLengthField(context),
+                        child: Text(
+                          locale.project_name,
+                          style: AppTextStyle.normalW200S34,
+                          textAlign: TextAlign.center,
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 40.h),
+                      SizedBox(
+                        height: 30.h,
+                      ),
+                      AppPhoneTextField(
+                        labelText: locale.phone,
+                        name: 'phone',
+                      ),
+                      SizedBox(
+                        height: 6.h,
+                      ),
+                      AppTextField(
+                        labelText: locale.password,
+                        name: 'password',
+                        validator:
+                            AppValidators.requiredMinLengthField(context),
+                      ),
+                      SizedBox(
+                        height: 40.h,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -84,6 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             locale.no_registration_yet,
                             style: AppTextStyle.normalW400S12,
                           ),
+                          SizedBox(width: 6.w,),
                           AppTransparentButton(
                             onTap: () {
                               router.pushScreen(
@@ -94,11 +91,11 @@ class _LoginScreenState extends State<LoginScreen> {
                           )
                         ],
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 150.h),
+                      SizedBox(
+                        height: 150.h,
                       ),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 10.w),
+                      SizedBox(
+                        width: 300.w,
                         child: AppTextButton(
                           color: colors.purple,
                           buttonText: locale.login,

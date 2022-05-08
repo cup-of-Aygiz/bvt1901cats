@@ -1,4 +1,5 @@
 import 'package:bvt1901_practice/uikit/app_bars/default_app_bar.dart';
+import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -6,6 +7,10 @@ class ProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(appBar: DefaultAppBar(),);
+    final colors = context.appColors;
+    return Scaffold(
+      appBar: const DefaultAppBar(),
+      backgroundColor: colors.generalColor,
+    );
   }
 }

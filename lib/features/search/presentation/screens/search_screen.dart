@@ -12,6 +12,7 @@ class SearchScreen extends StatelessWidget {
     final colors = context.appColors;
     final locale = context.appLocale;
     return Scaffold(
+      backgroundColor: colors.generalColor,
       appBar: const DefaultAppBar(),
       body: ListView(
         children: [
@@ -35,10 +36,10 @@ class SearchScreen extends StatelessWidget {
                 ),
                 width: 290.w,
                 height: 46.h,
-                margin: EdgeInsets.only(top: 20.h,left: 14.w),
+                margin: EdgeInsets.only(top: 20.h, left: 14.w),
               ),
               Container(
-                margin: EdgeInsets.only(left: 10.w,top: 20.h),
+                margin: EdgeInsets.only(left: 10.w, top: 20.h),
                 width: 46.h,
                 height: 46.h,
                 decoration: BoxDecoration(
