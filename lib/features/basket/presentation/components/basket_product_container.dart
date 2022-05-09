@@ -8,7 +8,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../gen/assets.gen.dart';
 import '../../../../uikit/buttons/app_transparent_button.dart';
 import '../../../product_page/presentation/screens/product_screen.dart';
-import 'package:counter/counter.dart';
 
 class BasketProductContainer extends StatelessWidget {
   final ProductEntity productEntity;
@@ -56,19 +55,49 @@ class BasketProductContainer extends StatelessWidget {
                         maxLines: 3,
                         style: AppTextStyle.normalW700S16,
                       ),
-                      Counter(
-                        min: 0,
-                        max: 10,
-                        bound: 1,
-                        step: 1,
-                        onValueChanged: (num){
-                          if(num>1){
-                            //productEntity.amount=num;
-                          }
-                          else{
-                            //окно подтверждения удаления
-                          }
-                        },
+                      Row(
+                        children: [
+                          SizedBox(
+                            height: 30.h,
+                            width: 30.w,
+                            child: OutlinedButton(
+                              style: ButtonStyle(
+                                padding: MaterialStateProperty.all(
+                                    EdgeInsets.zero),
+                              ),
+                              onPressed: () {},
+
+                              ///минус
+                              child: const Icon(
+                                Icons.remove,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            width: 50.w,
+                            alignment: Alignment.center,
+                            child: Text(
+                              '${productEntity.amount}',
+                              style: AppTextStyle.normalW700S16
+                            ),
+                          ),
+                          SizedBox(
+                            height: 30.h,
+                            width: 30.h,
+                            child: OutlinedButton(
+                              style: ButtonStyle(
+                                padding: MaterialStateProperty.all(
+                                    EdgeInsets.zero),
+                              ),
+                              onPressed: () {},
+
+                              ///плюс
+                              child: const Icon(
+                                Icons.add,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
