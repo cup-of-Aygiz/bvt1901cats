@@ -5,8 +5,12 @@ import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'addresses_page.dart';
+
 class AddressScreen extends StatelessWidget {
-  const AddressScreen({Key? key}) : super(key: key);
+
+  final String address;
+  const AddressScreen({Key? key, required this.address}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +27,14 @@ class AddressScreen extends StatelessWidget {
         children: [
           AppTextField(
             labelText: locale.address,
+            readOnly: true,
             name: "address",
+            initialValue: address,
+            maxLines: 3,
             padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 6.w),
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               AppTextField(
                 labelText: locale.entrance,
@@ -43,6 +51,7 @@ class AddressScreen extends StatelessWidget {
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               AppTextField(
                 labelText: locale.flat,
@@ -69,7 +78,9 @@ class AddressScreen extends StatelessWidget {
               width: _width,
               child: AppTextButton(
                 buttonText: locale.save_changes,
-                onPressed: () {},
+                onPressed: () {
+                  context.appRouter.pushScreen(context, const AddressesScreen());
+                },
               ),
             ),
           )

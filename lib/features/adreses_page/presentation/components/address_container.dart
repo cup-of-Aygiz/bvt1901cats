@@ -1,5 +1,4 @@
 import 'package:bvt1901_practice/app/presentation/theme/app_text_style.dart';
-import 'package:bvt1901_practice/features/adreses_page/presentation/screens/address_page.dart';
 import 'package:bvt1901_practice/uikit/buttons/app_transparent_button.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
@@ -15,14 +14,14 @@ class AddressContainer extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 10.h),
       child: AppTransparentButton(
         onTap: () {
-          context.appRouter.pushScreen(context, const AddressScreen());
+          //context.appRouter.pushScreen(context, const AddressScreen());
         },
         child: Container(
           decoration: BoxDecoration(
-            color: colors.grey,
+            color: colors.white,
             borderRadius: BorderRadius.circular(10.r),
           ),
-          height: 50.h,
+          height: 70.h,
           child: Row(
             children: [
               SizedBox(

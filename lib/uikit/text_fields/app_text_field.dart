@@ -18,6 +18,7 @@ class AppTextField extends StatelessWidget {
   final AutovalidateMode autoValidateMode;
   final EdgeInsets? padding;
   final InputBorder? inputBorder;
+  final int? maxLines;
 
   const AppTextField({
     Key? key,
@@ -35,6 +36,7 @@ class AppTextField extends StatelessWidget {
     this.inputBorder = const OutlineInputBorder(),
     this.readOnly = false,
     this.hintText,
+    this.maxLines,
   }) : super(key: key);
 
   @override
@@ -50,6 +52,7 @@ class AppTextField extends StatelessWidget {
           style: TextStyle(
             color: readOnly ? colors.grey : colors.black,
           ),
+          maxLines: maxLines ?? 1,
           decoration: InputDecoration(
             border: inputBorder,
             labelText: labelText,

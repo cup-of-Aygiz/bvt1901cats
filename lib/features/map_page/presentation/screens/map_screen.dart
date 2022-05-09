@@ -59,9 +59,9 @@ class _MapScreenState extends State<MapScreen> {
           ),
         ),
         GestureDetector(
-          onTap: (){
+          onTap: () {
             setState(() {
-              isOpenAddress=!isOpenAddress;
+              isOpenAddress = !isOpenAddress;
             });
           },
           child: Align(
@@ -79,7 +79,7 @@ class _MapScreenState extends State<MapScreen> {
               ),
               duration: const Duration(milliseconds: 300),
               secondChild: Container(
-                height: 300.h,
+                height: 200.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30.r),
                   color: colors.white,
@@ -87,17 +87,22 @@ class _MapScreenState extends State<MapScreen> {
                 child: Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(top: 20.h, bottom: 6.h),
+                      padding: EdgeInsets.only(top: 6.h, bottom: 2.h),
                       child: Text(
                         locale.delivery_address,
                         style: AppTextStyle.normalW700S16,
                         maxLines: 10,
                       ),
                     ),
-                    AppTextField(hintText: text, name: 'address'),
+                    AppTextField(
+                      hintText: text,
+                      name: 'address',
+                      readOnly: true,
+                      maxLines: 3,
+                    ),
                     Padding(
                       padding:
-                          EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
+                          EdgeInsets.symmetric(vertical: 2.h, horizontal: 16.w),
                       child: SizedBox(
                         width: _width,
                         child: AppTextButton(
@@ -115,24 +120,14 @@ class _MapScreenState extends State<MapScreen> {
                               text =
                                   "${geocodeFromPoint.firstAddress?.formatted}";
                             });
+
+                            await Future.delayed(const Duration(seconds: 1));
+                            context.appRouter
+                                .pushScreen(context, AddressScreen(address: text,));
                           },
                         ),
                       ),
                     ),
-                    Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
-                      child: SizedBox(
-                        width: _width,
-                        child: AppTextButton(
-                          buttonText: locale.next,
-                          onPressed: () {
-                            context.appRouter
-                                .pushScreen(context, const AddressScreen());
-                          },
-                        ),
-                      ),
-                    )
                   ],
                 ),
               ),

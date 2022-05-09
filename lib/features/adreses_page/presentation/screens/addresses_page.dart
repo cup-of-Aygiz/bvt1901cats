@@ -23,17 +23,21 @@ class AddressesScreen extends StatelessWidget {
       body: Stack(
         children: [
           const AddressesList(),
-          Padding(
-            padding: EdgeInsets.only(top: 200.h),
-            child: AppTextButton(
-              buttonText: locale.add_address,
-              onPressed: () {
-                context.appRouter.pushScreen(
-                  context,
-                  const MapScreen(),
-                  rootNavigator: true,
-                );
-              },
+          Positioned(
+            top: 470,
+            width: 390,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 10.h),
+              child: AppTextButton(
+                buttonText: locale.add_address,
+                onPressed: () {
+                  context.appRouter.pushScreen(
+                    context,
+                    const MapScreen(),
+                    rootNavigator: true,
+                  );
+                },
+              ),
             ),
           )
         ],

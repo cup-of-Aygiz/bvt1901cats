@@ -119,7 +119,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get prov_password => 'Повторите пароль';
 
   @override
-  String get save_changes => 'Сохранить изменения';
+  String get save_changes => 'Сохранить';
 
   @override
   String get my_addresses => 'Мои адреса';

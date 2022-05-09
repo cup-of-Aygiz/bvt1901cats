@@ -319,7 +319,7 @@ abstract class AppLocalizations {
   /// No description provided for @save_changes.
   ///
   /// In ru, this message translates to:
-  /// **'Сохранить изменения'**
+  /// **'Сохранить'**
   String get save_changes;
 
   /// No description provided for @my_addresses.
