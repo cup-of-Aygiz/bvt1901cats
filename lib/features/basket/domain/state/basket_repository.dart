@@ -11,4 +11,6 @@ abstract class BasketRepository {
     required int start,
     required int end,
   });
+
+  Future<double> getTotalPrice();
 }

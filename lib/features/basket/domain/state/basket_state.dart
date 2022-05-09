@@ -18,6 +18,7 @@ class BasketState with _$BasketState{
     @Default(0) int start,
     @Default(10) int end,
     @Default(20) int maxLength,
+    @Default(0) double totalPrice,
 
 })=_BasketState;
 

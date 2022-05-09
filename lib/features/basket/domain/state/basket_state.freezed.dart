@@ -27,7 +27,8 @@ class _$BasketStateTearOff {
       List<ProductEntity> productList = const [],
       int start = 0,
       int end = 10,
-      int maxLength = 20}) {
+      int maxLength = 20,
+      double totalPrice = 0}) {
     return _BasketState(
       loading: loading,
       error: error,
@@ -35,6 +36,7 @@ class _$BasketStateTearOff {
       start: start,
       end: end,
       maxLength: maxLength,
+      totalPrice: totalPrice,
     );
   }
 
@@ -54,6 +56,7 @@ mixin _$BasketState {
   int get start => throw _privateConstructorUsedError;
   int get end => throw _privateConstructorUsedError;
   int get maxLength => throw _privateConstructorUsedError;
+  double get totalPrice => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -72,7 +75,8 @@ abstract class $BasketStateCopyWith<$Res> {
       List<ProductEntity> productList,
       int start,
       int end,
-      int maxLength});
+      int maxLength,
+      double totalPrice});
 
   $ErrorModelCopyWith<$Res>? get error;
 }
@@ -93,6 +97,7 @@ class _$BasketStateCopyWithImpl<$Res> implements $BasketStateCopyWith<$Res> {
     Object? start = freezed,
     Object? end = freezed,
     Object? maxLength = freezed,
+    Object? totalPrice = freezed,
   }) {
     return _then(_value.copyWith(
       loading: loading == freezed
@@ -119,6 +124,10 @@ class _$BasketStateCopyWithImpl<$Res> implements $BasketStateCopyWith<$Res> {
           ? _value.maxLength
           : maxLength // ignore: cast_nullable_to_non_nullable
               as int,
+      totalPrice: totalPrice == freezed
+          ? _value.totalPrice
+          : totalPrice // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 
@@ -147,7 +156,8 @@ abstract class _$BasketStateCopyWith<$Res>
       List<ProductEntity> productList,
       int start,
       int end,
-      int maxLength});
+      int maxLength,
+      double totalPrice});
 
   @override
   $ErrorModelCopyWith<$Res>? get error;
@@ -171,6 +181,7 @@ class __$BasketStateCopyWithImpl<$Res> extends _$BasketStateCopyWithImpl<$Res>
     Object? start = freezed,
     Object? end = freezed,
     Object? maxLength = freezed,
+    Object? totalPrice = freezed,
   }) {
     return _then(_BasketState(
       loading: loading == freezed
@@ -197,6 +208,10 @@ class __$BasketStateCopyWithImpl<$Res> extends _$BasketStateCopyWithImpl<$Res>
           ? _value.maxLength
           : maxLength // ignore: cast_nullable_to_non_nullable
               as int,
+      totalPrice: totalPrice == freezed
+          ? _value.totalPrice
+          : totalPrice // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -210,7 +225,8 @@ class _$_BasketState implements _BasketState {
       this.productList = const [],
       this.start = 0,
       this.end = 10,
-      this.maxLength = 20});
+      this.maxLength = 20,
+      this.totalPrice = 0});
 
   factory _$_BasketState.fromJson(Map<String, dynamic> json) =>
       _$$_BasketStateFromJson(json);
@@ -232,10 +248,13 @@ class _$_BasketState implements _BasketState {
   @JsonKey(defaultValue: 20)
   @override
   final int maxLength;
+  @JsonKey(defaultValue: 0)
+  @override
+  final double totalPrice;
 
   @override
   String toString() {
-    return 'BasketState(loading: $loading, error: $error, productList: $productList, start: $start, end: $end, maxLength: $maxLength)';
+    return 'BasketState(loading: $loading, error: $error, productList: $productList, start: $start, end: $end, maxLength: $maxLength, totalPrice: $totalPrice)';
   }
 
   @override
@@ -256,7 +275,10 @@ class _$_BasketState implements _BasketState {
                 const DeepCollectionEquality().equals(other.end, end)) &&
             (identical(other.maxLength, maxLength) ||
                 const DeepCollectionEquality()
-                    .equals(other.maxLength, maxLength)));
+                    .equals(other.maxLength, maxLength)) &&
+            (identical(other.totalPrice, totalPrice) ||
+                const DeepCollectionEquality()
+                    .equals(other.totalPrice, totalPrice)));
   }
 
   @override
@@ -267,7 +289,8 @@ class _$_BasketState implements _BasketState {
       const DeepCollectionEquality().hash(productList) ^
       const DeepCollectionEquality().hash(start) ^
       const DeepCollectionEquality().hash(end) ^
-      const DeepCollectionEquality().hash(maxLength);
+      const DeepCollectionEquality().hash(maxLength) ^
+      const DeepCollectionEquality().hash(totalPrice);
 
   @JsonKey(ignore: true)
   @override
@@ -287,7 +310,8 @@ abstract class _BasketState implements BasketState {
       List<ProductEntity> productList,
       int start,
       int end,
-      int maxLength}) = _$_BasketState;
+      int maxLength,
+      double totalPrice}) = _$_BasketState;
 
   factory _BasketState.fromJson(Map<String, dynamic> json) =
       _$_BasketState.fromJson;
@@ -304,6 +328,8 @@ abstract class _BasketState implements BasketState {
   int get end => throw _privateConstructorUsedError;
   @override
   int get maxLength => throw _privateConstructorUsedError;
+  @override
+  double get totalPrice => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$BasketStateCopyWith<_BasketState> get copyWith =>

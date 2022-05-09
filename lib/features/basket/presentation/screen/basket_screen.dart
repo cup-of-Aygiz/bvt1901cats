@@ -11,9 +11,14 @@ import '../../../../uikit/spinkit/spinkit.dart';
 import '../../domain/state/basket_cubit.dart';
 import '../components/basket_product_container.dart';
 
-class BasketScreen extends StatelessWidget {
+class BasketScreen extends StatefulWidget {
   const BasketScreen({Key? key}) : super(key: key);
 
+  @override
+  State<BasketScreen> createState() => _BasketScreenState();
+}
+
+class _BasketScreenState extends State<BasketScreen> {
   @override
   Widget build(BuildContext context) {
     final colors = context.appColors;
@@ -81,7 +86,7 @@ class BasketScreen extends StatelessWidget {
                       Positioned(
                         bottom: 0,
                         child: Container(
-                          height: 140.h,
+                          height: 146.h,
                           width: width,
                           color: colors.generalColor,
                           child: Align(
@@ -89,7 +94,7 @@ class BasketScreen extends StatelessWidget {
                             child: AppTextButton(
                               width: width - 20.w,
                               height: 40.h,
-                              buttonText: locale.place_an_order,
+                              buttonText: '${locale.place_an_order}   ${state.totalPrice} ₽',
                               onPressed: () {},
                             ),
                           ),

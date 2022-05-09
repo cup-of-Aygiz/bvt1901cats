@@ -26,13 +26,13 @@ class BasketProductContainer extends StatelessWidget {
           context.appRouter.pushScreen(context, const ProductScreen());
         },
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 6.h, horizontal: 10.w),
+          padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 10.w),
           child: Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20.r),
+              borderRadius: BorderRadius.circular(14.r),
               color: colors.white,
             ),
-            height: 100.h,
+            height: 98.h,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

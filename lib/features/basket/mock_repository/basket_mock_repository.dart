@@ -36,4 +36,9 @@ class BasketMockRepository extends BasketRepository
       {required int start, required int end}) async {
     return 20;
   }
+
+  @override
+  Future<double> getTotalPrice() async{
+    return 4528;
+  }
 }

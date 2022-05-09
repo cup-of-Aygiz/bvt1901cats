@@ -19,6 +19,7 @@ _$_BasketState _$$_BasketStateFromJson(Map<String, dynamic> json) =>
       start: json['start'] as int? ?? 0,
       end: json['end'] as int? ?? 10,
       maxLength: json['maxLength'] as int? ?? 20,
+      totalPrice: (json['totalPrice'] as num?)?.toDouble() ?? 0,
     );
 
 Map<String, dynamic> _$$_BasketStateToJson(_$_BasketState instance) =>
@@ -29,4 +30,5 @@ Map<String, dynamic> _$$_BasketStateToJson(_$_BasketState instance) =>
       'start': instance.start,
       'end': instance.end,
       'maxLength': instance.maxLength,
+      'totalPrice': instance.totalPrice,
     };
