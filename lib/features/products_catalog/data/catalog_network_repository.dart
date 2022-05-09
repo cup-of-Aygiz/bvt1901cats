@@ -45,7 +45,7 @@ class CatalogNetworkRepository extends CatalogRepository {
           "limit": end,
         },
       );
-      return 100;
+      return response.data["count"];
     } catch (e) {
       throw mapToErrorModel(e);
     }
