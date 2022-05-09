@@ -321,6 +321,12 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Сохранить изменения'**
   String get save_changes;
+
+  /// No description provided for @place_an_order.
+  ///
+  /// In ru, this message translates to:
+  /// **'Оформить заказ'**
+  String get place_an_order;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

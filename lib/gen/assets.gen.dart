@@ -19,6 +19,9 @@ class $ConfigGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/ic_basket.svg
+  SvgGenImage get icBasket => const SvgGenImage('assets/icons/ic_basket.svg');
+
   /// File path: assets/icons/ic_bottle.svg
   SvgGenImage get icBottle => const SvgGenImage('assets/icons/ic_bottle.svg');
 

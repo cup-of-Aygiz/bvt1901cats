@@ -120,4 +120,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get save_changes => 'Сохранить изменения';
+
+  @override
+  String get place_an_order => 'Оформить заказ';
 }
