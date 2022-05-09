@@ -25,7 +25,6 @@ class CatalogCubit extends Cubit<CatalogState> {
           start: state.start,
           end: state.end,
         );
-        print({state.start,state.end,'214214'});
         emit(state.copyWith(
           productList: state.productList + listProducts,
           loading: false,

@@ -39,6 +39,7 @@ class _ProductListState extends State<ProductList>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     final locale = context.appLocale;
     return BlocBuilder<CatalogCubit, CatalogState>(
       builder: (context, state) {
