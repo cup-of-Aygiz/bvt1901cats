@@ -18,7 +18,7 @@ class BasketScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = context.appColors;
     final locale = context.appLocale;
-    final width=MediaQuery.of(context).size.width;
+    final width = MediaQuery.of(context).size.width;
     return BlocProvider(
       create: (context) => BasketCubit()..init(),
       child: BlocBuilder<BasketCubit, BasketState>(
@@ -28,9 +28,22 @@ class BasketScreen extends StatelessWidget {
             appBar: DefaultAppBar(
               titleText: locale.cart_tab,
               action: IconButton(
-                onPressed: () {
-                  //уведомление удалить все?
-                },
+                onPressed: () => showDialog<String>(
+                  context: context,
+                  builder: (BuildContext context) => AlertDialog(
+                    title: const Text('Очистить корзину?'),
+                    actions: <Widget>[
+                      TextButton(
+                        onPressed: () => Navigator.pop(context, 'OK'),
+                        child: const Text('Очистить'),
+                      ),
+                      TextButton(
+                        onPressed: () => Navigator.pop(context, 'Cancel'),
+                        child: const Text('Оставить'),
+                      ),
+                    ],
+                  ),
+                ),
                 icon: Assets.icons.icBasket.svg(),
               ),
             ),
@@ -74,7 +87,7 @@ class BasketScreen extends StatelessWidget {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: AppTextButton(
-                              width: width-20.w,
+                              width: width - 20.w,
                               height: 40.h,
                               buttonText: locale.place_an_order,
                               onPressed: () {},
