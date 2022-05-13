@@ -27,12 +27,14 @@ class _PersonDataScreenState extends State<PersonDataScreen> {
   @override
   Widget build(BuildContext context) {
     final locale = context.appLocale;
+    final colors = context.appColors;
 
     return BlocProvider<ProfileCubit>(
       create: (context) => ProfileCubit()..init(),
       child: BlocBuilder<ProfileCubit, ProfileState>(
         builder: (context, state) {
           return Scaffold(
+            backgroundColor: colors.generalColor,
             appBar: DefaultAppBar(
               titleText: locale.my_data,
             ),

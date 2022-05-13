@@ -10,7 +10,6 @@ import 'package:get_it/get_it.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import '../features/registration/mock/registration_mock_repository.dart';
-import 'device_preview_builder.dart';
 import 'logger/app_loger.dart';
 import 'mocking/runtime_mock_config.dart';
 
@@ -23,12 +22,15 @@ import 'mocking/runtime_mock_config.dart';
 final _mockConfig = RuntimeMockConfig.custom([
   RegistrationMockRepository(),
   LoginMockRepository(),
+  //FavoriteProductsMockRepository(),
   // CatalogMockRepository(),
 ]);
 
 /// 3. Если не нужно запускать DevicePreview
 /// то удаляем миксин DevicePreviewBuilder
-class DevAppBuilder extends MainAppBuilder with DevicePreviewBuilder {
+class DevAppBuilder extends MainAppBuilder  {
+
+  //with DevicePreviewBuilder
   // Переопределяем первый экран для запуска
 // @override
 //   Widget get initialScreen => super.initialScreen;

@@ -18,21 +18,22 @@ class CatalogCubit extends Cubit<CatalogState> {
 
   Future<void> loadProducts() async {
     try {
-      emit(state.copyWith(loading: true));
-      List<ProductEntity> listProducts =
-          await _catalogRepository.getProductList(
-        start: state.start,
-        end: state.end,
-      );
-
-      emit(state.copyWith(
-        productList: state.productList + listProducts,
-        loading: false,
-        start: state.end,
-        end: (state.end + 10) < state.maxLength
-            ? state.end + 10
-            : state.maxLength,
-      ));
+      if(!state.loading) {
+        emit(state.copyWith(loading: true));
+        List<ProductEntity> listProducts =
+            await _catalogRepository.getProductList(
+          start: state.start,
+          end: state.end,
+        );
+        emit(state.copyWith(
+          productList: state.productList + listProducts,
+          loading: false,
+          start: state.end,
+          end: (state.end + 10) < state.maxLength
+              ? state.end + 10
+              : state.maxLength,
+        ));
+      }
     } on ErrorModel catch (e) {
       emit(state.copyWith(loading: false, error: e));
     }

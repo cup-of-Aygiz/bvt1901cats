@@ -47,7 +47,9 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           Padding(
-              child: const ProductList(), padding: EdgeInsets.only(top: 66.h)),
+            child: const ProductList(),
+            padding: EdgeInsets.only(top: 66.h),
+          ),
         ],
       ),
     );
