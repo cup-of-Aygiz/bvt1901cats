@@ -25,6 +25,8 @@ class AddressesCubit extends Cubit<AddressesState> {
 
     _mockAddressRepository.addAddress(addressEntity: addressEntity);
 
-    emit(state.copyWith(loading: false));
+    List<AddressEntity> addressesList = _mockAddressRepository.getAddresses();
+
+    emit(state.copyWith(loading: false, addressesList: addressesList));
   }
 }
