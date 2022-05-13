@@ -4,7 +4,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTextField extends StatelessWidget {
-  final String labelText;
+  final String? labelText;
   final String name;
   final String? hintText;
   final double? width;
@@ -23,7 +23,7 @@ class AppTextField extends StatelessWidget {
 
   const AppTextField({
     Key? key,
-    required this.labelText,
+    this.labelText,
     this.obscureText = false,
     this.onChanged,
     this.onTap,
@@ -70,25 +70,6 @@ class AppTextField extends StatelessWidget {
           controller: controller,
           readOnly: readOnly,
         ),
-      child: FormBuilderTextField(
-        obscureText: obscureText,
-        style: TextStyle(
-          color: readOnly ? colors.grey : colors.black,
-        ),
-        decoration: InputDecoration(
-          border: inputBorder,
-          labelText: labelText,
-          errorMaxLines: 3,
-          suffix: suffix,
-        ),
-        initialValue: initialValue,
-        name: name,
-        onChanged: onChanged,
-        onTap: onTap,
-        autovalidateMode: autoValidateMode,
-        validator: validator,
-        controller: controller,
-        readOnly: readOnly,
       ),
     );
   }

@@ -79,7 +79,7 @@ class _MapScreenState extends State<MapScreen> {
               ),
               duration: const Duration(milliseconds: 300),
               secondChild: Container(
-                height: 200.h,
+                height: 250.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30.r),
                   color: colors.white,

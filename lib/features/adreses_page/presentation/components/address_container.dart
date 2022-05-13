@@ -1,11 +1,15 @@
 import 'package:bvt1901_practice/app/presentation/theme/app_text_style.dart';
+import 'package:bvt1901_practice/features/adreses_page/domain/entity/address_entity.dart';
 import 'package:bvt1901_practice/uikit/buttons/app_transparent_button.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddressContainer extends StatelessWidget {
-  const AddressContainer({Key? key}) : super(key: key);
+
+  final AddressEntity addressEntity;
+
+  const AddressContainer({Key? key, required this.addressEntity}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,13 +48,9 @@ class AddressContainer extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(top: 6.h),
                     child: Text(
-                      "Тут улица и дом",
+                      addressEntity.address,
                       style: AppTextStyle.normalW700S12,
                     ),
-                  ),
-                  Text(
-                    "Тут город",
-                    style: AppTextStyle.normalW700S9,
                   ),
                 ],
               ),
