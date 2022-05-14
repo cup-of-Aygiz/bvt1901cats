@@ -28,4 +28,15 @@ class FavoriteNetworkRepository extends FavoriteProductRepository {
     }
   }
 
+  @override
+  Future<List<ProductEntity>> addProduct({required int id}) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<List<ProductEntity>> deleteProduct({required int id}) {
+    throw UnimplementedError();
+  }
+  
+
 }

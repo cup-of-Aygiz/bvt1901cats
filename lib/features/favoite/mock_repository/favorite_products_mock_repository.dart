@@ -34,4 +34,15 @@ class FavoriteProductsMockRepository extends FavoriteProductRepository
     return productsList;
   }
 
+  @override
+  Future<List<ProductEntity>> addProduct({required int id}) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<List<ProductEntity>> deleteProduct({required int id}) {
+    throw UnimplementedError();
+  }
+  
+
 }
