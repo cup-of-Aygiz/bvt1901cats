@@ -42,4 +42,39 @@ class FavoriteProductsCubit extends Cubit<FavoriteProductState> {
       emit(state.copyWith(loading: false, error: e));
     }
   }
-}
+
+  Future<void> addFavoriteProduct(int id) async{
+    try{
+      emit(state.copyWith(loading: true));
+      log('Началось ${id}');
+      List<ProductEntity> listProducts =
+      await _favoriteProductRepository.addProduct(id: id);
+      log('Вот ${listProducts.length}');
+      emit(state.copyWith(
+        productList: listProducts,
+        loading: false,));
+
+    }
+    on ErrorModel catch (e) {
+      emit(state.copyWith(loading: false, error: e));
+    }
+  }
+
+  Future<void> deleteFavoriteProduct(int id) async{
+    try{
+      emit(state.copyWith(loading: true));
+
+      List<ProductEntity> listProducts =
+      await _favoriteProductRepository.deleteProduct(id: id);
+
+      emit(state.copyWith(
+        productList: listProducts,
+        loading: false,));
+
+    }
+    on ErrorModel catch (e) {
+      emit(state.copyWith(loading: false, error: e));
+    }
+  }
+
+  }

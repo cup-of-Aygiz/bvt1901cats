@@ -26,11 +26,10 @@ class AppLikeButton extends StatelessWidget {
             isLiked: isLiked,
             size: 26.h,
             onTap: (bool isLiked) async {
-              if (isLiked) {
-
-              }
-              else {
-
+              if (!isLiked) {
+                context.read<FavoriteProductsCubit>().addFavoriteProduct(productId);
+              } else {
+                context.read<FavoriteProductsCubit>().deleteFavoriteProduct(productId);
               }
               return !isLiked;
             },

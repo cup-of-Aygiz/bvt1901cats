@@ -19,7 +19,7 @@ class FavoriteNetworkRepository extends FavoriteProductRepository {
     try {
       log('Начало получения продуктов');
       final response = await dioContainer.dio.get('/favorites');
-
+      log('${response.statusCode}');
       final newList = List<ProductEntity>.from(
           response.data['rows'].map((e) => FavoriteDTO.fromJson(e).toEntity()));
       return newList;
@@ -29,13 +29,33 @@ class FavoriteNetworkRepository extends FavoriteProductRepository {
   }
 
   @override
-  Future<List<ProductEntity>> addProduct({required int id}) {
-    throw UnimplementedError();
+  Future<List<ProductEntity>> addProduct({required int id}) async{
+    try{
+      final response= await dioContainer.dio.put('/favorites',data: {'id': id});
+
+      log('${response.statusCode}');
+
+      final newList = List<ProductEntity>.from(
+          response.data['rows'].map((e) => FavoriteDTO.fromJson(e).toEntity()));
+      return newList;
+    }
+    catch (e) {
+      throw mapToErrorModel(e);
+    }
   }
 
   @override
-  Future<List<ProductEntity>> deleteProduct({required int id}) {
-    throw UnimplementedError();
+  Future<List<ProductEntity>> deleteProduct({required int id}) async{
+    try{
+      final response= await dioContainer.dio.delete('/favorites',data: {'id': id});
+
+      final newList = List<ProductEntity>.from(
+          response.data['rows'].map((e) => FavoriteDTO.fromJson(e).toEntity()));
+      return newList;
+    }
+    catch (e) {
+      throw mapToErrorModel(e);
+    }
   }
   
 
