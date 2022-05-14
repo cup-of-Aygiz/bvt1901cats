@@ -47,7 +47,7 @@ class MainAppBuilder extends AppBuilder {
                 // theme: lightThemeData,
                 home: state.profileEntity != null
                     ? const RouterScreen()
-                    : const RouterScreen(),
+                    : const WelcomePageScreen(),
               );
             },
           );

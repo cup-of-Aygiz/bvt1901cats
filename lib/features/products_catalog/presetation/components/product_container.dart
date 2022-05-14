@@ -1,5 +1,5 @@
 import 'package:bvt1901_practice/app/presentation/theme/app_text_style.dart';
-import 'package:bvt1901_practice/features/products_catalog/presetation/components/product_detals.dart';
+import 'package:bvt1901_practice/features/product_page/presentation/screens/product_detals.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';

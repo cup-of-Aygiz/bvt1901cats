@@ -1,6 +1,6 @@
 import 'package:bvt1901_practice/features/products_catalog/domain/entity/product_entity.dart';
-import 'package:bvt1901_practice/features/products_catalog/presetation/components/product_detals_counter.dart';
-import 'package:bvt1901_practice/features/products_catalog/presetation/components/product_detals_image.dart';
+import 'package:bvt1901_practice/features/product_page/presentation/components/product_detals_counter.dart';
+import 'package:bvt1901_practice/features/product_page/presentation/components/product_detals_image.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
