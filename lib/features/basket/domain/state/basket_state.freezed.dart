@@ -25,17 +25,11 @@ class _$BasketStateTearOff {
       {bool loading = false,
       ErrorModel? error,
       List<ProductEntity> productList = const [],
-      int start = 0,
-      int end = 10,
-      int maxLength = 20,
       double totalPrice = 0}) {
     return _BasketState(
       loading: loading,
       error: error,
       productList: productList,
-      start: start,
-      end: end,
-      maxLength: maxLength,
       totalPrice: totalPrice,
     );
   }
@@ -53,9 +47,6 @@ mixin _$BasketState {
   bool get loading => throw _privateConstructorUsedError;
   ErrorModel? get error => throw _privateConstructorUsedError;
   List<ProductEntity> get productList => throw _privateConstructorUsedError;
-  int get start => throw _privateConstructorUsedError;
-  int get end => throw _privateConstructorUsedError;
-  int get maxLength => throw _privateConstructorUsedError;
   double get totalPrice => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -73,9 +64,6 @@ abstract class $BasketStateCopyWith<$Res> {
       {bool loading,
       ErrorModel? error,
       List<ProductEntity> productList,
-      int start,
-      int end,
-      int maxLength,
       double totalPrice});
 
   $ErrorModelCopyWith<$Res>? get error;
@@ -94,9 +82,6 @@ class _$BasketStateCopyWithImpl<$Res> implements $BasketStateCopyWith<$Res> {
     Object? loading = freezed,
     Object? error = freezed,
     Object? productList = freezed,
-    Object? start = freezed,
-    Object? end = freezed,
-    Object? maxLength = freezed,
     Object? totalPrice = freezed,
   }) {
     return _then(_value.copyWith(
@@ -112,18 +97,6 @@ class _$BasketStateCopyWithImpl<$Res> implements $BasketStateCopyWith<$Res> {
           ? _value.productList
           : productList // ignore: cast_nullable_to_non_nullable
               as List<ProductEntity>,
-      start: start == freezed
-          ? _value.start
-          : start // ignore: cast_nullable_to_non_nullable
-              as int,
-      end: end == freezed
-          ? _value.end
-          : end // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxLength: maxLength == freezed
-          ? _value.maxLength
-          : maxLength // ignore: cast_nullable_to_non_nullable
-              as int,
       totalPrice: totalPrice == freezed
           ? _value.totalPrice
           : totalPrice // ignore: cast_nullable_to_non_nullable
@@ -154,9 +127,6 @@ abstract class _$BasketStateCopyWith<$Res>
       {bool loading,
       ErrorModel? error,
       List<ProductEntity> productList,
-      int start,
-      int end,
-      int maxLength,
       double totalPrice});
 
   @override
@@ -178,9 +148,6 @@ class __$BasketStateCopyWithImpl<$Res> extends _$BasketStateCopyWithImpl<$Res>
     Object? loading = freezed,
     Object? error = freezed,
     Object? productList = freezed,
-    Object? start = freezed,
-    Object? end = freezed,
-    Object? maxLength = freezed,
     Object? totalPrice = freezed,
   }) {
     return _then(_BasketState(
@@ -196,18 +163,6 @@ class __$BasketStateCopyWithImpl<$Res> extends _$BasketStateCopyWithImpl<$Res>
           ? _value.productList
           : productList // ignore: cast_nullable_to_non_nullable
               as List<ProductEntity>,
-      start: start == freezed
-          ? _value.start
-          : start // ignore: cast_nullable_to_non_nullable
-              as int,
-      end: end == freezed
-          ? _value.end
-          : end // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxLength: maxLength == freezed
-          ? _value.maxLength
-          : maxLength // ignore: cast_nullable_to_non_nullable
-              as int,
       totalPrice: totalPrice == freezed
           ? _value.totalPrice
           : totalPrice // ignore: cast_nullable_to_non_nullable
@@ -223,9 +178,6 @@ class _$_BasketState implements _BasketState {
       {this.loading = false,
       this.error,
       this.productList = const [],
-      this.start = 0,
-      this.end = 10,
-      this.maxLength = 20,
       this.totalPrice = 0});
 
   factory _$_BasketState.fromJson(Map<String, dynamic> json) =>
@@ -241,20 +193,11 @@ class _$_BasketState implements _BasketState {
   final List<ProductEntity> productList;
   @JsonKey(defaultValue: 0)
   @override
-  final int start;
-  @JsonKey(defaultValue: 10)
-  @override
-  final int end;
-  @JsonKey(defaultValue: 20)
-  @override
-  final int maxLength;
-  @JsonKey(defaultValue: 0)
-  @override
   final double totalPrice;
 
   @override
   String toString() {
-    return 'BasketState(loading: $loading, error: $error, productList: $productList, start: $start, end: $end, maxLength: $maxLength, totalPrice: $totalPrice)';
+    return 'BasketState(loading: $loading, error: $error, productList: $productList, totalPrice: $totalPrice)';
   }
 
   @override
@@ -269,13 +212,6 @@ class _$_BasketState implements _BasketState {
             (identical(other.productList, productList) ||
                 const DeepCollectionEquality()
                     .equals(other.productList, productList)) &&
-            (identical(other.start, start) ||
-                const DeepCollectionEquality().equals(other.start, start)) &&
-            (identical(other.end, end) ||
-                const DeepCollectionEquality().equals(other.end, end)) &&
-            (identical(other.maxLength, maxLength) ||
-                const DeepCollectionEquality()
-                    .equals(other.maxLength, maxLength)) &&
             (identical(other.totalPrice, totalPrice) ||
                 const DeepCollectionEquality()
                     .equals(other.totalPrice, totalPrice)));
@@ -287,9 +223,6 @@ class _$_BasketState implements _BasketState {
       const DeepCollectionEquality().hash(loading) ^
       const DeepCollectionEquality().hash(error) ^
       const DeepCollectionEquality().hash(productList) ^
-      const DeepCollectionEquality().hash(start) ^
-      const DeepCollectionEquality().hash(end) ^
-      const DeepCollectionEquality().hash(maxLength) ^
       const DeepCollectionEquality().hash(totalPrice);
 
   @JsonKey(ignore: true)
@@ -308,9 +241,6 @@ abstract class _BasketState implements BasketState {
       {bool loading,
       ErrorModel? error,
       List<ProductEntity> productList,
-      int start,
-      int end,
-      int maxLength,
       double totalPrice}) = _$_BasketState;
 
   factory _BasketState.fromJson(Map<String, dynamic> json) =
@@ -322,12 +252,6 @@ abstract class _BasketState implements BasketState {
   ErrorModel? get error => throw _privateConstructorUsedError;
   @override
   List<ProductEntity> get productList => throw _privateConstructorUsedError;
-  @override
-  int get start => throw _privateConstructorUsedError;
-  @override
-  int get end => throw _privateConstructorUsedError;
-  @override
-  int get maxLength => throw _privateConstructorUsedError;
   @override
   double get totalPrice => throw _privateConstructorUsedError;
   @override

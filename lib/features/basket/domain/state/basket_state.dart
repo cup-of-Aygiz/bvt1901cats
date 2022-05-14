@@ -15,9 +15,6 @@ class BasketState with _$BasketState{
     @Default(false) final bool loading,
     final ErrorModel? error,
     @Default([]) List<ProductEntity> productList,
-    @Default(0) int start,
-    @Default(10) int end,
-    @Default(20) int maxLength,
     @Default(0) double totalPrice,
 
 })=_BasketState;

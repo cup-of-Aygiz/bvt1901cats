@@ -37,5 +37,10 @@
   "new_password": "Новый пароль",
   "prov_password": "Повторите пароль",
   "save_changes": "Сохранить изменения",
-  "place_an_order": "Оформить заказ"
+  "place_an_order": "Оформить заказ",
+  "ok": "Ок",
+  "cancel": "Отмена",
+  "clear_basket": "Очистить корзину?",
+  "yes_clear": "Очистить",
+  "no_clear": "Оставить"
 }

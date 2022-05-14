@@ -327,6 +327,36 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Оформить заказ'**
   String get place_an_order;
+
+  /// No description provided for @ok.
+  ///
+  /// In ru, this message translates to:
+  /// **'Ок'**
+  String get ok;
+
+  /// No description provided for @cancel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Отмена'**
+  String get cancel;
+
+  /// No description provided for @clear_basket.
+  ///
+  /// In ru, this message translates to:
+  /// **'Очистить корзину?'**
+  String get clear_basket;
+
+  /// No description provided for @yes_clear.
+  ///
+  /// In ru, this message translates to:
+  /// **'Очистить'**
+  String get yes_clear;
+
+  /// No description provided for @no_clear.
+  ///
+  /// In ru, this message translates to:
+  /// **'Оставить'**
+  String get no_clear;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

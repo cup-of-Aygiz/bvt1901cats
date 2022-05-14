@@ -8,10 +8,7 @@ class BasketMockRepository extends BasketRepository
     with MockFactory<BasketRepository> {
 
   @override
-  Future<List<ProductEntity>> getProductList({
-    required int start,
-    required int end,
-  }) async {
+  Future<List<ProductEntity>> getProductList() async {
     await Future.delayed(const Duration(seconds: 2));
 
     final List<ProductEntity> productsList = [];
@@ -28,17 +25,7 @@ class BasketMockRepository extends BasketRepository
       );
     }
 
-    return productsList.sublist(start, end < 20 ? end : 20);
+    return productsList;
   }
 
-  @override
-  Future<int> getMaxLengthProducts(
-      {required int start, required int end}) async {
-    return 20;
-  }
-
-  @override
-  Future<double> getTotalPrice() async{
-    return 4528;
-  }
 }

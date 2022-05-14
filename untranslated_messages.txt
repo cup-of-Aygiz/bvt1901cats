@@ -35,6 +35,11 @@
     "new_password",
     "prov_password",
     "save_changes",
-    "place_an_order"
+    "place_an_order",
+    "ok",
+    "cancel",
+    "clear_basket",
+    "yes_clear",
+    "no_clear"
   ]
 }

@@ -36,15 +36,15 @@ class _BasketScreenState extends State<BasketScreen> {
                 onPressed: () => showDialog<String>(
                   context: context,
                   builder: (BuildContext context) => AlertDialog(
-                    title: const Text('Очистить корзину?'),
+                    title: Text(locale.clear_basket),
                     actions: <Widget>[
                       TextButton(
-                        onPressed: () => Navigator.pop(context, 'OK'),
-                        child: const Text('Очистить'),
+                        onPressed: () => Navigator.pop(context, locale.ok),
+                        child: Text(locale.yes_clear),
                       ),
                       TextButton(
-                        onPressed: () => Navigator.pop(context, 'Cancel'),
-                        child: const Text('Оставить'),
+                        onPressed: () => Navigator.pop(context, locale.cancel),
+                        child: Text(locale.no_clear),
                       ),
                     ],
                   ),
@@ -58,30 +58,19 @@ class _BasketScreenState extends State<BasketScreen> {
                   )
                 : Stack(
                     children: [
-                      NotificationListener(
-                        child: ListView(
-                          children: [
-                            Center(
-                              child: Wrap(
-                                children: [
-                                  for (var item in state.productList)
-                                    BasketProductContainer(
-                                      productEntity: item,
-                                    ),
-                                ],
-                              ),
+                      ListView(
+                        children: [
+                          Center(
+                            child: Wrap(
+                              children: [
+                                for (var item in state.productList)
+                                  BasketProductContainer(
+                                    productEntity: item,
+                                  ),
+                              ],
                             ),
-                            if (state.loading && state.productList.isNotEmpty)
-                              Padding(
-                                padding: EdgeInsets.symmetric(vertical: 20.h),
-                                child: const AppSpinKit(),
-                              ),
-                          ],
-                        ),
-                        onNotification: (scrollEnd) {
-                          context.read<BasketCubit>().loadProducts();
-                          return true;
-                        },
+                          ),
+                        ],
                       ),
                       Positioned(
                         bottom: 0,
@@ -94,7 +83,8 @@ class _BasketScreenState extends State<BasketScreen> {
                             child: AppTextButton(
                               width: width - 20.w,
                               height: 40.h,
-                              buttonText: '${locale.place_an_order}   ${state.totalPrice} ₽',
+                              buttonText:
+                                  '${locale.place_an_order}   ${state.totalPrice} ₽',
                               onPressed: () {},
                             ),
                           ),

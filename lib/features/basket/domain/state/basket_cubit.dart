@@ -15,29 +15,21 @@ class BasketCubit extends Cubit<BasketState> {
   final BasketMockRepository _basketProductsMockRepository =  BasketMockRepository();
 
   void init() async {
-    await getMaxLength();
-    await loadProducts();
+    await loadBasketProducts();
   }
 
-  Future<void> loadProducts() async {
+  Future<void> loadBasketProducts() async {
     try {
       emit(state.copyWith(loading: true));
 
       List<ProductEntity> listProducts =
-      await _basketProductsMockRepository.getProductList(
-        start: state.start,
-        end: state.end,
-      );
+      await _basketProductsMockRepository.getProductList();
 
-      double totalPrice=await _basketProductsMockRepository.getTotalPrice();
+      double totalPrice = getTotalPrice();
 
       emit(state.copyWith(
-        productList: state.productList + listProducts,
+        productList: listProducts,
         loading: false,
-        start: state.end,
-        end: (state.end + 10) < state.maxLength
-            ? state.end + 10
-            : state.maxLength,
         totalPrice: totalPrice,
       ));
     } on ErrorModel catch (e) {
@@ -45,20 +37,8 @@ class BasketCubit extends Cubit<BasketState> {
     }
   }
 
-  Future<void> getMaxLength() async {
-    try {
-      emit(state.copyWith(loading: true));
-      int maxLength =
-      await _basketProductsMockRepository.getMaxLengthProducts(
-        start: 1,
-        end: 1,
-      );
-      emit(state.copyWith(
-        maxLength: maxLength,
-        loading: false,
-      ));
-    } on ErrorModel catch (e) {
-      emit(state.copyWith(loading: false, error: e));
-    }
+  double getTotalPrice(){
+    return 423.56;
   }
+
 }
