@@ -321,6 +321,36 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Сохранить изменения'**
   String get save_changes;
+
+  /// No description provided for @price.
+  ///
+  /// In ru, this message translates to:
+  /// **'Цена'**
+  String get price;
+
+  /// No description provided for @manufacturer.
+  ///
+  /// In ru, this message translates to:
+  /// **'Производитель'**
+  String get manufacturer;
+
+  /// No description provided for @description.
+  ///
+  /// In ru, this message translates to:
+  /// **'Описание'**
+  String get description;
+
+  /// No description provided for @add_cart.
+  ///
+  /// In ru, this message translates to:
+  /// **'Добавить в Корзину'**
+  String get add_cart;
+
+  /// No description provided for @not_available.
+  ///
+  /// In ru, this message translates to:
+  /// **'Нет в наличии'**
+  String get not_available;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -31,9 +31,9 @@ class ProductContainer extends StatelessWidget {
                 backgroundColor: colors.transparent,
                 isScrollControlled: true,
                 context: context,
+                useRootNavigator: true,
                 builder: (BuildContext context) {
                   return ProductDetals(
-                      colors: colors,
                       productEntity: productEntity,
                       );
                 },

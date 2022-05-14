@@ -1,8 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /// normal = Roboto
@@ -59,6 +55,18 @@ class AppTextStyle {
   static final TextStyle normalW700S9 = TextStyle(
     fontSize: 9.sp,
     fontWeight: FontWeight.w700,
+  );
+
+  static final TextStyle normalW400S20 = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w400,
+  );
+
+  static final TextStyle normalW400S24red = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w400,
+    color: Colors.red,
+
   );
 
   static final TextStyle bottomNavigationLabel = TextStyle(

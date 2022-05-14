@@ -36,5 +36,10 @@
   "old_password": "Текущий пароль",
   "new_password": "Новый пароль",
   "prov_password": "Повторите пароль",
-  "save_changes": "Сохранить изменения"
+  "save_changes": "Сохранить изменения",
+  "price": "Цена",
+  "manufacturer": "Производитель",
+  "description": "Описание",
+  "add_cart": "Добавить в Корзину",
+  "not_available": "Нет в наличии"
 }

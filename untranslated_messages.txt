@@ -34,6 +34,11 @@
     "old_password",
     "new_password",
     "prov_password",
-    "save_changes"
+    "save_changes",
+    "price",
+    "manufacturer",
+    "description",
+    "add_cart",
+    "not_available"
   ]
 }
