@@ -1,10 +1,15 @@
+import 'dart:developer';
+
 import 'package:bvt1901_practice/features/favoite/domain/state/favorite_products_state.dart';
-import 'package:bvt1901_practice/features/favoite/mock_repository/favorite_products_mock_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../../../app/domain/models/error_model.dart';
+import '../../../../di/service_locator.dart';
 import '../../../products_catalog/domain/entity/product_entity.dart';
+import '../favorite_product_repository.dart';
 
+@LazySingleton()
 class FavoriteProductsCubit extends Cubit<FavoriteProductState> {
   FavoriteProductsCubit()
       : super(
@@ -13,48 +18,26 @@ class FavoriteProductsCubit extends Cubit<FavoriteProductState> {
           ),
         );
 
-  final FavoriteProductsMockRepository _favoriteProductsMockRepository =  FavoriteProductsMockRepository();
+  FavoriteProductRepository  get _favoriteProductRepository  => getIt();
 
   void init() async {
-    await getMaxLength();
     await loadFavoriteProducts();
   }
 
   Future<void> loadFavoriteProducts() async {
     try {
       emit(state.copyWith(loading: true));
-
+      log('Началось');
       List<ProductEntity> listProducts =
-          await _favoriteProductsMockRepository.getProductList(
-        start: state.start,
-        end: state.end,
-      );
+          await _favoriteProductRepository.getProductList();
 
+      log('Продукты получены');
       emit(state.copyWith(
-        productList: state.productList + listProducts,
-        loading: false,
-        start: state.end,
-        end: (state.end + 10) < state.maxLength
-            ? state.end + 10
-            : state.maxLength,
-      ));
-    } on ErrorModel catch (e) {
-      emit(state.copyWith(loading: false, error: e));
-    }
-  }
+        productList: listProducts,
+        loading: false,));
 
-  Future<void> getMaxLength() async {
-    try {
-      emit(state.copyWith(loading: true));
-      int maxLength =
-          await _favoriteProductsMockRepository.getMaxLengthProducts(
-        start: 1,
-        end: 1,
-      );
-      emit(state.copyWith(
-        maxLength: maxLength,
-        loading: false,
-      ));
+      log('Емит');
+
     } on ErrorModel catch (e) {
       emit(state.copyWith(loading: false, error: e));
     }

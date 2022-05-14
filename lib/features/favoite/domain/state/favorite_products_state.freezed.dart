@@ -24,17 +24,11 @@ class _$FavoriteProductStateTearOff {
   _FavoriteProductState call(
       {bool loading = false,
       ErrorModel? error,
-      List<ProductEntity> productList = const [],
-      int start = 0,
-      int end = 15,
-      int maxLength = 100}) {
+      List<ProductEntity> productList = const []}) {
     return _FavoriteProductState(
       loading: loading,
       error: error,
       productList: productList,
-      start: start,
-      end: end,
-      maxLength: maxLength,
     );
   }
 
@@ -51,11 +45,6 @@ mixin _$FavoriteProductState {
   bool get loading => throw _privateConstructorUsedError;
   ErrorModel? get error => throw _privateConstructorUsedError;
   List<ProductEntity> get productList => throw _privateConstructorUsedError;
-  int get start => throw _privateConstructorUsedError;
-  int get end => throw _privateConstructorUsedError;
-
-  /// максимальное кол-во продуктов
-  int get maxLength => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -68,13 +57,7 @@ abstract class $FavoriteProductStateCopyWith<$Res> {
   factory $FavoriteProductStateCopyWith(FavoriteProductState value,
           $Res Function(FavoriteProductState) then) =
       _$FavoriteProductStateCopyWithImpl<$Res>;
-  $Res call(
-      {bool loading,
-      ErrorModel? error,
-      List<ProductEntity> productList,
-      int start,
-      int end,
-      int maxLength});
+  $Res call({bool loading, ErrorModel? error, List<ProductEntity> productList});
 
   $ErrorModelCopyWith<$Res>? get error;
 }
@@ -93,9 +76,6 @@ class _$FavoriteProductStateCopyWithImpl<$Res>
     Object? loading = freezed,
     Object? error = freezed,
     Object? productList = freezed,
-    Object? start = freezed,
-    Object? end = freezed,
-    Object? maxLength = freezed,
   }) {
     return _then(_value.copyWith(
       loading: loading == freezed
@@ -110,18 +90,6 @@ class _$FavoriteProductStateCopyWithImpl<$Res>
           ? _value.productList
           : productList // ignore: cast_nullable_to_non_nullable
               as List<ProductEntity>,
-      start: start == freezed
-          ? _value.start
-          : start // ignore: cast_nullable_to_non_nullable
-              as int,
-      end: end == freezed
-          ? _value.end
-          : end // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxLength: maxLength == freezed
-          ? _value.maxLength
-          : maxLength // ignore: cast_nullable_to_non_nullable
-              as int,
     ));
   }
 
@@ -144,13 +112,7 @@ abstract class _$FavoriteProductStateCopyWith<$Res>
           $Res Function(_FavoriteProductState) then) =
       __$FavoriteProductStateCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {bool loading,
-      ErrorModel? error,
-      List<ProductEntity> productList,
-      int start,
-      int end,
-      int maxLength});
+  $Res call({bool loading, ErrorModel? error, List<ProductEntity> productList});
 
   @override
   $ErrorModelCopyWith<$Res>? get error;
@@ -172,9 +134,6 @@ class __$FavoriteProductStateCopyWithImpl<$Res>
     Object? loading = freezed,
     Object? error = freezed,
     Object? productList = freezed,
-    Object? start = freezed,
-    Object? end = freezed,
-    Object? maxLength = freezed,
   }) {
     return _then(_FavoriteProductState(
       loading: loading == freezed
@@ -189,18 +148,6 @@ class __$FavoriteProductStateCopyWithImpl<$Res>
           ? _value.productList
           : productList // ignore: cast_nullable_to_non_nullable
               as List<ProductEntity>,
-      start: start == freezed
-          ? _value.start
-          : start // ignore: cast_nullable_to_non_nullable
-              as int,
-      end: end == freezed
-          ? _value.end
-          : end // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxLength: maxLength == freezed
-          ? _value.maxLength
-          : maxLength // ignore: cast_nullable_to_non_nullable
-              as int,
     ));
   }
 }
@@ -209,12 +156,7 @@ class __$FavoriteProductStateCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_FavoriteProductState implements _FavoriteProductState {
   const _$_FavoriteProductState(
-      {this.loading = false,
-      this.error,
-      this.productList = const [],
-      this.start = 0,
-      this.end = 15,
-      this.maxLength = 100});
+      {this.loading = false, this.error, this.productList = const []});
 
   factory _$_FavoriteProductState.fromJson(Map<String, dynamic> json) =>
       _$$_FavoriteProductStateFromJson(json);
@@ -227,21 +169,10 @@ class _$_FavoriteProductState implements _FavoriteProductState {
   @JsonKey(defaultValue: const [])
   @override
   final List<ProductEntity> productList;
-  @JsonKey(defaultValue: 0)
-  @override
-  final int start;
-  @JsonKey(defaultValue: 15)
-  @override
-  final int end;
-  @JsonKey(defaultValue: 100)
-  @override
-
-  /// максимальное кол-во продуктов
-  final int maxLength;
 
   @override
   String toString() {
-    return 'FavoriteProductState(loading: $loading, error: $error, productList: $productList, start: $start, end: $end, maxLength: $maxLength)';
+    return 'FavoriteProductState(loading: $loading, error: $error, productList: $productList)';
   }
 
   @override
@@ -255,14 +186,7 @@ class _$_FavoriteProductState implements _FavoriteProductState {
                 const DeepCollectionEquality().equals(other.error, error)) &&
             (identical(other.productList, productList) ||
                 const DeepCollectionEquality()
-                    .equals(other.productList, productList)) &&
-            (identical(other.start, start) ||
-                const DeepCollectionEquality().equals(other.start, start)) &&
-            (identical(other.end, end) ||
-                const DeepCollectionEquality().equals(other.end, end)) &&
-            (identical(other.maxLength, maxLength) ||
-                const DeepCollectionEquality()
-                    .equals(other.maxLength, maxLength)));
+                    .equals(other.productList, productList)));
   }
 
   @override
@@ -270,10 +194,7 @@ class _$_FavoriteProductState implements _FavoriteProductState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(loading) ^
       const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(productList) ^
-      const DeepCollectionEquality().hash(start) ^
-      const DeepCollectionEquality().hash(end) ^
-      const DeepCollectionEquality().hash(maxLength);
+      const DeepCollectionEquality().hash(productList);
 
   @JsonKey(ignore: true)
   @override
@@ -291,10 +212,7 @@ abstract class _FavoriteProductState implements FavoriteProductState {
   const factory _FavoriteProductState(
       {bool loading,
       ErrorModel? error,
-      List<ProductEntity> productList,
-      int start,
-      int end,
-      int maxLength}) = _$_FavoriteProductState;
+      List<ProductEntity> productList}) = _$_FavoriteProductState;
 
   factory _FavoriteProductState.fromJson(Map<String, dynamic> json) =
       _$_FavoriteProductState.fromJson;
@@ -305,14 +223,6 @@ abstract class _FavoriteProductState implements FavoriteProductState {
   ErrorModel? get error => throw _privateConstructorUsedError;
   @override
   List<ProductEntity> get productList => throw _privateConstructorUsedError;
-  @override
-  int get start => throw _privateConstructorUsedError;
-  @override
-  int get end => throw _privateConstructorUsedError;
-  @override
-
-  /// максимальное кол-во продуктов
-  int get maxLength => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$FavoriteProductStateCopyWith<_FavoriteProductState> get copyWith =>

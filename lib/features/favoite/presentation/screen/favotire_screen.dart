@@ -2,7 +2,6 @@ import 'package:bvt1901_practice/features/favoite/domain/state/favorite_products
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../uikit/app_bars/default_app_bar.dart';
 import '../../../../uikit/spinkit/spinkit.dart';
@@ -31,33 +30,20 @@ class FavoriteScreen extends StatelessWidget {
                   )
                 : Stack(
                     children: [
-                      NotificationListener<ScrollEndNotification>(
-                        child: ListView(
-                          children: [
-                            Center(
-                              child: Wrap(
-                                children: [
-                                  for (var item in state.productList)
-                                    ProductContainer(
-                                      productEntity: item,
-                                      isLiked: true,
-                                    ),
-                                ],
-                              ),
+                      ListView(
+                        children: [
+                          Center(
+                            child: Wrap(
+                              children: [
+                                for (var item in state.productList)
+                                  ProductContainer(
+                                    productEntity: item,
+                                    isLiked: true,
+                                  ),
+                              ],
                             ),
-                            if (state.loading && state.productList.isNotEmpty)
-                              Padding(
-                                padding: EdgeInsets.symmetric(vertical: 20.h),
-                                child: const AppSpinKit(),
-                              ),
-                          ],
-                        ),
-                        onNotification: (scrollEnd) {
-                          context
-                              .read<FavoriteProductsCubit>()
-                              .loadFavoriteProducts();
-                          return true;
-                        },
+                          ),
+                        ],
                       ),
                     ],
                   ),

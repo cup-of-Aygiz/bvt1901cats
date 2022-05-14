@@ -17,9 +17,6 @@ _$_FavoriteProductState _$$_FavoriteProductStateFromJson(
               ?.map((e) => ProductEntity.fromJson(e as Map<String, dynamic>))
               .toList() ??
           [],
-      start: json['start'] as int? ?? 0,
-      end: json['end'] as int? ?? 15,
-      maxLength: json['maxLength'] as int? ?? 100,
     );
 
 Map<String, dynamic> _$$_FavoriteProductStateToJson(
@@ -28,7 +25,4 @@ Map<String, dynamic> _$$_FavoriteProductStateToJson(
       'loading': instance.loading,
       'error': instance.error,
       'productList': instance.productList,
-      'start': instance.start,
-      'end': instance.end,
-      'maxLength': instance.maxLength,
     };

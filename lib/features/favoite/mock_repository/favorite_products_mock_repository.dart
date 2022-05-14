@@ -11,15 +11,12 @@ class FavoriteProductsMockRepository extends FavoriteProductRepository
 
 
   @override
-  Future<List<ProductEntity>> getProductList({
-    required int start,
-    required int end,
-  }) async {
+  Future<List<ProductEntity>> getProductList () async {
     await Future.delayed(const Duration(seconds: 2));
 
     log("Начало генерации");
     final List<ProductEntity> productsList = [];
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 10; i++) {
       productsList.add(
         ProductEntity(
           id: AppUtils.intInRange(1, 1000000),
@@ -34,13 +31,7 @@ class FavoriteProductsMockRepository extends FavoriteProductRepository
     }
 
     log("Возвращается");
-    return productsList.sublist(start, end < 100 ? end : 100);
+    return productsList;
   }
 
-  @override
-  Future<int> getMaxLengthProducts(
-      {required int start, required int end}) async {
-    log("Я тут и возвращаю");
-    return 100;
-  }
 }

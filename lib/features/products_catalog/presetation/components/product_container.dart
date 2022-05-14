@@ -4,8 +4,8 @@ import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:like_button/like_button.dart';
 import '../../../../gen/assets.gen.dart';
+import '../../../../uikit/buttons/app_like_button/app_like_button.dart';
 import '../../../../uikit/buttons/app_transparent_button.dart';
 import '../../domain/entity/product_entity.dart';
 
@@ -21,9 +21,7 @@ class ProductContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery
-        .of(context)
-        .size;
+    Size size = MediaQuery.of(context).size;
     final colors = context.appColors;
     return SizedBox(
       width: size.width / 2 - 10,
@@ -42,7 +40,8 @@ class ProductContainer extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(25.r),
-                        topRight: Radius.circular(25.r),),
+                        topRight: Radius.circular(25.r),
+                      ),
                       color: colors.productColor,
                     ),
                     child: Stack(
@@ -69,9 +68,9 @@ class ProductContainer extends StatelessWidget {
                             ),
                             child: Padding(
                               padding: EdgeInsets.only(left: 2.w, top: 2.w),
-                              child: LikeButton(
+                              child: AppLikeButton(
+                                productId: productEntity.id,
                                 isLiked: isLiked,
-                                size: 26.h,
                               ),
                             ),
                           ),
@@ -109,7 +108,7 @@ class ProductContainer extends StatelessWidget {
                             decoration: BoxDecoration(
                               color: colors.purple,
                               borderRadius:
-                              BorderRadius.all(Radius.circular(10.r)),
+                                  BorderRadius.all(Radius.circular(10.r)),
                             ),
                             child: TextButton(
                               onPressed: () {},

@@ -13,10 +13,6 @@ class FavoriteProductState with _$FavoriteProductState {
     @Default(false) final bool loading,
     final ErrorModel? error,
     @Default([]) List<ProductEntity> productList,
-    @Default(0) int start,
-    @Default(15) int end,
-    /// максимальное кол-во продуктов
-    @Default(100) int maxLength,
 
   }) = _FavoriteProductState;
 
