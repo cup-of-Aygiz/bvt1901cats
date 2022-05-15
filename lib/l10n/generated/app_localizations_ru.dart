@@ -119,7 +119,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get prov_password => 'Повторите пароль';
 
   @override
-  String get save_changes => 'Сохранить';
+  String get save_changes => 'Сохранить изменения';
 
   @override
   String get my_addresses => 'Мои адреса';
@@ -159,4 +159,22 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get choose => 'Выбрать';
+
+  @override
+  String get place_an_order => 'Оформить заказ';
+
+  @override
+  String get ok => 'Ок';
+
+  @override
+  String get cancel => 'Отмена';
+
+  @override
+  String get clear_basket => 'Очистить корзину?';
+
+  @override
+  String get yes_clear => 'Очистить';
+
+  @override
+  String get no_clear => 'Оставить';
 }

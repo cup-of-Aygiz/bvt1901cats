@@ -10,18 +10,24 @@ class AppTextButton extends StatelessWidget {
     required this.onPressed,
     this.color,
     this.textColor,
+    this.width,
+    this.height=50,
+
   }) : super(key: key);
   final String buttonText;
   final Color? color;
   final Color? textColor;
   final VoidCallback onPressed;
+  final double? width;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
     final myColors = context.appColors;
 
     return SizedBox(
-      height: 50.h,
+      height: height,
+      width: width,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ButtonStyle(

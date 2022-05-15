@@ -49,6 +49,13 @@
   "next": "Далее",
   "delivery_address": "Адрес доставки",
   "load_address": "Определяем ваш адрес",
-  "choose": "Выбрать"
+  "choose": "Выбрать",
 
+  "save_changes": "Сохранить изменения",
+  "place_an_order": "Оформить заказ",
+  "ok": "Ок",
+  "cancel": "Отмена",
+  "clear_basket": "Очистить корзину?",
+  "yes_clear": "Очистить",
+  "no_clear": "Оставить"
 }

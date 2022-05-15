@@ -47,6 +47,12 @@
     "next",
     "delivery_address",
     "load_address",
-    "choose"
+    "choose",
+    "place_an_order",
+    "ok",
+    "cancel",
+    "clear_basket",
+    "yes_clear",
+    "no_clear"
   ]
 }
