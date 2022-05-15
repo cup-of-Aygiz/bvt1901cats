@@ -138,4 +138,44 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get no_clear => 'Оставить';
+  String get save_changes => 'Сохранить';
+
+  @override
+  String get my_addresses => 'Мои адреса';
+
+  @override
+  String get add_address => 'Новый адрес';
+
+  @override
+  String get address => 'Адрес';
+
+  @override
+  String get entrance => 'Подъезд';
+
+  @override
+  String get intercom => 'Домофон';
+
+  @override
+  String get flat => 'Квартира';
+
+  @override
+  String get floor => 'Этаж';
+
+  @override
+  String get comment => 'Комментарий курьеру';
+
+  @override
+  String get choose_address => 'Редактировать адрес';
+
+  @override
+  String get next => 'Далее';
+
+  @override
+  String get delivery_address => 'Адрес доставки';
+
+  @override
+  String get load_address => 'Определяем ваш адрес';
+
+  @override
+  String get choose => 'Выбрать';
 }

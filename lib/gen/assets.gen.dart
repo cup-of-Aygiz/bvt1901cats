@@ -60,6 +60,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_person.svg
   SvgGenImage get icPerson => const SvgGenImage('assets/icons/ic_person.svg');
 
+  /// File path: assets/icons/ic_pointer.svg
+  SvgGenImage get icPointer => const SvgGenImage('assets/icons/ic_pointer.svg');
+
   /// File path: assets/icons/ic_sales.svg
   SvgGenImage get icSales => const SvgGenImage('assets/icons/ic_sales.svg');
 

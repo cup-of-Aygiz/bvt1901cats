@@ -41,5 +41,19 @@
     "clear_basket",
     "yes_clear",
     "no_clear"
+    "save_changes",
+    "my_addresses",
+    "add_address",
+    "address",
+    "entrance",
+    "intercom",
+    "flat",
+    "floor",
+    "comment",
+    "choose_address",
+    "next",
+    "delivery_address",
+    "load_address",
+    "choose"
   ]
 }
