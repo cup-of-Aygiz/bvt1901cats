@@ -39,6 +39,9 @@ class BasketProductContainer extends StatelessWidget {
                   alignment: Alignment.topLeft,
                   width: 96.h,
                   height: 96.h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(14.r),
+                  ),
                   child: FancyShimmerImage(
                     imageUrl: productEntity.image,
                     boxFit: BoxFit.contain,

@@ -59,17 +59,13 @@ class _BasketScreenState extends State<BasketScreen> {
                 : Stack(
                     children: [
                       ListView(
+                        padding: EdgeInsets.zero,
+                        physics: const BouncingScrollPhysics(),
                         children: [
-                          Center(
-                            child: Wrap(
-                              children: [
-                                for (var item in state.productList)
-                                  BasketProductContainer(
-                                    productEntity: item,
-                                  ),
-                              ],
-                            ),
-                          ),
+                          for (int i = 9; i < state.productList.length; i++)
+                            BasketProductContainer(
+                                productEntity: state.productList[i]),
+                          SizedBox(height: 150.h),
                         ],
                       ),
                       Positioned(
@@ -84,7 +80,7 @@ class _BasketScreenState extends State<BasketScreen> {
                               width: width - 20.w,
                               height: 40.h,
                               buttonText:
-                                  '${locale.place_an_order}   ${state.totalPrice} ₽',
+                              '${locale.place_an_order} ${state.totalPrice} ₽',
                               onPressed: () {},
                             ),
                           ),
