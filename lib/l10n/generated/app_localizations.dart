@@ -319,8 +319,86 @@ abstract class AppLocalizations {
   /// No description provided for @save_changes.
   ///
   /// In ru, this message translates to:
-  /// **'Сохранить изменения'**
+  /// **'Сохранить'**
   String get save_changes;
+
+  /// No description provided for @my_addresses.
+  ///
+  /// In ru, this message translates to:
+  /// **'Мои адреса'**
+  String get my_addresses;
+
+  /// No description provided for @add_address.
+  ///
+  /// In ru, this message translates to:
+  /// **'Новый адрес'**
+  String get add_address;
+
+  /// No description provided for @address.
+  ///
+  /// In ru, this message translates to:
+  /// **'Адрес'**
+  String get address;
+
+  /// No description provided for @entrance.
+  ///
+  /// In ru, this message translates to:
+  /// **'Подъезд'**
+  String get entrance;
+
+  /// No description provided for @intercom.
+  ///
+  /// In ru, this message translates to:
+  /// **'Домофон'**
+  String get intercom;
+
+  /// No description provided for @flat.
+  ///
+  /// In ru, this message translates to:
+  /// **'Квартира'**
+  String get flat;
+
+  /// No description provided for @floor.
+  ///
+  /// In ru, this message translates to:
+  /// **'Этаж'**
+  String get floor;
+
+  /// No description provided for @comment.
+  ///
+  /// In ru, this message translates to:
+  /// **'Комментарий курьеру'**
+  String get comment;
+
+  /// No description provided for @choose_address.
+  ///
+  /// In ru, this message translates to:
+  /// **'Редактировать адрес'**
+  String get choose_address;
+
+  /// No description provided for @next.
+  ///
+  /// In ru, this message translates to:
+  /// **'Далее'**
+  String get next;
+
+  /// No description provided for @delivery_address.
+  ///
+  /// In ru, this message translates to:
+  /// **'Адрес доставки'**
+  String get delivery_address;
+
+  /// No description provided for @load_address.
+  ///
+  /// In ru, this message translates to:
+  /// **'Определяем ваш адрес'**
+  String get load_address;
+
+  /// No description provided for @choose.
+  ///
+  /// In ru, this message translates to:
+  /// **'Выбрать'**
+  String get choose;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
