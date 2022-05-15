@@ -1,19 +1,17 @@
+import 'dart:developer';
+
 import 'package:bvt1901_practice/features/favoite/domain/state/favorite_products_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:injectable/injectable.dart';
 
 import '../../../../app/domain/models/error_model.dart';
 import '../../../../di/service_locator.dart';
 import '../../../products_catalog/domain/entity/product_entity.dart';
 import '../favorite_product_repository.dart';
 
-@LazySingleton()
 class FavoriteProductsCubit extends Cubit<FavoriteProductState> {
   FavoriteProductsCubit()
       : super(
-          const FavoriteProductState(
-            productList: [],
-          ),
+          const FavoriteProductState(),
         );
 
   FavoriteProductRepository  get _favoriteProductRepository  => getIt();
@@ -42,12 +40,17 @@ class FavoriteProductsCubit extends Cubit<FavoriteProductState> {
     try{
       emit(state.copyWith(loading: true));
 
-      List<ProductEntity> listProducts =
+      //await Future.delayed(const Duration(seconds: 2));
+
+      List<ProductEntity> newListProducts =
       await _favoriteProductRepository.addProduct(id: id);
 
+      log('до эмита${state.productList.length}');
       emit(state.copyWith(
-        productList: listProducts,
+        productList: newListProducts,
         loading: false,));
+      log('ееееееееееееееееемииииииииииииииииит');
+      log('${state.productList.length}');
 
     }
     on ErrorModel catch (e) {
@@ -59,11 +62,11 @@ class FavoriteProductsCubit extends Cubit<FavoriteProductState> {
     try{
       emit(state.copyWith(loading: true));
 
-      List<ProductEntity> listProducts =
+      List<ProductEntity> newListProducts =
       await _favoriteProductRepository.deleteProduct(id: id);
 
       emit(state.copyWith(
-        productList: listProducts,
+        productList: newListProducts,
         loading: false,));
 
     }

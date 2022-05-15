@@ -1,6 +1,7 @@
 import 'package:bvt1901_practice/app/domain/app_builder.dart';
 import 'package:bvt1901_practice/app/router/app_router.dart';
 import 'package:bvt1901_practice/di/service_locator.dart';
+import 'package:bvt1901_practice/features/favoite/domain/state/favorite_products_cubit.dart';
 import 'package:bvt1901_practice/features/login/domain/state/login_state.dart';
 import 'package:bvt1901_practice/features/router/presentation/screen/router_screen.dart';
 
@@ -28,6 +29,9 @@ class MainAppBuilder extends AppBuilder {
           create: (_) => getIt<LoginCubit>()..init(),
         ),BlocProvider<CatalogCubit>(
           create: (_) => getIt<CatalogCubit>()..init(),
+        ),
+        BlocProvider<FavoriteProductsCubit>(
+          create: (context) => FavoriteProductsCubit()..init(),
         ),
       ],
       child: ScreenUtilInit(

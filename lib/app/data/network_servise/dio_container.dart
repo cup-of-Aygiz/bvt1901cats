@@ -15,7 +15,7 @@ class DioContainer {
       receiveTimeout: 7000,
     );
     dio = Dio(options);
-    dio.options.headers["x-access-token"]="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyNTQ4MDM5LCJleHAiOjE2NTI2MzQ0Mzl9.T_v381TdU0LlZ_ETq-eHfqszDln8Hi9n_ttTb5WRJlY";
+    dio.options.headers["x-access-token"]="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjUyNjM1MDMzLCJleHAiOjE2NTI3MjE0MzN9.Z7urGK-hMGfx2deBl3fquNRLNHiLu67sBo1cEQOoVns";
     addInterceptor(NetworkErrorInterceptor());
   }
 

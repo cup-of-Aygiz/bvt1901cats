@@ -112,12 +112,10 @@ class ProductContainer extends StatelessWidget {
                             ),
                             child: TextButton(
                               onPressed: () {},
-                              child: SafeArea(
-                                child: Text(
-                                  '${productEntity.price} ₽',
-                                  style: AppTextStyle.normalW700S11
-                                      .copyWith(color: colors.black),
-                                ),
+                              child: Text(
+                                '${productEntity.price} ₽',
+                                style: AppTextStyle.normalW700S11
+                                    .copyWith(color: colors.black),
                               ),
                             ),
                           ),

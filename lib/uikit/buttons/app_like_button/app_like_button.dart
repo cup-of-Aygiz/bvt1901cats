@@ -23,9 +23,7 @@ class AppLikeButton extends StatefulWidget {
 class _AppLikeButtonState extends State<AppLikeButton> {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => FavoriteProductsCubit(),
-      child: BlocBuilder<FavoriteProductsCubit, FavoriteProductState>(
+    return BlocBuilder<FavoriteProductsCubit, FavoriteProductState>(
         builder: (context, state) {
           return LikeButton(
             isLiked: widget.isLiked,
@@ -42,7 +40,7 @@ class _AppLikeButtonState extends State<AppLikeButton> {
             },
           );
         },
-      ),
-    );
+      );
+
   }
 }

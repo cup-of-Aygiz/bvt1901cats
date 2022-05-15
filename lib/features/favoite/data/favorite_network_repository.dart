@@ -17,11 +17,7 @@ class FavoriteNetworkRepository extends FavoriteProductRepository {
   @override
   Future<List<ProductEntity>> getProductList() async {
     try {
-      log('Начало получения продуктов');
-
       final response = await dioContainer.dio.get('/favorites');
-      log('${response.statusCode}');
-      log('${response.data}');
       final newList = List<ProductEntity>.from(
           response.data.map((e) => FavoriteDTO.fromJson(e).toEntity()));
       return newList;
