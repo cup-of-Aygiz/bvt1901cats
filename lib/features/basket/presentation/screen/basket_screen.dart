@@ -39,11 +39,11 @@ class _BasketScreenState extends State<BasketScreen> {
                     title: Text(locale.clear_basket),
                     actions: <Widget>[
                       TextButton(
-                        onPressed: () => Navigator.pop(context, locale.ok),
+                        onPressed: () => Navigator.maybePop(context, locale.ok),
                         child: Text(locale.yes_clear),
                       ),
                       TextButton(
-                        onPressed: () => Navigator.pop(context, locale.cancel),
+                        onPressed: () => Navigator.maybePop(context, locale.cancel),
                         child: Text(locale.no_clear),
                       ),
                     ],
@@ -62,7 +62,7 @@ class _BasketScreenState extends State<BasketScreen> {
                         padding: EdgeInsets.zero,
                         physics: const BouncingScrollPhysics(),
                         children: [
-                          for (int i = 9; i < state.productList.length; i++)
+                          for (int i = 0; i < state.productList.length; i++)
                             BasketProductContainer(
                                 productEntity: state.productList[i]),
                           SizedBox(height: 150.h),
@@ -77,6 +77,7 @@ class _BasketScreenState extends State<BasketScreen> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: AppTextButton(
+                              // -20 для отступа слева и справа
                               width: width - 20.w,
                               height: 40.h,
                               buttonText:

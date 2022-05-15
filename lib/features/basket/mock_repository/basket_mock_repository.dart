@@ -28,4 +28,21 @@ class BasketMockRepository extends BasketRepository
     return productsList;
   }
 
+
+  @override
+  Future<List<ProductEntity>> updateProductList({required int productId, required int amount}) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<List<ProductEntity>> addInProductList({required int productId, required int amount}) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<List<ProductEntity>> deleteFromProductList({required int productId}) {
+    throw UnimplementedError();
+  }
+
+
 }
