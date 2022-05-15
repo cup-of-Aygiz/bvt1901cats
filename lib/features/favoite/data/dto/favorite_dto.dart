@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:json_annotation/json_annotation.dart';
 
 import '../../../products_catalog/domain/entity/product_entity.dart';
@@ -37,18 +39,26 @@ class FavoriteDTO{
   factory FavoriteDTO.fromJson(Map<String, dynamic> json) => _$FavoriteDTOFromJson(json);
 
   ProductEntity toEntity() {
-    return ProductEntity(
-      id: id ?? -1,
-      image: images == null
-          ? ''
-          : images!.isNotEmpty
-          ? images!.first
-          : '',
-      name: name ?? '',
-      price: price ?? '',
-      amount: amount ?? -1,
-      volume: volume ?? '',
-    );
+    late ProductEntity pr;
+    try {
+      pr= ProductEntity(
+        id: id ?? -1,
+        image: images == null
+            ? ''
+            : images!.isNotEmpty
+            ? images!.first
+            : '',
+        name: name ?? '',
+        price: price ?? '',
+        amount: amount ?? -1,
+        volume: volume ?? '',
+      );
+    }
+    catch(e){
+      log("${e}");
+    }
+
+    return pr;
   }
 
 }

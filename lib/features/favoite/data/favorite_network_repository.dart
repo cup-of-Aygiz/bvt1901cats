@@ -18,10 +18,12 @@ class FavoriteNetworkRepository extends FavoriteProductRepository {
   Future<List<ProductEntity>> getProductList() async {
     try {
       log('Начало получения продуктов');
+
       final response = await dioContainer.dio.get('/favorites');
       log('${response.statusCode}');
+      log('${response.data}');
       final newList = List<ProductEntity>.from(
-          response.data['rows'].map((e) => FavoriteDTO.fromJson(e).toEntity()));
+          response.data.map((e) => FavoriteDTO.fromJson(e).toEntity()));
       return newList;
     } catch (e) {
       throw mapToErrorModel(e);
@@ -36,7 +38,7 @@ class FavoriteNetworkRepository extends FavoriteProductRepository {
       log('${response.statusCode}');
 
       final newList = List<ProductEntity>.from(
-          response.data['rows'].map((e) => FavoriteDTO.fromJson(e).toEntity()));
+          response.data.map((e) => FavoriteDTO.fromJson(e).toEntity()));
       return newList;
     }
     catch (e) {
@@ -50,7 +52,7 @@ class FavoriteNetworkRepository extends FavoriteProductRepository {
       final response= await dioContainer.dio.delete('/favorites',data: {'id': id});
 
       final newList = List<ProductEntity>.from(
-          response.data['rows'].map((e) => FavoriteDTO.fromJson(e).toEntity()));
+          response.data.map((e) => FavoriteDTO.fromJson(e).toEntity()));
       return newList;
     }
     catch (e) {

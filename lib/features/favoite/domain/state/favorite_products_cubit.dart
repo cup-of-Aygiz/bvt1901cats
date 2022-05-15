@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bvt1901_practice/features/favoite/domain/state/favorite_products_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
@@ -27,16 +25,13 @@ class FavoriteProductsCubit extends Cubit<FavoriteProductState> {
   Future<void> loadFavoriteProducts() async {
     try {
       emit(state.copyWith(loading: true));
-      log('Началось');
+
       List<ProductEntity> listProducts =
           await _favoriteProductRepository.getProductList();
 
-      log('Продукты получены');
       emit(state.copyWith(
         productList: listProducts,
         loading: false,));
-
-      log('Емит');
 
     } on ErrorModel catch (e) {
       emit(state.copyWith(loading: false, error: e));
@@ -46,10 +41,10 @@ class FavoriteProductsCubit extends Cubit<FavoriteProductState> {
   Future<void> addFavoriteProduct(int id) async{
     try{
       emit(state.copyWith(loading: true));
-      log('Началось ${id}');
+
       List<ProductEntity> listProducts =
       await _favoriteProductRepository.addProduct(id: id);
-      log('Вот ${listProducts.length}');
+
       emit(state.copyWith(
         productList: listProducts,
         loading: false,));

@@ -8,9 +8,14 @@ import '../../../../uikit/spinkit/spinkit.dart';
 import '../../../products_catalog/presetation/components/product_container.dart';
 import '../../domain/state/favorite_products_state.dart';
 
-class FavoriteScreen extends StatelessWidget {
+class FavoriteScreen extends StatefulWidget {
   const FavoriteScreen({Key? key}) : super(key: key);
 
+  @override
+  State<FavoriteScreen> createState() => _FavoriteScreenState();
+}
+
+class _FavoriteScreenState extends State<FavoriteScreen> {
   @override
   Widget build(BuildContext context) {
     final colors = context.appColors;
