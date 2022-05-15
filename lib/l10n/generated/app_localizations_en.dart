@@ -122,25 +122,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get save_changes => 'Сохранить изменения';
 
   @override
-  String get place_an_order => 'Оформить заказ';
-
-  @override
-  String get ok => 'Ок';
-
-  @override
-  String get cancel => 'Отмена';
-
-  @override
-  String get clear_basket => 'Очистить корзину?';
-
-  @override
-  String get yes_clear => 'Очистить';
-
-  @override
-  String get no_clear => 'Оставить';
-  String get save_changes => 'Сохранить';
-
-  @override
   String get my_addresses => 'Мои адреса';
 
   @override
@@ -178,4 +159,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get choose => 'Выбрать';
+
+  @override
+  String get place_an_order => 'Оформить заказ';
+
+  @override
+  String get ok => 'Ок';
+
+  @override
+  String get cancel => 'Отмена';
+
+  @override
+  String get clear_basket => 'Очистить корзину?';
+
+  @override
+  String get yes_clear => 'Очистить';
+
+  @override
+  String get no_clear => 'Оставить';
 }

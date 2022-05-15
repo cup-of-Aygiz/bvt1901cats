@@ -35,13 +35,6 @@
     "new_password",
     "prov_password",
     "save_changes",
-    "place_an_order",
-    "ok",
-    "cancel",
-    "clear_basket",
-    "yes_clear",
-    "no_clear"
-    "save_changes",
     "my_addresses",
     "add_address",
     "address",
@@ -54,6 +47,12 @@
     "next",
     "delivery_address",
     "load_address",
-    "choose"
+    "choose",
+    "place_an_order",
+    "ok",
+    "cancel",
+    "clear_basket",
+    "yes_clear",
+    "no_clear"
   ]
 }
