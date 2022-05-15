@@ -19,8 +19,8 @@ class BasketMockRepository extends BasketRepository
           image:
           "https://chance2.ru/photo/img/ostav-kotu-vody-pobolshe-foto-24.jpg",
           name: "Водичка $i",
-          price: AppUtils.intInRange(20, 500).toString(),
-          amount: AppUtils.intInRange(0, 100),
+          price: AppUtils.intInRange(20, 100).toString(),
+          amount: AppUtils.intInRange(0, 10),
         ),
       );
     }

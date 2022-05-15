@@ -1,18 +1,20 @@
+import 'package:bvt1901_practice/di/service_locator.dart';
 import 'package:bvt1901_practice/features/basket/domain/state/basket_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../../../app/domain/models/error_model.dart';
 import '../../../products_catalog/domain/entity/product_entity.dart';
-import '../../mock_repository/basket_mock_repository.dart';
+import 'basket_repository.dart';
 
+@LazySingleton()
 class BasketCubit extends Cubit<BasketState> {
   BasketCubit()
       : super(
           const BasketState(productList: []),
         );
 
-
-  final BasketMockRepository _basketProductsMockRepository =  BasketMockRepository();
+  BasketRepository get _basketProductsRepository => getIt();
 
   void init() async {
     await loadBasketProducts();
@@ -23,9 +25,9 @@ class BasketCubit extends Cubit<BasketState> {
       emit(state.copyWith(loading: true));
 
       List<ProductEntity> listProducts =
-      await _basketProductsMockRepository.getProductList();
+          await _basketProductsRepository.getProductList();
 
-      double totalPrice = getTotalPrice();
+      double totalPrice = getTotalPrice(listProducts);
 
       emit(state.copyWith(
         productList: listProducts,
@@ -37,8 +39,11 @@ class BasketCubit extends Cubit<BasketState> {
     }
   }
 
-  double getTotalPrice(){
-    return 423.56;
+  double getTotalPrice(List<ProductEntity> listProducts) {
+    double total = 0;
+    for (int i = 0; i < listProducts.length; i++) {
+      total += listProducts[i].amount * double.parse(listProducts[i].price);
+    }
+    return total;
   }
-
 }

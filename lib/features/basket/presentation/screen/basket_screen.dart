@@ -80,7 +80,7 @@ class _BasketScreenState extends State<BasketScreen> {
                               width: width - 20.w,
                               height: 40.h,
                               buttonText:
-                              '${locale.place_an_order} ${state.totalPrice} ₽',
+                                  '${locale.place_an_order} ${state.totalPrice} ₽',
                               onPressed: () {},
                             ),
                           ),
