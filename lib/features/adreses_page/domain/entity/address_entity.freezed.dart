@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'address_entity.dart';
@@ -11,40 +12,11 @@ part of 'address_entity.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 AddressEntity _$AddressEntityFromJson(Map<String, dynamic> json) {
   return _AddressEntity.fromJson(json);
 }
-
-/// @nodoc
-class _$AddressEntityTearOff {
-  const _$AddressEntityTearOff();
-
-  _AddressEntity call(
-      {String address = '',
-      int entrance = 0,
-      int flat = 0,
-      int floor = 0,
-      int intercom = 0,
-      String comment = ''}) {
-    return _AddressEntity(
-      address: address,
-      entrance: entrance,
-      flat: flat,
-      floor: floor,
-      intercom: intercom,
-      comment: comment,
-    );
-  }
-
-  AddressEntity fromJson(Map<String, Object> json) {
-    return AddressEntity.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $AddressEntity = _$AddressEntityTearOff();
 
 /// @nodoc
 mixin _$AddressEntity {
@@ -123,11 +95,11 @@ class _$AddressEntityCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$AddressEntityCopyWith<$Res>
+abstract class _$$_AddressEntityCopyWith<$Res>
     implements $AddressEntityCopyWith<$Res> {
-  factory _$AddressEntityCopyWith(
-          _AddressEntity value, $Res Function(_AddressEntity) then) =
-      __$AddressEntityCopyWithImpl<$Res>;
+  factory _$$_AddressEntityCopyWith(
+          _$_AddressEntity value, $Res Function(_$_AddressEntity) then) =
+      __$$_AddressEntityCopyWithImpl<$Res>;
   @override
   $Res call(
       {String address,
@@ -139,15 +111,15 @@ abstract class _$AddressEntityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AddressEntityCopyWithImpl<$Res>
+class __$$_AddressEntityCopyWithImpl<$Res>
     extends _$AddressEntityCopyWithImpl<$Res>
-    implements _$AddressEntityCopyWith<$Res> {
-  __$AddressEntityCopyWithImpl(
-      _AddressEntity _value, $Res Function(_AddressEntity) _then)
-      : super(_value, (v) => _then(v as _AddressEntity));
+    implements _$$_AddressEntityCopyWith<$Res> {
+  __$$_AddressEntityCopyWithImpl(
+      _$_AddressEntity _value, $Res Function(_$_AddressEntity) _then)
+      : super(_value, (v) => _then(v as _$_AddressEntity));
 
   @override
-  _AddressEntity get _value => super._value as _AddressEntity;
+  _$_AddressEntity get _value => super._value as _$_AddressEntity;
 
   @override
   $Res call({
@@ -158,7 +130,7 @@ class __$AddressEntityCopyWithImpl<$Res>
     Object? intercom = freezed,
     Object? comment = freezed,
   }) {
-    return _then(_AddressEntity(
+    return _then(_$_AddressEntity(
       address: address == freezed
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -201,23 +173,23 @@ class _$_AddressEntity implements _AddressEntity {
   factory _$_AddressEntity.fromJson(Map<String, dynamic> json) =>
       _$$_AddressEntityFromJson(json);
 
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String address;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int entrance;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int flat;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int floor;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int intercom;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String comment;
 
   @override
@@ -228,38 +200,31 @@ class _$_AddressEntity implements _AddressEntity {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AddressEntity &&
-            (identical(other.address, address) ||
-                const DeepCollectionEquality()
-                    .equals(other.address, address)) &&
-            (identical(other.entrance, entrance) ||
-                const DeepCollectionEquality()
-                    .equals(other.entrance, entrance)) &&
-            (identical(other.flat, flat) ||
-                const DeepCollectionEquality().equals(other.flat, flat)) &&
-            (identical(other.floor, floor) ||
-                const DeepCollectionEquality().equals(other.floor, floor)) &&
-            (identical(other.intercom, intercom) ||
-                const DeepCollectionEquality()
-                    .equals(other.intercom, intercom)) &&
-            (identical(other.comment, comment) ||
-                const DeepCollectionEquality().equals(other.comment, comment)));
+        (other.runtimeType == runtimeType &&
+            other is _$_AddressEntity &&
+            const DeepCollectionEquality().equals(other.address, address) &&
+            const DeepCollectionEquality().equals(other.entrance, entrance) &&
+            const DeepCollectionEquality().equals(other.flat, flat) &&
+            const DeepCollectionEquality().equals(other.floor, floor) &&
+            const DeepCollectionEquality().equals(other.intercom, intercom) &&
+            const DeepCollectionEquality().equals(other.comment, comment));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(address) ^
-      const DeepCollectionEquality().hash(entrance) ^
-      const DeepCollectionEquality().hash(flat) ^
-      const DeepCollectionEquality().hash(floor) ^
-      const DeepCollectionEquality().hash(intercom) ^
-      const DeepCollectionEquality().hash(comment);
 
   @JsonKey(ignore: true)
   @override
-  _$AddressEntityCopyWith<_AddressEntity> get copyWith =>
-      __$AddressEntityCopyWithImpl<_AddressEntity>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(address),
+      const DeepCollectionEquality().hash(entrance),
+      const DeepCollectionEquality().hash(flat),
+      const DeepCollectionEquality().hash(floor),
+      const DeepCollectionEquality().hash(intercom),
+      const DeepCollectionEquality().hash(comment));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_AddressEntityCopyWith<_$_AddressEntity> get copyWith =>
+      __$$_AddressEntityCopyWithImpl<_$_AddressEntity>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -269,12 +234,12 @@ class _$_AddressEntity implements _AddressEntity {
 
 abstract class _AddressEntity implements AddressEntity {
   const factory _AddressEntity(
-      {String address,
-      int entrance,
-      int flat,
-      int floor,
-      int intercom,
-      String comment}) = _$_AddressEntity;
+      {final String address,
+      final int entrance,
+      final int flat,
+      final int floor,
+      final int intercom,
+      final String comment}) = _$_AddressEntity;
 
   factory _AddressEntity.fromJson(Map<String, dynamic> json) =
       _$_AddressEntity.fromJson;
@@ -293,6 +258,6 @@ abstract class _AddressEntity implements AddressEntity {
   String get comment => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AddressEntityCopyWith<_AddressEntity> get copyWith =>
+  _$$_AddressEntityCopyWith<_$_AddressEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }

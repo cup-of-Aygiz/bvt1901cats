@@ -15,7 +15,7 @@ _$_BasketState _$$_BasketStateFromJson(Map<String, dynamic> json) =>
       productList: (json['productList'] as List<dynamic>?)
               ?.map((e) => ProductEntity.fromJson(e as Map<String, dynamic>))
               .toList() ??
-          [],
+          const [],
       totalPrice: (json['totalPrice'] as num?)?.toDouble() ?? 0,
     );
 
