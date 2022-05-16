@@ -19,8 +19,15 @@ class $ConfigGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/ic_basket.svg
+  SvgGenImage get icBasket => const SvgGenImage('assets/icons/ic_basket.svg');
+
   /// File path: assets/icons/ic_bottle.svg
   SvgGenImage get icBottle => const SvgGenImage('assets/icons/ic_bottle.svg');
+
+  /// File path: assets/icons/ic_closeEye.svg
+  SvgGenImage get icCloseEye =>
+      const SvgGenImage('assets/icons/ic_closeEye.svg');
 
   /// File path: assets/icons/ic_freeDelivery.svg
   SvgGenImage get icFreeDelivery =>
@@ -47,8 +54,14 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_ok.svg
   SvgGenImage get icOk => const SvgGenImage('assets/icons/ic_ok.svg');
 
+  /// File path: assets/icons/ic_openEye.svg
+  SvgGenImage get icOpenEye => const SvgGenImage('assets/icons/ic_openEye.svg');
+
   /// File path: assets/icons/ic_person.svg
   SvgGenImage get icPerson => const SvgGenImage('assets/icons/ic_person.svg');
+
+  /// File path: assets/icons/ic_pointer.svg
+  SvgGenImage get icPointer => const SvgGenImage('assets/icons/ic_pointer.svg');
 
   /// File path: assets/icons/ic_sales.svg
   SvgGenImage get icSales => const SvgGenImage('assets/icons/ic_sales.svg');

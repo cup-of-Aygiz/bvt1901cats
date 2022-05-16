@@ -15,6 +15,7 @@ class AppPhoneTextField extends StatelessWidget {
   final bool readOnly;
   final InputBorder? inputBorder;
   final Function(String?)? onChanged;
+  final AutovalidateMode autoValidateMode;
 
   const AppPhoneTextField({
     Key? key,
@@ -28,6 +29,7 @@ class AppPhoneTextField extends StatelessWidget {
     this.readOnly = false,
     this.inputBorder = const OutlineInputBorder(),
     this.onChanged,
+    this.autoValidateMode=AutovalidateMode.onUserInteraction,
   }) : super(key: key);
 
   @override
@@ -35,7 +37,7 @@ class AppPhoneTextField extends StatelessWidget {
     final locale = context.appLocale;
 
     return Padding(
-      padding: padding ?? EdgeInsets.symmetric(vertical: 10.h),
+      padding: padding ?? EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.h),
       child: FormBuilderTextField(
         initialValue: initialValue,
         controller: textEditingController,
@@ -48,7 +50,7 @@ class AppPhoneTextField extends StatelessWidget {
               mask: '+7(###)###-##-##', filter: {'#': RegExp(r'[0-9]')})
         ],
         keyboardType: TextInputType.phone,
-        autovalidateMode: AutovalidateMode.onUserInteraction,
+        autovalidateMode: autoValidateMode,
         decoration: InputDecoration(
           border: inputBorder,
           labelText: locale.phone,

@@ -5,21 +5,26 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:like_button/like_button.dart';
+import '../../../../gen/assets.gen.dart';
 import '../../../../uikit/buttons/app_transparent_button.dart';
 import '../../domain/entity/product_entity.dart';
 
 class ProductContainer extends StatelessWidget {
   final ProductEntity productEntity;
+  final bool isLiked;
 
   const ProductContainer({
     Key? key,
     required this.productEntity,
+    this.isLiked = false,
   }) : super(key: key);
   
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery
+        .of(context)
+        .size;
     final colors = context.appColors;
     return SizedBox(
       width: size.width / 2 - 10,
@@ -44,17 +49,21 @@ class ProductContainer extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
               child: Column(
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.only(
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(25.r),
-                        topRight: Radius.circular(25.r)),
+                        topRight: Radius.circular(25.r),),
+                      color: colors.productColor,
+                    ),
                     child: Stack(
                       children: [
                         FancyShimmerImage(
                           imageUrl: productEntity.image,
                           width: constraints.maxWidth,
                           height: constraints.maxWidth,
-                          boxFit: BoxFit.fill,
+                          boxFit: BoxFit.contain,
+                          errorWidget: Assets.images.logotip.image(),
                         ),
                         Positioned(
                           top: 0.h,
@@ -65,11 +74,14 @@ class ProductContainer extends StatelessWidget {
                             decoration: BoxDecoration(
                               color: colors.white,
                               borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(25.r)),
+                                bottomLeft: Radius.circular(25.r),
+                                topRight: Radius.circular(25.r),
+                              ),
                             ),
                             child: Padding(
                               padding: EdgeInsets.only(left: 2.w, top: 2.w),
                               child: LikeButton(
+                                isLiked: isLiked,
                                 size: 26.h,
                               ),
                             ),
@@ -108,7 +120,7 @@ class ProductContainer extends StatelessWidget {
                             decoration: BoxDecoration(
                               color: colors.purple,
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(10.r)),
+                              BorderRadius.all(Radius.circular(10.r)),
                             ),
                             child: TextButton(
                               onPressed: () {},

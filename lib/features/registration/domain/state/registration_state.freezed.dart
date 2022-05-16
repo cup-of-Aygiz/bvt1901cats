@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'registration_state.dart';
@@ -11,34 +12,11 @@ part of 'registration_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 RegistrationState _$RegistrationStateFromJson(Map<String, dynamic> json) {
   return _RegistrationState.fromJson(json);
 }
-
-/// @nodoc
-class _$RegistrationStateTearOff {
-  const _$RegistrationStateTearOff();
-
-  _RegistrationState call(
-      {bool loading = false,
-      ErrorModel? error,
-      required PersonEntity personEntity}) {
-    return _RegistrationState(
-      loading: loading,
-      error: error,
-      personEntity: personEntity,
-    );
-  }
-
-  RegistrationState fromJson(Map<String, Object> json) {
-    return RegistrationState.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $RegistrationState = _$RegistrationStateTearOff();
 
 /// @nodoc
 mixin _$RegistrationState {
@@ -114,11 +92,11 @@ class _$RegistrationStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$RegistrationStateCopyWith<$Res>
+abstract class _$$_RegistrationStateCopyWith<$Res>
     implements $RegistrationStateCopyWith<$Res> {
-  factory _$RegistrationStateCopyWith(
-          _RegistrationState value, $Res Function(_RegistrationState) then) =
-      __$RegistrationStateCopyWithImpl<$Res>;
+  factory _$$_RegistrationStateCopyWith(_$_RegistrationState value,
+          $Res Function(_$_RegistrationState) then) =
+      __$$_RegistrationStateCopyWithImpl<$Res>;
   @override
   $Res call({bool loading, ErrorModel? error, PersonEntity personEntity});
 
@@ -129,15 +107,15 @@ abstract class _$RegistrationStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$RegistrationStateCopyWithImpl<$Res>
+class __$$_RegistrationStateCopyWithImpl<$Res>
     extends _$RegistrationStateCopyWithImpl<$Res>
-    implements _$RegistrationStateCopyWith<$Res> {
-  __$RegistrationStateCopyWithImpl(
-      _RegistrationState _value, $Res Function(_RegistrationState) _then)
-      : super(_value, (v) => _then(v as _RegistrationState));
+    implements _$$_RegistrationStateCopyWith<$Res> {
+  __$$_RegistrationStateCopyWithImpl(
+      _$_RegistrationState _value, $Res Function(_$_RegistrationState) _then)
+      : super(_value, (v) => _then(v as _$_RegistrationState));
 
   @override
-  _RegistrationState get _value => super._value as _RegistrationState;
+  _$_RegistrationState get _value => super._value as _$_RegistrationState;
 
   @override
   $Res call({
@@ -145,7 +123,7 @@ class __$RegistrationStateCopyWithImpl<$Res>
     Object? error = freezed,
     Object? personEntity = freezed,
   }) {
-    return _then(_RegistrationState(
+    return _then(_$_RegistrationState(
       loading: loading == freezed
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
@@ -171,8 +149,8 @@ class _$_RegistrationState implements _RegistrationState {
   factory _$_RegistrationState.fromJson(Map<String, dynamic> json) =>
       _$$_RegistrationStateFromJson(json);
 
-  @JsonKey(defaultValue: false)
   @override
+  @JsonKey()
   final bool loading;
   @override
   final ErrorModel? error;
@@ -187,28 +165,27 @@ class _$_RegistrationState implements _RegistrationState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RegistrationState &&
-            (identical(other.loading, loading) ||
-                const DeepCollectionEquality()
-                    .equals(other.loading, loading)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
-            (identical(other.personEntity, personEntity) ||
-                const DeepCollectionEquality()
-                    .equals(other.personEntity, personEntity)));
+        (other.runtimeType == runtimeType &&
+            other is _$_RegistrationState &&
+            const DeepCollectionEquality().equals(other.loading, loading) &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality()
+                .equals(other.personEntity, personEntity));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(loading) ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(personEntity);
 
   @JsonKey(ignore: true)
   @override
-  _$RegistrationStateCopyWith<_RegistrationState> get copyWith =>
-      __$RegistrationStateCopyWithImpl<_RegistrationState>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(loading),
+      const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(personEntity));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_RegistrationStateCopyWith<_$_RegistrationState> get copyWith =>
+      __$$_RegistrationStateCopyWithImpl<_$_RegistrationState>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -218,9 +195,9 @@ class _$_RegistrationState implements _RegistrationState {
 
 abstract class _RegistrationState implements RegistrationState {
   const factory _RegistrationState(
-      {bool loading,
-      ErrorModel? error,
-      required PersonEntity personEntity}) = _$_RegistrationState;
+      {final bool loading,
+      final ErrorModel? error,
+      required final PersonEntity personEntity}) = _$_RegistrationState;
 
   factory _RegistrationState.fromJson(Map<String, dynamic> json) =
       _$_RegistrationState.fromJson;
@@ -233,6 +210,6 @@ abstract class _RegistrationState implements RegistrationState {
   PersonEntity get personEntity => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$RegistrationStateCopyWith<_RegistrationState> get copyWith =>
+  _$$_RegistrationStateCopyWith<_$_RegistrationState> get copyWith =>
       throw _privateConstructorUsedError;
 }

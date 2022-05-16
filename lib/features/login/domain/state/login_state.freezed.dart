@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'login_state.dart';
@@ -11,32 +12,11 @@ part of 'login_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 LoginState _$LoginStateFromJson(Map<String, dynamic> json) {
   return _LoginState.fromJson(json);
 }
-
-/// @nodoc
-class _$LoginStateTearOff {
-  const _$LoginStateTearOff();
-
-  _LoginState call(
-      {bool loading = false, ErrorModel? error, ProfileEntity? profileEntity}) {
-    return _LoginState(
-      loading: loading,
-      error: error,
-      profileEntity: profileEntity,
-    );
-  }
-
-  LoginState fromJson(Map<String, Object> json) {
-    return LoginState.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $LoginState = _$LoginStateTearOff();
 
 /// @nodoc
 mixin _$LoginState {
@@ -115,10 +95,11 @@ class _$LoginStateCopyWithImpl<$Res> implements $LoginStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$LoginStateCopyWith<$Res> implements $LoginStateCopyWith<$Res> {
-  factory _$LoginStateCopyWith(
-          _LoginState value, $Res Function(_LoginState) then) =
-      __$LoginStateCopyWithImpl<$Res>;
+abstract class _$$_LoginStateCopyWith<$Res>
+    implements $LoginStateCopyWith<$Res> {
+  factory _$$_LoginStateCopyWith(
+          _$_LoginState value, $Res Function(_$_LoginState) then) =
+      __$$_LoginStateCopyWithImpl<$Res>;
   @override
   $Res call({bool loading, ErrorModel? error, ProfileEntity? profileEntity});
 
@@ -129,14 +110,14 @@ abstract class _$LoginStateCopyWith<$Res> implements $LoginStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LoginStateCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
-    implements _$LoginStateCopyWith<$Res> {
-  __$LoginStateCopyWithImpl(
-      _LoginState _value, $Res Function(_LoginState) _then)
-      : super(_value, (v) => _then(v as _LoginState));
+class __$$_LoginStateCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
+    implements _$$_LoginStateCopyWith<$Res> {
+  __$$_LoginStateCopyWithImpl(
+      _$_LoginState _value, $Res Function(_$_LoginState) _then)
+      : super(_value, (v) => _then(v as _$_LoginState));
 
   @override
-  _LoginState get _value => super._value as _LoginState;
+  _$_LoginState get _value => super._value as _$_LoginState;
 
   @override
   $Res call({
@@ -144,7 +125,7 @@ class __$LoginStateCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
     Object? error = freezed,
     Object? profileEntity = freezed,
   }) {
-    return _then(_LoginState(
+    return _then(_$_LoginState(
       loading: loading == freezed
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
@@ -169,8 +150,8 @@ class _$_LoginState implements _LoginState {
   factory _$_LoginState.fromJson(Map<String, dynamic> json) =>
       _$$_LoginStateFromJson(json);
 
-  @JsonKey(defaultValue: false)
   @override
+  @JsonKey()
   final bool loading;
   @override
   final ErrorModel? error;
@@ -185,28 +166,26 @@ class _$_LoginState implements _LoginState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoginState &&
-            (identical(other.loading, loading) ||
-                const DeepCollectionEquality()
-                    .equals(other.loading, loading)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
-            (identical(other.profileEntity, profileEntity) ||
-                const DeepCollectionEquality()
-                    .equals(other.profileEntity, profileEntity)));
+        (other.runtimeType == runtimeType &&
+            other is _$_LoginState &&
+            const DeepCollectionEquality().equals(other.loading, loading) &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality()
+                .equals(other.profileEntity, profileEntity));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(loading) ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(profileEntity);
 
   @JsonKey(ignore: true)
   @override
-  _$LoginStateCopyWith<_LoginState> get copyWith =>
-      __$LoginStateCopyWithImpl<_LoginState>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(loading),
+      const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(profileEntity));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_LoginStateCopyWith<_$_LoginState> get copyWith =>
+      __$$_LoginStateCopyWithImpl<_$_LoginState>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -216,9 +195,9 @@ class _$_LoginState implements _LoginState {
 
 abstract class _LoginState implements LoginState {
   const factory _LoginState(
-      {bool loading,
-      ErrorModel? error,
-      ProfileEntity? profileEntity}) = _$_LoginState;
+      {final bool loading,
+      final ErrorModel? error,
+      final ProfileEntity? profileEntity}) = _$_LoginState;
 
   factory _LoginState.fromJson(Map<String, dynamic> json) =
       _$_LoginState.fromJson;
@@ -231,6 +210,6 @@ abstract class _LoginState implements LoginState {
   ProfileEntity? get profileEntity => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$LoginStateCopyWith<_LoginState> get copyWith =>
+  _$$_LoginStateCopyWith<_$_LoginState> get copyWith =>
       throw _privateConstructorUsedError;
 }

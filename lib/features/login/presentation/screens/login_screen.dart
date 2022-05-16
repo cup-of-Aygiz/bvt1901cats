@@ -3,7 +3,6 @@ import 'package:bvt1901_practice/features/registration/presentation/screen/regis
 import 'package:bvt1901_practice/uikit/app_bars/default_app_bar.dart';
 import 'package:bvt1901_practice/uikit/buttons/app_text_button.dart';
 import 'package:bvt1901_practice/uikit/text_fields/app_phone_field.dart';
-import 'package:bvt1901_practice/uikit/text_fields/app_text_field.dart';
 import 'package:bvt1901_practice/uikit/validators/app_validators.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +11,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../uikit/buttons/app_transparent_button.dart';
 import '../../../../uikit/spinkit/spinkit.dart';
+import '../../../../uikit/text_fields/app_password_field.dart';
 import '../../../registration/presentation/components/proggres_gradient.dart';
 import '../../../router/presentation/screen/router_screen.dart';
 import '../../domain/state/login_cubit.dart';
@@ -44,39 +44,34 @@ class _LoginScreenState extends State<LoginScreen> {
                 length: 2,
                 child: FormBuilder(
                   key: _formKey,
-                  child: ListView(
+                  child: Column(
                     children: [
-                      Padding(
-                        padding: EdgeInsets.only(top: 32.h),
-                      ),
+                      SizedBox(height: 32.h),
                       Text(
                         locale.project_name,
                         style: AppTextStyle.normalW200S34,
                         textAlign: TextAlign.center,
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 32.h),
+                      SizedBox(height: 32.h),
+                      AppPhoneTextField(
+                        labelText: locale.phone,
+                        name: 'phone',
+                        autoValidateMode: AutovalidateMode.disabled,
                       ),
+                      SizedBox(height: 4.h),
                       Container(
+                        height: 60.h,
                         margin: EdgeInsets.symmetric(horizontal: 10.w),
-                        child: AppPhoneTextField(
-                            labelText: locale.phone, name: 'phone'),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 6.h),
-                      ),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 10.w),
-                        child: AppTextField(
-                          labelText: locale.password,
+                        child: AppPasswordField(
+                          labelText: locale.old_password,
                           name: 'password',
+                          padding: EdgeInsets.symmetric(vertical: 2.h),
+                          autoValidateMode: AutovalidateMode.disabled,
                           validator:
                               AppValidators.requiredMinLengthField(context),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 40.h),
-                      ),
+                      SizedBox(height: 32.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -84,6 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             locale.no_registration_yet,
                             style: AppTextStyle.normalW400S12,
                           ),
+                          SizedBox(width: 4.w),
                           AppTransparentButton(
                             onTap: () {
                               router.pushScreen(
@@ -94,10 +90,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           )
                         ],
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 150.h),
-                      ),
+                      SizedBox(height: 140.h),
                       Container(
+                        width: 300.w,
                         margin: EdgeInsets.symmetric(horizontal: 10.w),
                         child: AppTextButton(
                           color: colors.purple,
@@ -106,15 +101,18 @@ class _LoginScreenState extends State<LoginScreen> {
                             _formKey.currentState?.validate();
                             if (_formKey.currentState?.validate() ?? false) {
                               _formKey.currentState!.save();
-                              final loginSuccess = await context
+                              await context
                                   .read<LoginCubit>()
                                   .saveStateAndLogin(
                                       _formKey.currentState!.value['phone'],
-                                      _formKey.currentState!.value['password']);
-                              if (loginSuccess) {
-                                context.appRouter.pushAndPopToRoot(
-                                    context, const RouterScreen());
-                              }
+                                      _formKey.currentState!.value['password']).then((loginSuccess){
+                                if (loginSuccess) {
+                                  context.appRouter.pushAndPopToRoot(
+                                      context, const RouterScreen());
+                                }
+                                }
+                              );
+
                             }
                           },
                         ),

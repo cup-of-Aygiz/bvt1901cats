@@ -25,6 +25,12 @@ class HomeScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 10.h),
             child: Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.circular(30.r),
+                color: colors.white,
+              ),
+              height: 46.h,
               child: FormBuilderTextField(
                 name: 'find',
                 readOnly: true,
@@ -38,16 +44,12 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              decoration: BoxDecoration(
-                shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.circular(30.r),
-                color: colors.white,
-              ),
-              height: 46.h,
             ),
           ),
           Padding(
-              child: const ProductList(), padding: EdgeInsets.only(top: 66.h)),
+            padding: EdgeInsets.only(top: 66.h),
+            child: const ProductList(),
+          ),
         ],
       ),
     );
