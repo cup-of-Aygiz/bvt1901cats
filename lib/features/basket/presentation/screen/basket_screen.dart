@@ -8,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../gen/assets.gen.dart';
 import '../../../../uikit/spinkit/spinkit.dart';
+import '../../../order_registration/presentation/screens/order_registration.dart';
 import '../../domain/state/basket_cubit.dart';
 import '../components/basket_product_container.dart';
 
@@ -82,7 +83,9 @@ class _BasketScreenState extends State<BasketScreen> {
                               height: 40.h,
                               buttonText:
                                   '${locale.place_an_order} ${state.totalPrice} ₽',
-                              onPressed: () {},
+                              onPressed: () {
+                                context.appRouter.pushScreen(context, const OrdersRegistration());
+                              },
                             ),
                           ),
                         ),
