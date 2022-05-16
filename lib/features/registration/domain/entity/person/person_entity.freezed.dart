@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'person_entity.dart';
@@ -11,38 +12,11 @@ part of 'person_entity.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PersonEntity _$PersonEntityFromJson(Map<String, dynamic> json) {
   return _PersonEntity.fromJson(json);
 }
-
-/// @nodoc
-class _$PersonEntityTearOff {
-  const _$PersonEntityTearOff();
-
-  _PersonEntity call(
-      {String firstName = '',
-      String lastName = '',
-      String middleName = '',
-      String phone = '',
-      String password = ''}) {
-    return _PersonEntity(
-      firstName: firstName,
-      lastName: lastName,
-      middleName: middleName,
-      phone: phone,
-      password: password,
-    );
-  }
-
-  PersonEntity fromJson(Map<String, Object> json) {
-    return PersonEntity.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PersonEntity = _$PersonEntityTearOff();
 
 /// @nodoc
 mixin _$PersonEntity {
@@ -118,11 +92,11 @@ class _$PersonEntityCopyWithImpl<$Res> implements $PersonEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$PersonEntityCopyWith<$Res>
+abstract class _$$_PersonEntityCopyWith<$Res>
     implements $PersonEntityCopyWith<$Res> {
-  factory _$PersonEntityCopyWith(
-          _PersonEntity value, $Res Function(_PersonEntity) then) =
-      __$PersonEntityCopyWithImpl<$Res>;
+  factory _$$_PersonEntityCopyWith(
+          _$_PersonEntity value, $Res Function(_$_PersonEntity) then) =
+      __$$_PersonEntityCopyWithImpl<$Res>;
   @override
   $Res call(
       {String firstName,
@@ -133,14 +107,15 @@ abstract class _$PersonEntityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PersonEntityCopyWithImpl<$Res> extends _$PersonEntityCopyWithImpl<$Res>
-    implements _$PersonEntityCopyWith<$Res> {
-  __$PersonEntityCopyWithImpl(
-      _PersonEntity _value, $Res Function(_PersonEntity) _then)
-      : super(_value, (v) => _then(v as _PersonEntity));
+class __$$_PersonEntityCopyWithImpl<$Res>
+    extends _$PersonEntityCopyWithImpl<$Res>
+    implements _$$_PersonEntityCopyWith<$Res> {
+  __$$_PersonEntityCopyWithImpl(
+      _$_PersonEntity _value, $Res Function(_$_PersonEntity) _then)
+      : super(_value, (v) => _then(v as _$_PersonEntity));
 
   @override
-  _PersonEntity get _value => super._value as _PersonEntity;
+  _$_PersonEntity get _value => super._value as _$_PersonEntity;
 
   @override
   $Res call({
@@ -150,7 +125,7 @@ class __$PersonEntityCopyWithImpl<$Res> extends _$PersonEntityCopyWithImpl<$Res>
     Object? phone = freezed,
     Object? password = freezed,
   }) {
-    return _then(_PersonEntity(
+    return _then(_$_PersonEntity(
       firstName: firstName == freezed
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
@@ -188,26 +163,25 @@ class _$_PersonEntity implements _PersonEntity {
   factory _$_PersonEntity.fromJson(Map<String, dynamic> json) =>
       _$$_PersonEntityFromJson(json);
 
-  @JsonKey(defaultValue: '')
-  @override
-
   /// имя
-  final String firstName;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
+  final String firstName;
 
   /// фамилия
-  final String lastName;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
+  final String lastName;
 
   /// отчество
+  @override
+  @JsonKey()
   final String middleName;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String phone;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String password;
 
   @override
@@ -218,36 +192,30 @@ class _$_PersonEntity implements _PersonEntity {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PersonEntity &&
-            (identical(other.firstName, firstName) ||
-                const DeepCollectionEquality()
-                    .equals(other.firstName, firstName)) &&
-            (identical(other.lastName, lastName) ||
-                const DeepCollectionEquality()
-                    .equals(other.lastName, lastName)) &&
-            (identical(other.middleName, middleName) ||
-                const DeepCollectionEquality()
-                    .equals(other.middleName, middleName)) &&
-            (identical(other.phone, phone) ||
-                const DeepCollectionEquality().equals(other.phone, phone)) &&
-            (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)));
+        (other.runtimeType == runtimeType &&
+            other is _$_PersonEntity &&
+            const DeepCollectionEquality().equals(other.firstName, firstName) &&
+            const DeepCollectionEquality().equals(other.lastName, lastName) &&
+            const DeepCollectionEquality()
+                .equals(other.middleName, middleName) &&
+            const DeepCollectionEquality().equals(other.phone, phone) &&
+            const DeepCollectionEquality().equals(other.password, password));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(firstName) ^
-      const DeepCollectionEquality().hash(lastName) ^
-      const DeepCollectionEquality().hash(middleName) ^
-      const DeepCollectionEquality().hash(phone) ^
-      const DeepCollectionEquality().hash(password);
 
   @JsonKey(ignore: true)
   @override
-  _$PersonEntityCopyWith<_PersonEntity> get copyWith =>
-      __$PersonEntityCopyWithImpl<_PersonEntity>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(firstName),
+      const DeepCollectionEquality().hash(lastName),
+      const DeepCollectionEquality().hash(middleName),
+      const DeepCollectionEquality().hash(phone),
+      const DeepCollectionEquality().hash(password));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_PersonEntityCopyWith<_$_PersonEntity> get copyWith =>
+      __$$_PersonEntityCopyWithImpl<_$_PersonEntity>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -257,11 +225,11 @@ class _$_PersonEntity implements _PersonEntity {
 
 abstract class _PersonEntity implements PersonEntity {
   const factory _PersonEntity(
-      {String firstName,
-      String lastName,
-      String middleName,
-      String phone,
-      String password}) = _$_PersonEntity;
+      {final String firstName,
+      final String lastName,
+      final String middleName,
+      final String phone,
+      final String password}) = _$_PersonEntity;
 
   factory _PersonEntity.fromJson(Map<String, dynamic> json) =
       _$_PersonEntity.fromJson;
@@ -284,6 +252,6 @@ abstract class _PersonEntity implements PersonEntity {
   String get password => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PersonEntityCopyWith<_PersonEntity> get copyWith =>
+  _$$_PersonEntityCopyWith<_$_PersonEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }

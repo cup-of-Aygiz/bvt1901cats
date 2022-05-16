@@ -11,22 +11,27 @@ class LoginMockRepository extends LoginRepository
   final RegistrationMockStorage _registrationMockStorage =
       RegistrationMockStorage();
   @override
-  Future<ProfileEntity?> login({
+  Future<String> login({
     required String phone,
     required String password,
   }) async {
+    return phone;
+  }
+
+  @override
+  Future<ProfileEntity?> getProfile({required String token}) async {
     try {
       final PersonEntity? personEntity =
           await _registrationMockStorage.loadPerson(
-        phone: phone,
+        phone: token,
       );
       return personEntity != null
           ? ProfileEntity(
-              firstName: personEntity.firstName,
-              lastName: personEntity.lastName,
-              middleName: personEntity.middleName,
-              phone: personEntity.phone,
-            )
+        firstName: personEntity.firstName,
+        lastName: personEntity.lastName,
+        middleName: personEntity.middleName,
+        phone: personEntity.phone,
+      )
           : null;
     } catch (e) {
       throw mapToErrorModel(e);

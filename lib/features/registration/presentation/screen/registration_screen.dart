@@ -33,7 +33,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     final colors = context.appColors;
 
     return BlocProvider(
-      create: (context) => RegistrationCubit()..init(),
+      create: (context) => RegistrationCubit(),
       child: BlocBuilder<RegistrationCubit, RegistrationState>(
         buildWhen: (p, c) => p != c,
         builder: (context, state) {

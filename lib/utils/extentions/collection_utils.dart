@@ -23,9 +23,9 @@ class IterableUtils {
 
   static String string(Iterable iterable) {
     final concatenate = StringBuffer();
-    iterable.forEach((item) {
+    for (var item in iterable) {
       concatenate.write(item?.toString());
-    });
+    }
     return concatenate.toString();
   }
 

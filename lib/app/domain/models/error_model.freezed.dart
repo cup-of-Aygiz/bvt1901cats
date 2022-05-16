@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'error_model.dart';
@@ -11,37 +12,11 @@ part of 'error_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 ErrorModel _$ErrorModelFromJson(Map<String, dynamic> json) {
   return _ErrorModel.fromJson(json);
 }
-
-/// @nodoc
-class _$ErrorModelTearOff {
-  const _$ErrorModelTearOff();
-
-  _ErrorModel call(String message,
-      {dynamic error,
-      String? details,
-      String? code,
-      @JsonKey(ignore: true) StackTrace? stacktrace}) {
-    return _ErrorModel(
-      message,
-      error: error,
-      details: details,
-      code: code,
-      stacktrace: stacktrace,
-    );
-  }
-
-  ErrorModel fromJson(Map<String, Object> json) {
-    return ErrorModel.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ErrorModel = _$ErrorModelTearOff();
 
 /// @nodoc
 mixin _$ErrorModel {
@@ -114,10 +89,11 @@ class _$ErrorModelCopyWithImpl<$Res> implements $ErrorModelCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ErrorModelCopyWith<$Res> implements $ErrorModelCopyWith<$Res> {
-  factory _$ErrorModelCopyWith(
-          _ErrorModel value, $Res Function(_ErrorModel) then) =
-      __$ErrorModelCopyWithImpl<$Res>;
+abstract class _$$_ErrorModelCopyWith<$Res>
+    implements $ErrorModelCopyWith<$Res> {
+  factory _$$_ErrorModelCopyWith(
+          _$_ErrorModel value, $Res Function(_$_ErrorModel) then) =
+      __$$_ErrorModelCopyWithImpl<$Res>;
   @override
   $Res call(
       {String message,
@@ -128,14 +104,14 @@ abstract class _$ErrorModelCopyWith<$Res> implements $ErrorModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ErrorModelCopyWithImpl<$Res> extends _$ErrorModelCopyWithImpl<$Res>
-    implements _$ErrorModelCopyWith<$Res> {
-  __$ErrorModelCopyWithImpl(
-      _ErrorModel _value, $Res Function(_ErrorModel) _then)
-      : super(_value, (v) => _then(v as _ErrorModel));
+class __$$_ErrorModelCopyWithImpl<$Res> extends _$ErrorModelCopyWithImpl<$Res>
+    implements _$$_ErrorModelCopyWith<$Res> {
+  __$$_ErrorModelCopyWithImpl(
+      _$_ErrorModel _value, $Res Function(_$_ErrorModel) _then)
+      : super(_value, (v) => _then(v as _$_ErrorModel));
 
   @override
-  _ErrorModel get _value => super._value as _ErrorModel;
+  _$_ErrorModel get _value => super._value as _$_ErrorModel;
 
   @override
   $Res call({
@@ -145,7 +121,7 @@ class __$ErrorModelCopyWithImpl<$Res> extends _$ErrorModelCopyWithImpl<$Res>
     Object? code = freezed,
     Object? stacktrace = freezed,
   }) {
-    return _then(_ErrorModel(
+    return _then(_$_ErrorModel(
       message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -191,7 +167,8 @@ class _$_ErrorModel extends _ErrorModel {
   final String? details;
   @override
   final String? code;
-  @override // ignore: invalid_annotation_target
+// ignore: invalid_annotation_target
+  @override
   @JsonKey(ignore: true)
   final StackTrace? stacktrace;
 
@@ -203,35 +180,30 @@ class _$_ErrorModel extends _ErrorModel {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ErrorModel &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality()
-                    .equals(other.message, message)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
-            (identical(other.details, details) ||
-                const DeepCollectionEquality()
-                    .equals(other.details, details)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)) &&
-            (identical(other.stacktrace, stacktrace) ||
-                const DeepCollectionEquality()
-                    .equals(other.stacktrace, stacktrace)));
+        (other.runtimeType == runtimeType &&
+            other is _$_ErrorModel &&
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.details, details) &&
+            const DeepCollectionEquality().equals(other.code, code) &&
+            const DeepCollectionEquality()
+                .equals(other.stacktrace, stacktrace));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(message) ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(details) ^
-      const DeepCollectionEquality().hash(code) ^
-      const DeepCollectionEquality().hash(stacktrace);
 
   @JsonKey(ignore: true)
   @override
-  _$ErrorModelCopyWith<_ErrorModel> get copyWith =>
-      __$ErrorModelCopyWithImpl<_ErrorModel>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(message),
+      const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(details),
+      const DeepCollectionEquality().hash(code),
+      const DeepCollectionEquality().hash(stacktrace));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_ErrorModelCopyWith<_$_ErrorModel> get copyWith =>
+      __$$_ErrorModelCopyWithImpl<_$_ErrorModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -240,11 +212,11 @@ class _$_ErrorModel extends _ErrorModel {
 }
 
 abstract class _ErrorModel extends ErrorModel {
-  const factory _ErrorModel(String message,
-      {dynamic error,
-      String? details,
-      String? code,
-      @JsonKey(ignore: true) StackTrace? stacktrace}) = _$_ErrorModel;
+  const factory _ErrorModel(final String message,
+      {final dynamic error,
+      final String? details,
+      final String? code,
+      @JsonKey(ignore: true) final StackTrace? stacktrace}) = _$_ErrorModel;
   const _ErrorModel._() : super._();
 
   factory _ErrorModel.fromJson(Map<String, dynamic> json) =
@@ -263,6 +235,6 @@ abstract class _ErrorModel extends ErrorModel {
   StackTrace? get stacktrace => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ErrorModelCopyWith<_ErrorModel> get copyWith =>
+  _$$_ErrorModelCopyWith<_$_ErrorModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

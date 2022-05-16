@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'profile_state.dart';
@@ -11,32 +12,11 @@ part of 'profile_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 ProfileState _$ProfileStateFromJson(Map<String, dynamic> json) {
   return _ProfileState.fromJson(json);
 }
-
-/// @nodoc
-class _$ProfileStateTearOff {
-  const _$ProfileStateTearOff();
-
-  _ProfileState call(
-      {bool loading = false, ErrorModel? error, ProfileEntity? profileEntity}) {
-    return _ProfileState(
-      loading: loading,
-      error: error,
-      profileEntity: profileEntity,
-    );
-  }
-
-  ProfileState fromJson(Map<String, Object> json) {
-    return ProfileState.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ProfileState = _$ProfileStateTearOff();
 
 /// @nodoc
 mixin _$ProfileState {
@@ -115,11 +95,11 @@ class _$ProfileStateCopyWithImpl<$Res> implements $ProfileStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ProfileStateCopyWith<$Res>
+abstract class _$$_ProfileStateCopyWith<$Res>
     implements $ProfileStateCopyWith<$Res> {
-  factory _$ProfileStateCopyWith(
-          _ProfileState value, $Res Function(_ProfileState) then) =
-      __$ProfileStateCopyWithImpl<$Res>;
+  factory _$$_ProfileStateCopyWith(
+          _$_ProfileState value, $Res Function(_$_ProfileState) then) =
+      __$$_ProfileStateCopyWithImpl<$Res>;
   @override
   $Res call({bool loading, ErrorModel? error, ProfileEntity? profileEntity});
 
@@ -130,14 +110,15 @@ abstract class _$ProfileStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ProfileStateCopyWithImpl<$Res> extends _$ProfileStateCopyWithImpl<$Res>
-    implements _$ProfileStateCopyWith<$Res> {
-  __$ProfileStateCopyWithImpl(
-      _ProfileState _value, $Res Function(_ProfileState) _then)
-      : super(_value, (v) => _then(v as _ProfileState));
+class __$$_ProfileStateCopyWithImpl<$Res>
+    extends _$ProfileStateCopyWithImpl<$Res>
+    implements _$$_ProfileStateCopyWith<$Res> {
+  __$$_ProfileStateCopyWithImpl(
+      _$_ProfileState _value, $Res Function(_$_ProfileState) _then)
+      : super(_value, (v) => _then(v as _$_ProfileState));
 
   @override
-  _ProfileState get _value => super._value as _ProfileState;
+  _$_ProfileState get _value => super._value as _$_ProfileState;
 
   @override
   $Res call({
@@ -145,7 +126,7 @@ class __$ProfileStateCopyWithImpl<$Res> extends _$ProfileStateCopyWithImpl<$Res>
     Object? error = freezed,
     Object? profileEntity = freezed,
   }) {
-    return _then(_ProfileState(
+    return _then(_$_ProfileState(
       loading: loading == freezed
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
@@ -170,8 +151,8 @@ class _$_ProfileState implements _ProfileState {
   factory _$_ProfileState.fromJson(Map<String, dynamic> json) =>
       _$$_ProfileStateFromJson(json);
 
-  @JsonKey(defaultValue: false)
   @override
+  @JsonKey()
   final bool loading;
   @override
   final ErrorModel? error;
@@ -186,28 +167,26 @@ class _$_ProfileState implements _ProfileState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ProfileState &&
-            (identical(other.loading, loading) ||
-                const DeepCollectionEquality()
-                    .equals(other.loading, loading)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
-            (identical(other.profileEntity, profileEntity) ||
-                const DeepCollectionEquality()
-                    .equals(other.profileEntity, profileEntity)));
+        (other.runtimeType == runtimeType &&
+            other is _$_ProfileState &&
+            const DeepCollectionEquality().equals(other.loading, loading) &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality()
+                .equals(other.profileEntity, profileEntity));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(loading) ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(profileEntity);
 
   @JsonKey(ignore: true)
   @override
-  _$ProfileStateCopyWith<_ProfileState> get copyWith =>
-      __$ProfileStateCopyWithImpl<_ProfileState>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(loading),
+      const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(profileEntity));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_ProfileStateCopyWith<_$_ProfileState> get copyWith =>
+      __$$_ProfileStateCopyWithImpl<_$_ProfileState>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -217,9 +196,9 @@ class _$_ProfileState implements _ProfileState {
 
 abstract class _ProfileState implements ProfileState {
   const factory _ProfileState(
-      {bool loading,
-      ErrorModel? error,
-      ProfileEntity? profileEntity}) = _$_ProfileState;
+      {final bool loading,
+      final ErrorModel? error,
+      final ProfileEntity? profileEntity}) = _$_ProfileState;
 
   factory _ProfileState.fromJson(Map<String, dynamic> json) =
       _$_ProfileState.fromJson;
@@ -232,6 +211,6 @@ abstract class _ProfileState implements ProfileState {
   ProfileEntity? get profileEntity => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ProfileStateCopyWith<_ProfileState> get copyWith =>
+  _$$_ProfileStateCopyWith<_$_ProfileState> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -9,6 +9,7 @@ import 'catalog_state.dart';
 @LazySingleton()
 class CatalogCubit extends Cubit<CatalogState> {
   CatalogCubit() : super(const CatalogState());
+
   CatalogRepository get _catalogRepository => getIt();
 
   void init() async {
@@ -18,7 +19,7 @@ class CatalogCubit extends Cubit<CatalogState> {
 
   Future<void> loadProducts() async {
     try {
-      if(!state.loading) {
+      if (!state.loading) {
         emit(state.copyWith(loading: true));
         List<ProductEntity> listProducts =
             await _catalogRepository.getProductList(
@@ -27,11 +28,13 @@ class CatalogCubit extends Cubit<CatalogState> {
         );
         emit(state.copyWith(
           productList: state.productList + listProducts,
-          loading: false,
           start: state.end,
           end: (state.end + 10) < state.maxLength
               ? state.end + 10
               : state.maxLength,
+        ));
+        emit(state.copyWith(
+          loading: false,
         ));
       }
     } on ErrorModel catch (e) {
@@ -48,6 +51,8 @@ class CatalogCubit extends Cubit<CatalogState> {
       );
       emit(state.copyWith(
         maxLength: maxLength,
+      ));
+      emit(state.copyWith(
         loading: false,
       ));
     } on ErrorModel catch (e) {

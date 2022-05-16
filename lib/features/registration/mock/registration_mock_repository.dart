@@ -24,9 +24,4 @@ class RegistrationMockRepository extends RegistrationRepository
     return booleanResult;
   }
 
-  @override
-  Future<PersonEntity> loadPerson() {
-    // TODO: implement loadPerson
-    throw UnimplementedError();
-  }
 }

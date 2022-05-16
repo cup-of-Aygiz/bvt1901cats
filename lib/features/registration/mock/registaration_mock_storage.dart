@@ -10,9 +10,9 @@ class RegistrationMockStorage {
     required String phone,
   }) async {
     try {
-      final _sharedPreferences = await SharedPreferences.getInstance();
-      final json = _sharedPreferences.containsKey('person_entity$phone')
-          ? _sharedPreferences.getString('person_entity$phone')
+      final sharedPreferences = await SharedPreferences.getInstance();
+      final json = sharedPreferences.containsKey('person_entity$phone')
+          ? sharedPreferences.getString('person_entity$phone')
           : null;
       if (json != null) {
         return PersonEntity.fromJson(jsonDecode(json));
@@ -27,9 +27,9 @@ class RegistrationMockStorage {
   /// сохренение Пользователя
   Future<void> savePerson({required PersonEntity personEntity}) async {
     try {
-      final _sharedPreferences = await SharedPreferences.getInstance();
+      final sharedPreferences = await SharedPreferences.getInstance();
       final json = jsonEncode(personEntity.toJson());
-      await _sharedPreferences.setString(
+      await sharedPreferences.setString(
           'person_entity${personEntity.phone}', json);
     } catch (e) {
       rethrow;

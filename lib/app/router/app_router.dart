@@ -28,8 +28,8 @@ class AppRouter with
 
   static void init({int initialTab = 0}) {
     instance = AppRouter._(initialTabIndex: initialTab);
-    instance.tabNavigatorScreensMap.values.forEach((tabScreen) {
+    for (var tabScreen in instance.tabNavigatorScreensMap.values) {
       tabScreen.init(initialTab);
-    });
+    }
   }
 }

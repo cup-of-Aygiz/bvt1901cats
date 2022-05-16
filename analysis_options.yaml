@@ -13,10 +13,4 @@ analyzer:
 
 linter:
   rules:
-    avoid_classes_with_only_static_members: false
-    avoid_function_literals_in_foreach_calls: false
-    #sort_constructors_first:  true
-    public_member_api_docs: false
-    # prefer_relative_imports: true
-    # todo обновить
-    deprecated_consistency: false
+    no_leading_underscores_for_library_prefixes: false
