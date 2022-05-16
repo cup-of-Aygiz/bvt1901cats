@@ -8,6 +8,7 @@ class DefaultAppBar extends StatelessWidget with PreferredSizeWidget {
   final bool centreTitle;
   final String? titleText;
   final Widget? title;
+  final Widget action;
   final Color? backgroundColor;
 
   @override
@@ -19,6 +20,7 @@ class DefaultAppBar extends StatelessWidget with PreferredSizeWidget {
     this.titleText,
     this.backgroundColor,
     this.title,
+    this.action=const SizedBox(),
   }) : super(key: key);
 
   @override
@@ -41,6 +43,9 @@ class DefaultAppBar extends StatelessWidget with PreferredSizeWidget {
         centerTitle: centreTitle,
         leading: canPop ? const AppGoBackButton() : null,
         backgroundColor: backgroundColor ?? myColors.purple,
+        actions: [
+          action,
+        ],
       ),
     );
   }

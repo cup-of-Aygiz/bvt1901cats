@@ -36,5 +36,26 @@
   "old_password": "Текущий пароль",
   "new_password": "Новый пароль",
   "prov_password": "Повторите пароль",
-  "save_changes": "Сохранить изменения"
+  "save_changes": "Сохранить",
+  "my_addresses": "Мои адреса",
+  "add_address": "Новый адрес",
+  "address": "Адрес",
+  "entrance": "Подъезд",
+  "intercom": "Домофон",
+  "flat": "Квартира",
+  "floor": "Этаж",
+  "comment": "Комментарий курьеру",
+  "choose_address": "Редактировать адрес",
+  "next": "Далее",
+  "delivery_address": "Адрес доставки",
+  "load_address": "Определяем ваш адрес",
+  "choose": "Выбрать",
+
+  "save_changes": "Сохранить изменения",
+  "place_an_order": "Оформить заказ",
+  "ok": "Ок",
+  "cancel": "Отмена",
+  "clear_basket": "Очистить корзину?",
+  "yes_clear": "Очистить",
+  "no_clear": "Оставить"
 }
