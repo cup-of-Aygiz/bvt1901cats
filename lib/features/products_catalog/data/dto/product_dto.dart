@@ -12,6 +12,7 @@ class ProductDTO {
   final String? volume;
   final String? price;
   final int? amount;
+  final bool? favorite;
 
   ProductDTO({
     required this.id,
@@ -20,6 +21,7 @@ class ProductDTO {
     required this.volume,
     required this.price,
     required this.amount,
+    required this.favorite,
   });
 
   factory ProductDTO.fromJson(Map<String, dynamic> json) =>
@@ -37,6 +39,7 @@ class ProductDTO {
       price: price ?? '',
       amount: amount ?? -1,
       volume: volume ?? '',
+      isLiked: favorite ?? false
     );
   }
 }

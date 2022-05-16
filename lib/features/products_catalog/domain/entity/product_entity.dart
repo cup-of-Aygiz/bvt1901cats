@@ -12,6 +12,8 @@ class ProductEntity with _$ProductEntity {
     @Default('') final String name,
     @Default('') final String price,
     @Default(0) final int amount,
+    @Default(false) final bool isLiked,
+
   }) = _ProductEntity;
   factory ProductEntity.fromJson(Map<String, dynamic> json) =>
       _$ProductEntityFromJson(json);

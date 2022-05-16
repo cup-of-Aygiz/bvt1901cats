@@ -1,3 +1,4 @@
+import 'package:bvt1901_practice/features/products_catalog/domain/state/catalog_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,9 +33,12 @@ class _AppLikeButtonState extends State<AppLikeButton> {
               if (!isLiked) {
                 setState(() { widget.isLiked = !widget.isLiked; });
                 context.read<FavoriteProductsCubit>().addFavoriteProduct(widget.productId);
+                context.read<CatalogCubit>().loadProducts();
+
               } else {
                 setState(() { widget.isLiked = !widget.isLiked; });
                 context.read<FavoriteProductsCubit>().deleteFavoriteProduct(widget.productId);
+                context.read<CatalogCubit>().loadProducts();
               }
               return !isLiked;
             },

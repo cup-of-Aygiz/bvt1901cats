@@ -27,7 +27,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         ),
         backgroundColor: colors.generalColor,
         body: BlocBuilder<FavoriteProductsCubit, FavoriteProductState>(
-          buildWhen: (p,c)=>p.productList!=c.productList,
+          //buildWhen: (p,c)=>p.productList!=c.productList,
           builder: (context, state) {
             return state.loading && state.productList.isEmpty
                 ? const Center(
@@ -44,7 +44,6 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                                 for (var item in state.productList)
                                   ProductContainer(
                                     productEntity: item,
-                                    isLiked: true,
                                   ),
                               ],
                             ),

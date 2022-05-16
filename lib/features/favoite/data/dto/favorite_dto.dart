@@ -52,6 +52,7 @@ class FavoriteDTO{
         price: price ?? '',
         amount: amount ?? -1,
         volume: volume ?? '',
+        isLiked: true
       );
     }
     catch(e){

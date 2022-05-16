@@ -9,16 +9,19 @@ import '../../../../uikit/buttons/app_like_button/app_like_button.dart';
 import '../../../../uikit/buttons/app_transparent_button.dart';
 import '../../domain/entity/product_entity.dart';
 
-class ProductContainer extends StatelessWidget {
+class ProductContainer extends StatefulWidget {
   final ProductEntity productEntity;
-  final bool isLiked;
 
   const ProductContainer({
     Key? key,
     required this.productEntity,
-    this.isLiked = false,
   }) : super(key: key);
 
+  @override
+  State<ProductContainer> createState() => _ProductContainerState();
+}
+
+class _ProductContainerState extends State<ProductContainer> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -47,7 +50,7 @@ class ProductContainer extends StatelessWidget {
                     child: Stack(
                       children: [
                         FancyShimmerImage(
-                          imageUrl: productEntity.image,
+                          imageUrl: widget.productEntity.image,
                           width: constraints.maxWidth,
                           height: constraints.maxWidth,
                           boxFit: BoxFit.contain,
@@ -69,8 +72,8 @@ class ProductContainer extends StatelessWidget {
                             child: Padding(
                               padding: EdgeInsets.only(left: 2.w, top: 2.w),
                               child: AppLikeButton(
-                                productId: productEntity.id,
-                                isLiked: isLiked,
+                                productId: widget.productEntity.id,
+                                isLiked: widget.productEntity.isLiked,
                               ),
                             ),
                           ),
@@ -93,7 +96,7 @@ class ProductContainer extends StatelessWidget {
                           padding: EdgeInsets.symmetric(
                               horizontal: 10.w, vertical: 4.h),
                           child: Text(
-                            productEntity.name,
+                            widget.productEntity.name,
                             style: constraints.maxWidth > 196
                                 ? AppTextStyle.normalW700S11
                                 : AppTextStyle.normalW700S9,
@@ -113,7 +116,7 @@ class ProductContainer extends StatelessWidget {
                             child: TextButton(
                               onPressed: () {},
                               child: Text(
-                                '${productEntity.price} ₽',
+                                '${widget.productEntity.price} ₽',
                                 style: AppTextStyle.normalW700S11
                                     .copyWith(color: colors.black),
                               ),

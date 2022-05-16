@@ -14,6 +14,7 @@ ProductDTO _$ProductDTOFromJson(Map<String, dynamic> json) => ProductDTO(
       volume: json['volume'] as String?,
       price: json['price'] as String?,
       amount: json['amount'] as int?,
+      favorite: json['favorite'] as bool?,
     );
 
 Map<String, dynamic> _$ProductDTOToJson(ProductDTO instance) =>
@@ -24,4 +25,5 @@ Map<String, dynamic> _$ProductDTOToJson(ProductDTO instance) =>
       'volume': instance.volume,
       'price': instance.price,
       'amount': instance.amount,
+      'favorite': instance.favorite,
     };

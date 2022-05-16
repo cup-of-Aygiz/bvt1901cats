@@ -27,7 +27,8 @@ class _$ProductEntityTearOff {
       String volume = '',
       String name = '',
       String price = '',
-      int amount = 0}) {
+      int amount = 0,
+      bool isLiked = false}) {
     return _ProductEntity(
       id: id,
       image: image,
@@ -35,6 +36,7 @@ class _$ProductEntityTearOff {
       name: name,
       price: price,
       amount: amount,
+      isLiked: isLiked,
     );
   }
 
@@ -54,6 +56,7 @@ mixin _$ProductEntity {
   String get name => throw _privateConstructorUsedError;
   String get price => throw _privateConstructorUsedError;
   int get amount => throw _privateConstructorUsedError;
+  bool get isLiked => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -72,7 +75,8 @@ abstract class $ProductEntityCopyWith<$Res> {
       String volume,
       String name,
       String price,
-      int amount});
+      int amount,
+      bool isLiked});
 }
 
 /// @nodoc
@@ -92,6 +96,7 @@ class _$ProductEntityCopyWithImpl<$Res>
     Object? name = freezed,
     Object? price = freezed,
     Object? amount = freezed,
+    Object? isLiked = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -118,6 +123,10 @@ class _$ProductEntityCopyWithImpl<$Res>
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as int,
+      isLiked: isLiked == freezed
+          ? _value.isLiked
+          : isLiked // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -135,7 +144,8 @@ abstract class _$ProductEntityCopyWith<$Res>
       String volume,
       String name,
       String price,
-      int amount});
+      int amount,
+      bool isLiked});
 }
 
 /// @nodoc
@@ -157,6 +167,7 @@ class __$ProductEntityCopyWithImpl<$Res>
     Object? name = freezed,
     Object? price = freezed,
     Object? amount = freezed,
+    Object? isLiked = freezed,
   }) {
     return _then(_ProductEntity(
       id: id == freezed
@@ -183,6 +194,10 @@ class __$ProductEntityCopyWithImpl<$Res>
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as int,
+      isLiked: isLiked == freezed
+          ? _value.isLiked
+          : isLiked // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -196,7 +211,8 @@ class _$_ProductEntity implements _ProductEntity {
       this.volume = '',
       this.name = '',
       this.price = '',
-      this.amount = 0});
+      this.amount = 0,
+      this.isLiked = false});
 
   factory _$_ProductEntity.fromJson(Map<String, dynamic> json) =>
       _$$_ProductEntityFromJson(json);
@@ -219,10 +235,13 @@ class _$_ProductEntity implements _ProductEntity {
   @JsonKey(defaultValue: 0)
   @override
   final int amount;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool isLiked;
 
   @override
   String toString() {
-    return 'ProductEntity(id: $id, image: $image, volume: $volume, name: $name, price: $price, amount: $amount)';
+    return 'ProductEntity(id: $id, image: $image, volume: $volume, name: $name, price: $price, amount: $amount, isLiked: $isLiked)';
   }
 
   @override
@@ -240,7 +259,9 @@ class _$_ProductEntity implements _ProductEntity {
             (identical(other.price, price) ||
                 const DeepCollectionEquality().equals(other.price, price)) &&
             (identical(other.amount, amount) ||
-                const DeepCollectionEquality().equals(other.amount, amount)));
+                const DeepCollectionEquality().equals(other.amount, amount)) &&
+            (identical(other.isLiked, isLiked) ||
+                const DeepCollectionEquality().equals(other.isLiked, isLiked)));
   }
 
   @override
@@ -251,7 +272,8 @@ class _$_ProductEntity implements _ProductEntity {
       const DeepCollectionEquality().hash(volume) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(price) ^
-      const DeepCollectionEquality().hash(amount);
+      const DeepCollectionEquality().hash(amount) ^
+      const DeepCollectionEquality().hash(isLiked);
 
   @JsonKey(ignore: true)
   @override
@@ -271,7 +293,8 @@ abstract class _ProductEntity implements ProductEntity {
       String volume,
       String name,
       String price,
-      int amount}) = _$_ProductEntity;
+      int amount,
+      bool isLiked}) = _$_ProductEntity;
 
   factory _ProductEntity.fromJson(Map<String, dynamic> json) =
       _$_ProductEntity.fromJson;
@@ -288,6 +311,8 @@ abstract class _ProductEntity implements ProductEntity {
   String get price => throw _privateConstructorUsedError;
   @override
   int get amount => throw _privateConstructorUsedError;
+  @override
+  bool get isLiked => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ProductEntityCopyWith<_ProductEntity> get copyWith =>

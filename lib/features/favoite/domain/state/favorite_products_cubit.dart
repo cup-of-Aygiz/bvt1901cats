@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bvt1901_practice/features/favoite/domain/state/favorite_products_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -40,17 +38,12 @@ class FavoriteProductsCubit extends Cubit<FavoriteProductState> {
     try{
       emit(state.copyWith(loading: true));
 
-      //await Future.delayed(const Duration(seconds: 2));
-
       List<ProductEntity> newListProducts =
       await _favoriteProductRepository.addProduct(id: id);
 
-      log('до эмита${state.productList.length}');
       emit(state.copyWith(
         productList: newListProducts,
         loading: false,));
-      log('ееееееееееееееееемииииииииииииииииит');
-      log('${state.productList.length}');
 
     }
     on ErrorModel catch (e) {

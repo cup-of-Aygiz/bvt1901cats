@@ -42,6 +42,7 @@ class _ProductListState extends State<ProductList>
     super.build(context);
     final locale = context.appLocale;
     return BlocBuilder<CatalogCubit, CatalogState>(
+      buildWhen: (p,c)=>p!=c,
       builder: (context, state) {
         return state.loading && state.productList.isEmpty
             ? const Center(

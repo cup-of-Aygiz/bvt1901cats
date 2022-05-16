@@ -14,6 +14,7 @@ _$_ProductEntity _$$_ProductEntityFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String? ?? '',
       price: json['price'] as String? ?? '',
       amount: json['amount'] as int? ?? 0,
+      isLiked: json['isLiked'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$_ProductEntityToJson(_$_ProductEntity instance) =>
@@ -24,4 +25,5 @@ Map<String, dynamic> _$$_ProductEntityToJson(_$_ProductEntity instance) =>
       'name': instance.name,
       'price': instance.price,
       'amount': instance.amount,
+      'isLiked': instance.isLiked,
     };

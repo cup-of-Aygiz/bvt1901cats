@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bvt1901_practice/app/domain/models/error_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
@@ -33,6 +35,7 @@ class CatalogCubit extends Cubit<CatalogState> {
               ? state.end + 10
               : state.maxLength,
         ));
+        log("Я загрузил новое");
       }
     } on ErrorModel catch (e) {
       emit(state.copyWith(loading: false, error: e));
