@@ -44,9 +44,10 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   gh.factory<_i8.FlutterSecureStorage>(
       () => registerModule.flutterSecureStorage);
   gh.lazySingleton<_i9.LoginCubit>(() => _i9.LoginCubit());
-  gh.factory<_i10.LoginRepository>(() => _i11.LoginNetworkRepository());
+  gh.factory<_i10.LoginRepository>(
+      () => _i11.LoginNetworkRepository(get<_i7.DioContainer>()));
   gh.factory<_i12.RegistrationRepository>(
-      () => _i13.RegistrationNetworkRepository());
+      () => _i13.RegistrationNetworkRepository(get<_i7.DioContainer>()));
   await gh.factoryAsync<_i14.SharedPreferences>(
       () => registerModule.sharedPreferences,
       preResolve: true);

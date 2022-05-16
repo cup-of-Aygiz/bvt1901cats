@@ -41,14 +41,13 @@ dependencies:
   flutter_gen: 4.1.6
   # dev
   logger: 1.0.0
-  device_preview: 1.0.0
   fancy_shimmer_image: ^2.0.0+2
   flutter_screenutil: ^5.2.0
   flutter_svg: ^1.0.3
   flutter_svg_provider: ^1.0.3
   flutter_form_builder: 6.0.1
   shimmer: ^2.0.0
-  freezed_annotation: any
+  freezed_annotation: ^2.0.3
   nil: ^1.1.1
   flutter_secure_storage: ^5.0.2
   shared_preferences: ^2.0.8
@@ -66,15 +65,15 @@ dev_dependencies:
     sdk: flutter
   build_runner: ^2.1.4
   # freezed
-  freezed: ^0.14.2
+  freezed: ^2.0.3+1
   # res generators
   flutter_gen_runner: any
-  injectable_generator: ^1.5.2
+  injectable_generator: ^1.5.3
   flutter_launcher_icons: ^0.9.2
   flutter_native_splash: any
   json_serializable: ^6.0.1
   # linters
-  flutter_lints: ^1.0.4
+  flutter_lints: ^2.0.1
   # testing
   bloc_test: ^8.0.1
 

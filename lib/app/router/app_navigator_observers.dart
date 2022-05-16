@@ -10,13 +10,13 @@ class AppNavigatorObserver extends NavigatorObserver {
     if (blackList.contains(route.settings.name)) {
       return;
     }
-    navigatorObservers.forEach((observer) {
+    for (var observer in navigatorObservers) {
       try {
         observer.didPush(route, previousRoute);
       } catch (e) {
         logException(e);
       }
-    });
+    }
     super.didPush(route, previousRoute);
   }
 
@@ -25,13 +25,13 @@ class AppNavigatorObserver extends NavigatorObserver {
     if (blackList.contains(route.settings.name)) {
       return;
     }
-    navigatorObservers.forEach((observer) {
+    for (var observer in navigatorObservers) {
       try {
         observer.didPop(route, previousRoute);
       } catch (e) {
         logException(e);
       }
-    });
+    }
     super.didPop(route, previousRoute);
   }
 
@@ -40,13 +40,13 @@ class AppNavigatorObserver extends NavigatorObserver {
     if (blackList.contains(route.settings.name)) {
       return;
     }
-    navigatorObservers.forEach((observer) {
+    for (var observer in navigatorObservers) {
       try {
         observer.didRemove(route, previousRoute);
       } catch (e) {
         logException(e);
       }
-    });
+    }
     super.didRemove(route, previousRoute);
   }
 
@@ -55,37 +55,37 @@ class AppNavigatorObserver extends NavigatorObserver {
     if (blackList.contains(route.settings.name)) {
       return;
     }
-    navigatorObservers.forEach((observer) {
+    for (var observer in navigatorObservers) {
       try {
         observer.didStartUserGesture(route, previousRoute);
       } catch (e) {
         logException(e);
       }
-    });
+    }
     super.didStartUserGesture(route, previousRoute);
   }
 
   @override
   void didStopUserGesture() {
-    navigatorObservers.forEach((observer) {
+    for (var observer in navigatorObservers) {
       try {
         observer.didStopUserGesture();
       } catch (e) {
         logException(e);
       }
-    });
+    }
     super.didStopUserGesture();
   }
 
   @override
   void didReplace({Route? newRoute, Route? oldRoute}) {
-    navigatorObservers.forEach((observer) {
+    for (var observer in navigatorObservers) {
       try {
         observer.didReplace(newRoute: newRoute, oldRoute: oldRoute);
       } catch (e) {
         logException(e);
       }
-    });
+    }
     super.didReplace(newRoute: newRoute, oldRoute: oldRoute);
   }
 }

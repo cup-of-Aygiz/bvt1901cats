@@ -15,7 +15,7 @@ _$_AddressesState _$$_AddressesStateFromJson(Map<String, dynamic> json) =>
       addressesList: (json['addressesList'] as List<dynamic>?)
               ?.map((e) => AddressEntity.fromJson(e as Map<String, dynamic>))
               .toList() ??
-          [],
+          const [],
     );
 
 Map<String, dynamic> _$$_AddressesStateToJson(_$_AddressesState instance) =>

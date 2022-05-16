@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'network_error.dart';
@@ -11,35 +12,7 @@ part of 'network_error.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$NetworkErrorTearOff {
-  const _$NetworkErrorTearOff();
-
-  _ResponseError request({required DioError error}) {
-    return _ResponseError(
-      error: error,
-    );
-  }
-
-  _DecodingError logic({String? error}) {
-    return _DecodingError(
-      error: error,
-    );
-  }
-
-  _NoConnection noConnection() {
-    return const _NoConnection();
-  }
-
-  _Unknown unknown() {
-    return const _Unknown();
-  }
-}
-
-/// @nodoc
-const $NetworkError = _$NetworkErrorTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$NetworkError {
@@ -112,29 +85,29 @@ class _$NetworkErrorCopyWithImpl<$Res> implements $NetworkErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ResponseErrorCopyWith<$Res> {
-  factory _$ResponseErrorCopyWith(
-          _ResponseError value, $Res Function(_ResponseError) then) =
-      __$ResponseErrorCopyWithImpl<$Res>;
+abstract class _$$_ResponseErrorCopyWith<$Res> {
+  factory _$$_ResponseErrorCopyWith(
+          _$_ResponseError value, $Res Function(_$_ResponseError) then) =
+      __$$_ResponseErrorCopyWithImpl<$Res>;
   $Res call({DioError error});
 }
 
 /// @nodoc
-class __$ResponseErrorCopyWithImpl<$Res>
+class __$$_ResponseErrorCopyWithImpl<$Res>
     extends _$NetworkErrorCopyWithImpl<$Res>
-    implements _$ResponseErrorCopyWith<$Res> {
-  __$ResponseErrorCopyWithImpl(
-      _ResponseError _value, $Res Function(_ResponseError) _then)
-      : super(_value, (v) => _then(v as _ResponseError));
+    implements _$$_ResponseErrorCopyWith<$Res> {
+  __$$_ResponseErrorCopyWithImpl(
+      _$_ResponseError _value, $Res Function(_$_ResponseError) _then)
+      : super(_value, (v) => _then(v as _$_ResponseError));
 
   @override
-  _ResponseError get _value => super._value as _ResponseError;
+  _$_ResponseError get _value => super._value as _$_ResponseError;
 
   @override
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(_ResponseError(
+    return _then(_$_ResponseError(
       error: error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -159,19 +132,19 @@ class _$_ResponseError extends _ResponseError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ResponseError &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)));
+        (other.runtimeType == runtimeType &&
+            other is _$_ResponseError &&
+            const DeepCollectionEquality().equals(other.error, error));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
-  _$ResponseErrorCopyWith<_ResponseError> get copyWith =>
-      __$ResponseErrorCopyWithImpl<_ResponseError>(this, _$identity);
+  _$$_ResponseErrorCopyWith<_$_ResponseError> get copyWith =>
+      __$$_ResponseErrorCopyWithImpl<_$_ResponseError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -249,39 +222,40 @@ class _$_ResponseError extends _ResponseError {
 }
 
 abstract class _ResponseError extends NetworkError {
-  const factory _ResponseError({required DioError error}) = _$_ResponseError;
+  const factory _ResponseError({required final DioError error}) =
+      _$_ResponseError;
   const _ResponseError._() : super._();
 
   DioError get error => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$ResponseErrorCopyWith<_ResponseError> get copyWith =>
+  _$$_ResponseErrorCopyWith<_$_ResponseError> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DecodingErrorCopyWith<$Res> {
-  factory _$DecodingErrorCopyWith(
-          _DecodingError value, $Res Function(_DecodingError) then) =
-      __$DecodingErrorCopyWithImpl<$Res>;
+abstract class _$$_DecodingErrorCopyWith<$Res> {
+  factory _$$_DecodingErrorCopyWith(
+          _$_DecodingError value, $Res Function(_$_DecodingError) then) =
+      __$$_DecodingErrorCopyWithImpl<$Res>;
   $Res call({String? error});
 }
 
 /// @nodoc
-class __$DecodingErrorCopyWithImpl<$Res>
+class __$$_DecodingErrorCopyWithImpl<$Res>
     extends _$NetworkErrorCopyWithImpl<$Res>
-    implements _$DecodingErrorCopyWith<$Res> {
-  __$DecodingErrorCopyWithImpl(
-      _DecodingError _value, $Res Function(_DecodingError) _then)
-      : super(_value, (v) => _then(v as _DecodingError));
+    implements _$$_DecodingErrorCopyWith<$Res> {
+  __$$_DecodingErrorCopyWithImpl(
+      _$_DecodingError _value, $Res Function(_$_DecodingError) _then)
+      : super(_value, (v) => _then(v as _$_DecodingError));
 
   @override
-  _DecodingError get _value => super._value as _DecodingError;
+  _$_DecodingError get _value => super._value as _$_DecodingError;
 
   @override
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(_DecodingError(
+    return _then(_$_DecodingError(
       error: error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -306,19 +280,19 @@ class _$_DecodingError extends _DecodingError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DecodingError &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)));
+        (other.runtimeType == runtimeType &&
+            other is _$_DecodingError &&
+            const DeepCollectionEquality().equals(other.error, error));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
-  _$DecodingErrorCopyWith<_DecodingError> get copyWith =>
-      __$DecodingErrorCopyWithImpl<_DecodingError>(this, _$identity);
+  _$$_DecodingErrorCopyWith<_$_DecodingError> get copyWith =>
+      __$$_DecodingErrorCopyWithImpl<_$_DecodingError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -396,31 +370,32 @@ class _$_DecodingError extends _DecodingError {
 }
 
 abstract class _DecodingError extends NetworkError {
-  const factory _DecodingError({String? error}) = _$_DecodingError;
+  const factory _DecodingError({final String? error}) = _$_DecodingError;
   const _DecodingError._() : super._();
 
   String? get error => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$DecodingErrorCopyWith<_DecodingError> get copyWith =>
+  _$$_DecodingErrorCopyWith<_$_DecodingError> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$NoConnectionCopyWith<$Res> {
-  factory _$NoConnectionCopyWith(
-          _NoConnection value, $Res Function(_NoConnection) then) =
-      __$NoConnectionCopyWithImpl<$Res>;
+abstract class _$$_NoConnectionCopyWith<$Res> {
+  factory _$$_NoConnectionCopyWith(
+          _$_NoConnection value, $Res Function(_$_NoConnection) then) =
+      __$$_NoConnectionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NoConnectionCopyWithImpl<$Res> extends _$NetworkErrorCopyWithImpl<$Res>
-    implements _$NoConnectionCopyWith<$Res> {
-  __$NoConnectionCopyWithImpl(
-      _NoConnection _value, $Res Function(_NoConnection) _then)
-      : super(_value, (v) => _then(v as _NoConnection));
+class __$$_NoConnectionCopyWithImpl<$Res>
+    extends _$NetworkErrorCopyWithImpl<$Res>
+    implements _$$_NoConnectionCopyWith<$Res> {
+  __$$_NoConnectionCopyWithImpl(
+      _$_NoConnection _value, $Res Function(_$_NoConnection) _then)
+      : super(_value, (v) => _then(v as _$_NoConnection));
 
   @override
-  _NoConnection get _value => super._value as _NoConnection;
+  _$_NoConnection get _value => super._value as _$_NoConnection;
 }
 
 /// @nodoc
@@ -435,7 +410,8 @@ class _$_NoConnection extends _NoConnection {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NoConnection);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_NoConnection);
   }
 
   @override
@@ -522,19 +498,20 @@ abstract class _NoConnection extends NetworkError {
 }
 
 /// @nodoc
-abstract class _$UnknownCopyWith<$Res> {
-  factory _$UnknownCopyWith(_Unknown value, $Res Function(_Unknown) then) =
-      __$UnknownCopyWithImpl<$Res>;
+abstract class _$$_UnknownCopyWith<$Res> {
+  factory _$$_UnknownCopyWith(
+          _$_Unknown value, $Res Function(_$_Unknown) then) =
+      __$$_UnknownCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$UnknownCopyWithImpl<$Res> extends _$NetworkErrorCopyWithImpl<$Res>
-    implements _$UnknownCopyWith<$Res> {
-  __$UnknownCopyWithImpl(_Unknown _value, $Res Function(_Unknown) _then)
-      : super(_value, (v) => _then(v as _Unknown));
+class __$$_UnknownCopyWithImpl<$Res> extends _$NetworkErrorCopyWithImpl<$Res>
+    implements _$$_UnknownCopyWith<$Res> {
+  __$$_UnknownCopyWithImpl(_$_Unknown _value, $Res Function(_$_Unknown) _then)
+      : super(_value, (v) => _then(v as _$_Unknown));
 
   @override
-  _Unknown get _value => super._value as _Unknown;
+  _$_Unknown get _value => super._value as _$_Unknown;
 }
 
 /// @nodoc
@@ -549,7 +526,8 @@ class _$_Unknown extends _Unknown {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Unknown);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Unknown);
   }
 
   @override

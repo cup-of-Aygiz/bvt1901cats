@@ -12,13 +12,6 @@ ErrorModel mapToErrorModel(dynamic error,
     return error;
   }
 
-  {
-    final err = _getErrorFromMaxidomProtocol(error);
-    if (err != null) {
-      return err;
-    }
-  }
-
   try {
     if (error is AppException) {
       return _getAppExceptionErrorModel(error);
@@ -36,23 +29,6 @@ ErrorModel mapToErrorModel(dynamic error,
   );
 }
 
-ErrorModel? _getErrorFromMaxidomProtocol(dynamic e) {
-  if (e is DioError) {
-    if (e.response != null) {
-      try {
-        final message =
-        (e.response!.data['error'] as List).first['userMessage'];
-        return ErrorModel(
-          message,
-          code: _getMessageCode(e.response?.statusCode),
-          error: e,
-          details: e.response?.statusMessage,
-        );
-      } catch (_) {}
-    }
-  }
-  return null;
-}
 
 ErrorModel _getAppExceptionErrorModel(AppException error) {
   final message = error.message ?? '';
@@ -90,7 +66,7 @@ ErrorModel _getDioErrorModel(DioError error) {
         error.response?.data['error'] != null &&
         error.response?.data['error'] is Iterable) {
       final message = IterableUtils.getFirstOrNull(
-          (error.response?.data['error'] as Iterable)) ??
+              (error.response?.data['error'] as Iterable)) ??
           '';
       return ErrorModel(
         message,
@@ -103,10 +79,8 @@ ErrorModel _getDioErrorModel(DioError error) {
     if (error.response?.data is Map &&
         error.response?.data['error'] != null &&
         error.response?.data['error'] is Map) {
-      final message = (error.response?.data['error'] as Map)
-          .entries
-          .first
-          .toString();
+      final message =
+          (error.response?.data['error'] as Map).entries.first.toString();
       return ErrorModel(
         message,
         error: error,
@@ -115,8 +89,7 @@ ErrorModel _getDioErrorModel(DioError error) {
       );
     }
 
-    if (error.response?.data is Map &&
-        error.response?.data['error'] != null) {
+    if (error.response?.data is Map && error.response?.data['error'] != null) {
       final message = error.response?.data['error'] ?? '';
       return ErrorModel(
         message,

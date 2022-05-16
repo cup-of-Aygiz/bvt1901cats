@@ -14,12 +14,15 @@ class LoginCubit extends Cubit<LoginState> {
         );
 
   LoginRepository get _loginRepository => getIt();
+
   AuthTokenStorage get _authTokenStorage => getIt();
 
   Future<void> init() async {
     try {
-      emit(state.copyWith(
-          profileEntity: await _authTokenStorage.loadAuthProfile()));
+      final token = await _authTokenStorage.loadAccessToken();
+      if (token != null) {
+        await getProfile(token: token);
+      }
     } on ErrorModel catch (e) {
       emit(state.copyWith(error: e));
     }
@@ -28,8 +31,18 @@ class LoginCubit extends Cubit<LoginState> {
   Future<bool> saveStateAndLogin(String phone, String password) async {
     try {
       emit(state.copyWith(loading: true));
-      final profileEntity =
+      final token =
           await _loginRepository.login(phone: phone, password: password);
+      return await getProfile(token: token);
+    } on ErrorModel catch (e) {
+      emit(state.copyWith(error: e, loading: false));
+      return false;
+    }
+  }
+
+  Future<bool> getProfile({required String token}) async {
+    try {
+      final profileEntity = await _loginRepository.getProfile(token: token);
       emit(state.copyWith(
         loading: false,
         profileEntity: profileEntity,
