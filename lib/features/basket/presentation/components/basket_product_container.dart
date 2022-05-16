@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../gen/assets.gen.dart';
 import '../../../../uikit/buttons/app_transparent_button.dart';
-import '../../../product_page/presentation/screens/product_screen.dart';
+import '../../../product_page/presentation/screens/product_detals.dart';
 
 class BasketProductContainer extends StatelessWidget {
   final ProductEntity productEntity;
@@ -22,7 +22,17 @@ class BasketProductContainer extends StatelessWidget {
     final colors = context.appColors;
     return AppTransparentButton(
         onTap: () {
-          context.appRouter.pushScreen(context, const ProductScreen());
+          showModalBottomSheet(
+            backgroundColor: colors.transparent,
+            isScrollControlled: true,
+            context: context,
+            useRootNavigator: true,
+            builder: (BuildContext context) {
+              return ProductDetals(
+                productEntity: productEntity,
+              );
+            },
+          );
         },
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 10.w),

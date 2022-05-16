@@ -122,21 +122,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get save_changes => 'Сохранить изменения';
 
   @override
-  String get price => 'Цена';
-
-  @override
-  String get manufacturer => 'Производитель';
-
-  @override
-  String get description => 'Описание';
-
-  @override
-  String get add_cart => 'Добавить в Корзину';
-
-  @override
-  String get not_available => 'Нет в наличии';
-
-  @override
   String get my_addresses => 'Мои адреса';
 
   @override
@@ -192,4 +177,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get no_clear => 'Оставить';
+
+  @override
+  String get price => 'Цена';
+
+  @override
+  String get manufacturer => 'Производитель';
+
+  @override
+  String get description => 'Описание';
+
+  @override
+  String get add_cart => 'Добавить в Корзину';
+
+  @override
+  String get not_available => 'Нет в наличии';
 }

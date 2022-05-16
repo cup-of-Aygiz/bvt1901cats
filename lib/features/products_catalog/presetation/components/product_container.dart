@@ -33,7 +33,7 @@ class ProductContainer extends StatelessWidget {
           return AppTransparentButton(
             onTap: () {
               showModalBottomSheet(
-                backgroundColor: colors.transparent,
+                backgroundColor: colors.generalColor,
                 isScrollControlled: true,
                 context: context,
                 useRootNavigator: true,

@@ -54,7 +54,6 @@
     "clear_basket",
     "yes_clear",
     "no_clear",
-    "save_changes",
     "price",
     "manufacturer",
     "description",

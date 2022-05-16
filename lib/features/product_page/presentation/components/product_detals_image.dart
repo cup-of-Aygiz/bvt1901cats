@@ -3,6 +3,8 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../gen/assets.gen.dart';
+
 class ProductDetalsImage extends StatelessWidget {
   final ProductEntity productEntity;
   
@@ -11,8 +13,6 @@ class ProductDetalsImage extends StatelessWidget {
     required this.productEntity,
   }) : super(key: key);
 
-
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -20,6 +20,7 @@ class ProductDetalsImage extends StatelessWidget {
         imageUrl: productEntity.image,
         height: 300.h,
         boxFit: BoxFit.fitHeight,
+        errorWidget: Assets.images.logotip.image(),
       ),
       onTap: () => showGeneralDialog(
         context: context,
