@@ -101,15 +101,18 @@ class _LoginScreenState extends State<LoginScreen> {
                             _formKey.currentState?.validate();
                             if (_formKey.currentState?.validate() ?? false) {
                               _formKey.currentState!.save();
-                              final loginSuccess = await context
+                              await context
                                   .read<LoginCubit>()
                                   .saveStateAndLogin(
                                       _formKey.currentState!.value['phone'],
-                                      _formKey.currentState!.value['password']);
-                              if (loginSuccess) {
-                                context.appRouter.pushAndPopToRoot(
-                                    context, const RouterScreen());
-                              }
+                                      _formKey.currentState!.value['password']).then((loginSuccess){
+                                if (loginSuccess) {
+                                  context.appRouter.pushAndPopToRoot(
+                                      context, const RouterScreen());
+                                }
+                                }
+                              );
+
                             }
                           },
                         ),

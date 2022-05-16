@@ -48,10 +48,10 @@ class AppTabRouter {
   }
 
   void _tabListener() {
-    final _currentTab = RouterTabType.values.elementAt(currentTabIndex);
+    final currentTab = RouterTabType.values.elementAt(currentTabIndex);
     for (var observer in _tabObservers) {
       try {
-        observer.onTabChanged(_currentTab);
+        observer.onTabChanged(currentTab);
       } catch (e) {
         logException(e);
       }

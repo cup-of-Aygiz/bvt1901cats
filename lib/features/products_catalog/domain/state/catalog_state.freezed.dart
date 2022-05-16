@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'catalog_state.dart';
@@ -11,40 +12,11 @@ part of 'catalog_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 CatalogState _$CatalogStateFromJson(Map<String, dynamic> json) {
   return _CatalogState.fromJson(json);
 }
-
-/// @nodoc
-class _$CatalogStateTearOff {
-  const _$CatalogStateTearOff();
-
-  _CatalogState call(
-      {bool loading = false,
-      ErrorModel? error,
-      List<ProductEntity> productList = const [],
-      int start = 0,
-      int end = 15,
-      int maxLength = 100}) {
-    return _CatalogState(
-      loading: loading,
-      error: error,
-      productList: productList,
-      start: start,
-      end: end,
-      maxLength: maxLength,
-    );
-  }
-
-  CatalogState fromJson(Map<String, Object> json) {
-    return CatalogState.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $CatalogState = _$CatalogStateTearOff();
 
 /// @nodoc
 mixin _$CatalogState {
@@ -137,11 +109,11 @@ class _$CatalogStateCopyWithImpl<$Res> implements $CatalogStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$CatalogStateCopyWith<$Res>
+abstract class _$$_CatalogStateCopyWith<$Res>
     implements $CatalogStateCopyWith<$Res> {
-  factory _$CatalogStateCopyWith(
-          _CatalogState value, $Res Function(_CatalogState) then) =
-      __$CatalogStateCopyWithImpl<$Res>;
+  factory _$$_CatalogStateCopyWith(
+          _$_CatalogState value, $Res Function(_$_CatalogState) then) =
+      __$$_CatalogStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool loading,
@@ -156,14 +128,15 @@ abstract class _$CatalogStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$CatalogStateCopyWithImpl<$Res> extends _$CatalogStateCopyWithImpl<$Res>
-    implements _$CatalogStateCopyWith<$Res> {
-  __$CatalogStateCopyWithImpl(
-      _CatalogState _value, $Res Function(_CatalogState) _then)
-      : super(_value, (v) => _then(v as _CatalogState));
+class __$$_CatalogStateCopyWithImpl<$Res>
+    extends _$CatalogStateCopyWithImpl<$Res>
+    implements _$$_CatalogStateCopyWith<$Res> {
+  __$$_CatalogStateCopyWithImpl(
+      _$_CatalogState _value, $Res Function(_$_CatalogState) _then)
+      : super(_value, (v) => _then(v as _$_CatalogState));
 
   @override
-  _CatalogState get _value => super._value as _CatalogState;
+  _$_CatalogState get _value => super._value as _$_CatalogState;
 
   @override
   $Res call({
@@ -174,7 +147,7 @@ class __$CatalogStateCopyWithImpl<$Res> extends _$CatalogStateCopyWithImpl<$Res>
     Object? end = freezed,
     Object? maxLength = freezed,
   }) {
-    return _then(_CatalogState(
+    return _then(_$_CatalogState(
       loading: loading == freezed
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
@@ -184,7 +157,7 @@ class __$CatalogStateCopyWithImpl<$Res> extends _$CatalogStateCopyWithImpl<$Res>
           : error // ignore: cast_nullable_to_non_nullable
               as ErrorModel?,
       productList: productList == freezed
-          ? _value.productList
+          ? _value._productList
           : productList // ignore: cast_nullable_to_non_nullable
               as List<ProductEntity>,
       start: start == freezed
@@ -209,32 +182,38 @@ class _$_CatalogState implements _CatalogState {
   const _$_CatalogState(
       {this.loading = false,
       this.error,
-      this.productList = const [],
+      final List<ProductEntity> productList = const [],
       this.start = 0,
       this.end = 15,
-      this.maxLength = 100});
+      this.maxLength = 100})
+      : _productList = productList;
 
   factory _$_CatalogState.fromJson(Map<String, dynamic> json) =>
       _$$_CatalogStateFromJson(json);
 
-  @JsonKey(defaultValue: false)
   @override
+  @JsonKey()
   final bool loading;
   @override
   final ErrorModel? error;
-  @JsonKey(defaultValue: const [])
+  final List<ProductEntity> _productList;
   @override
-  final List<ProductEntity> productList;
-  @JsonKey(defaultValue: 0)
+  @JsonKey()
+  List<ProductEntity> get productList {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_productList);
+  }
+
   @override
+  @JsonKey()
   final int start;
-  @JsonKey(defaultValue: 15)
   @override
+  @JsonKey()
   final int end;
-  @JsonKey(defaultValue: 100)
-  @override
 
   /// максимальное кол-во продуктов
+  @override
+  @JsonKey()
   final int maxLength;
 
   @override
@@ -245,38 +224,32 @@ class _$_CatalogState implements _CatalogState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CatalogState &&
-            (identical(other.loading, loading) ||
-                const DeepCollectionEquality()
-                    .equals(other.loading, loading)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
-            (identical(other.productList, productList) ||
-                const DeepCollectionEquality()
-                    .equals(other.productList, productList)) &&
-            (identical(other.start, start) ||
-                const DeepCollectionEquality().equals(other.start, start)) &&
-            (identical(other.end, end) ||
-                const DeepCollectionEquality().equals(other.end, end)) &&
-            (identical(other.maxLength, maxLength) ||
-                const DeepCollectionEquality()
-                    .equals(other.maxLength, maxLength)));
+        (other.runtimeType == runtimeType &&
+            other is _$_CatalogState &&
+            const DeepCollectionEquality().equals(other.loading, loading) &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality()
+                .equals(other._productList, _productList) &&
+            const DeepCollectionEquality().equals(other.start, start) &&
+            const DeepCollectionEquality().equals(other.end, end) &&
+            const DeepCollectionEquality().equals(other.maxLength, maxLength));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(loading) ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(productList) ^
-      const DeepCollectionEquality().hash(start) ^
-      const DeepCollectionEquality().hash(end) ^
-      const DeepCollectionEquality().hash(maxLength);
 
   @JsonKey(ignore: true)
   @override
-  _$CatalogStateCopyWith<_CatalogState> get copyWith =>
-      __$CatalogStateCopyWithImpl<_CatalogState>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(loading),
+      const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(_productList),
+      const DeepCollectionEquality().hash(start),
+      const DeepCollectionEquality().hash(end),
+      const DeepCollectionEquality().hash(maxLength));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_CatalogStateCopyWith<_$_CatalogState> get copyWith =>
+      __$$_CatalogStateCopyWithImpl<_$_CatalogState>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -286,12 +259,12 @@ class _$_CatalogState implements _CatalogState {
 
 abstract class _CatalogState implements CatalogState {
   const factory _CatalogState(
-      {bool loading,
-      ErrorModel? error,
-      List<ProductEntity> productList,
-      int start,
-      int end,
-      int maxLength}) = _$_CatalogState;
+      {final bool loading,
+      final ErrorModel? error,
+      final List<ProductEntity> productList,
+      final int start,
+      final int end,
+      final int maxLength}) = _$_CatalogState;
 
   factory _CatalogState.fromJson(Map<String, dynamic> json) =
       _$_CatalogState.fromJson;
@@ -312,6 +285,6 @@ abstract class _CatalogState implements CatalogState {
   int get maxLength => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CatalogStateCopyWith<_CatalogState> get copyWith =>
+  _$$_CatalogStateCopyWith<_$_CatalogState> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -18,7 +18,7 @@ class AppRunner {
     }, (error, stackTrace) {
       handleZonedException(error, stackTrace);
     });
-    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       onAppLoaded();
     });
   }

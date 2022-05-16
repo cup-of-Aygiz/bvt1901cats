@@ -19,6 +19,14 @@ class SearchScreen extends StatelessWidget {
           Row(
             children: [
               Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.circular(30.r),
+                  color: colors.white,
+                ),
+                width: 290.w,
+                height: 46.h,
+                margin: EdgeInsets.only(top: 20.h, left: 14.w),
                 child: FormBuilderTextField(
                   name: 'find',
                   autofocus: true,
@@ -29,14 +37,6 @@ class SearchScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                decoration: BoxDecoration(
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.circular(30.r),
-                  color: colors.white,
-                ),
-                width: 290.w,
-                height: 46.h,
-                margin: EdgeInsets.only(top: 20.h, left: 14.w),
               ),
               Container(
                 margin: EdgeInsets.only(left: 10.w, top: 20.h),

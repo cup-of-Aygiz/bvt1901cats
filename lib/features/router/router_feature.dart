@@ -1,7 +1,7 @@
 import 'package:bvt1901_practice/features/router/presentation/components/tab_navigator_screen.dart';
 
 import '../../app/router/app_router.dart';
-import '../cart/presentation/screen/cart_screen.dart';
+import '../basket/presentation/screen/basket_screen.dart';
 import '../favoite/presentation/screen/favotire_screen.dart';
 import '../home/presentation/screen/home_screen.dart';
 import '../profile/presentation/screen/profile_screen.dart';
@@ -14,7 +14,7 @@ Map<RouterTabType, TabNavigatorScreen> getTabNavigatorScreensMap() =>
           initialScreen: const FavoriteScreen(),
           routerTab: RouterTabType.favorite),
       RouterTabType.cart: TabNavigatorScreen(
-        initialScreen: const CartScreen(),
+        initialScreen: const BasketScreen(),
         routerTab: RouterTabType.cart,
       ),
       RouterTabType.cabinet: TabNavigatorScreen(

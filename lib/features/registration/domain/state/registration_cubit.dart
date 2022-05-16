@@ -4,6 +4,7 @@ import 'package:bvt1901_practice/features/registration/domain/state/registration
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../di/service_locator.dart';
+import '../../../login/domain/state/login_cubit.dart';
 import '../repository/registration_repository.dart';
 
 // import '../../mock/registration_mock_repository.dart';
@@ -18,10 +19,6 @@ class RegistrationCubit extends Cubit<RegistrationState> {
 
   RegistrationRepository get _registrationRepository => getIt();
 
-  Future<void> init() async {
-    emit(state.copyWith(
-        personEntity: await _registrationRepository.loadPerson()));
-  }
 
   Future<void> saveStateAndRegistration(Map<String, dynamic> json) async {
     try {
@@ -29,6 +26,7 @@ class RegistrationCubit extends Cubit<RegistrationState> {
       emit(state.copyWith(loading: true));
       await _registrationRepository.registration(
           personEntity: state.personEntity);
+      getIt<LoginCubit>().init();
       emit(state.copyWith(loading: false));
     } on ErrorModel catch (e) {
       emit(state.copyWith(error: e, loading: false));

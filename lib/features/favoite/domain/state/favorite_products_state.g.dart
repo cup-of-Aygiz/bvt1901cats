@@ -16,7 +16,7 @@ _$_FavoriteProductState _$$_FavoriteProductStateFromJson(
       productList: (json['productList'] as List<dynamic>?)
               ?.map((e) => ProductEntity.fromJson(e as Map<String, dynamic>))
               .toList() ??
-          [],
+          const [],
       start: json['start'] as int? ?? 0,
       end: json['end'] as int? ?? 15,
       maxLength: json['maxLength'] as int? ?? 100,
