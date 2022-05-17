@@ -50,12 +50,17 @@
   "delivery_address": "Адрес доставки",
   "load_address": "Определяем ваш адрес",
   "choose": "Выбрать",
-
   "save_changes": "Сохранить изменения",
   "place_an_order": "Оформить заказ",
   "ok": "Ок",
   "cancel": "Отмена",
   "clear_basket": "Очистить корзину?",
   "yes_clear": "Очистить",
-  "no_clear": "Оставить"
+  "no_clear": "Оставить",
+  "save_changes": "Сохранить изменения",
+  "price": "Цена",
+  "manufacturer": "Производитель",
+  "description": "Описание",
+  "add_cart": "Добавить в Корзину",
+  "not_available": "Нет в наличии"
 }

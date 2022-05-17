@@ -53,6 +53,11 @@
     "cancel",
     "clear_basket",
     "yes_clear",
-    "no_clear"
+    "no_clear",
+    "price",
+    "manufacturer",
+    "description",
+    "add_cart",
+    "not_available"
   ]
 }

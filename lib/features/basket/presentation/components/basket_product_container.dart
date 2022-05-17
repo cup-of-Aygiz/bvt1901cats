@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../gen/assets.gen.dart';
 import '../../../../uikit/buttons/app_transparent_button.dart';
-import '../../../product_page/presentation/screens/product_screen.dart';
+import '../../../product_page/presentation/screens/product_detals.dart';
 
 class BasketProductContainer extends StatelessWidget {
   final ProductEntity productEntity;
@@ -22,7 +22,17 @@ class BasketProductContainer extends StatelessWidget {
     final colors = context.appColors;
     return AppTransparentButton(
         onTap: () {
-          context.appRouter.pushScreen(context, const ProductScreen());
+          showModalBottomSheet(
+            backgroundColor: colors.transparent,
+            isScrollControlled: true,
+            context: context,
+            useRootNavigator: true,
+            builder: (BuildContext context) {
+              return ProductDetals(
+                productId: productEntity.id,
+              );
+            },
+          );
         },
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 10.w),
@@ -65,8 +75,8 @@ class BasketProductContainer extends StatelessWidget {
                             width: 30.w,
                             child: OutlinedButton(
                               style: ButtonStyle(
-                                padding: MaterialStateProperty.all(
-                                    EdgeInsets.zero),
+                                padding:
+                                    MaterialStateProperty.all(EdgeInsets.zero),
                               ),
                               onPressed: () {},
 
@@ -79,18 +89,16 @@ class BasketProductContainer extends StatelessWidget {
                           Container(
                             width: 50.w,
                             alignment: Alignment.center,
-                            child: Text(
-                              '${productEntity.amount}',
-                              style: AppTextStyle.normalW700S16
-                            ),
+                            child: Text('${productEntity.amount}',
+                                style: AppTextStyle.normalW700S16),
                           ),
                           SizedBox(
                             height: 30.h,
                             width: 30.h,
                             child: OutlinedButton(
                               style: ButtonStyle(
-                                padding: MaterialStateProperty.all(
-                                    EdgeInsets.zero),
+                                padding:
+                                    MaterialStateProperty.all(EdgeInsets.zero),
                               ),
                               onPressed: () {},
 
@@ -110,7 +118,6 @@ class BasketProductContainer extends StatelessWidget {
                   child: Text(
                     "${productEntity.price} ₽",
                     style: AppTextStyle.normalW400S16,
-
                   ),
                 ),
               ],
