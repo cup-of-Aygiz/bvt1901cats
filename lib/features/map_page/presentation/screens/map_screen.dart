@@ -34,7 +34,7 @@ class _MapScreenState extends State<MapScreen> {
   Widget build(BuildContext context) {
     final colors = context.appColors;
     final locale = context.appLocale;
-    final double _width = MediaQuery.of(context).size.width;
+    final double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
       appBar: const DefaultAppBar(),
@@ -44,10 +44,10 @@ class _MapScreenState extends State<MapScreen> {
           onCameraPositionChanged: (CameraPosition cameraPosition,
               CameraUpdateReason cameraUpdateReason, bool prov) {
             setState(() {
-              PointGeocode _point = PointGeocode(
+              PointGeocode point = PointGeocode(
                   longitude: cameraPosition.target.longitude,
                   latitude: cameraPosition.target.latitude);
-              point = _point;
+              point = point;
             });
           },
         ),
@@ -104,7 +104,7 @@ class _MapScreenState extends State<MapScreen> {
                       padding:
                           EdgeInsets.symmetric(vertical: 2.h, horizontal: 16.w),
                       child: SizedBox(
-                        width: _width,
+                        width: width,
                         child: AppTextButton(
                           buttonText: locale.choose,
                           onPressed: () async {
