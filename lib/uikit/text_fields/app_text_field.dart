@@ -20,6 +20,7 @@ class AppTextField extends StatelessWidget {
   final InputBorder? inputBorder;
   final int? maxLines;
   final Widget? suffix;
+  final TextInputType? textInputType;
 
   const AppTextField({
     Key? key,
@@ -27,6 +28,7 @@ class AppTextField extends StatelessWidget {
     this.obscureText = false,
     this.onChanged,
     this.onTap,
+    this.textInputType,
     this.initialValue,
     required this.name,
     this.validator,
@@ -61,6 +63,7 @@ class AppTextField extends StatelessWidget {
             errorMaxLines: 3,
             hintText: hintText,
           ),
+          keyboardType: textInputType,
           initialValue: initialValue,
           name: name,
           onChanged: onChanged,

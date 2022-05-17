@@ -28,7 +28,7 @@ class _MapScreenState extends State<MapScreen> {
   final YandexGeocoder geocoder =
       YandexGeocoder(apiKey: "6e95a308-6db4-4bf9-8dfe-a22740c21a94");
 
-  PointGeocode point = PointGeocode(longitude: 37.617734, latitude: 55.751999);
+  PointGeocode _point = PointGeocode(longitude: 37.617734, latitude: 55.751999);
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class _MapScreenState extends State<MapScreen> {
               PointGeocode point = PointGeocode(
                   longitude: cameraPosition.target.longitude,
                   latitude: cameraPosition.target.latitude);
-              point = point;
+              _point = point;
             });
           },
         ),
@@ -111,8 +111,8 @@ class _MapScreenState extends State<MapScreen> {
                             final GeocodeResponse geocodeFromPoint =
                                 await geocoder.getGeocode(GeocodeRequest(
                               geocode: PointGeocode(
-                                  latitude: point.latitude,
-                                  longitude: point.longitude),
+                                  latitude: _point.latitude,
+                                  longitude: _point.longitude),
                               lang: Lang.ru,
                             ));
 

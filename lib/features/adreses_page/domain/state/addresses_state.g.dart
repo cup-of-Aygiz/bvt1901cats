@@ -16,6 +16,10 @@ _$_AddressesState _$$_AddressesStateFromJson(Map<String, dynamic> json) =>
               ?.map((e) => AddressEntity.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      favoriteAddresses: json['favoriteAddresses'] == null
+          ? null
+          : AddressEntity.fromJson(
+              json['favoriteAddresses'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_AddressesStateToJson(_$_AddressesState instance) =>
@@ -23,4 +27,5 @@ Map<String, dynamic> _$$_AddressesStateToJson(_$_AddressesState instance) =>
       'loading': instance.loading,
       'error': instance.error,
       'addressesList': instance.addressesList,
+      'favoriteAddresses': instance.favoriteAddresses,
     };
