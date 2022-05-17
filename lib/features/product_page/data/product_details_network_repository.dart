@@ -1,5 +1,5 @@
 import 'package:bvt1901_practice/app/data/network_servise/dio_container.dart';
-import 'package:bvt1901_practice/features/login/domain/entity/dto/product_details_dto.dart';
+import 'package:bvt1901_practice/features/product_page/data/dto/product_details_dto.dart';
 import 'package:bvt1901_practice/features/product_page/domain/entity/product_details_entity.dart';
 import 'package:bvt1901_practice/features/product_page/domain/product_details_repository.dart';
 import 'package:injectable/injectable.dart';

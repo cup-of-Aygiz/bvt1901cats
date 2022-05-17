@@ -507,6 +507,12 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Бесплатно'**
   String get free;
+
+  /// No description provided for @empty_basket.
+  ///
+  /// In ru, this message translates to:
+  /// **'Корзина пуста'**
+  String get empty_basket;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

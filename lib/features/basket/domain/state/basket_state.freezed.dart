@@ -22,7 +22,8 @@ BasketState _$BasketStateFromJson(Map<String, dynamic> json) {
 mixin _$BasketState {
   bool get loading => throw _privateConstructorUsedError;
   ErrorModel? get error => throw _privateConstructorUsedError;
-  List<ProductEntity> get productList => throw _privateConstructorUsedError;
+  List<ProductDetailsEntity> get productList =>
+      throw _privateConstructorUsedError;
   double get totalPrice => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,7 +40,7 @@ abstract class $BasketStateCopyWith<$Res> {
   $Res call(
       {bool loading,
       ErrorModel? error,
-      List<ProductEntity> productList,
+      List<ProductDetailsEntity> productList,
       double totalPrice});
 
   $ErrorModelCopyWith<$Res>? get error;
@@ -72,7 +73,7 @@ class _$BasketStateCopyWithImpl<$Res> implements $BasketStateCopyWith<$Res> {
       productList: productList == freezed
           ? _value.productList
           : productList // ignore: cast_nullable_to_non_nullable
-              as List<ProductEntity>,
+              as List<ProductDetailsEntity>,
       totalPrice: totalPrice == freezed
           ? _value.totalPrice
           : totalPrice // ignore: cast_nullable_to_non_nullable
@@ -102,7 +103,7 @@ abstract class _$$_BasketStateCopyWith<$Res>
   $Res call(
       {bool loading,
       ErrorModel? error,
-      List<ProductEntity> productList,
+      List<ProductDetailsEntity> productList,
       double totalPrice});
 
   @override
@@ -138,7 +139,7 @@ class __$$_BasketStateCopyWithImpl<$Res> extends _$BasketStateCopyWithImpl<$Res>
       productList: productList == freezed
           ? _value._productList
           : productList // ignore: cast_nullable_to_non_nullable
-              as List<ProductEntity>,
+              as List<ProductDetailsEntity>,
       totalPrice: totalPrice == freezed
           ? _value.totalPrice
           : totalPrice // ignore: cast_nullable_to_non_nullable
@@ -153,7 +154,7 @@ class _$_BasketState implements _BasketState {
   const _$_BasketState(
       {this.loading = false,
       this.error,
-      final List<ProductEntity> productList = const [],
+      final List<ProductDetailsEntity> productList = const [],
       this.totalPrice = 0})
       : _productList = productList;
 
@@ -165,10 +166,10 @@ class _$_BasketState implements _BasketState {
   final bool loading;
   @override
   final ErrorModel? error;
-  final List<ProductEntity> _productList;
+  final List<ProductDetailsEntity> _productList;
   @override
   @JsonKey()
-  List<ProductEntity> get productList {
+  List<ProductDetailsEntity> get productList {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_productList);
   }
@@ -219,7 +220,7 @@ abstract class _BasketState implements BasketState {
   const factory _BasketState(
       {final bool loading,
       final ErrorModel? error,
-      final List<ProductEntity> productList,
+      final List<ProductDetailsEntity> productList,
       final double totalPrice}) = _$_BasketState;
 
   factory _BasketState.fromJson(Map<String, dynamic> json) =
@@ -230,7 +231,8 @@ abstract class _BasketState implements BasketState {
   @override
   ErrorModel? get error => throw _privateConstructorUsedError;
   @override
-  List<ProductEntity> get productList => throw _privateConstructorUsedError;
+  List<ProductDetailsEntity> get productList =>
+      throw _privateConstructorUsedError;
   @override
   double get totalPrice => throw _privateConstructorUsedError;
   @override

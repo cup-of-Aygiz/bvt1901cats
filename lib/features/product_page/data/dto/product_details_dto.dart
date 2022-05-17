@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../../product_page/domain/entity/product_details_entity.dart';
+import '../../domain/entity/product_details_entity.dart';
+
 
 part 'product_details_dto.g.dart';
 

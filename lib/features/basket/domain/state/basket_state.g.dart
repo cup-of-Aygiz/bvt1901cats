@@ -13,7 +13,8 @@ _$_BasketState _$$_BasketStateFromJson(Map<String, dynamic> json) =>
           ? null
           : ErrorModel.fromJson(json['error'] as Map<String, dynamic>),
       productList: (json['productList'] as List<dynamic>?)
-              ?.map((e) => ProductEntity.fromJson(e as Map<String, dynamic>))
+              ?.map((e) =>
+                  ProductDetailsEntity.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
       totalPrice: (json['totalPrice'] as num?)?.toDouble() ?? 0,

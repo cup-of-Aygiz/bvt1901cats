@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:injectable/injectable.dart';
+import '../../features/basket/domain/state/basket_cubit.dart';
 import '../../features/login/domain/state/login_cubit.dart';
 import '../../features/products_catalog/domain/state/catalog_cubit.dart';
 import '../../l10n/generated/app_localizations.dart';
@@ -25,8 +26,12 @@ class MainAppBuilder extends AppBuilder {
       providers: [
         BlocProvider<LoginCubit>(
           create: (_) => getIt<LoginCubit>()..init(),
-        ),BlocProvider<CatalogCubit>(
+        ),
+        BlocProvider<CatalogCubit>(
           create: (_) => getIt<CatalogCubit>()..init(),
+        ),
+        BlocProvider<BasketCubit>(
+          create: (_) => BasketCubit()..init(),
         ),
       ],
       child: ScreenUtilInit(

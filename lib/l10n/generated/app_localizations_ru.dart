@@ -213,4 +213,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get free => 'Бесплатно';
+
+  @override
+  String get empty_basket => 'Корзина пуста';
 }
