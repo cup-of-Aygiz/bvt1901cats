@@ -49,7 +49,6 @@
   "delivery_address": "Адрес доставки",
   "load_address": "Определяем ваш адрес",
   "choose": "Выбрать",
-
   "save_changes": "Сохранить изменения",
   "place_an_order": "Оформить заказ",
   "ok": "Ок",
@@ -62,5 +61,12 @@
   "checkout": "Оформить заказ",
   "total": "Итого",
   "cost_of_delivery": "Доставка",
-  "cost_of_products": "Стоимость"
+  "cost_of_products": "Стоимость",
+  "no_clear": "Оставить",
+  "save_changes": "Сохранить изменения",
+  "price": "Цена",
+  "manufacturer": "Производитель",
+  "description": "Описание",
+  "add_cart": "Добавить в Корзину",
+  "not_available": "Нет в наличии"
 }

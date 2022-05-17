@@ -1,6 +1,8 @@
 import 'package:bvt1901_practice/app/domain/models/error_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
+import '../../../../app/data/network_servise/dio_container.dart';
+import '../../../../app/data/network_servise/token_interceptor.dart';
 import '../../../../di/service_locator.dart';
 import '../../data/auth_secure_storage.dart';
 import '../repository/login_repository.dart';
@@ -57,5 +59,14 @@ class LoginCubit extends Cubit<LoginState> {
       emit(state.copyWith(error: e, loading: false));
       return false;
     }
+  }
+
+  Future<void> logOut() async {
+    emit(state.copyWith(
+      profileEntity: null,
+    ));
+    await getIt<AuthTokenStorage>().deleteAccessToken();
+    getIt<DioContainer>()
+        .deleteInterceptor(AuthTokenInterceptor);
   }
 }

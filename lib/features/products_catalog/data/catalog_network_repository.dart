@@ -26,6 +26,7 @@ class CatalogNetworkRepository extends CatalogRepository {
       );
       final newList = List<ProductEntity>.from(
           response.data['rows'].map((e) => ProductDTO.fromJson(e).toEntity()));
+
       return newList;
     } catch (e) {
       throw mapToErrorModel(e);

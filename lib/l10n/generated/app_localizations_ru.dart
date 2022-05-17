@@ -195,4 +195,19 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get cost_of_products => 'Стоимость';
+
+  @override
+  String get price => 'Цена';
+
+  @override
+  String get manufacturer => 'Производитель';
+
+  @override
+  String get description => 'Описание';
+
+  @override
+  String get add_cart => 'Добавить в Корзину';
+
+  @override
+  String get not_available => 'Нет в наличии';
 }

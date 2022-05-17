@@ -60,5 +60,11 @@
     "total",
     "cost_of_delivery",
     "cost_of_products"
+    "no_clear",
+    "price",
+    "manufacturer",
+    "description",
+    "add_cart",
+    "not_available"
   ]
 }
