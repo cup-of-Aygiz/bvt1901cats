@@ -4,10 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../app/domain/models/error_model.dart';
 import '../../../../../di/service_locator.dart';
-import '../../../../login/data/auth_secure_storage.dart';
+import '../person_repository.dart';
 
 class ProfileCubit extends Cubit<ProfileState> {
-  AuthTokenStorage get _authTokenStorage => getIt();
+  PersonRepository get personRepository => getIt();
 
   ProfileCubit()
       : super(
@@ -17,8 +17,19 @@ class ProfileCubit extends Cubit<ProfileState> {
   Future<void> init() async {
     try {
       emit(state.copyWith(loading: true));
-      final profileEntity = await _authTokenStorage.loadAuthProfile();
+      final profileEntity = await personRepository.loadProfile();
       emit(state.copyWith(loading: false, profileEntity: profileEntity));
+    } on ErrorModel catch (e) {
+      emit(state.copyWith(error: e));
+    }
+  }
+
+  Future<void> updateUser(ProfileEntity profileEntity) async {
+    try {
+      emit(state.copyWith(loading: true));
+      final newProfile =
+          await personRepository.putProfile(profileEntity: profileEntity);
+      emit(state.copyWith(loading: false, profileEntity: newProfile));
     } on ErrorModel catch (e) {
       emit(state.copyWith(error: e));
     }
