@@ -3,7 +3,7 @@ import 'package:bvt1901_practice/features/adreses_page/domain/entity/address_ent
 
 class MockAddressRepository extends AddressesRepository{
 
-  List<AddressEntity> _addressesList = [];
+  final List<AddressEntity> _addressesList = [];
 
   @override
   List<AddressEntity> getAddresses() {
