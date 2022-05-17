@@ -1,4 +1,3 @@
-import 'package:bvt1901_practice/features/products_catalog/domain/entity/product_entity.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,18 +5,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../gen/assets.gen.dart';
 
 class ProductDetalsImage extends StatelessWidget {
-  final ProductEntity productEntity;
+  final String image;
   
   const ProductDetalsImage({
     Key? key,
-    required this.productEntity,
+    required this.image,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       child: FancyShimmerImage(
-        imageUrl: productEntity.image,
+        imageUrl: image,
         height: 300.h,
         boxFit: BoxFit.fitHeight,
         errorWidget: Assets.images.logotip.image(),
@@ -33,7 +32,7 @@ class ProductDetalsImage extends StatelessWidget {
             onTap: () => Navigator.of(context).pop(),
             child: InteractiveViewer(
               child: FancyShimmerImage(
-                imageUrl: productEntity.image,
+                imageUrl: image,
                 boxFit: BoxFit.contain,
               ),
             ),

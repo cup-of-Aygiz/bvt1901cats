@@ -103,7 +103,7 @@ class ProductContainer extends StatelessWidget {
                           padding: EdgeInsets.symmetric(
                               horizontal: 10.w, vertical: 4.h),
                           child: Text(
-                            productEntity.name,
+                            productEntity.name.substring(0,productEntity.name.indexOf(' ')),
                             style: constraints.maxWidth > 196
                                 ? AppTextStyle.normalW700S11
                                 : AppTextStyle.normalW700S9,

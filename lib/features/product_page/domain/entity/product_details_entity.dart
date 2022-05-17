@@ -16,7 +16,7 @@ class ProductDetailsEntity with _$ProductDetailsEntity{
     @Default('') final String made,
     @Default('') final String manufacturer,
     @Default('') final String image,
-    @Default(false) final bool? favorite,
+    @Default(false) final bool favorite,
 })=_ProductDetailsEntity;
 
   factory ProductDetailsEntity.fromJson(Map<String,dynamic> json)=>_$ProductDetailsEntityFromJson(json);

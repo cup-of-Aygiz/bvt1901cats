@@ -29,7 +29,7 @@ mixin _$ProductDetailsEntity {
   String get made => throw _privateConstructorUsedError;
   String get manufacturer => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
-  bool? get favorite => throw _privateConstructorUsedError;
+  bool get favorite => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -52,7 +52,7 @@ abstract class $ProductDetailsEntityCopyWith<$Res> {
       String made,
       String manufacturer,
       String image,
-      bool? favorite});
+      bool favorite});
 }
 
 /// @nodoc
@@ -117,7 +117,7 @@ class _$ProductDetailsEntityCopyWithImpl<$Res>
       favorite: favorite == freezed
           ? _value.favorite
           : favorite // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ));
   }
 }
@@ -139,7 +139,7 @@ abstract class _$$_ProductDetailsEntityCopyWith<$Res>
       String made,
       String manufacturer,
       String image,
-      bool? favorite});
+      bool favorite});
 }
 
 /// @nodoc
@@ -206,7 +206,7 @@ class __$$_ProductDetailsEntityCopyWithImpl<$Res>
       favorite: favorite == freezed
           ? _value.favorite
           : favorite // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ));
   }
 }
@@ -258,7 +258,7 @@ class _$_ProductDetailsEntity implements _ProductDetailsEntity {
   final String image;
   @override
   @JsonKey()
-  final bool? favorite;
+  final bool favorite;
 
   @override
   String toString() {
@@ -322,7 +322,7 @@ abstract class _ProductDetailsEntity implements ProductDetailsEntity {
       final String made,
       final String manufacturer,
       final String image,
-      final bool? favorite}) = _$_ProductDetailsEntity;
+      final bool favorite}) = _$_ProductDetailsEntity;
 
   factory _ProductDetailsEntity.fromJson(Map<String, dynamic> json) =
       _$_ProductDetailsEntity.fromJson;
@@ -346,7 +346,7 @@ abstract class _ProductDetailsEntity implements ProductDetailsEntity {
   @override
   String get image => throw _privateConstructorUsedError;
   @override
-  bool? get favorite => throw _privateConstructorUsedError;
+  bool get favorite => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_ProductDetailsEntityCopyWith<_$_ProductDetailsEntity> get copyWith =>
