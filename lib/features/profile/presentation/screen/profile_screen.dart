@@ -65,13 +65,13 @@ class ProfileScreen extends StatelessWidget {
             icon: Assets.icons.icLeave.svg(width: 30.h, height: 30.h),
             text: locale.leave_account,
             onTap: () async {
-              await context
-                  .read<LoginCubit>()
-                  .logOut()
+              await context.read<LoginCubit>().logOut().then((value) => router
+                  .pushScreen(context, const WelcomePageScreen(),
+                      rootNavigator: true)
                   .then((value) => router.pushAndRemoveAllBefore(
                         context,
                         const WelcomePageScreen(),
-                      ));
+                      )));
             },
           ),
         ],

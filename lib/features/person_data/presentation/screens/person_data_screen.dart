@@ -1,3 +1,4 @@
+import 'package:bvt1901_practice/features/login/domain/entity/profile_entity.dart';
 import 'package:bvt1901_practice/features/person_data/presentation/domain/state/profile_cubit.dart';
 import 'package:bvt1901_practice/features/person_data/presentation/domain/state/profile_state.dart';
 import 'package:bvt1901_practice/uikit/app_bars/default_app_bar.dart';
@@ -99,9 +100,28 @@ class _PersonDataScreenState extends State<PersonDataScreen> {
                               padding: EdgeInsets.symmetric(
                                   horizontal: 10.h, vertical: 4.w),
                               child: AppTextButton(
-                                  //buttonText: locale.save_changes,
-                                  buttonText: locale.save_changes,
-                                  onPressed: () {}),
+                                //buttonText: locale.save_changes,
+                                buttonText: locale.save_changes,
+                                onPressed: () {
+                                  _formKey.currentState?.validate();
+                                  if (_formKey.currentState?.validate() ??
+                                      false) {
+                                    _formKey.currentState?.save();
+                                    context
+                                        .read<ProfileCubit>()
+                                        .updateUser(ProfileEntity(
+                                          firstName: _formKey
+                                              .currentState?.value['firstName'],
+                                          lastName: _formKey
+                                              .currentState?.value['lastName'],
+                                          middleName: _formKey
+                                              .currentState?.value['middleName'],
+                                          phone: _formKey
+                                              .currentState?.value['phone'],
+                                        ));
+                                  }
+                                },
+                              ),
                             )
                           ],
                         ),

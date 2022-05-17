@@ -28,6 +28,8 @@ class ProfileDTO {
   factory ProfileDTO.fromJson(Map<String, dynamic> json) =>
       _$ProfileDTOFromJson(json);
 
+  Map<String, dynamic> toJson() => _$ProfileDTOToJson(this);
+
   ProfileEntity toEntity() {
     return ProfileEntity(
       firstName: firstName ?? '',

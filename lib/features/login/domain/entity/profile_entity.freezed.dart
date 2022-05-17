@@ -134,12 +134,13 @@ class __$$_ProfileEntityCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ProfileEntity implements _ProfileEntity {
+class _$_ProfileEntity extends _ProfileEntity {
   const _$_ProfileEntity(
       {this.firstName = '',
       this.lastName = '',
       this.middleName = '',
-      this.phone = ''});
+      this.phone = ''})
+      : super._();
 
   factory _$_ProfileEntity.fromJson(Map<String, dynamic> json) =>
       _$$_ProfileEntityFromJson(json);
@@ -199,12 +200,13 @@ class _$_ProfileEntity implements _ProfileEntity {
   }
 }
 
-abstract class _ProfileEntity implements ProfileEntity {
+abstract class _ProfileEntity extends ProfileEntity {
   const factory _ProfileEntity(
       {final String firstName,
       final String lastName,
       final String middleName,
       final String phone}) = _$_ProfileEntity;
+  const _ProfileEntity._() : super._();
 
   factory _ProfileEntity.fromJson(Map<String, dynamic> json) =
       _$_ProfileEntity.fromJson;
