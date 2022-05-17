@@ -1,5 +1,4 @@
 import 'package:bvt1901_practice/app/presentation/theme/app_text_style.dart';
-import 'package:bvt1901_practice/features/products_catalog/domain/entity/product_entity.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
@@ -7,10 +6,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../gen/assets.gen.dart';
 import '../../../../uikit/buttons/app_transparent_button.dart';
+import '../../../product_page/domain/entity/product_details_entity.dart';
 import '../../../product_page/presentation/screens/product_detals.dart';
 
 class BasketProductContainer extends StatelessWidget {
-  final ProductEntity productEntity;
+  final ProductDetailsEntity productEntity;
 
   const BasketProductContainer({
     Key? key,

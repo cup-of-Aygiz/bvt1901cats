@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../app/domain/models/error_model.dart';
-import '../../../products_catalog/domain/entity/product_entity.dart';
+import '../../../product_page/domain/entity/product_details_entity.dart';
 
 part 'basket_state.freezed.dart';
 
@@ -12,7 +12,7 @@ class BasketState with _$BasketState {
   const factory BasketState({
     @Default(false) final bool loading,
     final ErrorModel? error,
-    @Default([]) List<ProductEntity> productList,
+    @Default([]) List<ProductDetailsEntity> productList,
     @Default(0) double totalPrice,
   }) = _BasketState;
 

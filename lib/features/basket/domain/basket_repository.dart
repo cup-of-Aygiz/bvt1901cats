@@ -1,19 +1,19 @@
-import '../../products_catalog/domain/entity/product_entity.dart';
+import '../../product_page/domain/entity/product_details_entity.dart';
 
 abstract class BasketRepository {
 
-  Future<List<ProductEntity>> getProductList();
+  Future<List<ProductDetailsEntity>> getProductList();
 
-  Future<List<ProductEntity>> addInProductList({
+  Future<List<ProductDetailsEntity>> addInProductList({
     required int  productId,
     required int amount,
 });
 
-  Future<List<ProductEntity>> deleteFromProductList({
+  Future<List<ProductDetailsEntity>> deleteFromProductList({
     required int  productId,
 });
 
-  Future<List<ProductEntity>> updateProductList({
+  Future<List<ProductDetailsEntity>> updateProductList({
     required int  productId,
     required int amount,
 });

@@ -1,12 +1,10 @@
-import 'dart:developer';
-
 import 'package:bvt1901_practice/di/service_locator.dart';
 import 'package:bvt1901_practice/features/basket/domain/state/basket_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../../app/domain/models/error_model.dart';
-import '../../../products_catalog/domain/entity/product_entity.dart';
+import '../../../product_page/domain/entity/product_details_entity.dart';
 import '../basket_repository.dart';
 
 @LazySingleton()
@@ -25,8 +23,8 @@ class BasketCubit extends Cubit<BasketState> {
   Future<void> loadBasketProducts() async {
     try {
       emit(state.copyWith(loading: true));
-      log('Я в кубите');
-      List<ProductEntity> listProducts =
+
+      List<ProductDetailsEntity> listProducts =
           await _basketProductsRepository.getProductList();
 
       double totalPrice = getTotalPrice(listProducts);
@@ -41,7 +39,7 @@ class BasketCubit extends Cubit<BasketState> {
     }
   }
 
-  double getTotalPrice(List<ProductEntity> listProducts) {
+  double getTotalPrice(List<ProductDetailsEntity> listProducts) {
     double total = 0;
     for (int i = 0; i < listProducts.length; i++) {
       total += listProducts[i].amount * double.parse(listProducts[i].price);
@@ -53,7 +51,7 @@ class BasketCubit extends Cubit<BasketState> {
     try {
       emit(state.copyWith(loading: true));
 
-      List<ProductEntity> listProducts =
+      List<ProductDetailsEntity> listProducts =
           await _basketProductsRepository.addInProductList(productId: productId, amount: amount);
  
       double totalPrice = getTotalPrice(listProducts);
@@ -72,7 +70,7 @@ class BasketCubit extends Cubit<BasketState> {
     try {
       emit(state.copyWith(loading: true));
 
-      List<ProductEntity> listProducts =
+      List<ProductDetailsEntity> listProducts =
           await _basketProductsRepository.deleteFromProductList(productId: id);
 
       double totalPrice = getTotalPrice(listProducts);
@@ -91,7 +89,7 @@ class BasketCubit extends Cubit<BasketState> {
     try {
       emit(state.copyWith(loading: true));
 
-      List<ProductEntity> listProducts =
+      List<ProductDetailsEntity> listProducts =
           await _basketProductsRepository.updateProductList(
         productId: productId,
         amount: amount,
