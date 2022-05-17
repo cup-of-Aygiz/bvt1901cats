@@ -31,7 +31,7 @@ class BasketNetworkRepository extends BasketRepository {
       );
 
       return List<ProductDetailsEntity>.from(response.data
-          .map((e) => ProductDetailsDTO.fromJson(e).toDetailsEntity()));
+          .map((e) => ProductDetailsDTO.fromJson(e).toEntity()));
     } catch (e) {
       throw mapToErrorModel(e);
     }
@@ -53,7 +53,7 @@ class BasketNetworkRepository extends BasketRepository {
       );
 
       return List<ProductDetailsEntity>.from(response.data
-          .map((e) => ProductDetailsDTO.fromJson(e).toDetailsEntity()));
+          .map((e) => ProductDetailsDTO.fromJson(e).toEntity()));
     } catch (e) {
       throw mapToErrorModel(e);
     }
@@ -71,7 +71,7 @@ class BasketNetworkRepository extends BasketRepository {
       );
 
       return List<ProductDetailsEntity>.from(response.data
-          .map((e) => ProductDetailsDTO.fromJson(e).toDetailsEntity()));
+          .map((e) => ProductDetailsDTO.fromJson(e).toEntity()));
     } catch (e) {
       throw mapToErrorModel(e);
     }
@@ -94,7 +94,7 @@ class BasketNetworkRepository extends BasketRepository {
       );
 
       return List<ProductDetailsEntity>.from(response.data
-          .map((e) => ProductDetailsDTO.fromJson(e).toDetailsEntity()));
+          .map((e) => ProductDetailsDTO.fromJson(e).toEntity()));
     } catch (e) {
       throw mapToErrorModel(e);
     }

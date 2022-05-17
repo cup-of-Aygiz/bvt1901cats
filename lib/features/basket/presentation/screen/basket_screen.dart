@@ -25,7 +25,6 @@ class _BasketScreenState extends State<BasketScreen> {
   Widget build(BuildContext context) {
     final colors = context.appColors;
     final locale = context.appLocale;
-    final width = MediaQuery.of(context).size.width;
     return BlocBuilder<BasketCubit, BasketState>(
       builder: (context, state) {
         return Scaffold(
@@ -78,30 +77,22 @@ class _BasketScreenState extends State<BasketScreen> {
                           ],
                         ),
                         Positioned(
-                          bottom: 10.h,
-                          left: 20.h,
-                          right: 20.h,
-                          child: Container(
-                            height: 146.h,
-                            color: colors.generalColor,
-                            child: Align(
-                              alignment: Alignment.topCenter,
-                              child: AppTextButton(
-                                width: width,
-                                height: 40.h,
-                                buttonText:
-                                    '${locale.place_an_order} ${state.totalPrice} ₽',
-                                onPressed: () {
-                                  context.appRouter.pushScreen(
-                                    context,
-                                    OrdersRegistration(
-                                      price: state.totalPrice,
-                                    ),
-                                    rootNavigator: true,
-                                  );
-                                },
-                              ),
-                            ),
+                          bottom: 120.h,
+                          left: 10.w,
+                          right: 10.w,
+                          child: AppTextButton(
+                            height: 40.h,
+                            buttonText:
+                                '${locale.place_an_order} ${state.totalPrice} ₽',
+                            onPressed: () {
+                              context.appRouter.pushScreen(
+                                context,
+                                OrdersRegistration(
+                                  price: state.totalPrice,
+                                ),
+                                rootNavigator: true,
+                              );
+                            },
                           ),
                         )
                       ],

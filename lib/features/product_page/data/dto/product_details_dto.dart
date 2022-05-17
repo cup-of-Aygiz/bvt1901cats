@@ -38,7 +38,7 @@ class ProductDetailsDTO {
   factory ProductDetailsDTO.fromJson(Map<String, dynamic> json) =>
       _$ProductDetailsDTOFromJson(json);
 
-  ProductDetailsEntity toDetailsEntity() {
+  ProductDetailsEntity toEntity() {
     return ProductDetailsEntity(
       id: id ?? -1,
       image: images == null
