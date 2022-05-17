@@ -1,4 +1,4 @@
-import 'package:bvt1901_practice/features/basket/domain/state/basket_repository.dart';
+import 'package:bvt1901_practice/features/basket/domain/basket_repository.dart';
 
 import '../../../dev/mocking/mock_object.dart';
 import '../../../utils/app_utils.dart';

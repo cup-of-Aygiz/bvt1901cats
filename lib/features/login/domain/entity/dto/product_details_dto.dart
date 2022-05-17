@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../product_page/domain/entity/product_details_entity.dart';
+import '../../../../products_catalog/domain/entity/product_entity.dart';
 
 part 'product_details_dto.g.dart';
 
@@ -37,7 +38,7 @@ class ProductDetailsDTO {
   factory ProductDetailsDTO.fromJson(Map<String, dynamic> json) =>
       _$ProductDetailsDTOFromJson(json);
 
-  ProductDetailsEntity toEntity() {
+  ProductDetailsEntity toDetailsEntity() {
     return ProductDetailsEntity(
       id: id ?? -1,
       image: images == null
@@ -53,6 +54,21 @@ class ProductDetailsDTO {
       made: made ?? '',
       manufacturer: manufacturer ?? '',
       favorite: favorite ?? false,
+    );
+  }
+
+  ProductEntity toEntity() {
+    return ProductEntity(
+      id: id ?? -1,
+      image: images == null
+          ? ''
+          : images!.isNotEmpty
+          ? images!.first
+          : '',
+      name: name ?? '',
+      price: price ?? '',
+      amount: amount ?? -1,
+      volume: volume ?? '',
     );
   }
 }

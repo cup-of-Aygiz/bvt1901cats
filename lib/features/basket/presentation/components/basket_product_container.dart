@@ -41,7 +41,7 @@ class BasketProductContainer extends StatelessWidget {
               borderRadius: BorderRadius.circular(14.r),
               color: colors.white,
             ),
-            height: 98.h,
+            height: 120.h,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -60,64 +60,68 @@ class BasketProductContainer extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 10.h),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        productEntity.name,
-                        maxLines: 3,
-                        style: AppTextStyle.normalW700S16,
-                      ),
-                      Row(
-                        children: [
-                          SizedBox(
-                            height: 30.h,
-                            width: 30.w,
-                            child: OutlinedButton(
-                              style: ButtonStyle(
-                                padding:
-                                    MaterialStateProperty.all(EdgeInsets.zero),
-                              ),
-                              onPressed: () {},
+                  child: SizedBox(
+                    width: 140.h,
+                    height: 130.h,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          productEntity.name,
+                          maxLines: 3,
+                          style: AppTextStyle.normalW700S14,
+                        ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              height: 30.h,
+                              width: 30.w,
+                              child: OutlinedButton(
+                                style: ButtonStyle(
+                                  padding:
+                                      MaterialStateProperty.all(EdgeInsets.zero),
+                                ),
+                                onPressed: () {},
 
-                              ///минус
-                              child: const Icon(
-                                Icons.remove,
+                                ///минус
+                                child: const Icon(
+                                  Icons.remove,
+                                ),
                               ),
                             ),
-                          ),
-                          Container(
-                            width: 50.w,
-                            alignment: Alignment.center,
-                            child: Text('${productEntity.amount}',
-                                style: AppTextStyle.normalW700S16),
-                          ),
-                          SizedBox(
-                            height: 30.h,
-                            width: 30.h,
-                            child: OutlinedButton(
-                              style: ButtonStyle(
-                                padding:
-                                    MaterialStateProperty.all(EdgeInsets.zero),
-                              ),
-                              onPressed: () {},
+                            Container(
+                              width: 50.w,
+                              alignment: Alignment.center,
+                              child: Text('${productEntity.amount}',
+                                  style: AppTextStyle.normalW700S16),
+                            ),
+                            SizedBox(
+                              height: 30.h,
+                              width: 30.h,
+                              child: OutlinedButton(
+                                style: ButtonStyle(
+                                  padding:
+                                      MaterialStateProperty.all(EdgeInsets.zero),
+                                ),
+                                onPressed: () {},
 
-                              ///плюс
-                              child: const Icon(
-                                Icons.add,
+                                ///плюс
+                                child: const Icon(
+                                  Icons.add,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  padding: EdgeInsets.only(right: 16.w),
                   child: Text(
                     "${productEntity.price} ₽",
-                    style: AppTextStyle.normalW400S16,
+                    style: AppTextStyle.normalW700S16,
                   ),
                 ),
               ],

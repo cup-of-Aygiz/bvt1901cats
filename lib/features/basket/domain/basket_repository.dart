@@ -1,4 +1,4 @@
-import '../../../products_catalog/domain/entity/product_entity.dart';
+import '../../products_catalog/domain/entity/product_entity.dart';
 
 abstract class BasketRepository {
 

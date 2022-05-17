@@ -12,6 +12,8 @@ import 'package:shared_preferences/shared_preferences.dart' as _i18;
 
 import '../app/data/network_servise/dio_container.dart' as _i7;
 import '../app/presentation/app_config.dart' as _i3;
+import '../features/basket/data/network_basket_repository.dart' as _i21;
+import '../features/basket/domain/basket_repository.dart' as _i20;
 import '../features/basket/domain/state/basket_cubit.dart' as _i4;
 import '../features/login/data/auth_secure_storage.dart' as _i19;
 import '../features/login/data/repository/login_network_repository.dart'
@@ -23,8 +25,8 @@ import '../features/product_page/data/product_details_network_repository.dart'
 import '../features/product_page/domain/product_details_repository.dart'
     as _i12;
 import '../features/products_catalog/data/catalog_network_repository.dart'
-    as _i21;
-import '../features/products_catalog/domain/catalog_repository.dart' as _i20;
+    as _i23;
+import '../features/products_catalog/domain/catalog_repository.dart' as _i22;
 import '../features/products_catalog/domain/state/catalog_cubit.dart' as _i5;
 import '../features/registration/data/repository/registration_network_repository.dart'
     as _i15;
@@ -32,7 +34,7 @@ import '../features/registration/domain/repository/registration_repository.dart'
     as _i14;
 import '../features/search/data/searcher_network_repository.dart' as _i17;
 import '../features/search/domain/searcher_repository.dart' as _i16;
-import 'register_module.dart' as _i22; // ignore_for_file: unnecessary_lambdas
+import 'register_module.dart' as _i24; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -63,11 +65,13 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       preResolve: true);
   gh.factory<_i19.AuthTokenStorage>(
       () => _i19.AuthTokenLocalStorage(get<_i8.FlutterSecureStorage>()));
-  gh.factory<_i20.CatalogRepository>(
-      () => _i21.CatalogNetworkRepository(get<_i7.DioContainer>()));
+  gh.factory<_i20.BasketRepository>(
+      () => _i21.BasketNetworkRepository(get<_i7.DioContainer>()));
+  gh.factory<_i22.CatalogRepository>(
+      () => _i23.CatalogNetworkRepository(get<_i7.DioContainer>()));
   return get;
 }
 
 class _$AppConfigModule extends _i3.AppConfigModule {}
 
-class _$RegisterModule extends _i22.RegisterModule {}
+class _$RegisterModule extends _i24.RegisterModule {}

@@ -40,7 +40,8 @@ class _BasketScreenState extends State<BasketScreen> {
                     title: Text(locale.clear_basket),
                     actions: <Widget>[
                       TextButton(
-                        onPressed: () => context.appRouter.mayBePop(context, locale.ok),
+                        onPressed: () =>
+                            context.appRouter.mayBePop(context, locale.ok),
                         child: Text(locale.yes_clear),
                       ),
                       TextButton(
@@ -54,51 +55,53 @@ class _BasketScreenState extends State<BasketScreen> {
                 icon: Assets.icons.icBasket.svg(),
               ),
             ),
-            body: state.loading && state.productList.isEmpty
+            body: state.loading
                 ? const Center(
                     child: AppSpinKit(),
                   )
-                : Stack(
-                    children: [
-                      ListView(
-                        padding: EdgeInsets.zero,
-                        physics: const BouncingScrollPhysics(),
+                : state.productList.isEmpty
+                    ? const Center()
+                    : Stack(
                         children: [
-                          for (int i = 0; i < state.productList.length; i++)
-                            BasketProductContainer(
-                                productEntity: state.productList[i]),
-                          SizedBox(height: 150.h),
+                          ListView(
+                            padding: EdgeInsets.zero,
+                            physics: const BouncingScrollPhysics(),
+                            children: [
+                              for (int i = 0; i < state.productList.length; i++)
+                                BasketProductContainer(
+                                    productEntity: state.productList[i]),
+                              SizedBox(height: 150.h),
+                            ],
+                          ),
+                          Positioned(
+                            bottom: 0,
+                            child: Container(
+                              height: 146.h,
+                              width: width,
+                              color: colors.generalColor,
+                              child: Align(
+                                alignment: Alignment.topCenter,
+                                child: AppTextButton(
+                                  // -20 для отступа слева и справа
+                                  width: width - 20.w,
+                                  height: 40.h,
+                                  buttonText:
+                                      '${locale.place_an_order} ${state.totalPrice} ₽',
+                                  onPressed: () {
+                                    context.appRouter.pushScreen(
+                                      context,
+                                      OrdersRegistration(
+                                        price: state.totalPrice,
+                                      ),
+                                      rootNavigator: true,
+                                    );
+                                  },
+                                ),
+                              ),
+                            ),
+                          )
                         ],
                       ),
-                      Positioned(
-                        bottom: 0,
-                        child: Container(
-                          height: 146.h,
-                          width: width,
-                          color: colors.generalColor,
-                          child: Align(
-                            alignment: Alignment.topCenter,
-                            child: AppTextButton(
-                              // -20 для отступа слева и справа
-                              width: width - 20.w,
-                              height: 40.h,
-                              buttonText:
-                                  '${locale.place_an_order} ${state.totalPrice} ₽',
-                              onPressed: () {
-                                context.appRouter.pushScreen(
-                                  context,
-                                  OrdersRegistration(
-                                    price: state.totalPrice,
-                                  ),
-                                  rootNavigator: true,
-                                );
-                              },
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
           );
         },
       ),

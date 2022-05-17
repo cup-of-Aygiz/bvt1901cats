@@ -24,7 +24,7 @@ class ProductDetailsNetworkRepository extends ProductDetailsRepository {
         },
       );
 
-      final product = ProductDetailsDTO.fromJson(response.data).toEntity();
+      final product = ProductDetailsDTO.fromJson(response.data).toDetailsEntity();
 
       return product;
     } catch (e) {
