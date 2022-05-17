@@ -59,12 +59,12 @@
     "checkout",
     "total",
     "cost_of_delivery",
-    "cost_of_products"
-    "no_clear",
+    "cost_of_products",
     "price",
     "manufacturer",
     "description",
     "add_cart",
-    "not_available"
+    "not_available",
+    "free"
   ]
 }

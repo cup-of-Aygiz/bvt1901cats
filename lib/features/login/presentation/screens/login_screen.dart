@@ -71,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               AppValidators.requiredMinLengthField(context),
                         ),
                       ),
-                      SizedBox(height: 32.h),
+                      SizedBox(height: 62.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -90,7 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           )
                         ],
                       ),
-                      SizedBox(height: 140.h),
+                      SizedBox(height: 230.h),
                       Container(
                         width: 300.w,
                         margin: EdgeInsets.symmetric(horizontal: 10.w),
@@ -112,7 +112,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                 }
                                 }
                               );
-
                             }
                           },
                         ),

@@ -44,7 +44,8 @@ class _BasketScreenState extends State<BasketScreen> {
                         child: Text(locale.yes_clear),
                       ),
                       TextButton(
-                        onPressed: () => Navigator.maybePop(context, locale.cancel),
+                        onPressed: () =>
+                            Navigator.maybePop(context, locale.cancel),
                         child: Text(locale.no_clear),
                       ),
                     ],
@@ -84,7 +85,13 @@ class _BasketScreenState extends State<BasketScreen> {
                               buttonText:
                                   '${locale.place_an_order} ${state.totalPrice} ₽',
                               onPressed: () {
-                                context.appRouter.pushScreen(context, const OrdersRegistration());
+                                context.appRouter.pushScreen(
+                                  context,
+                                  OrdersRegistration(
+                                    price: state.totalPrice,
+                                  ),
+                                  rootNavigator: true,
+                                );
                               },
                             ),
                           ),

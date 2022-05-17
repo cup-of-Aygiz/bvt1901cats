@@ -182,7 +182,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get payment_method => 'Способ оплаты';
 
   @override
-  String get payment_to_courier => 'Оплата курьеру';
+  String get payment_to_courier => 'Наличные';
 
   @override
   String get checkout => 'Оформить заказ';
@@ -210,4 +210,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get not_available => 'Нет в наличии';
+
+  @override
+  String get free => 'Бесплатно';
 }

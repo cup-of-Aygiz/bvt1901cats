@@ -54,7 +54,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               ),
               body: (!state.loading)
                   ? BackgroundProgressWidget(
-                length: 4,
+                length: 3,
                 error: state.error != null,
                 child: FormBuilder(
                   key: _formKey,
@@ -123,7 +123,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         ],
                       ),
                       Positioned(
-                        bottom: 30.h,
+                        bottom: 70.h,
                         left: 10.w,
                         right: 10.w,
                         child: AppTextButton(
