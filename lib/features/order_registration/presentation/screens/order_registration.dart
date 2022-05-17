@@ -22,7 +22,7 @@ class OrdersRegistration extends StatelessWidget {
     final locale = context.appLocale;
     final width = MediaQuery.of(context).size.width;
     //вычитаем совокупность отступов
-    final halfWidth = width / 2.w - 12;
+    final halfWidth = width / 2.w - 12.w;
     return Scaffold(
       appBar: DefaultAppBar(titleText: locale.checkout),
       backgroundColor: colors.generalColor,
@@ -80,10 +80,11 @@ class OrdersRegistration extends StatelessWidget {
               SizedBox(height: 20.h),
               AppTextButton(
                 //вычитаем совоупность отступов
-                width: width-40.w,
+                width: width - 40.w,
                 buttonText: locale.choose_address,
                 onPressed: () {
-                  context.appRouter.pushScreen(context, const AddressesScreen());
+                  context.appRouter
+                      .pushScreen(context, const AddressesScreen());
                 },
               ),
               SizedBox(height: 20.h),
@@ -156,14 +157,14 @@ class OrdersRegistration extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: AppTextButton(
                 //вычитаем совоупность отступов
-                width: width-40.w,
+                width: width - 40.w,
                 buttonText: locale.checkout,
                 onPressed: () {
                   context.appRouter.mayBePop(context);
                 },
               ),
             ),
-          )
+          ),
         ],
       ),
     );

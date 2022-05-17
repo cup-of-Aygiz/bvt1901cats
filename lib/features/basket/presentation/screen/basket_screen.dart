@@ -40,12 +40,12 @@ class _BasketScreenState extends State<BasketScreen> {
                     title: Text(locale.clear_basket),
                     actions: <Widget>[
                       TextButton(
-                        onPressed: () => Navigator.maybePop(context, locale.ok),
+                        onPressed: () => context.appRouter.mayBePop(context, locale.ok),
                         child: Text(locale.yes_clear),
                       ),
                       TextButton(
                         onPressed: () =>
-                            Navigator.maybePop(context, locale.cancel),
+                            context.appRouter.mayBePop(context, locale.cancel),
                         child: Text(locale.no_clear),
                       ),
                     ],
