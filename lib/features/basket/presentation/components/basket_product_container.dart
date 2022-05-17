@@ -29,7 +29,7 @@ class BasketProductContainer extends StatelessWidget {
             useRootNavigator: true,
             builder: (BuildContext context) {
               return ProductDetals(
-                productEntity: productEntity,
+                productId: productEntity.id,
               );
             },
           );
@@ -75,8 +75,8 @@ class BasketProductContainer extends StatelessWidget {
                             width: 30.w,
                             child: OutlinedButton(
                               style: ButtonStyle(
-                                padding: MaterialStateProperty.all(
-                                    EdgeInsets.zero),
+                                padding:
+                                    MaterialStateProperty.all(EdgeInsets.zero),
                               ),
                               onPressed: () {},
 
@@ -89,18 +89,16 @@ class BasketProductContainer extends StatelessWidget {
                           Container(
                             width: 50.w,
                             alignment: Alignment.center,
-                            child: Text(
-                              '${productEntity.amount}',
-                              style: AppTextStyle.normalW700S16
-                            ),
+                            child: Text('${productEntity.amount}',
+                                style: AppTextStyle.normalW700S16),
                           ),
                           SizedBox(
                             height: 30.h,
                             width: 30.h,
                             child: OutlinedButton(
                               style: ButtonStyle(
-                                padding: MaterialStateProperty.all(
-                                    EdgeInsets.zero),
+                                padding:
+                                    MaterialStateProperty.all(EdgeInsets.zero),
                               ),
                               onPressed: () {},
 
@@ -120,7 +118,6 @@ class BasketProductContainer extends StatelessWidget {
                   child: Text(
                     "${productEntity.price} ₽",
                     style: AppTextStyle.normalW400S16,
-
                   ),
                 ),
               ],

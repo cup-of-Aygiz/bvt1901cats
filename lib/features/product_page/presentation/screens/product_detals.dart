@@ -1,5 +1,3 @@
-import 'package:bvt1901_practice/features/products_catalog/domain/entity/product_entity.dart';
-import 'package:bvt1901_practice/features/product_page/presentation/components/product_detals_image.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,11 +7,11 @@ import '../../../../app/presentation/theme/app_text_style.dart';
 import '../../../../uikit/buttons/app_text_button.dart';
 
 class ProductDetals extends StatelessWidget {
-  final ProductEntity productEntity;
+  final int productId;
 
   const ProductDetals({
     Key? key,
-    required this.productEntity,
+    required this.productId,
   }) : super(key: key);
 
   @override
@@ -41,13 +39,14 @@ class ProductDetals extends StatelessWidget {
               child: ListView(
                 controller: scrollController,
                 children: [
-                  ProductDetalsImage(productEntity: productEntity),
+                  //ProductDetalsImage(productEntity: productEntity),
                   SizedBox(height: 20.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        productEntity.name,
+                        '',
+                        //productEntity.name,
                         style: AppTextStyle.normalW700S18,
                       ),
                       LikeButton(size: 26.h),
@@ -96,7 +95,8 @@ class ProductDetals extends StatelessWidget {
                     AppTextButton(
                       width: 340.w,
                       color: colors.lightBlue,
-                      buttonText: '${productEntity.price} ₽',
+                      buttonText: '',
+                      //'${productEntity.price} ₽',
                       onPressed: () {},
                     ),
                   ],
