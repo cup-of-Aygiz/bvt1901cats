@@ -23,9 +23,9 @@ class AddressScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = context.appColors;
     final locale = context.appLocale;
-    final double _width = MediaQuery.of(context).size.width;
-    final double _halfWidth = _width / 2 - 20.w;
-    final _formKey = GlobalKey<FormBuilderState>();
+    final double width = MediaQuery.of(context).size.width;
+    final double halfWidth = width / 2 - 20.w;
+    final formKey = GlobalKey<FormBuilderState>();
     return BlocProvider(
       create: (context) => AddressesCubit(),
       child: BlocBuilder<AddressesCubit, AddressesState>(
@@ -56,13 +56,13 @@ class AddressScreen extends StatelessWidget {
                           AppTextField(
                             labelText: locale.entrance,
                             name: "entrance",
-                            width: _halfWidth,
+                            width: halfWidth,
                             padding: EdgeInsets.only(bottom: 10.h, left: 6.h),
                           ),
                           AppTextField(
                             labelText: locale.intercom,
                             name: "intercom",
-                            width: _halfWidth,
+                            width: halfWidth,
                             padding: EdgeInsets.only(bottom: 10.h, left: 6.h),
                           ),
                         ],
@@ -73,13 +73,13 @@ class AddressScreen extends StatelessWidget {
                           AppTextField(
                             labelText: locale.flat,
                             name: "flat",
-                            width: _halfWidth,
+                            width: halfWidth,
                             padding: EdgeInsets.only(bottom: 10.h, left: 6.h),
                           ),
                           AppTextField(
                             labelText: locale.floor,
                             name: "floor",
-                            width: _halfWidth,
+                            width: halfWidth,
                             padding: EdgeInsets.only(bottom: 10.h, left: 6.h),
                           ),
                         ],
@@ -94,25 +94,25 @@ class AddressScreen extends StatelessWidget {
                         padding: EdgeInsets.symmetric(
                             vertical: 10.h, horizontal: 6.w),
                         child: SizedBox(
-                          width: _width,
+                          width: width,
                           child: AppTextButton(
                             buttonText: locale.save_changes,
                             onPressed: () {
-                              String? _comment=_formKey.currentState?.value['comment'];
-                              String? _floor=_formKey.currentState?.value['floor'];
-                              String? _entrance=_formKey.currentState?.value['entrance'];
-                              String? _intercom=_formKey.currentState?.value['intercom'];
-                              String? _flat=_formKey.currentState?.value['flat'];
-                              var _newAddress=AddressEntity(
+                              String? comment=formKey.currentState?.value['comment'];
+                              String? floor=formKey.currentState?.value['floor'];
+                              String? entrance=formKey.currentState?.value['entrance'];
+                              String? intercom=formKey.currentState?.value['intercom'];
+                              String? flat=formKey.currentState?.value['flat'];
+                              var newAddress=AddressEntity(
                                   address: address,
-                                  flat: _flat==null ? 0 : int.parse(_flat!),
-                                  floor: _floor==null ? 0 : int.parse(_floor!),
-                                  entrance: _entrance==null ? 0 : int.parse(_entrance!),
-                                  intercom: _intercom==null ? 0 : int.parse(_intercom!),
-                                  comment: _comment ?? '',
+                                  flat: flat==null ? 0 : int.parse(flat),
+                                  floor: floor==null ? 0 : int.parse(floor),
+                                  entrance: entrance==null ? 0 : int.parse(entrance),
+                                  intercom: intercom==null ? 0 : int.parse(intercom),
+                                  comment: comment ?? '',
                               );
-                              log(_newAddress.address);
-                              context.read<AddressesCubit>().addAddresses(_newAddress);
+                              log(newAddress.address);
+                              context.read<AddressesCubit>().addAddresses(newAddress);
                               context.appRouter.popToRoot(context);
                             },
                           ),
