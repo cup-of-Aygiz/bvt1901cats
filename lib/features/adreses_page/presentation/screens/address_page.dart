@@ -98,21 +98,21 @@ class AddressScreen extends StatelessWidget {
                           child: AppTextButton(
                             buttonText: locale.save_changes,
                             onPressed: () {
-                              String? _comment=_formKey.currentState?.value['comment'];
-                              String? _floor=_formKey.currentState?.value['floor'];
-                              String? _entrance=_formKey.currentState?.value['entrance'];
-                              String? _intercom=_formKey.currentState?.value['intercom'];
-                              String? _flat=_formKey.currentState?.value['flat'];
-                              var _newAddress=AddressEntity(
+                              String? comment=_formKey.currentState?.value['comment'];
+                              String? floor=_formKey.currentState?.value['floor'];
+                              String? entrance=_formKey.currentState?.value['entrance'];
+                              String? intercom=_formKey.currentState?.value['intercom'];
+                              String? flat=_formKey.currentState?.value['flat'];
+                              var newAddress=AddressEntity(
                                   address: address,
-                                  flat: _flat==null ? 0 : int.parse(_flat!),
-                                  floor: _floor==null ? 0 : int.parse(_floor!),
-                                  entrance: _entrance==null ? 0 : int.parse(_entrance!),
-                                  intercom: _intercom==null ? 0 : int.parse(_intercom!),
-                                  comment: _comment ?? '',
+                                  flat: flat==null ? 0 : int.parse(flat),
+                                  floor:floor==null ? 0 : int.parse(floor),
+                                  entrance: entrance==null ? 0 : int.parse(entrance),
+                                  intercom: intercom==null ? 0 : int.parse(intercom),
+                                  comment: comment ?? '',
                               );
-                              log(_newAddress.address);
-                              context.read<AddressesCubit>().addAddresses(_newAddress);
+                              log(newAddress.address);
+                              context.read<AddressesCubit>().addAddresses(newAddress);
                               context.appRouter.popToRoot(context);
                             },
                           ),
