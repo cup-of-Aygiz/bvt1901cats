@@ -8,6 +8,8 @@ import '../domain/entity/profile_entity.dart';
 abstract class AuthTokenStorage {
   Future<void> saveAccessToken(String accessToken);
 
+  Future<void> deleteAccessToken();
+
   Future<String?> loadAccessToken();
 
   Future<void> saveAuthProfile(ProfileEntity profileEntity);
@@ -64,5 +66,15 @@ class AuthTokenLocalStorage extends AuthTokenStorage {
           value: jsonEncode(profileEntity.toJson()),
           aOptions: androidOptions);
     } catch (_) {}
+  }
+
+  @override
+  Future<void> deleteAccessToken() async {
+    try {
+      return await _secureStorage.delete(
+          key: 'accessTokenKey', aOptions: androidOptions);
+    } catch (_) {
+      return Future(() => null);
+    }
   }
 }
