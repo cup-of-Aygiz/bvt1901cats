@@ -18,18 +18,16 @@ import '../features/login/data/repository/login_network_repository.dart'
     as _i11;
 import '../features/login/domain/repository/login_repository.dart' as _i10;
 import '../features/login/domain/state/login_cubit.dart' as _i9;
-import '../features/product_page/data/product_details_network_repository.dart'
-    as _i13;
-import '../features/product_page/domain/product_details_repository.dart'
-    as _i12;
 import '../features/products_catalog/data/catalog_network_repository.dart'
     as _i19;
 import '../features/products_catalog/domain/catalog_repository.dart' as _i18;
 import '../features/products_catalog/domain/state/catalog_cubit.dart' as _i5;
 import '../features/registration/data/repository/registration_network_repository.dart'
-    as _i15;
+    as _i13;
 import '../features/registration/domain/repository/registration_repository.dart'
-    as _i14;
+    as _i12;
+import '../features/search/data/searcher_network_repository.dart' as _i15;
+import '../features/search/domain/searcher_repository.dart' as _i14;
 import 'register_module.dart' as _i20; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
@@ -50,10 +48,10 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i9.LoginCubit>(() => _i9.LoginCubit());
   gh.factory<_i10.LoginRepository>(
       () => _i11.LoginNetworkRepository(get<_i7.DioContainer>()));
-  gh.factory<_i12.ProductDetailsRepository>(
-      () => _i13.ProductDetailsNetworkRepository(get<_i7.DioContainer>()));
-  gh.factory<_i14.RegistrationRepository>(
-      () => _i15.RegistrationNetworkRepository(get<_i7.DioContainer>()));
+  gh.factory<_i12.RegistrationRepository>(
+      () => _i13.RegistrationNetworkRepository(get<_i7.DioContainer>()));
+  gh.factory<_i14.SearcherRepository>(
+      () => _i15.SearcherNetworkRepository(get<_i7.DioContainer>()));
   await gh.factoryAsync<_i16.SharedPreferences>(
       () => registerModule.sharedPreferences,
       preResolve: true);

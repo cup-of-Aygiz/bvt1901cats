@@ -121,9 +121,12 @@ class _MapScreenState extends State<MapScreen> {
                                   "${geocodeFromPoint.firstAddress?.formatted}";
                             });
 
-                            await Future.delayed(const Duration(seconds: 1));
-                            context.appRouter
-                                .pushScreen(context, AddressScreen(address: text,));
+                            await Future.delayed(const Duration(seconds: 1))
+                                .then((value) => context.appRouter.pushScreen(
+                                    context,
+                                    AddressScreen(
+                                      address: text,
+                                    )));
                           },
                         ),
                       ),

@@ -106,7 +106,7 @@ class AddressScreen extends StatelessWidget {
                               var newAddress=AddressEntity(
                                   address: address,
                                   flat: flat==null ? 0 : int.parse(flat),
-                                  floor:floor==null ? 0 : int.parse(floor),
+                                  floor: floor==null ? 0 : int.parse(floor),
                                   entrance: entrance==null ? 0 : int.parse(entrance),
                                   intercom: intercom==null ? 0 : int.parse(intercom),
                                   comment: comment ?? '',
