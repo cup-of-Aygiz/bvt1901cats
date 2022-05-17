@@ -33,7 +33,11 @@ class _LoginScreenState extends State<LoginScreen> {
     final colors = context.appColors;
     final router = context.appRouter;
 
-    return BlocBuilder<LoginCubit, LoginState>(builder: (context, state) {
+    return BlocConsumer<LoginCubit, LoginState>(listener: (context, state) {
+      if (state.profileEntity != null) {
+        context.appRouter.pushAndPopToRoot(context, const RouterScreen());
+      }
+    }, builder: (context, state) {
       return Scaffold(
         backgroundColor: colors.white,
         appBar: DefaultAppBar(
@@ -105,13 +109,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                   .read<LoginCubit>()
                                   .saveStateAndLogin(
                                       _formKey.currentState!.value['phone'],
-                                      _formKey.currentState!.value['password']).then((loginSuccess){
+                                      _formKey.currentState!.value['password'])
+                                  .then((loginSuccess) {
                                 if (loginSuccess) {
                                   context.appRouter.pushAndPopToRoot(
                                       context, const RouterScreen());
                                 }
-                                }
-                              );
+                              });
                             }
                           },
                         ),

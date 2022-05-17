@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
               ),
               height: 46.h,
               child: FormBuilderTextField(
-                name: 'find',
+                name: 'find1',
                 readOnly: true,
                 onTap: () {
                   context.appRouter.pushScreen(context, const SearchScreen());
