@@ -96,25 +96,26 @@ class ProductContainer extends StatelessWidget {
                       color: colors.white,
                     ),
                     width: size.width / 2,
-                    height: 70.h,
-                    child: Column(
+                    height: 100.h,
+                    child: Stack(
                       children: [
                         Padding(
                           padding: EdgeInsets.symmetric(
-                              horizontal: 10.w, vertical: 4.h),
+                              vertical: 4.h, horizontal: 4.w),
                           child: Text(
-                            productEntity.name.substring(0,productEntity.name.indexOf(' ')),
-                            style: constraints.maxWidth > 196
-                                ? AppTextStyle.normalW700S11
-                                : AppTextStyle.normalW700S9,
-                            maxLines: 1,
+                            productEntity.name,
+                            style: AppTextStyle.normalW400S9,
+                            maxLines: 4,
+                            textAlign: TextAlign.center,
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 20.w, vertical: 4.h),
+                        Positioned(
+                          bottom: 6.h,
                           child: Container(
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 30.w, vertical: 4.h),
                             height: 30.h,
+                            width: 90.w,
                             decoration: BoxDecoration(
                               color: colors.purple,
                               borderRadius:
@@ -122,13 +123,11 @@ class ProductContainer extends StatelessWidget {
                             ),
                             child: TextButton(
                               onPressed: () {},
-                              child: SafeArea(
-                                child: Text(
+                              child: Text(
                                   '${productEntity.price} ₽',
                                   style: AppTextStyle.normalW700S11
                                       .copyWith(color: colors.black),
                                 ),
-                              ),
                             ),
                           ),
                         ),

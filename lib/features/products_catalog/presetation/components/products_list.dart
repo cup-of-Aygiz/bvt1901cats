@@ -48,6 +48,7 @@ class _ProductListState extends State<ProductList>
                 child: AppSpinKit(),
               )
             : ListView(
+                padding: EdgeInsets.zero,
                 controller: _controller,
                 children: [
                   CarouselSlider(
