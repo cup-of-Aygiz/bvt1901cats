@@ -1,6 +1,9 @@
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../gen/assets.gen.dart';
 
 class SliderItem extends StatelessWidget {
   final String text;
@@ -25,13 +28,10 @@ class SliderItem extends StatelessWidget {
           style: BorderStyle.solid,
         ),
       ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 50.h),
-        child: Text(
-          text,
-          textAlign: TextAlign.center,
-
-        ),
+      child: FancyShimmerImage(
+        imageUrl: text,
+        boxFit: BoxFit.fill,
+        errorWidget: Assets.images.logotip.image(),
       ),
     );
   }
