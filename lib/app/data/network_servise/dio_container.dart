@@ -15,6 +15,7 @@ class DioContainer {
       receiveTimeout: 7000,
     );
     dio = Dio(options);
+    //dio.options.headers['x-access-token'] = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyNjQ4NTkyLCJleHAiOjE2NTI3MzQ5OTJ9.BUOSRw3uSssbCm_lwvH4FSXga5DTT_Z7CrR9UNM2Ozo';
     addInterceptor(NetworkErrorInterceptor());
   }
 

@@ -316,12 +316,6 @@ abstract class AppLocalizations {
   /// **'Повторите пароль'**
   String get prov_password;
 
-  /// No description provided for @save_changes.
-  ///
-  /// In ru, this message translates to:
-  /// **'Сохранить изменения'**
-  String get save_changes;
-
   /// No description provided for @my_addresses.
   ///
   /// In ru, this message translates to:
@@ -400,6 +394,12 @@ abstract class AppLocalizations {
   /// **'Выбрать'**
   String get choose;
 
+  /// No description provided for @save_changes.
+  ///
+  /// In ru, this message translates to:
+  /// **'Сохранить изменения'**
+  String get save_changes;
+
   /// No description provided for @place_an_order.
   ///
   /// In ru, this message translates to:
@@ -435,6 +435,78 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Оставить'**
   String get no_clear;
+
+  /// No description provided for @payment_method.
+  ///
+  /// In ru, this message translates to:
+  /// **'Способ оплаты'**
+  String get payment_method;
+
+  /// No description provided for @payment_to_courier.
+  ///
+  /// In ru, this message translates to:
+  /// **'Наличные'**
+  String get payment_to_courier;
+
+  /// No description provided for @checkout.
+  ///
+  /// In ru, this message translates to:
+  /// **'Оформить заказ'**
+  String get checkout;
+
+  /// No description provided for @total.
+  ///
+  /// In ru, this message translates to:
+  /// **'Итого'**
+  String get total;
+
+  /// No description provided for @cost_of_delivery.
+  ///
+  /// In ru, this message translates to:
+  /// **'Доставка'**
+  String get cost_of_delivery;
+
+  /// No description provided for @cost_of_products.
+  ///
+  /// In ru, this message translates to:
+  /// **'Стоимость'**
+  String get cost_of_products;
+
+  /// No description provided for @price.
+  ///
+  /// In ru, this message translates to:
+  /// **'Цена'**
+  String get price;
+
+  /// No description provided for @manufacturer.
+  ///
+  /// In ru, this message translates to:
+  /// **'Производитель'**
+  String get manufacturer;
+
+  /// No description provided for @description.
+  ///
+  /// In ru, this message translates to:
+  /// **'Описание'**
+  String get description;
+
+  /// No description provided for @add_cart.
+  ///
+  /// In ru, this message translates to:
+  /// **'Добавить в Корзину'**
+  String get add_cart;
+
+  /// No description provided for @not_available.
+  ///
+  /// In ru, this message translates to:
+  /// **'Нет в наличии'**
+  String get not_available;
+
+  /// No description provided for @free.
+  ///
+  /// In ru, this message translates to:
+  /// **'Бесплатно'**
+  String get free;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

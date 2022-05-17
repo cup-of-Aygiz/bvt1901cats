@@ -33,97 +33,95 @@ class _LoginScreenState extends State<LoginScreen> {
     final colors = context.appColors;
     final router = context.appRouter;
 
-    return BlocConsumer<LoginCubit, LoginState>(
-      listener: (context, state) {
-        if (state.profileEntity != null) {
-          context.appRouter.pushAndPopToRoot(context, const RouterScreen());
-        }
-      },
-      builder: (context, state) {
-        return Scaffold(
-          backgroundColor: colors.white,
-          appBar: DefaultAppBar(
-            titleText: locale.login_title,
-          ),
-          body: (!state.loading)
-              ? BackgroundProgressWidget(
-                  length: 2,
-                  child: FormBuilder(
-                    key: _formKey,
-                    child: Column(
-                      children: [
-                        SizedBox(height: 32.h),
-                        Text(
-                          locale.project_name,
-                          style: AppTextStyle.normalW200S34,
-                          textAlign: TextAlign.center,
-                        ),
-                        SizedBox(height: 32.h),
-                        AppPhoneTextField(
-                          labelText: locale.phone,
-                          name: 'phone',
+    return BlocBuilder<LoginCubit, LoginState>(builder: (context, state) {
+      return Scaffold(
+        backgroundColor: colors.white,
+        appBar: DefaultAppBar(
+          titleText: locale.login_title,
+        ),
+        body: (!state.loading)
+            ? BackgroundProgressWidget(
+                length: 2,
+                child: FormBuilder(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      SizedBox(height: 32.h),
+                      Text(
+                        locale.project_name,
+                        style: AppTextStyle.normalW200S34,
+                        textAlign: TextAlign.center,
+                      ),
+                      SizedBox(height: 32.h),
+                      AppPhoneTextField(
+                        labelText: locale.phone,
+                        name: 'phone',
+                        autoValidateMode: AutovalidateMode.disabled,
+                      ),
+                      SizedBox(height: 4.h),
+                      Container(
+                        height: 60.h,
+                        margin: EdgeInsets.symmetric(horizontal: 10.w),
+                        child: AppPasswordField(
+                          labelText: locale.old_password,
+                          name: 'password',
+                          padding: EdgeInsets.symmetric(vertical: 2.h),
                           autoValidateMode: AutovalidateMode.disabled,
+                          validator:
+                              AppValidators.requiredMinLengthField(context),
                         ),
-                        SizedBox(height: 4.h),
-                        Container(
-                          height: 60.h,
-                          margin: EdgeInsets.symmetric(horizontal: 10.w),
-                          child: AppPasswordField(
-                            labelText: locale.old_password,
-                            name: 'password',
-                            padding: EdgeInsets.symmetric(vertical: 2.h),
-                            autoValidateMode: AutovalidateMode.disabled,
-                            validator:
-                                AppValidators.requiredMinLengthField(context),
+                      ),
+                      SizedBox(height: 62.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            locale.no_registration_yet,
+                            style: AppTextStyle.normalW400S12,
                           ),
-                        ),
-                        SizedBox(height: 32.h),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              locale.no_registration_yet,
-                              style: AppTextStyle.normalW400S12,
-                            ),
-                            SizedBox(width: 4.w),
-                            AppTransparentButton(
-                              onTap: () {
-                                router.pushScreen(
-                                    context, const RegistrationScreen());
-                              },
-                              child: Text(locale.create_account,
-                                  style: AppTextStyle.normalW700S12),
-                            )
-                          ],
-                        ),
-                        SizedBox(height: 140.h),
-                        Container(
-                          width: 300.w,
-                          margin: EdgeInsets.symmetric(horizontal: 10.w),
-                          child: AppTextButton(
-                            color: colors.purple,
-                            buttonText: locale.login,
-                            onPressed: () async {
-                              _formKey.currentState?.validate();
-                              if (_formKey.currentState?.validate() ?? false) {
-                                _formKey.currentState!.save();
-                                await context
-                                    .read<LoginCubit>()
-                                    .saveStateAndLogin(
-                                        _formKey.currentState!.value['phone'],
-                                        _formKey
-                                            .currentState!.value['password']);
-                              }
+                          SizedBox(width: 4.w),
+                          AppTransparentButton(
+                            onTap: () {
+                              router.pushScreen(
+                                  context, const RegistrationScreen());
                             },
-                          ),
+                            child: Text(locale.create_account,
+                                style: AppTextStyle.normalW700S12),
+                          )
+                        ],
+                      ),
+                      SizedBox(height: 230.h),
+                      Container(
+                        width: 300.w,
+                        margin: EdgeInsets.symmetric(horizontal: 10.w),
+                        child: AppTextButton(
+                          color: colors.purple,
+                          buttonText: locale.login,
+                          onPressed: () async {
+                            _formKey.currentState?.validate();
+                            if (_formKey.currentState?.validate() ?? false) {
+                              _formKey.currentState!.save();
+                              await context
+                                  .read<LoginCubit>()
+                                  .saveStateAndLogin(
+                                      _formKey.currentState!.value['phone'],
+                                      _formKey.currentState!.value['password']).then((loginSuccess){
+                                if (loginSuccess) {
+                                  context.appRouter.pushAndPopToRoot(
+                                      context, const RouterScreen());
+                                }
+                                }
+                              );
+                            }
+                          },
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                )
-              : const AppSpinKit(),
-        );
-      },
-    );
+                ),
+              )
+            : const AppSpinKit(),
+      );
+    });
   }
 }

@@ -1,8 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /// normal = Roboto
@@ -17,6 +13,36 @@ class AppTextStyle {
     fontWeight: FontWeight.w700,
   );
 
+ static final TextStyle normalW300S14 = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w300,
+  );
+
+  static final TextStyle normalW400S9 = TextStyle(
+    fontSize: 9.sp,
+    fontWeight: FontWeight.w400,
+  );
+
+  static final TextStyle normalW700S14 = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w700,
+  );
+
+  static final TextStyle normalW500S14 = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+  );
+
+  static final TextStyle normalW400S14 = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
+  );
+
+  static final TextStyle normalW700S30 = TextStyle(
+    fontSize: 30.sp,
+    fontWeight: FontWeight.w700,
+  );
+
   static final TextStyle normalW700S16 = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeight.w700,
@@ -25,6 +51,11 @@ class AppTextStyle {
   static final TextStyle normalW200S34 = TextStyle(
     fontSize: 34.sp,
     fontWeight: FontWeight.w200,
+  );
+
+  static final TextStyle normalW700S24 = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w700,
   );
 
   static final TextStyle normalW400S12 = TextStyle(
@@ -49,6 +80,18 @@ class AppTextStyle {
   static final TextStyle normalW700S9 = TextStyle(
     fontSize: 9.sp,
     fontWeight: FontWeight.w700,
+  );
+
+  static final TextStyle normalW400S20 = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w400,
+  );
+
+  static final TextStyle normalW400S24red = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w400,
+    color: Colors.red,
+
   );
 
   static final TextStyle bottomNavigationLabel = TextStyle(

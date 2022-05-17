@@ -8,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../gen/assets.gen.dart';
 import '../../../../uikit/spinkit/spinkit.dart';
+import '../../../order_registration/presentation/screens/order_registration.dart';
 import '../../domain/state/basket_cubit.dart';
 import '../components/basket_product_container.dart';
 
@@ -39,11 +40,12 @@ class _BasketScreenState extends State<BasketScreen> {
                     title: Text(locale.clear_basket),
                     actions: <Widget>[
                       TextButton(
-                        onPressed: () => Navigator.maybePop(context, locale.ok),
+                        onPressed: () => context.appRouter.mayBePop(context, locale.ok),
                         child: Text(locale.yes_clear),
                       ),
                       TextButton(
-                        onPressed: () => Navigator.maybePop(context, locale.cancel),
+                        onPressed: () =>
+                            context.appRouter.mayBePop(context, locale.cancel),
                         child: Text(locale.no_clear),
                       ),
                     ],
@@ -82,7 +84,15 @@ class _BasketScreenState extends State<BasketScreen> {
                               height: 40.h,
                               buttonText:
                                   '${locale.place_an_order} ${state.totalPrice} ₽',
-                              onPressed: () {},
+                              onPressed: () {
+                                context.appRouter.pushScreen(
+                                  context,
+                                  OrdersRegistration(
+                                    price: state.totalPrice,
+                                  ),
+                                  rootNavigator: true,
+                                );
+                              },
                             ),
                           ),
                         ),
