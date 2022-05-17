@@ -78,16 +78,16 @@ class _BasketScreenState extends State<BasketScreen> {
                           ],
                         ),
                         Positioned(
-                          bottom: 0,
+                          bottom: 10.h,
+                          left: 20.h,
+                          right: 20.h,
                           child: Container(
                             height: 146.h,
-                            width: width,
                             color: colors.generalColor,
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: AppTextButton(
-                                // -20 для отступа слева и справа
-                                width: width - 20.w,
+                                width: width,
                                 height: 40.h,
                                 buttonText:
                                     '${locale.place_an_order} ${state.totalPrice} ₽',
