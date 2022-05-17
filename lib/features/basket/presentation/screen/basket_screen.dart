@@ -25,9 +25,7 @@ class _BasketScreenState extends State<BasketScreen> {
     final colors = context.appColors;
     final locale = context.appLocale;
     final width = MediaQuery.of(context).size.width;
-    return BlocProvider(
-      create: (context) => BasketCubit()..init(),
-      child: BlocBuilder<BasketCubit, BasketState>(
+    return BlocBuilder<BasketCubit, BasketState>(
         builder: (context, state) {
           return Scaffold(
             backgroundColor: colors.generalColor,
@@ -104,7 +102,7 @@ class _BasketScreenState extends State<BasketScreen> {
                       ),
           );
         },
-      ),
-    );
+      );
+
   }
 }
