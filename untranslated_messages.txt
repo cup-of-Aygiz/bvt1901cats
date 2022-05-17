@@ -34,7 +34,6 @@
     "old_password",
     "new_password",
     "prov_password",
-    "save_changes",
     "my_addresses",
     "add_address",
     "address",
@@ -48,16 +47,24 @@
     "delivery_address",
     "load_address",
     "choose",
+    "save_changes",
     "place_an_order",
     "ok",
     "cancel",
     "clear_basket",
     "yes_clear",
     "no_clear",
+    "payment_method",
+    "payment_to_courier",
+    "checkout",
+    "total",
+    "cost_of_delivery",
+    "cost_of_products",
     "price",
     "manufacturer",
     "description",
     "add_cart",
-    "not_available"
+    "not_available",
+    "free"
   ]
 }

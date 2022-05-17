@@ -36,7 +36,6 @@
   "old_password": "Текущий пароль",
   "new_password": "Новый пароль",
   "prov_password": "Повторите пароль",
-  "save_changes": "Сохранить",
   "my_addresses": "Мои адреса",
   "add_address": "Новый адрес",
   "address": "Адрес",
@@ -57,10 +56,16 @@
   "clear_basket": "Очистить корзину?",
   "yes_clear": "Очистить",
   "no_clear": "Оставить",
-  "save_changes": "Сохранить изменения",
+  "payment_method": "Способ оплаты",
+  "payment_to_courier": "Наличные",
+  "checkout": "Оформить заказ",
+  "total": "Итого",
+  "cost_of_delivery": "Доставка",
+  "cost_of_products": "Стоимость",
   "price": "Цена",
   "manufacturer": "Производитель",
   "description": "Описание",
   "add_cart": "Добавить в Корзину",
-  "not_available": "Нет в наличии"
+  "not_available": "Нет в наличии",
+  "free": "Бесплатно"
 }

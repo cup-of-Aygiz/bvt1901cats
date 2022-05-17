@@ -119,9 +119,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get prov_password => 'Повторите пароль';
 
   @override
-  String get save_changes => 'Сохранить изменения';
-
-  @override
   String get my_addresses => 'Мои адреса';
 
   @override
@@ -161,6 +158,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get choose => 'Выбрать';
 
   @override
+  String get save_changes => 'Сохранить изменения';
+
+  @override
   String get place_an_order => 'Оформить заказ';
 
   @override
@@ -179,6 +179,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String get no_clear => 'Оставить';
 
   @override
+  String get payment_method => 'Способ оплаты';
+
+  @override
+  String get payment_to_courier => 'Наличные';
+
+  @override
+  String get checkout => 'Оформить заказ';
+
+  @override
+  String get total => 'Итого';
+
+  @override
+  String get cost_of_delivery => 'Доставка';
+
+  @override
+  String get cost_of_products => 'Стоимость';
+
+  @override
   String get price => 'Цена';
 
   @override
@@ -192,4 +210,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get not_available => 'Нет в наличии';
+
+  @override
+  String get free => 'Бесплатно';
 }
