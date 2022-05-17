@@ -45,10 +45,10 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         body: (!state.loading)
             ? BackgroundProgressWidget(
-                length: 2,
+                length: 10,
                 child: FormBuilder(
                   key: _formKey,
-                  child: Column(
+                  child: ListView(
                     children: [
                       SizedBox(height: 32.h),
                       Text(

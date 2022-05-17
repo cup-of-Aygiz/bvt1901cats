@@ -42,29 +42,30 @@ class AddressesScreen extends StatelessWidget {
                           Center(
                             child: Wrap(
                               children: [
-                                for (int i = 0; i < state.addressesList.length; i++)
-                                  AddressContainer( addressEntity: state.addressesList[i],)
+                                for (var item in state.addressesList)
+                                  AddressContainer(
+                                    addressEntity: item,
+                                    isFavorite: item == state.favoriteAddresses,
+                                  )
                               ],
                             ),
                           ),
+                          SizedBox(height: 80.h,),
                         ],
                       ),
                       Positioned(
-                        bottom: 50,
-                        width: 390,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 20.w, vertical: 10.h),
-                          child: AppTextButton(
-                            buttonText: locale.add_address,
-                            onPressed: () {
-                              context.appRouter.pushScreen(
-                                context,
-                                const MapScreen(),
-                                rootNavigator: true,
-                              );
-                            },
-                          ),
+                        bottom: 50.h,
+                        left: 16.w,
+                        right: 16.w,
+                        child: AppTextButton(
+                          buttonText: locale.add_address,
+                          onPressed: () {
+                            context.appRouter.pushScreen(
+                              context,
+                              const MapScreen(),
+                              rootNavigator: true,
+                            );
+                          },
                         ),
                       )
                     ],

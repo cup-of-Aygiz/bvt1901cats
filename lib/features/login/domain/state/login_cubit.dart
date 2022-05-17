@@ -21,12 +21,17 @@ class LoginCubit extends Cubit<LoginState> {
 
   Future<void> init() async {
     try {
+      emit(state.copyWith(loading: true));
       final token = await _authTokenStorage.loadAccessToken();
       if (token != null) {
         await getProfile(token: token);
       }
+      emit(state.copyWith(loading: false));
     } on ErrorModel catch (e) {
-      emit(state.copyWith(error: e));
+      emit(state.copyWith(
+        error: e,
+        loading: false,
+      ));
     }
   }
 
@@ -66,7 +71,6 @@ class LoginCubit extends Cubit<LoginState> {
       profileEntity: null,
     ));
     await getIt<AuthTokenStorage>().deleteAccessToken();
-    getIt<DioContainer>()
-        .deleteInterceptor(AuthTokenInterceptor);
+    getIt<DioContainer>().deleteInterceptor(AuthTokenInterceptor);
   }
 }
