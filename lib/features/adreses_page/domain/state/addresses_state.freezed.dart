@@ -23,6 +23,7 @@ mixin _$AddressesState {
   bool get loading => throw _privateConstructorUsedError;
   ErrorModel? get error => throw _privateConstructorUsedError;
   List<AddressEntity> get addressesList => throw _privateConstructorUsedError;
+  AddressEntity? get favoriteAddresses => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,9 +37,13 @@ abstract class $AddressesStateCopyWith<$Res> {
           AddressesState value, $Res Function(AddressesState) then) =
       _$AddressesStateCopyWithImpl<$Res>;
   $Res call(
-      {bool loading, ErrorModel? error, List<AddressEntity> addressesList});
+      {bool loading,
+      ErrorModel? error,
+      List<AddressEntity> addressesList,
+      AddressEntity? favoriteAddresses});
 
   $ErrorModelCopyWith<$Res>? get error;
+  $AddressEntityCopyWith<$Res>? get favoriteAddresses;
 }
 
 /// @nodoc
@@ -55,6 +60,7 @@ class _$AddressesStateCopyWithImpl<$Res>
     Object? loading = freezed,
     Object? error = freezed,
     Object? addressesList = freezed,
+    Object? favoriteAddresses = freezed,
   }) {
     return _then(_value.copyWith(
       loading: loading == freezed
@@ -69,6 +75,10 @@ class _$AddressesStateCopyWithImpl<$Res>
           ? _value.addressesList
           : addressesList // ignore: cast_nullable_to_non_nullable
               as List<AddressEntity>,
+      favoriteAddresses: favoriteAddresses == freezed
+          ? _value.favoriteAddresses
+          : favoriteAddresses // ignore: cast_nullable_to_non_nullable
+              as AddressEntity?,
     ));
   }
 
@@ -82,6 +92,17 @@ class _$AddressesStateCopyWithImpl<$Res>
       return _then(_value.copyWith(error: value));
     });
   }
+
+  @override
+  $AddressEntityCopyWith<$Res>? get favoriteAddresses {
+    if (_value.favoriteAddresses == null) {
+      return null;
+    }
+
+    return $AddressEntityCopyWith<$Res>(_value.favoriteAddresses!, (value) {
+      return _then(_value.copyWith(favoriteAddresses: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -92,10 +113,15 @@ abstract class _$$_AddressesStateCopyWith<$Res>
       __$$_AddressesStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool loading, ErrorModel? error, List<AddressEntity> addressesList});
+      {bool loading,
+      ErrorModel? error,
+      List<AddressEntity> addressesList,
+      AddressEntity? favoriteAddresses});
 
   @override
   $ErrorModelCopyWith<$Res>? get error;
+  @override
+  $AddressEntityCopyWith<$Res>? get favoriteAddresses;
 }
 
 /// @nodoc
@@ -114,6 +140,7 @@ class __$$_AddressesStateCopyWithImpl<$Res>
     Object? loading = freezed,
     Object? error = freezed,
     Object? addressesList = freezed,
+    Object? favoriteAddresses = freezed,
   }) {
     return _then(_$_AddressesState(
       loading: loading == freezed
@@ -128,6 +155,10 @@ class __$$_AddressesStateCopyWithImpl<$Res>
           ? _value._addressesList
           : addressesList // ignore: cast_nullable_to_non_nullable
               as List<AddressEntity>,
+      favoriteAddresses: favoriteAddresses == freezed
+          ? _value.favoriteAddresses
+          : favoriteAddresses // ignore: cast_nullable_to_non_nullable
+              as AddressEntity?,
     ));
   }
 }
@@ -138,7 +169,8 @@ class _$_AddressesState implements _AddressesState {
   const _$_AddressesState(
       {this.loading = false,
       this.error,
-      final List<AddressEntity> addressesList = const []})
+      final List<AddressEntity> addressesList = const [],
+      this.favoriteAddresses})
       : _addressesList = addressesList;
 
   factory _$_AddressesState.fromJson(Map<String, dynamic> json) =>
@@ -158,8 +190,11 @@ class _$_AddressesState implements _AddressesState {
   }
 
   @override
+  final AddressEntity? favoriteAddresses;
+
+  @override
   String toString() {
-    return 'AddressesState(loading: $loading, error: $error, addressesList: $addressesList)';
+    return 'AddressesState(loading: $loading, error: $error, addressesList: $addressesList, favoriteAddresses: $favoriteAddresses)';
   }
 
   @override
@@ -170,7 +205,9 @@ class _$_AddressesState implements _AddressesState {
             const DeepCollectionEquality().equals(other.loading, loading) &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality()
-                .equals(other._addressesList, _addressesList));
+                .equals(other._addressesList, _addressesList) &&
+            const DeepCollectionEquality()
+                .equals(other.favoriteAddresses, favoriteAddresses));
   }
 
   @JsonKey(ignore: true)
@@ -179,7 +216,8 @@ class _$_AddressesState implements _AddressesState {
       runtimeType,
       const DeepCollectionEquality().hash(loading),
       const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(_addressesList));
+      const DeepCollectionEquality().hash(_addressesList),
+      const DeepCollectionEquality().hash(favoriteAddresses));
 
   @JsonKey(ignore: true)
   @override
@@ -196,7 +234,8 @@ abstract class _AddressesState implements AddressesState {
   const factory _AddressesState(
       {final bool loading,
       final ErrorModel? error,
-      final List<AddressEntity> addressesList}) = _$_AddressesState;
+      final List<AddressEntity> addressesList,
+      final AddressEntity? favoriteAddresses}) = _$_AddressesState;
 
   factory _AddressesState.fromJson(Map<String, dynamic> json) =
       _$_AddressesState.fromJson;
@@ -207,6 +246,8 @@ abstract class _AddressesState implements AddressesState {
   ErrorModel? get error => throw _privateConstructorUsedError;
   @override
   List<AddressEntity> get addressesList => throw _privateConstructorUsedError;
+  @override
+  AddressEntity? get favoriteAddresses => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_AddressesStateCopyWith<_$_AddressesState> get copyWith =>

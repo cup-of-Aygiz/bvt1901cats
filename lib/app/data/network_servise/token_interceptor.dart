@@ -11,7 +11,7 @@ class AuthTokenInterceptor extends Interceptor {
   void onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
     if (options.extra[tag] == true) {
-      options.headers['Authorization'] = accessToken;
+      options.headers['x-access-token'] = accessToken;
     }
     super.onRequest(options, handler);
   }

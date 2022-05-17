@@ -22,6 +22,7 @@ class LoginNetworkRepository extends LoginRepository {
       final response = await dioContainer.dio.post(
         '/auth/login',
         data: {"phone": phone, "password": password},
+
       );
       getIt<DioContainer>()
           .addInterceptor(AuthTokenInterceptor(response.data['accessToken']));

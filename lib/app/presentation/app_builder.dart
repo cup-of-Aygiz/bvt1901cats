@@ -2,9 +2,8 @@ import 'package:bvt1901_practice/app/domain/app_builder.dart';
 import 'package:bvt1901_practice/app/router/app_router.dart';
 import 'package:bvt1901_practice/di/service_locator.dart';
 import 'package:bvt1901_practice/features/login/domain/state/login_state.dart';
-import 'package:bvt1901_practice/features/router/presentation/screen/router_screen.dart';
+import 'package:bvt1901_practice/features/router/presentation/screen/splash_screen.dart';
 
-import 'package:bvt1901_practice/features/welcom_page/presentation/screens/welcom_page_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -50,9 +49,7 @@ class MainAppBuilder extends AppBuilder {
                 supportedLocales: AppLocalizations.supportedLocales,
                 themeMode: ThemeMode.light,
                 // theme: lightThemeData,
-                home: state.profileEntity != null
-                    ? const RouterScreen()
-                    : const WelcomePageScreen(),
+                home:  SplashScreen(cubit: context.read<LoginCubit>(),),
               );
             },
           );
