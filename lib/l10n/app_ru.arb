@@ -68,5 +68,7 @@
   "add_cart": "Добавить в Корзину",
   "not_available": "Нет в наличии",
   "free": "Бесплатно",
-  "empty_basket":"Корзина пуста"
+  "empty_basket":"Корзина пуста",
+  "empty_orders_list": "Пока не было заказов",
+  "sum_with_delivery": "Итого с доставкой"
 }

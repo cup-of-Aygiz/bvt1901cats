@@ -3,6 +3,7 @@ import 'package:bvt1901_practice/app/presentation/app_builder.dart';
 import 'package:bvt1901_practice/app/presentation/app_config.dart';
 import 'package:bvt1901_practice/app/presentation/app_runner.dart';
 import 'package:bvt1901_practice/di/service_locator.dart';
+import 'package:bvt1901_practice/features/orders/mock/mock_orders_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
@@ -18,8 +19,9 @@ import 'mocking/runtime_mock_config.dart';
 ///   //SampleMockApi(),
 /// ]);
 final _mockConfig = RuntimeMockConfig.custom([
-  // RegistrationMockRepository(),
-  // LoginMockRepository(),
+  OrdersMockRepository(),
+  // RegitrationMockRepository(),
+  //LoginMockRepository(),
   //BasketMockRepository(),
   //FavoriteProductsMockRepository(),
   // CatalogMockRepository(),
