@@ -99,4 +99,21 @@ class BasketNetworkRepository extends BasketRepository {
       throw mapToErrorModel(e);
     }
   }
+
+  @override
+  Future<List<ProductDetailsEntity>> clearProductList() async{
+    try {
+      final String? token = await getIt<AuthTokenStorage>().loadAccessToken();
+      final response = await dioContainer.dio.delete(
+        '/cart',
+        options: Options(headers: {
+          'x-access-token': token,
+        }),
+      );
+      return [];
+
+    } catch (e) {
+      throw mapToErrorModel(e);
+    }
+  }
 }

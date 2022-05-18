@@ -96,15 +96,17 @@ class ProductContainer extends StatelessWidget {
                       color: colors.white,
                     ),
                     width: size.width / 2,
-                    height: 100.h,
+                    height: 80.h,
                     child: Stack(
+                      alignment: Alignment.center,
                       children: [
-                        Padding(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 4.h, horizontal: 4.w),
+                        Positioned(
+                          top: 6.h,
+                          left: 4.w,
+                          right: 4.w,
                           child: Text(
                             productEntity.name,
-                            style: AppTextStyle.normalW400S9,
+                            style: AppTextStyle.normalW500S10,
                             maxLines: 4,
                             textAlign: TextAlign.center,
                           ),
@@ -124,10 +126,10 @@ class ProductContainer extends StatelessWidget {
                             child: TextButton(
                               onPressed: () {},
                               child: Text(
-                                  '${productEntity.price} ₽',
-                                  style: AppTextStyle.normalW700S11
-                                      .copyWith(color: colors.black),
-                                ),
+                                '${productEntity.price} ₽',
+                                style: AppTextStyle.normalW700S11
+                                    .copyWith(color: colors.black),
+                              ),
                             ),
                           ),
                         ),

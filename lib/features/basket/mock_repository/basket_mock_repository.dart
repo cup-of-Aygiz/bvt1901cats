@@ -44,4 +44,9 @@ class BasketMockRepository extends BasketRepository
       {required int productId, required int amount}) {
     throw UnimplementedError();
   }
+
+  @override
+  Future<List<ProductDetailsEntity>> clearProductList() {
+    throw UnimplementedError();
+  }
 }

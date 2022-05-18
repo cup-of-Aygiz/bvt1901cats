@@ -23,12 +23,12 @@ class _AppCounterState extends State<AppCounter> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(onPressed: (){}, icon: const Icon(Icons.add)),
+          IconButton(onPressed: (){}, icon: const Icon(Icons.remove)),
           Text(
             '1',
             style: AppTextStyle.normalW700S16,
           ),
-          IconButton(onPressed: (){}, icon: const Icon(Icons.remove)),
+          IconButton(onPressed: (){}, icon: const Icon(Icons.add)),
         ],
       ),
     );

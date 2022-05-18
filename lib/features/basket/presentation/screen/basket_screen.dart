@@ -38,8 +38,10 @@ class _BasketScreenState extends State<BasketScreen> {
                   title: Text(locale.clear_basket),
                   actions: <Widget>[
                     TextButton(
-                      onPressed: () =>
-                          context.appRouter.mayBePop(context, locale.ok),
+                      onPressed: () {
+                        context.read<BasketCubit>().crearProductList();
+                        context.appRouter.mayBePop(context, locale.ok);
+                      },
                       child: Text(locale.yes_clear),
                     ),
                     TextButton(

@@ -18,5 +18,6 @@ abstract class BasketRepository {
     required int amount,
 });
 
+  Future<List<ProductDetailsEntity>> clearProductList();
 
 }
