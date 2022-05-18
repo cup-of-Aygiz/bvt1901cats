@@ -43,10 +43,10 @@ class OrdersMockRepository extends OrderRepository
     for (int i = 0; i < 10; i++) {
       orders.add(
         OrderEntity(
-          orderNumber: '${AppUtils.intInRange(100000, 1000000)}',
+          orderNumber: AppUtils.intInRange(100000, 1000000),
           orderDate: '${DateTime.now()}',
           deliveryAddress: 'Москва улица Маршала Тухачевского 18, 411, поъезд 1, этаж 4',
-          price: AppUtils.intInRange(20, 500).toString(),
+          price: 456,
           products: getEntity(),
         ),
       );

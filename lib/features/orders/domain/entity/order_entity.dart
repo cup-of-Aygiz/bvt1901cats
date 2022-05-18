@@ -9,11 +9,11 @@ part 'order_entity.g.dart';
 @freezed
 class OrderEntity with _$OrderEntity {
   const factory OrderEntity({
-    @Default('') final String orderNumber,
+    @Default(0) final int orderNumber,
     @Default('') final String orderDate,
     @Default('') final String deliveryAddress,
     @Default([]) final List<ProductDetailsEntity> products,
-    @Default('') final String price,
+    @Default(0) final double price,
   }) = _OrderEntity;
 
   factory OrderEntity.fromJson(Map<String, dynamic> json) =>

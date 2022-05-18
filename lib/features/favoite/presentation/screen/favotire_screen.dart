@@ -33,6 +33,7 @@ class FavoriteScreen extends StatelessWidget {
                       child: Text(
                         locale.empty_favorite,
                         style: AppTextStyle.normalW400S20,
+                        textAlign: TextAlign.center,
                       ),
                     )
                   : ListView(

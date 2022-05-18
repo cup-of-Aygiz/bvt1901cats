@@ -8,7 +8,7 @@ part of 'order_entity.dart';
 
 _$_OrderEntity _$$_OrderEntityFromJson(Map<String, dynamic> json) =>
     _$_OrderEntity(
-      orderNumber: json['orderNumber'] as String? ?? '',
+      orderNumber: json['orderNumber'] as int? ?? 0,
       orderDate: json['orderDate'] as String? ?? '',
       deliveryAddress: json['deliveryAddress'] as String? ?? '',
       products: (json['products'] as List<dynamic>?)
@@ -16,7 +16,7 @@ _$_OrderEntity _$$_OrderEntityFromJson(Map<String, dynamic> json) =>
                   ProductDetailsEntity.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      price: json['price'] as String? ?? '',
+      price: (json['price'] as num?)?.toDouble() ?? 0,
     );
 
 Map<String, dynamic> _$$_OrderEntityToJson(_$_OrderEntity instance) =>

@@ -20,11 +20,11 @@ OrderEntity _$OrderEntityFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$OrderEntity {
-  String get orderNumber => throw _privateConstructorUsedError;
+  int get orderNumber => throw _privateConstructorUsedError;
   String get orderDate => throw _privateConstructorUsedError;
   String get deliveryAddress => throw _privateConstructorUsedError;
   List<ProductDetailsEntity> get products => throw _privateConstructorUsedError;
-  String get price => throw _privateConstructorUsedError;
+  double get price => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,11 +38,11 @@ abstract class $OrderEntityCopyWith<$Res> {
           OrderEntity value, $Res Function(OrderEntity) then) =
       _$OrderEntityCopyWithImpl<$Res>;
   $Res call(
-      {String orderNumber,
+      {int orderNumber,
       String orderDate,
       String deliveryAddress,
       List<ProductDetailsEntity> products,
-      String price});
+      double price});
 }
 
 /// @nodoc
@@ -65,7 +65,7 @@ class _$OrderEntityCopyWithImpl<$Res> implements $OrderEntityCopyWith<$Res> {
       orderNumber: orderNumber == freezed
           ? _value.orderNumber
           : orderNumber // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       orderDate: orderDate == freezed
           ? _value.orderDate
           : orderDate // ignore: cast_nullable_to_non_nullable
@@ -81,7 +81,7 @@ class _$OrderEntityCopyWithImpl<$Res> implements $OrderEntityCopyWith<$Res> {
       price: price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
     ));
   }
 }
@@ -94,11 +94,11 @@ abstract class _$$_OrderEntityCopyWith<$Res>
       __$$_OrderEntityCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String orderNumber,
+      {int orderNumber,
       String orderDate,
       String deliveryAddress,
       List<ProductDetailsEntity> products,
-      String price});
+      double price});
 }
 
 /// @nodoc
@@ -123,7 +123,7 @@ class __$$_OrderEntityCopyWithImpl<$Res> extends _$OrderEntityCopyWithImpl<$Res>
       orderNumber: orderNumber == freezed
           ? _value.orderNumber
           : orderNumber // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       orderDate: orderDate == freezed
           ? _value.orderDate
           : orderDate // ignore: cast_nullable_to_non_nullable
@@ -139,7 +139,7 @@ class __$$_OrderEntityCopyWithImpl<$Res> extends _$OrderEntityCopyWithImpl<$Res>
       price: price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
     ));
   }
 }
@@ -148,11 +148,11 @@ class __$$_OrderEntityCopyWithImpl<$Res> extends _$OrderEntityCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_OrderEntity implements _OrderEntity {
   const _$_OrderEntity(
-      {this.orderNumber = '',
+      {this.orderNumber = 0,
       this.orderDate = '',
       this.deliveryAddress = '',
       final List<ProductDetailsEntity> products = const [],
-      this.price = ''})
+      this.price = 0})
       : _products = products;
 
   factory _$_OrderEntity.fromJson(Map<String, dynamic> json) =>
@@ -160,7 +160,7 @@ class _$_OrderEntity implements _OrderEntity {
 
   @override
   @JsonKey()
-  final String orderNumber;
+  final int orderNumber;
   @override
   @JsonKey()
   final String orderDate;
@@ -177,7 +177,7 @@ class _$_OrderEntity implements _OrderEntity {
 
   @override
   @JsonKey()
-  final String price;
+  final double price;
 
   @override
   String toString() {
@@ -221,17 +221,17 @@ class _$_OrderEntity implements _OrderEntity {
 
 abstract class _OrderEntity implements OrderEntity {
   const factory _OrderEntity(
-      {final String orderNumber,
+      {final int orderNumber,
       final String orderDate,
       final String deliveryAddress,
       final List<ProductDetailsEntity> products,
-      final String price}) = _$_OrderEntity;
+      final double price}) = _$_OrderEntity;
 
   factory _OrderEntity.fromJson(Map<String, dynamic> json) =
       _$_OrderEntity.fromJson;
 
   @override
-  String get orderNumber => throw _privateConstructorUsedError;
+  int get orderNumber => throw _privateConstructorUsedError;
   @override
   String get orderDate => throw _privateConstructorUsedError;
   @override
@@ -239,7 +239,7 @@ abstract class _OrderEntity implements OrderEntity {
   @override
   List<ProductDetailsEntity> get products => throw _privateConstructorUsedError;
   @override
-  String get price => throw _privateConstructorUsedError;
+  double get price => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_OrderEntityCopyWith<_$_OrderEntity> get copyWith =>

@@ -112,17 +112,20 @@ class ProductContainer extends StatelessWidget {
                           color: colors.white,
                         ),
                         width: size.width / 2,
-                        height: 100.h,
+                        height: 90.h,
                         child: Stack(
                           children: [
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 4.h, horizontal: 4.w),
-                              child: Text(
-                                productEntity.name,
-                                style: AppTextStyle.normalW400S9,
-                                maxLines: 4,
-                                textAlign: TextAlign.center,
+                            Positioned(
+                              top: 10.h,
+                              left: 10.w,
+                              right: 10.w,
+                              child: Center(
+                                child: Text(
+                                  productEntity.name,
+                                  style: AppTextStyle.normalW400S9,
+                                  maxLines: 3,
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
                             ),
                             Positioned(
