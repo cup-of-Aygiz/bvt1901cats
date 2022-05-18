@@ -216,4 +216,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get empty_basket => 'Корзина пуста';
+
+  @override
+  String get empty_favorite => 'Тут будут отображаться избранные товары';
 }

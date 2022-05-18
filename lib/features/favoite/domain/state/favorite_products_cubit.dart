@@ -1,10 +1,13 @@
 import 'package:bvt1901_practice/features/favoite/domain/state/favorite_products_state.dart';
-import 'package:bvt1901_practice/features/favoite/mock_repository/favorite_products_mock_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../../../app/domain/models/error_model.dart';
+import '../../../../di/service_locator.dart';
 import '../../../products_catalog/domain/entity/product_entity.dart';
+import '../favorite_product_repository.dart';
 
+@LazySingleton()
 class FavoriteProductsCubit extends Cubit<FavoriteProductState> {
   FavoriteProductsCubit()
       : super(
@@ -13,48 +16,34 @@ class FavoriteProductsCubit extends Cubit<FavoriteProductState> {
           ),
         );
 
-  final FavoriteProductsMockRepository _favoriteProductsMockRepository =  FavoriteProductsMockRepository();
-
-  void init() async {
-    await getMaxLength();
-    await loadFavoriteProducts();
-  }
+  FavoriteProductRepository get favoriteProductRepository => getIt();
 
   Future<void> loadFavoriteProducts() async {
     try {
       emit(state.copyWith(loading: true));
-
-      List<ProductEntity> listProducts =
-          await _favoriteProductsMockRepository.getProductList(
-        start: state.start,
-        end: state.end,
-      );
-
-      emit(state.copyWith(
-        productList: state.productList + listProducts,
-        loading: false,
-        start: state.end,
-        end: (state.end + 10) < state.maxLength
-            ? state.end + 10
-            : state.maxLength,
-      ));
+      final newList = await favoriteProductRepository.getProductList();
+      emit(state.copyWith(loading: false, productList: newList));
     } on ErrorModel catch (e) {
       emit(state.copyWith(loading: false, error: e));
     }
   }
 
-  Future<void> getMaxLength() async {
+  Future<void> updateList(int id) async {
     try {
       emit(state.copyWith(loading: true));
-      int maxLength =
-          await _favoriteProductsMockRepository.getMaxLengthProducts(
-        start: 1,
-        end: 1,
-      );
-      emit(state.copyWith(
-        maxLength: maxLength,
-        loading: false,
-      ));
+      List<ProductEntity> newList = state.productList;
+      bool added = true;
+      for (var item in newList) {
+        if (item.id == id) {
+          added = false;
+        }
+      }
+      if (added) {
+        newList = await favoriteProductRepository.addedProducts(id);
+      } else {
+        newList = await favoriteProductRepository.deleteProducts(id);
+      }
+      emit(state.copyWith(loading: false, productList: newList));
     } on ErrorModel catch (e) {
       emit(state.copyWith(loading: false, error: e));
     }
