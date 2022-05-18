@@ -1,4 +1,5 @@
 import 'package:bvt1901_practice/app/domain/models/error_model.dart';
+import 'package:bvt1901_practice/features/favoite/domain/state/favorite_products_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 import '../../../../di/service_locator.dart';
@@ -15,6 +16,7 @@ class CatalogCubit extends Cubit<CatalogState> {
   void init() async {
     await getMaxLength();
     await loadProducts();
+    await getIt<FavoriteProductsCubit>().loadFavoriteProducts();
   }
 
   Future<void> loadProducts() async {
