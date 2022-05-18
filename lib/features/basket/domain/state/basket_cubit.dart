@@ -107,7 +107,7 @@ class BasketCubit extends Cubit<BasketState> {
     }
   }
 
-  Future<void> crearProductList() async {
+  Future<void> clearProductList() async {
     try {
       emit(state.copyWith(loading: true));
 
