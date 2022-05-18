@@ -35,6 +35,9 @@ class MainAppBuilder extends AppBuilder {
         BlocProvider<BasketCubit>(
           create: (_) => BasketCubit()..init(),
         ),
+        BlocProvider<OrdersCubit>(
+          create: (_) => OrdersCubit()..init(),
+        ),
         BlocProvider<FavoriteProductsCubit>(
           create: (_) => getIt<FavoriteProductsCubit>()..loadFavoriteProducts(),
         ),

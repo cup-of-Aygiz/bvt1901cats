@@ -3,6 +3,7 @@ import 'package:bvt1901_practice/features/person_data/presentation/domain/state/
 import 'package:bvt1901_practice/features/person_data/presentation/domain/state/profile_state.dart';
 import 'package:bvt1901_practice/uikit/app_bars/default_app_bar.dart';
 import 'package:bvt1901_practice/uikit/buttons/app_text_button.dart';
+import 'package:bvt1901_practice/uikit/error_message/error_message.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -32,7 +33,13 @@ class _PersonDataScreenState extends State<PersonDataScreen> {
 
     return BlocProvider<ProfileCubit>(
       create: (context) => ProfileCubit()..init(),
-      child: BlocBuilder<ProfileCubit, ProfileState>(
+      child: BlocConsumer<ProfileCubit, ProfileState>(
+        listener: (context, state) {
+          if (state.error != null) {
+            AppTopMessage.error(
+                context: context, title: state.error?.message ?? "");
+          }
+        },
         builder: (context, state) {
           return Scaffold(
             backgroundColor: colors.generalColor,
@@ -114,8 +121,8 @@ class _PersonDataScreenState extends State<PersonDataScreen> {
                                               .currentState?.value['firstName'],
                                           lastName: _formKey
                                               .currentState?.value['lastName'],
-                                          middleName: _formKey
-                                              .currentState?.value['middleName'],
+                                          middleName: _formKey.currentState
+                                              ?.value['middleName'],
                                           phone: _formKey
                                               .currentState?.value['phone'],
                                         ));

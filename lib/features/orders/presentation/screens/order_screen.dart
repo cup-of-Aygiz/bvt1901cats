@@ -37,8 +37,8 @@ class OrdersScreen extends StatelessWidget {
                   : PageView(
                       scrollDirection: Axis.horizontal,
                       children: [
-                        for (int i = 0; i < state.ordersList.length; i++)
-                          OrderContainer(orderEntity: state.ordersList[i]),
+                        for (var item in state.ordersList)
+                          OrderContainer(orderEntity: item),
                       ],
                     );
         },
