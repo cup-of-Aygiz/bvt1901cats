@@ -19,6 +19,7 @@ _$_ProductDetailsEntity _$$_ProductDetailsEntityFromJson(
       manufacturer: json['manufacturer'] as String? ?? '',
       image: json['image'] as String? ?? '',
       favorite: json['favorite'] as bool? ?? false,
+      cartAmount: json['cartAmount'] as int? ?? 0,
     );
 
 Map<String, dynamic> _$$_ProductDetailsEntityToJson(
@@ -34,4 +35,5 @@ Map<String, dynamic> _$$_ProductDetailsEntityToJson(
       'manufacturer': instance.manufacturer,
       'image': instance.image,
       'favorite': instance.favorite,
+      'cartAmount': instance.cartAmount,
     };

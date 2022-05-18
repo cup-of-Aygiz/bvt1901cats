@@ -31,9 +31,11 @@ class BasketCubit extends Cubit<BasketState> {
 
       emit(state.copyWith(
         productList: listProducts,
-        loading: false,
         totalPrice: totalPrice,
       ));
+
+      emit(state.copyWith(loading: false));
+
     } on ErrorModel catch (e) {
       emit(state.copyWith(loading: false, error: e));
     }
@@ -42,7 +44,7 @@ class BasketCubit extends Cubit<BasketState> {
   double getTotalPrice(List<ProductDetailsEntity> listProducts) {
     double total = 0;
     for (int i = 0; i < listProducts.length; i++) {
-      total += listProducts[i].amount * double.parse(listProducts[i].price);
+      total += listProducts[i].cartAmount * double.parse(listProducts[i].price);
     }
     return total;
   }
@@ -58,9 +60,10 @@ class BasketCubit extends Cubit<BasketState> {
 
       emit(state.copyWith(
         productList: listProducts,
-        loading: false,
         totalPrice: totalPrice,
       ));
+
+      emit(state.copyWith(loading: false));
     } on ErrorModel catch (e) {
       emit(state.copyWith(loading: false, error: e));
     }
@@ -77,9 +80,11 @@ class BasketCubit extends Cubit<BasketState> {
 
       emit(state.copyWith(
         productList: listProducts,
-        loading: false,
         totalPrice: totalPrice,
       ));
+
+      emit(state.copyWith(loading: false));
+
     } on ErrorModel catch (e) {
       emit(state.copyWith(loading: false, error: e));
     }
@@ -99,9 +104,11 @@ class BasketCubit extends Cubit<BasketState> {
 
       emit(state.copyWith(
         productList: listProducts,
-        loading: false,
         totalPrice: totalPrice,
       ));
+
+      emit(state.copyWith(loading: false));
+
     } on ErrorModel catch (e) {
       emit(state.copyWith(loading: false, error: e));
     }
@@ -121,9 +128,7 @@ class BasketCubit extends Cubit<BasketState> {
         totalPrice: totalPrice,
       ));
 
-      emit(state.copyWith(
-        loading: false,
-      ));
+      emit(state.copyWith(loading: false));
     } on ErrorModel catch (e) {
       emit(state.copyWith(loading: false, error: e));
     }

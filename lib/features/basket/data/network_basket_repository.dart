@@ -21,7 +21,7 @@ class BasketNetworkRepository extends BasketRepository {
     try {
       final String? token = await getIt<AuthTokenStorage>().loadAccessToken();
       final response = await dioContainer.dio.post('/cart',
-          queryParameters: {
+          data: {
             'id': productId,
             'amount': amount,
           },

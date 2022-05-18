@@ -73,7 +73,7 @@ class BasketProductContainer extends StatelessWidget {
                           maxLines: 3,
                           style: AppTextStyle.normalW700S14,
                         ),
-                        AppCounter(),
+                        AppCounter(id: productEntity.id,),
                       ],
                     ),
                   ),

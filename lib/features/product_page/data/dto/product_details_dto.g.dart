@@ -21,6 +21,7 @@ ProductDetailsDTO _$ProductDetailsDTOFromJson(Map<String, dynamic> json) =>
       createdAt: json['createdAt'] as String?,
       updatedAt: json['updatedAt'] as String?,
       favorite: json['favorite'] as bool?,
+      cartAmount: json['cartAmount'] as int?,
     );
 
 Map<String, dynamic> _$ProductDetailsDTOToJson(ProductDetailsDTO instance) =>
@@ -37,4 +38,5 @@ Map<String, dynamic> _$ProductDetailsDTOToJson(ProductDetailsDTO instance) =>
       'createdAt': instance.createdAt,
       'updatedAt': instance.updatedAt,
       'favorite': instance.favorite,
+      'cartAmount': instance.cartAmount,
     };

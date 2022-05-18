@@ -30,6 +30,7 @@ mixin _$ProductDetailsEntity {
   String get manufacturer => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
   bool get favorite => throw _privateConstructorUsedError;
+  int get cartAmount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -52,7 +53,8 @@ abstract class $ProductDetailsEntityCopyWith<$Res> {
       String made,
       String manufacturer,
       String image,
-      bool favorite});
+      bool favorite,
+      int cartAmount});
 }
 
 /// @nodoc
@@ -76,6 +78,7 @@ class _$ProductDetailsEntityCopyWithImpl<$Res>
     Object? manufacturer = freezed,
     Object? image = freezed,
     Object? favorite = freezed,
+    Object? cartAmount = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -118,6 +121,10 @@ class _$ProductDetailsEntityCopyWithImpl<$Res>
           ? _value.favorite
           : favorite // ignore: cast_nullable_to_non_nullable
               as bool,
+      cartAmount: cartAmount == freezed
+          ? _value.cartAmount
+          : cartAmount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -139,7 +146,8 @@ abstract class _$$_ProductDetailsEntityCopyWith<$Res>
       String made,
       String manufacturer,
       String image,
-      bool favorite});
+      bool favorite,
+      int cartAmount});
 }
 
 /// @nodoc
@@ -165,6 +173,7 @@ class __$$_ProductDetailsEntityCopyWithImpl<$Res>
     Object? manufacturer = freezed,
     Object? image = freezed,
     Object? favorite = freezed,
+    Object? cartAmount = freezed,
   }) {
     return _then(_$_ProductDetailsEntity(
       id: id == freezed
@@ -207,6 +216,10 @@ class __$$_ProductDetailsEntityCopyWithImpl<$Res>
           ? _value.favorite
           : favorite // ignore: cast_nullable_to_non_nullable
               as bool,
+      cartAmount: cartAmount == freezed
+          ? _value.cartAmount
+          : cartAmount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -224,7 +237,8 @@ class _$_ProductDetailsEntity implements _ProductDetailsEntity {
       this.made = '',
       this.manufacturer = '',
       this.image = '',
-      this.favorite = false});
+      this.favorite = false,
+      this.cartAmount = 0});
 
   factory _$_ProductDetailsEntity.fromJson(Map<String, dynamic> json) =>
       _$$_ProductDetailsEntityFromJson(json);
@@ -259,10 +273,13 @@ class _$_ProductDetailsEntity implements _ProductDetailsEntity {
   @override
   @JsonKey()
   final bool favorite;
+  @override
+  @JsonKey()
+  final int cartAmount;
 
   @override
   String toString() {
-    return 'ProductDetailsEntity(id: $id, name: $name, price: $price, amount: $amount, volume: $volume, ingredients: $ingredients, made: $made, manufacturer: $manufacturer, image: $image, favorite: $favorite)';
+    return 'ProductDetailsEntity(id: $id, name: $name, price: $price, amount: $amount, volume: $volume, ingredients: $ingredients, made: $made, manufacturer: $manufacturer, image: $image, favorite: $favorite, cartAmount: $cartAmount)';
   }
 
   @override
@@ -281,7 +298,9 @@ class _$_ProductDetailsEntity implements _ProductDetailsEntity {
             const DeepCollectionEquality()
                 .equals(other.manufacturer, manufacturer) &&
             const DeepCollectionEquality().equals(other.image, image) &&
-            const DeepCollectionEquality().equals(other.favorite, favorite));
+            const DeepCollectionEquality().equals(other.favorite, favorite) &&
+            const DeepCollectionEquality()
+                .equals(other.cartAmount, cartAmount));
   }
 
   @JsonKey(ignore: true)
@@ -297,7 +316,8 @@ class _$_ProductDetailsEntity implements _ProductDetailsEntity {
       const DeepCollectionEquality().hash(made),
       const DeepCollectionEquality().hash(manufacturer),
       const DeepCollectionEquality().hash(image),
-      const DeepCollectionEquality().hash(favorite));
+      const DeepCollectionEquality().hash(favorite),
+      const DeepCollectionEquality().hash(cartAmount));
 
   @JsonKey(ignore: true)
   @override
@@ -322,7 +342,8 @@ abstract class _ProductDetailsEntity implements ProductDetailsEntity {
       final String made,
       final String manufacturer,
       final String image,
-      final bool favorite}) = _$_ProductDetailsEntity;
+      final bool favorite,
+      final int cartAmount}) = _$_ProductDetailsEntity;
 
   factory _ProductDetailsEntity.fromJson(Map<String, dynamic> json) =
       _$_ProductDetailsEntity.fromJson;
@@ -347,6 +368,8 @@ abstract class _ProductDetailsEntity implements ProductDetailsEntity {
   String get image => throw _privateConstructorUsedError;
   @override
   bool get favorite => throw _privateConstructorUsedError;
+  @override
+  int get cartAmount => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_ProductDetailsEntityCopyWith<_$_ProductDetailsEntity> get copyWith =>
