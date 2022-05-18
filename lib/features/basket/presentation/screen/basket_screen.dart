@@ -85,7 +85,7 @@ class _BasketScreenState extends State<BasketScreen> {
                           child: AppTextButton(
                             height: 40.h,
                             buttonText:
-                                '${locale.place_an_order} ${state.totalPrice} ₽',
+                                '${locale.place_an_order} ${state.totalPrice.toStringAsPrecision(3)} ₽',
                             onPressed: () {
                               context.appRouter.pushScreen(
                                 context,

@@ -42,7 +42,7 @@ class _AppCounterState extends State<AppCounter> {
             children: [
               IconButton(
                   onPressed: () {
-                    context.read<BasketCubit>().deleteProduct(widget.id);
+                    context.read<BasketCubit>().updateProductList(widget.id, state.productList[index].cartAmount-1);
                   },
                   icon: const Icon(Icons.remove)),
               Text(
