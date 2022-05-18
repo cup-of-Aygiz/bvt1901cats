@@ -34,7 +34,8 @@ class OrdersScreen extends StatelessWidget {
                         style: AppTextStyle.normalW700S18,
                       ),
                     )
-                  : ListView(
+                  : PageView(
+                      scrollDirection: Axis.horizontal,
                       children: [
                         for (int i = 0; i < state.ordersList.length; i++)
                           OrderContainer(orderEntity: state.ordersList[i]),
