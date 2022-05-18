@@ -10,6 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:injectable/injectable.dart';
 import '../../features/basket/domain/state/basket_cubit.dart';
+import '../../features/favoite/domain/state/favorite_products_cubit.dart';
 import '../../features/login/domain/state/login_cubit.dart';
 import '../../features/products_catalog/domain/state/catalog_cubit.dart';
 import '../../l10n/generated/app_localizations.dart';
@@ -34,6 +35,9 @@ class MainAppBuilder extends AppBuilder {
         BlocProvider<BasketCubit>(
           create: (_) => BasketCubit()..init(),
         ),
+        BlocProvider<FavoriteProductsCubit>(
+          create: (_) => getIt<FavoriteProductsCubit>()..loadFavoriteProducts(),
+        ),
         BlocProvider<OrdersCubit>(
           create: (_) => OrdersCubit()..init(),
         ),
@@ -53,7 +57,9 @@ class MainAppBuilder extends AppBuilder {
                 supportedLocales: AppLocalizations.supportedLocales,
                 themeMode: ThemeMode.light,
                 // theme: lightThemeData,
-                home:  SplashScreen(cubit: context.read<LoginCubit>(),),
+                home: SplashScreen(
+                  cubit: context.read<LoginCubit>(),
+                ),
               );
             },
           );

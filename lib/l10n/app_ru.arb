@@ -71,4 +71,6 @@
   "empty_basket":"Корзина пуста",
   "empty_orders_list": "Пока не было заказов",
   "sum_with_delivery": "Итого с доставкой"
+  "empty_basket":"Корзина пуста",
+  "empty_favorite":"Тут будут отображаться избранные товары"
 }
