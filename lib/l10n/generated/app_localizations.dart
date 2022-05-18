@@ -525,6 +525,12 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Итого с доставкой'**
   String get sum_with_delivery;
+
+  /// No description provided for @empty_favorite.
+  ///
+  /// In ru, this message translates to:
+  /// **'Тут будут отображаться избранные товары'**
+  String get empty_favorite;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

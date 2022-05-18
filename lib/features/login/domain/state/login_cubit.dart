@@ -37,6 +37,7 @@ class LoginCubit extends Cubit<LoginState> {
 
   Future<bool> saveStateAndLogin(String phone, String password) async {
     try {
+      print({'wqttqwtqwtq'});
       emit(state.copyWith(loading: true));
       final token =
           await _loginRepository.login(phone: phone, password: password);

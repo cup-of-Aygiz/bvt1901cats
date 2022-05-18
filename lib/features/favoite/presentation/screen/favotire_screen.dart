@@ -1,3 +1,4 @@
+import 'package:bvt1901_practice/app/presentation/theme/app_text_style.dart';
 import 'package:bvt1901_practice/features/favoite/domain/state/favorite_products_cubit.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
@@ -16,54 +17,46 @@ class FavoriteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = context.appColors;
     final locale = context.appLocale;
-    return BlocProvider(
-      create: (context) => FavoriteProductsCubit()..init(),
-      child: BlocBuilder<FavoriteProductsCubit, FavoriteProductState>(
-        builder: (context, state) {
-          return Scaffold(
-            appBar: DefaultAppBar(
-              titleText: locale.favorite_tab,
-            ),
-            backgroundColor: colors.generalColor,
-            body: state.loading && state.productList.isEmpty
-                ? const Center(
-                    child: AppSpinKit(),
-                  )
-                : Stack(
-                    children: [
-                      NotificationListener<ScrollEndNotification>(
-                        child: ListView(
-                          children: [
-                            Center(
-                              child: Wrap(
-                                children: [
-                                  for (var item in state.productList)
-                                    ProductContainer(
-                                      productEntity: item,
-                                      isLiked: true,
-                                    ),
-                                ],
-                              ),
-                            ),
-                            if (state.loading && state.productList.isNotEmpty)
-                              Padding(
-                                padding: EdgeInsets.symmetric(vertical: 20.h),
-                                child: const AppSpinKit(),
-                              ),
-                          ],
-                        ),
-                        onNotification: (scrollEnd) {
-                          context
-                              .read<FavoriteProductsCubit>()
-                              .loadFavoriteProducts();
-                          return true;
-                        },
+    return BlocBuilder<FavoriteProductsCubit, FavoriteProductState>(
+      builder: (context, state) {
+        return Scaffold(
+          appBar: DefaultAppBar(
+            titleText: locale.favorite_tab,
+          ),
+          backgroundColor: colors.generalColor,
+          body: state.loading
+              ? const Center(
+                  child: AppSpinKit(),
+                )
+              : state.productList.isEmpty
+                  ? Center(
+                      child: Text(
+                        locale.empty_favorite,
+                        style: AppTextStyle.normalW400S20,
                       ),
-                    ],
-                  ),
-          );
-        },
-      ),
+                    )
+                  : ListView(
+                      children: [
+                        Center(
+                          child: Wrap(
+                            children: [
+                              for (var item in state.productList)
+                                ProductContainer(
+                                  productEntity: item,
+                                  isLiked: true,
+                                ),
+                            ],
+                          ),
+                        ),
+                        if (state.loading && state.productList.isNotEmpty)
+                          Padding(
+                            padding: EdgeInsets.symmetric(vertical: 20.h),
+                            child: const AppSpinKit(),
+                          ),
+                      ],
+                    ),
+        );
+      },
     );
   }
 }

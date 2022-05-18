@@ -222,4 +222,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sum_with_delivery => 'Итого с доставкой';
+
+  @override
+  String get empty_favorite => 'Тут будут отображаться избранные товары';
 }

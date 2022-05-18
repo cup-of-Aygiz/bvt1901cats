@@ -17,6 +17,7 @@ dependencies:
   # animated page indicator 
   smooth_page_indicator: ^1.0.0+2
 
+  another_flushbar: 1.10.25
   cupertino_icons: ^1.0.2
   device_info_plus: ^2.2.0
   json_annotation: ^4.3.0

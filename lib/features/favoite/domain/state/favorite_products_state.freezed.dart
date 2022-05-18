@@ -23,11 +23,6 @@ mixin _$FavoriteProductState {
   bool get loading => throw _privateConstructorUsedError;
   ErrorModel? get error => throw _privateConstructorUsedError;
   List<ProductEntity> get productList => throw _privateConstructorUsedError;
-  int get start => throw _privateConstructorUsedError;
-  int get end => throw _privateConstructorUsedError;
-
-  /// максимальное кол-во продуктов
-  int get maxLength => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,13 +35,7 @@ abstract class $FavoriteProductStateCopyWith<$Res> {
   factory $FavoriteProductStateCopyWith(FavoriteProductState value,
           $Res Function(FavoriteProductState) then) =
       _$FavoriteProductStateCopyWithImpl<$Res>;
-  $Res call(
-      {bool loading,
-      ErrorModel? error,
-      List<ProductEntity> productList,
-      int start,
-      int end,
-      int maxLength});
+  $Res call({bool loading, ErrorModel? error, List<ProductEntity> productList});
 
   $ErrorModelCopyWith<$Res>? get error;
 }
@@ -65,9 +54,6 @@ class _$FavoriteProductStateCopyWithImpl<$Res>
     Object? loading = freezed,
     Object? error = freezed,
     Object? productList = freezed,
-    Object? start = freezed,
-    Object? end = freezed,
-    Object? maxLength = freezed,
   }) {
     return _then(_value.copyWith(
       loading: loading == freezed
@@ -82,18 +68,6 @@ class _$FavoriteProductStateCopyWithImpl<$Res>
           ? _value.productList
           : productList // ignore: cast_nullable_to_non_nullable
               as List<ProductEntity>,
-      start: start == freezed
-          ? _value.start
-          : start // ignore: cast_nullable_to_non_nullable
-              as int,
-      end: end == freezed
-          ? _value.end
-          : end // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxLength: maxLength == freezed
-          ? _value.maxLength
-          : maxLength // ignore: cast_nullable_to_non_nullable
-              as int,
     ));
   }
 
@@ -116,13 +90,7 @@ abstract class _$$_FavoriteProductStateCopyWith<$Res>
           $Res Function(_$_FavoriteProductState) then) =
       __$$_FavoriteProductStateCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {bool loading,
-      ErrorModel? error,
-      List<ProductEntity> productList,
-      int start,
-      int end,
-      int maxLength});
+  $Res call({bool loading, ErrorModel? error, List<ProductEntity> productList});
 
   @override
   $ErrorModelCopyWith<$Res>? get error;
@@ -144,9 +112,6 @@ class __$$_FavoriteProductStateCopyWithImpl<$Res>
     Object? loading = freezed,
     Object? error = freezed,
     Object? productList = freezed,
-    Object? start = freezed,
-    Object? end = freezed,
-    Object? maxLength = freezed,
   }) {
     return _then(_$_FavoriteProductState(
       loading: loading == freezed
@@ -161,18 +126,6 @@ class __$$_FavoriteProductStateCopyWithImpl<$Res>
           ? _value._productList
           : productList // ignore: cast_nullable_to_non_nullable
               as List<ProductEntity>,
-      start: start == freezed
-          ? _value.start
-          : start // ignore: cast_nullable_to_non_nullable
-              as int,
-      end: end == freezed
-          ? _value.end
-          : end // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxLength: maxLength == freezed
-          ? _value.maxLength
-          : maxLength // ignore: cast_nullable_to_non_nullable
-              as int,
     ));
   }
 }
@@ -183,10 +136,7 @@ class _$_FavoriteProductState implements _FavoriteProductState {
   const _$_FavoriteProductState(
       {this.loading = false,
       this.error,
-      final List<ProductEntity> productList = const [],
-      this.start = 0,
-      this.end = 15,
-      this.maxLength = 100})
+      final List<ProductEntity> productList = const []})
       : _productList = productList;
 
   factory _$_FavoriteProductState.fromJson(Map<String, dynamic> json) =>
@@ -206,20 +156,8 @@ class _$_FavoriteProductState implements _FavoriteProductState {
   }
 
   @override
-  @JsonKey()
-  final int start;
-  @override
-  @JsonKey()
-  final int end;
-
-  /// максимальное кол-во продуктов
-  @override
-  @JsonKey()
-  final int maxLength;
-
-  @override
   String toString() {
-    return 'FavoriteProductState(loading: $loading, error: $error, productList: $productList, start: $start, end: $end, maxLength: $maxLength)';
+    return 'FavoriteProductState(loading: $loading, error: $error, productList: $productList)';
   }
 
   @override
@@ -230,10 +168,7 @@ class _$_FavoriteProductState implements _FavoriteProductState {
             const DeepCollectionEquality().equals(other.loading, loading) &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality()
-                .equals(other._productList, _productList) &&
-            const DeepCollectionEquality().equals(other.start, start) &&
-            const DeepCollectionEquality().equals(other.end, end) &&
-            const DeepCollectionEquality().equals(other.maxLength, maxLength));
+                .equals(other._productList, _productList));
   }
 
   @JsonKey(ignore: true)
@@ -242,10 +177,7 @@ class _$_FavoriteProductState implements _FavoriteProductState {
       runtimeType,
       const DeepCollectionEquality().hash(loading),
       const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(_productList),
-      const DeepCollectionEquality().hash(start),
-      const DeepCollectionEquality().hash(end),
-      const DeepCollectionEquality().hash(maxLength));
+      const DeepCollectionEquality().hash(_productList));
 
   @JsonKey(ignore: true)
   @override
@@ -263,10 +195,7 @@ abstract class _FavoriteProductState implements FavoriteProductState {
   const factory _FavoriteProductState(
       {final bool loading,
       final ErrorModel? error,
-      final List<ProductEntity> productList,
-      final int start,
-      final int end,
-      final int maxLength}) = _$_FavoriteProductState;
+      final List<ProductEntity> productList}) = _$_FavoriteProductState;
 
   factory _FavoriteProductState.fromJson(Map<String, dynamic> json) =
       _$_FavoriteProductState.fromJson;
@@ -277,14 +206,6 @@ abstract class _FavoriteProductState implements FavoriteProductState {
   ErrorModel? get error => throw _privateConstructorUsedError;
   @override
   List<ProductEntity> get productList => throw _privateConstructorUsedError;
-  @override
-  int get start => throw _privateConstructorUsedError;
-  @override
-  int get end => throw _privateConstructorUsedError;
-  @override
-
-  /// максимальное кол-во продуктов
-  int get maxLength => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_FavoriteProductStateCopyWith<_$_FavoriteProductState> get copyWith =>

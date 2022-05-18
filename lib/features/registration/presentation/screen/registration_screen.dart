@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../uikit/error_message/error_message.dart';
 import '../../../../uikit/spinkit/spinkit.dart';
 import '../../../../uikit/text_fields/app_phone_field.dart';
 import '../../../../uikit/text_fields/app_text_field.dart';
@@ -44,7 +45,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       },
       child: BlocProvider(
         create: (context) => RegistrationCubit(),
-        child: BlocBuilder<RegistrationCubit, RegistrationState>(
+        child: BlocConsumer<RegistrationCubit, RegistrationState>(
+          listener: (context, state) {
+            if(state.error!=null){
+              AppTopMessage.error(context: context, title: state.error?.message??'');
+            }
+          },
           buildWhen: (p, c) => p != c,
           builder: (context, state) {
             return Scaffold(
@@ -54,13 +60,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               ),
               body: (!state.loading)
                   ? BackgroundProgressWidget(
-                length: 3,
+                length: 10,
                 error: state.error != null,
                 child: FormBuilder(
                   key: _formKey,
                   child: Stack(
                     children: [
-                      Column(
+                      ListView(
                         children: [
                           SizedBox(height: 20.h),
                           AppTextField(
@@ -120,6 +126,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               return null;
                             },
                           ),
+                          SizedBox(height: 130.h,),
                         ],
                       ),
                       Positioned(
