@@ -31,10 +31,13 @@ class OrderProductContainer extends StatelessWidget {
                 errorWidget: Assets.images.logotip.image(),
               ),
             ),
-            Text(
-              product.name,
-              maxLines: 3,
-              style: AppTextStyle.normalW700S12,
+            SizedBox(
+              width: 160.w,
+              child: Text(
+                product.name,
+                maxLines: 3,
+                style: AppTextStyle.normalW500S12,
+              ),
             ),
             Row(
               children: [
