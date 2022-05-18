@@ -1,4 +1,5 @@
 import 'package:bvt1901_practice/app/presentation/theme/app_text_style.dart';
+import 'package:bvt1901_practice/features/basket/domain/state/basket_cubit.dart';
 import 'package:bvt1901_practice/features/favoite/domain/state/favorite_products_state.dart';
 import 'package:bvt1901_practice/features/product_page/presentation/screens/product_detals.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
@@ -90,7 +91,7 @@ class ProductContainer extends StatelessWidget {
                                             .contains(productEntity),
                                     size: 26.h,
                                     onTap: (_) async {
-                                       context
+                                      context
                                           .read<FavoriteProductsCubit>()
                                           .updateList(productEntity.id);
                                       return state.productList
@@ -137,7 +138,11 @@ class ProductContainer extends StatelessWidget {
                                       BorderRadius.all(Radius.circular(10.r)),
                                 ),
                                 child: TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    context
+                                        .read<BasketCubit>()
+                                        .addProduct(productEntity.id, 1);
+                                  },
                                   child: Text(
                                     '${productEntity.price} ₽',
                                     style: AppTextStyle.normalW700S11

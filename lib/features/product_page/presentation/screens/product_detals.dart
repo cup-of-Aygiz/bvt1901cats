@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../app/presentation/theme/app_text_style.dart';
 import '../../../../uikit/buttons/app_text_button.dart';
 import '../../../../uikit/spinkit/spinkit.dart';
+import '../../../basket/domain/state/basket_cubit.dart';
 import '../../domain/state/product_details_state.dart';
 import '../components/product_detals_image.dart';
 
@@ -113,7 +114,11 @@ class ProductDetals extends StatelessWidget {
                                   color: colors.lightBlue,
                                   buttonText:
                                       '${state.productDetailsEntity!.price} ₽',
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    context
+                                        .read<BasketCubit>()
+                                        .addProduct(productId, 1);
+                                  },
                                 ),
                               ],
                             ),

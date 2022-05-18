@@ -53,13 +53,13 @@ class _ProductListState extends State<ProductList>
                     options: CarouselOptions(height: 150.h),
                     items: const [
                       SliderItem(
-                          text:
+                          image:
                               'https://hozvo.ru/storage/ads_bloknot_preview/1477750385.jpg'),
                       SliderItem(
-                          text:
+                          image:
                               'https://vodavorle.ru/uploads/news/thumbs/70_1580311462.jpg'),
                       SliderItem(
-                          text:
+                          image:
                               'https://vodavorle.ru/uploads/news/thumbs/70_1580311438.jpg'),
                     ],
                   ),

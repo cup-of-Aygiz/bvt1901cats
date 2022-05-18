@@ -20,7 +20,7 @@ class WelcomePageScreen extends StatelessWidget {
       appBar: DefaultAppBar(
         titleText: locale.welcome,
       ),
-      body: ListView(
+      body: Column(
         children: [
           Padding(
             padding: EdgeInsets.only(top: 20.h),
@@ -54,7 +54,7 @@ class WelcomePageScreen extends StatelessWidget {
           ),
         ],
       ),
-      backgroundColor: colors.generalColor,
+      backgroundColor: colors.white,
     );
   }
 }

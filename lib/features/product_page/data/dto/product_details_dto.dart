@@ -19,6 +19,7 @@ class ProductDetailsDTO {
   final String? createdAt;
   final String? updatedAt;
   final bool? favorite;
+  final int? cartAmount;
 
   ProductDetailsDTO({
     required this.id,
@@ -33,6 +34,7 @@ class ProductDetailsDTO {
     required this.createdAt,
     required this.updatedAt,
     required this.favorite,
+    required this.cartAmount,
   });
 
   factory ProductDetailsDTO.fromJson(Map<String, dynamic> json) =>
@@ -54,6 +56,7 @@ class ProductDetailsDTO {
       made: made ?? '',
       manufacturer: manufacturer ?? '',
       favorite: favorite ?? false,
+      cartAmount: cartAmount ?? 0,
     );
   }
 }

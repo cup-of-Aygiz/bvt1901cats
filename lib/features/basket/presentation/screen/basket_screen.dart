@@ -38,8 +38,10 @@ class _BasketScreenState extends State<BasketScreen> {
                   title: Text(locale.clear_basket),
                   actions: <Widget>[
                     TextButton(
-                      onPressed: () =>
-                          context.appRouter.mayBePop(context, locale.ok),
+                      onPressed: () {
+                        context.read<BasketCubit>().clearProductList();
+                        context.appRouter.mayBePop(context, locale.ok);
+                      },
                       child: Text(locale.yes_clear),
                     ),
                     TextButton(
@@ -83,7 +85,7 @@ class _BasketScreenState extends State<BasketScreen> {
                           child: AppTextButton(
                             height: 40.h,
                             buttonText:
-                                '${locale.place_an_order} ${state.totalPrice} ₽',
+                                '${locale.place_an_order} ${state.totalPrice.toStringAsPrecision(3)} ₽',
                             onPressed: () {
                               context.appRouter.pushScreen(
                                 context,

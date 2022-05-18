@@ -31,9 +31,11 @@ class BasketCubit extends Cubit<BasketState> {
 
       emit(state.copyWith(
         productList: listProducts,
-        loading: false,
         totalPrice: totalPrice,
       ));
+
+      emit(state.copyWith(loading: false));
+
     } on ErrorModel catch (e) {
       emit(state.copyWith(loading: false, error: e));
     }
@@ -42,7 +44,7 @@ class BasketCubit extends Cubit<BasketState> {
   double getTotalPrice(List<ProductDetailsEntity> listProducts) {
     double total = 0;
     for (int i = 0; i < listProducts.length; i++) {
-      total += listProducts[i].amount * double.parse(listProducts[i].price);
+      total += listProducts[i].cartAmount * double.parse(listProducts[i].price);
     }
     return total;
   }
@@ -51,16 +53,17 @@ class BasketCubit extends Cubit<BasketState> {
     try {
       emit(state.copyWith(loading: true));
 
-      List<ProductDetailsEntity> listProducts =
-          await _basketProductsRepository.addInProductList(productId: productId, amount: amount);
- 
+      List<ProductDetailsEntity> listProducts = await _basketProductsRepository
+          .addInProductList(productId: productId, amount: amount);
+
       double totalPrice = getTotalPrice(listProducts);
 
       emit(state.copyWith(
         productList: listProducts,
-        loading: false,
         totalPrice: totalPrice,
       ));
+
+      emit(state.copyWith(loading: false));
     } on ErrorModel catch (e) {
       emit(state.copyWith(loading: false, error: e));
     }
@@ -77,9 +80,11 @@ class BasketCubit extends Cubit<BasketState> {
 
       emit(state.copyWith(
         productList: listProducts,
-        loading: false,
         totalPrice: totalPrice,
       ));
+
+      emit(state.copyWith(loading: false));
+
     } on ErrorModel catch (e) {
       emit(state.copyWith(loading: false, error: e));
     }
@@ -99,9 +104,31 @@ class BasketCubit extends Cubit<BasketState> {
 
       emit(state.copyWith(
         productList: listProducts,
-        loading: false,
         totalPrice: totalPrice,
       ));
+
+      emit(state.copyWith(loading: false));
+
+    } on ErrorModel catch (e) {
+      emit(state.copyWith(loading: false, error: e));
+    }
+  }
+
+  Future<void> clearProductList() async {
+    try {
+      emit(state.copyWith(loading: true));
+
+      List<ProductDetailsEntity> listProducts =
+          await _basketProductsRepository.clearProductList();
+
+      double totalPrice = 0;
+
+      emit(state.copyWith(
+        productList: listProducts,
+        totalPrice: totalPrice,
+      ));
+
+      emit(state.copyWith(loading: false));
     } on ErrorModel catch (e) {
       emit(state.copyWith(loading: false, error: e));
     }

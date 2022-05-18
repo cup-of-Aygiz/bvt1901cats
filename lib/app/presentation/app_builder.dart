@@ -41,6 +41,9 @@ class MainAppBuilder extends AppBuilder {
         BlocProvider<FavoriteProductsCubit>(
           create: (_) => getIt<FavoriteProductsCubit>()..loadFavoriteProducts(),
         ),
+        BlocProvider<OrdersCubit>(
+          create: (_) => OrdersCubit()..init(),
+        ),
       ],
       child: ScreenUtilInit(
         designSize: const Size(375, 750),

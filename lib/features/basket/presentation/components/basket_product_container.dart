@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../gen/assets.gen.dart';
 import '../../../../uikit/buttons/app_transparent_button.dart';
+import '../../../app_counter/presentation/components/app_counter.dart';
 import '../../../product_page/domain/entity/product_details_entity.dart';
 import '../../../product_page/presentation/screens/product_detals.dart';
 
@@ -65,54 +66,14 @@ class BasketProductContainer extends StatelessWidget {
                     height: 130.h,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           productEntity.name,
                           maxLines: 3,
                           style: AppTextStyle.normalW700S14,
                         ),
-                        Row(
-                          children: [
-                            SizedBox(
-                              height: 30.h,
-                              width: 30.w,
-                              child: OutlinedButton(
-                                style: ButtonStyle(
-                                  padding:
-                                      MaterialStateProperty.all(EdgeInsets.zero),
-                                ),
-                                onPressed: () {},
-
-                                ///минус
-                                child: const Icon(
-                                  Icons.remove,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              width: 50.w,
-                              alignment: Alignment.center,
-                              child: Text('${productEntity.amount}',
-                                  style: AppTextStyle.normalW700S16),
-                            ),
-                            SizedBox(
-                              height: 30.h,
-                              width: 30.h,
-                              child: OutlinedButton(
-                                style: ButtonStyle(
-                                  padding:
-                                      MaterialStateProperty.all(EdgeInsets.zero),
-                                ),
-                                onPressed: () {},
-
-                                ///плюс
-                                child: const Icon(
-                                  Icons.add,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                        AppCounter(id: productEntity.id,),
                       ],
                     ),
                   ),
