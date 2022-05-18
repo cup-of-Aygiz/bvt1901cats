@@ -10,6 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../uikit/buttons/app_transparent_button.dart';
+import '../../../../uikit/error_message/error_message.dart';
 import '../../../../uikit/spinkit/spinkit.dart';
 import '../../../../uikit/text_fields/app_password_field.dart';
 import '../../../registration/presentation/components/proggres_gradient.dart';
@@ -34,6 +35,9 @@ class _LoginScreenState extends State<LoginScreen> {
     final router = context.appRouter;
 
     return BlocConsumer<LoginCubit, LoginState>(listener: (context, state) {
+      if(state.error!=null){
+        AppTopMessage.error(context: context, title: state.error?.message??'');
+      }
       if (state.profileEntity != null) {
         context.appRouter.pushAndPopToRoot(context, const RouterScreen());
       }
