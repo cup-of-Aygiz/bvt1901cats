@@ -514,6 +514,18 @@ abstract class AppLocalizations {
   /// **'Корзина пуста'**
   String get empty_basket;
 
+  /// No description provided for @empty_orders_list.
+  ///
+  /// In ru, this message translates to:
+  /// **'Пока не было заказов'**
+  String get empty_orders_list;
+
+  /// No description provided for @sum_with_delivery.
+  ///
+  /// In ru, this message translates to:
+  /// **'Итого с доставкой'**
+  String get sum_with_delivery;
+
   /// No description provided for @empty_favorite.
   ///
   /// In ru, this message translates to:

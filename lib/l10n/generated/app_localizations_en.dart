@@ -218,5 +218,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get empty_basket => 'Корзина пуста';
 
   @override
+  String get empty_orders_list => 'Пока не было заказов';
+
+  @override
+  String get sum_with_delivery => 'Итого с доставкой';
+
+  @override
   String get empty_favorite => 'Тут будут отображаться избранные товары';
 }
