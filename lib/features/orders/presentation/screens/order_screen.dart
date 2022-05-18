@@ -4,6 +4,7 @@ import 'package:bvt1901_practice/features/orders/domain/state/orders_state.dart'
 import 'package:bvt1901_practice/features/orders/presentation/components/order_container.dart';
 import 'package:bvt1901_practice/utils/extentions/app_context.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../uikit/app_bars/default_app_bar.dart';
@@ -37,8 +38,8 @@ class OrdersScreen extends StatelessWidget {
                   : PageView(
                       scrollDirection: Axis.horizontal,
                       children: [
-                        for (int i = 0; i < state.ordersList.length; i++)
-                          OrderContainer(orderEntity: state.ordersList[i]),
+                        for (var item in state.ordersList)
+                          OrderContainer(orderEntity: item),
                       ],
                     );
         },

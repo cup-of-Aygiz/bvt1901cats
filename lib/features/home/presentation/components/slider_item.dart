@@ -18,7 +18,6 @@ class SliderItem extends StatelessWidget {
     final colors = context.appColors;
     return Container(
       width: MediaQuery.of(context).size.width,
-      //margin: EdgeInsets.symmetric(horizontal: 6.w),
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
         color: colors.productColor,

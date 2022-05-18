@@ -1,8 +1,7 @@
 import 'package:bvt1901_practice/features/orders/domain/entity/order_entity.dart';
 import 'package:bvt1901_practice/features/orders/domain/orders_repository.dart';
 
-
-class NetworkOrdersRepository extends OrderRepository{
+class NetworkOrdersRepository extends OrderRepository {
   @override
   Future<List<OrderEntity>> addOrders() {
     // TODO: implement addOrders
@@ -14,6 +13,4 @@ class NetworkOrdersRepository extends OrderRepository{
     // TODO: implement getOrders
     throw UnimplementedError();
   }
-
-
 }
