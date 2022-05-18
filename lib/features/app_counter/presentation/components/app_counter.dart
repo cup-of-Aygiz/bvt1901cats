@@ -15,6 +15,7 @@ class AppCounter extends StatefulWidget {
 
   @override
   State<AppCounter> createState() => _AppCounterState();
+
 }
 
 class _AppCounterState extends State<AppCounter> {
@@ -22,6 +23,13 @@ class _AppCounterState extends State<AppCounter> {
   Widget build(BuildContext context) {
     return BlocBuilder<BasketCubit, BasketState>(
       builder: (context, state) {
+        int index=-1;
+        for(int i=0;i<state.productList.length;i++){
+          if(state.productList[i].id==widget.id) {
+            index = i;
+            break;
+          }
+        }
         return Container(
           height: 36.h,
           width: 130.w,
@@ -38,7 +46,7 @@ class _AppCounterState extends State<AppCounter> {
                   },
                   icon: const Icon(Icons.remove)),
               Text(
-                '${state.productList[widget.id].cartAmount}',
+                '${state.productList[index].cartAmount}',
                 style: AppTextStyle.normalW700S16,
               ),
               IconButton(

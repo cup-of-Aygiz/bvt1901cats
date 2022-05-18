@@ -68,8 +68,7 @@
     "free",
     "empty_basket",
     "empty_orders_list",
-    "sum_with_delivery"
-    "empty_basket",
+    "sum_with_delivery",
     "empty_favorite"
   ]
 }
