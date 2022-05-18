@@ -5,25 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../di/service_locator.dart';
 import '../../../../uikit/app_bars/default_app_bar.dart';
 import '../../../../uikit/spinkit/spinkit.dart';
 import '../../../products_catalog/presetation/components/product_container.dart';
 import '../../domain/state/favorite_products_state.dart';
 
-class FavoriteScreen extends StatefulWidget {
+class FavoriteScreen extends StatelessWidget {
   const FavoriteScreen({Key? key}) : super(key: key);
-
-  @override
-  State<FavoriteScreen> createState() => _FavoriteScreenState();
-}
-
-class _FavoriteScreenState extends State<FavoriteScreen> {
-  @override
-  initState() async {
-    super.initState();
-    await getIt<FavoriteProductsCubit>().loadFavoriteProducts();
-  }
 
   @override
   Widget build(BuildContext context) {
