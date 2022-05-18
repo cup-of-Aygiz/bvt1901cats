@@ -20,18 +20,19 @@ class BasketNetworkRepository extends BasketRepository {
       {required int productId, required int amount}) async {
     try {
       final String? token = await getIt<AuthTokenStorage>().loadAccessToken();
-      final response = await dioContainer.dio.post('/cart',
-          data: {
-            'id': productId,
-            'amount': amount,
-          },
-          options: Options(headers: {
-            'x-access-token': token,
-          }),
+      final response = await dioContainer.dio.post(
+        '/cart',
+        data: {
+          'id': productId,
+          'amount': amount,
+        },
+        options: Options(headers: {
+          'x-access-token': token,
+        }),
       );
 
-      return List<ProductDetailsEntity>.from(response.data
-          .map((e) => ProductDetailsDTO.fromJson(e).toEntity()));
+      return List<ProductDetailsEntity>.from(
+          response.data.map((e) => ProductDetailsDTO.fromJson(e).toEntity()));
     } catch (e) {
       throw mapToErrorModel(e);
     }
@@ -52,8 +53,8 @@ class BasketNetworkRepository extends BasketRepository {
         }),
       );
 
-      return List<ProductDetailsEntity>.from(response.data
-          .map((e) => ProductDetailsDTO.fromJson(e).toEntity()));
+      return List<ProductDetailsEntity>.from(
+          response.data.map((e) => ProductDetailsDTO.fromJson(e).toEntity()));
     } catch (e) {
       throw mapToErrorModel(e);
     }
@@ -65,13 +66,13 @@ class BasketNetworkRepository extends BasketRepository {
       final String? token = await getIt<AuthTokenStorage>().loadAccessToken();
       final response = await dioContainer.dio.get(
         '/cart',
-          options: Options(headers: {
-            'x-access-token': token,
-          }),
+        options: Options(headers: {
+          'x-access-token': token,
+        }),
       );
 
-      return List<ProductDetailsEntity>.from(response.data
-          .map((e) => ProductDetailsDTO.fromJson(e).toEntity()));
+      return List<ProductDetailsEntity>.from(
+          response.data.map((e) => ProductDetailsDTO.fromJson(e).toEntity()));
     } catch (e) {
       throw mapToErrorModel(e);
     }
@@ -93,15 +94,15 @@ class BasketNetworkRepository extends BasketRepository {
         }),
       );
 
-      return List<ProductDetailsEntity>.from(response.data
-          .map((e) => ProductDetailsDTO.fromJson(e).toEntity()));
+      return List<ProductDetailsEntity>.from(
+          response.data.map((e) => ProductDetailsDTO.fromJson(e).toEntity()));
     } catch (e) {
       throw mapToErrorModel(e);
     }
   }
 
   @override
-  Future<List<ProductDetailsEntity>> clearProductList() async{
+  Future<List<ProductDetailsEntity>> clearProductList() async {
     try {
       final String? token = await getIt<AuthTokenStorage>().loadAccessToken();
       final response = await dioContainer.dio.delete(
@@ -111,7 +112,6 @@ class BasketNetworkRepository extends BasketRepository {
         }),
       );
       return [];
-
     } catch (e) {
       throw mapToErrorModel(e);
     }
