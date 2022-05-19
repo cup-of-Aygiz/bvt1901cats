@@ -36,6 +36,7 @@ class WelcomePageScreen extends StatelessWidget {
           Container(
             margin: EdgeInsets.symmetric(horizontal: 10.w),
             child: AppTextButton(
+              width: MediaQuery.of(context).size.width,
                 buttonText: locale.login,
                 onPressed: () {
                   router.pushScreen(context, const LoginScreen());
@@ -47,6 +48,7 @@ class WelcomePageScreen extends StatelessWidget {
           Container(
             margin: EdgeInsets.symmetric(horizontal: 10.w),
             child: AppTextButton(
+                width: MediaQuery.of(context).size.width,
                 buttonText: locale.registration,
                 onPressed: () {
                   router.pushScreen(context, const RegistrationScreen());

@@ -11,8 +11,7 @@ class AppTextButton extends StatelessWidget {
     this.color,
     this.textColor,
     this.width,
-    this.height=50,
-
+    this.height = 50,
   }) : super(key: key);
   final String buttonText;
   final Color? color;
@@ -27,7 +26,7 @@ class AppTextButton extends StatelessWidget {
 
     return SizedBox(
       height: height,
-      width: width,
+      width: width ?? MediaQuery.of(context).size.width,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ButtonStyle(
